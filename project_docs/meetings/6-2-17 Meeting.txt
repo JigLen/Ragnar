@@ -1,7 +1,0 @@
-Setup Repo locally and online via David's pc/github
-
-Scrum Master: Carl
-
-Created blank maven project
-
-Setup Git and Github. Everyone bar Dimitar can push and pull to their DIT machines.
