@@ -2,4 +2,4 @@
 *.class
 target/*
 *.csv
-
+.DS_Store
