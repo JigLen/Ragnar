@@ -14,7 +14,7 @@ Sahar		- IMSI based query for customer services rep. (Simple Query)
 
 Carl		- User story 1 and 3. Research burndown chart and implement.
 
-Ciaran		- Establish Relationships within within User story 3 (Joint effort, dual approach who’s is better wins)
+Ciaran		- Establish Relationships within the db. User story 3 (Joint effort, dual approach who’s is better wins)
 
 David		- Research what a user story is. and prepare a list for the product owner
 		  (Jenny) to populate the product backlog.
@@ -25,9 +25,7 @@ David		- Research what a user story is. and prepare a list for the product owner
 
  What issues do you have?
 
- EOD
+Everybody’s happy! 
+Sahar is going to work on her part, will update team by saturday if it’s going well, or she needs help etc.
 
- Empty int fields goes to '' (empty string) rather than NULL.
-
- Date/Time field is in the format yyyy-mm-dd hh:mi and mysql expects yyyy-mm-dd hh:mi:ss	
- this was set to DATE rather than DATETIME. Thanks to Dimitar for spotting it.
+ 
