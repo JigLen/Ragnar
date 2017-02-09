@@ -1,5 +1,5 @@
 *.javac
 *.class
-target/
+target/*
 *.csv
 
