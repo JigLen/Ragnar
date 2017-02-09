@@ -1,9 +1,26 @@
-What did you do?
+What did you do? (Collectively)
+
+Set up git repo
+Set up github repo and linked to local git repo
+Set up blank maven project
+Modelled our initial db design (will need to be restructured)
+Set up Trello board(project) Ragnar
 
 
 
 What will you do today?
 
+Read through Sprint 0 reequirements
+Get CSVs of data Jenny provided
+Discuss data and decide structure
+import into db via to workbench
 
 
  What issues do you have?
+
+ EOD
+
+ Empty int fields goes to '' (empty string) rather than NULL.
+
+ Date/Time field is in the format yyyy-mm-dd hh:mi and mysql expects yyyy-mm-dd hh:mi:ss	
+ this was set to DATE rather than DATETIME. Thanks to Dimitar for spotting it.
