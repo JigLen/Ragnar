@@ -18,9 +18,9 @@ USE `mydb` ;
 -- Table `mydb`.`Failure_Class`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Failure_Class` (
-  `Failure Class` INT NOT NULL,
-  `Description` VARCHAR(45) NULL,
-  PRIMARY KEY (`Failure Class`))
+  Failure_Class INT NOT NULL,
+  Description VARCHAR(45) NULL,
+  PRIMARY KEY (Failure_Class))
 ENGINE = InnoDB;
 
 
@@ -28,10 +28,10 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Event_Cause`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Event_Cause` (
-  `Course Code` INT NOT NULL AUTO_INCREMENT,
-  `Event id` INT NOT NULL,
-  `Description` VARCHAR(45) NULL,
-  PRIMARY KEY (`Course Code`, `Event id`))
+  Cause_Code INT NOT NULL AUTO_INCREMENT,
+  Event_id INT NOT NULL,
+  Description VARCHAR(45) NULL,
+  PRIMARY KEY (Cause_Code, Event_id))
 ENGINE = InnoDB;
 
 
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Base_Data` (
   Operator INT NULL,
   Cell_id INT NULL,
   Duration INT NULL,
-  Course_Code INT NULL,
+  Cause_Code INT NULL,
   NE_Version VARCHAR(45) NULL,
   IMSI decimal(20,0) NULL,
   HIER3_ID decimal(20,0) NULL,
@@ -76,27 +76,28 @@ ENGINE = InnoDB;
 -- Table `mydb`.`UE`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`UE` (
-  `TAC` INT NOT NULL,
-  `MARKETING NAME` VARCHAR(45) NULL,
-  `MANUFACTURER` VARCHAR(45) NULL,
-  `ACCESS CAPABILITY` VARCHAR(45) NULL,
-  `MODEL` VARCHAR(45) NULL,
-  `VENDOR NAME` VARCHAR(45) NULL,
-  `UE TYPE` VARCHAR(45) NULL,
-  `OS` VARCHAR(45) NULL,
-  `INPUT_MODE` VARCHAR(45) NULL,
+  TAC INT NOT NULL,
+  Marketing_Name VARCHAR(45) NULL,
+  Manufacturer VARCHAR(45) NULL,
+  Access_Capability VARCHAR(45) NULL,
+  Model VARCHAR(45) NULL,
+  Vendor_Name VARCHAR(45) NULL,
+  UE_Type VARCHAR(45) NULL,
+  OS VARCHAR(45) NULL,
+  Input_Mode VARCHAR(45) NULL,
+
   PRIMARY KEY (`TAC`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`MCE-MNC`
+-- Table `mydb`.`MCC_MNC`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`MCE-MNC` (
-  `MCC` INT(11) NOT NULL,
-  `MNC` INT(11) NOT NULL,
-  `COUNT` VARCHAR(45) NOT NULL,
-  `OPERATOR` VARCHAR(45) NOT NULL,
+CREATE TABLE IF NOT EXISTS `mydb`.`MCC_MNC` (
+  MCC INT(11) NOT NULL,
+  MNC INT(11) NOT NULL,
+  Country VARCHAR(45) NOT NULL,
+  Operator VARCHAR(45) NOT NULL,
   PRIMARY KEY (`MCC`, `MNC`))
 ENGINE = InnoDB;
 
