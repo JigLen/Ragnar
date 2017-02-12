@@ -1,11 +1,11 @@
 package com.vikings.ragnar.datacleaning;
 
 import java.io.*;
-import java.util.Arrays;
-
 
 /**
  * Created by carlmccann2 on 09/02/2017.
+ *
+ * Watches the directory where new data to be imported will be dropped. This will automate cleaning, insertion etc.
  */
 public class BaseDataCleaner {
     public static void clean(String fileName){
