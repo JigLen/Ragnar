@@ -17,10 +17,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="blah" />
+        <module name="Ragnar" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="blah" target="1.5" />
+      <module name="Ragnar" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

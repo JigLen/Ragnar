@@ -8,8 +8,10 @@ import java.util.Arrays;
  * Created by carlmccann2 on 09/02/2017.
  */
 public class BaseDataCleaner {
-    public static void clean(){
-        String fileName = "res/base_data/base_data_empty_null_field.csv";
+    public static void clean(String fileName){
+        System.out.println("Cleaning: " + fileName);
+        // for testing originally, now taken in via arg
+        // String fileName = "res/base_data/base_data_empty_null_field.csv";
         File file = new File(fileName);
 
         try{
@@ -55,6 +57,6 @@ public class BaseDataCleaner {
     }
 
     public static void main(String[] args) {
-        clean();
+        //clean();
     }
 }
