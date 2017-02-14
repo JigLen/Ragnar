@@ -1,6 +1,6 @@
 package com.vikings.ragnar.datawatcher;
 
-import com.vikings.ragnar.datacleaning.BaseDataCleaner;
+import com.vikings.ragnar.datavalidation.DataCleaner;
 
 import java.io.IOException;
 import java.nio.file.*;
@@ -48,10 +48,10 @@ public class DataWatcher {
                         continue;
                     } else if (kind == ENTRY_CREATE) {
                         //  spot sql files
-                        if(fileName.toString().endsWith(".sql")){
-                            System.out.println("Found sql file");
+                        if(fileName.toString().endsWith(".csv")){
+                            System.out.println("Found csv file");
                             String relPathToFilename = dir.toString() + "/" + fileName.toString();
-                            BaseDataCleaner.clean(relPathToFilename);
+                            DataCleaner.clean(relPathToFilename);
                         }
                     }
                 }

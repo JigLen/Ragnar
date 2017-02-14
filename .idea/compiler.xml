@@ -22,7 +22,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="blah" target="1.5" />
-      <module name="Ragnar" target="1.5" />
+      <module name="Ragnar" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

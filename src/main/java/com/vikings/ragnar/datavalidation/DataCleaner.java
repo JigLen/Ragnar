@@ -1,4 +1,4 @@
-package com.vikings.ragnar.datacleaning;
+package com.vikings.ragnar.datavalidation;
 
 import java.io.*;
 
@@ -7,7 +7,7 @@ import java.io.*;
  *
  * Watches the directory where new data to be imported will be dropped. This will automate cleaning, insertion etc.
  */
-public class BaseDataCleaner {
+public class DataCleaner {
     public static void clean(String fileName){
         System.out.println("Cleaning: " + fileName);
         // for testing originally, now taken in via arg
