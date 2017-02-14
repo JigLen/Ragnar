@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82667479-5b6a-4afa-a950-957517594b6d" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/datacleaning/BaseDataCleaner.java" afterPath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/datavalidation/DataCleaner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/datawatcher/DataWatcher.java" afterPath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/datawatcher/DataWatcher.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -45,8 +41,8 @@
       <file leaf-file-name="DataWatcher.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/datawatcher/DataWatcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="48" column="52" lean-forward="false" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
+            <state relative-caret-position="210">
+              <caret line="49" column="20" lean-forward="false" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -752,12 +748,12 @@
       <workItem from="1486922777335" duration="4064000" />
       <workItem from="1486987738231" duration="526000" />
       <workItem from="1486988294558" duration="3045000" />
-      <workItem from="1487082671275" duration="491000" />
+      <workItem from="1487082671275" duration="590000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12381000" />
+    <option name="totallyTimeSpent" value="12480000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
@@ -1069,8 +1065,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/datawatcher/DataWatcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="48" column="52" lean-forward="false" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
+        <state relative-caret-position="210">
+          <caret line="49" column="20" lean-forward="false" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
           <folding />
         </state>
       </provider>
