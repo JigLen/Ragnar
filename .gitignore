@@ -3,3 +3,4 @@
 target/*
 *.csv
 .DS_Store
+/target/
