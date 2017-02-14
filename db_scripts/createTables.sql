@@ -40,7 +40,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Base_Data` (
   Date_Time DATETIME NOT NULL,
-	Event_id INT NOT NULL,
+  Event_id INT NOT NULL,
   Failure_Class INT DEFAULT NULL,
   UE_Type INT NULL,
   Market INT NULL,
@@ -56,6 +56,11 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Base_Data` (
   id INT NOT NULL auto_increment,
  
  #remove next line and uncomment following section to revert
+ #The foreign keys are created here.
+ CONSTRAINT event_id_fk 
+ FOREIGN KEY (Cause_Code,Event_id) REFERENCES event_cause(Cause_Code,Event_id),
+ CONSTRAINT failure_class_fk 
+ FOREIGN KEY (Failure_Class) REFERENCES failure_class(Failure_Class),
  primary key(`id`))
  
 #  PRIMARY KEY (`id`),
