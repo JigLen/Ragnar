@@ -1,6 +1,8 @@
 package com.vikings.ragnar.datavalidation;
 
 import java.io.*;
+import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * Created by carlmccann2 on 09/02/2017.
@@ -13,38 +15,56 @@ public class DataCleaner {
         // for testing originally, now taken in via arg
         // String fileName = "res/base_data/base_data_empty_null_field.csv";
         File file = new File(fileName);
+        File tempFile = new File(fileName + ".tmp");
 
         try{
             BufferedReader br = new BufferedReader(new FileReader(file));
-            PrintWriter writer = new PrintWriter(fileName + ".tmp","UTF-8");
+
+            PrintWriter writer = new PrintWriter(tempFile,"UTF-8");
             String line;
+
+            boolean pastLineOne = false;
             while ((line = br.readLine()) != null) {
                 String line_split[] = line.split(",");
-                if(line_split[2].equals("")){
-                    line_split[2] = "\\N";
+
+                if(pastLineOne){
+                    // replaces any empty or (null) fields with \N
+                    for (int i = 0; i < line_split.length ; i++) {
+                        if(line_split[i].equals("") || line_split[i].equals("(null)")){
+                            line_split[i] = "\\N";
+                        }
+                    }
+
+                    // Date/Time formatting
+                    String dateSplit[] = line_split[0].split("/");
+
+                    if(dateSplit.length == 3){
+                        String yearTimeSplit[] = dateSplit[2].split(" ");
+                        String mysqlDateTimeFormat = yearTimeSplit[0] + "-" + dateSplit[1]
+                                + "-" + dateSplit[0] + " " + yearTimeSplit[1];
+                        line_split[0] = mysqlDateTimeFormat;
+                    }
                 }
-                if(line_split[8].equals("")){
-                    line_split[8] = "\\N";
+                else{
+                    pastLineOne = true;
                 }
+
+                // rewrite
                 for (int i = 0; i < line_split.length ; i++) {
-                   if (i == line_split.length-1){
-                       writer.println(line_split[i]);
-                   }
-                   else{
-                       writer.print(line_split[i] + ",");
-                   }
+                    if (i == line_split.length-1){
+                        writer.println(line_split[i]);
+                    }
+                    else{
+                        writer.print(line_split[i] + ",");
+                    }
                 }
-
-
             }
+
             writer.close();
             br.close();
             file.delete();
 
-           String newFileName = "res/base_data/base_data_empty_null_field.csv.tmp";
-           file = new File(newFileName);
-           file.renameTo(new File(fileName));
-
+            tempFile.renameTo(file);
 
 
 
@@ -56,7 +76,8 @@ public class DataCleaner {
 
     }
 
-    public static void main(String[] args) {
-        //clean();
-    }
+//    public static void main(String[] args) {
+//        //clean();
+//        clean("res/base_data.csv");
+//    }
 }

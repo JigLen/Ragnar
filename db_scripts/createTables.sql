@@ -15,32 +15,11 @@ CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
 USE `mydb` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Failure_Class`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Failure_Class` (
-  Failure_Class INT NOT NULL,
-  Description VARCHAR(45) NULL,
-  PRIMARY KEY (Failure_Class))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`Event_Cause`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Event_Cause` (
-  Cause_Code INT NOT NULL AUTO_INCREMENT,
-  Event_id INT NOT NULL,
-  Description VARCHAR(45) NULL,
-  PRIMARY KEY (Cause_Code, Event_id))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `mydb`.`Base_Data`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Base_Data` (
-  Date_Time DATETIME NOT NULL,
-  Event_id INT NOT NULL,
+  Date_Time DATETIME NULL,
+  Event_id INT NULL,
   Failure_Class INT DEFAULT NULL,
   UE_Type INT NULL,
   Market INT NULL,
@@ -58,10 +37,10 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Base_Data` (
  #remove next line and uncomment following section to revert
  #The foreign keys are created here.
  CONSTRAINT event_id_fk 
- FOREIGN KEY (Cause_Code,Event_id) REFERENCES event_cause(Cause_Code,Event_id),
+ FOREIGN KEY (Cause_Code,Event_id) REFERENCES Event_Cause(Cause_Code,Event_id),
  CONSTRAINT failure_class_fk 
- FOREIGN KEY (Failure_Class) REFERENCES failure_class(Failure_Class),
- primary key(`id`))
+ FOREIGN KEY (Failure_Class) REFERENCES Failure_Class(Failure_Class),
+ primary key(id))
  
 #  PRIMARY KEY (`id`),
 #  CONSTRAINT `Failure Class`
@@ -76,22 +55,24 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Base_Data` (
 #    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `mydb`.`Event_Cause`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Event_Cause` (
+  Cause_Code INT NOT NULL,
+  Event_id INT NOT NULL,
+  Description VARCHAR(75) NULL,
+  PRIMARY KEY (Cause_Code, Event_id))
+ENGINE = InnoDB;
+
 
 -- -----------------------------------------------------
--- Table `mydb`.`UE`
+-- Table `mydb`.`Failure_Class`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`UE` (
-  TAC INT NOT NULL,
-  Marketing_Name VARCHAR(45) NULL,
-  Manufacturer VARCHAR(45) NULL,
-  Access_Capability VARCHAR(45) NULL,
-  Model VARCHAR(45) NULL,
-  Vendor_Name VARCHAR(45) NULL,
-  UE_Type VARCHAR(45) NULL,
-  OS VARCHAR(45) NULL,
-  Input_Mode VARCHAR(45) NULL,
-
-  PRIMARY KEY (`TAC`))
+CREATE TABLE IF NOT EXISTS `mydb`.`Failure_Class` (
+  Failure_Class INT NOT NULL,
+  Description VARCHAR(45) NULL,
+  PRIMARY KEY (Failure_Class))
 ENGINE = InnoDB;
 
 
@@ -101,10 +82,29 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`MCC_MNC` (
   MCC INT(11) NOT NULL,
   MNC INT(11) NOT NULL,
-  Country VARCHAR(45) NOT NULL,
-  Operator VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`MCC`, `MNC`))
+  Country VARCHAR(30) NOT NULL,
+  Operator VARCHAR(50) NOT NULL,
+  PRIMARY KEY (MCC, MNC))
 ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`UE`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`UE` (
+  TAC INT NOT NULL,
+  Marketing_Name VARCHAR(50) NULL,
+  Manufacturer VARCHAR(40) NULL,
+  Access_Capability VARCHAR(140) NULL,
+  Model VARCHAR(50) NULL,
+  Vendor_Name VARCHAR(40) NULL,
+  UE_Type VARCHAR(30) NULL,
+  OS VARCHAR(30) NULL,
+  Input_Mode VARCHAR(30) NULL,
+  PRIMARY KEY (TAC))
+ENGINE = InnoDB;
+
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

@@ -4,3 +4,9 @@ target/*
 *.csv
 .DS_Store
 /target/
+workspace.xml
+datasources.local.xml
+datasources.xml
+.idea/
+.idea/libraries/
+.idea/datasources/

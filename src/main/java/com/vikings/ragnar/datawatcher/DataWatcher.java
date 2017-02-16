@@ -69,7 +69,7 @@ public class DataWatcher {
         }
     }
 
-    public static void main(String[] args) {
-        DataWatcher dataWatcher = new DataWatcher();
-    }
+//    public static void main(String[] args) {
+//        DataWatcher dataWatcher = new DataWatcher();
+//    }
 }
