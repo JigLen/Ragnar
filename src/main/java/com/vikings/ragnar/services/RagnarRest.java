@@ -1,9 +1,10 @@
 package com.vikings.ragnar.services;
 
+
+import com.vikings.ragnar.entities.BaseDataEntity;
 import com.vikings.ragnar.entities.MccMncEntity;
 
 import javax.ejb.EJB;
-import javax.ejb.Stateless;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -19,9 +20,21 @@ public class RagnarRest {
     @EJB
     MccMncService mccMncServiceEjb;
 
+    @EJB
+    BaseDataService baseDataServiceEjb;
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Collection<MccMncEntity> getAllInfo(){
+    @Path("/allMccMncInfo")
+    public Collection<MccMncEntity> getAllMccMncInfo(){
         return mccMncServiceEjb.getAllInfo();
     }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/allBaseDataInfo")
+    public Collection<BaseDataEntity> getAllBaseDataInfo(){
+        return baseDataServiceEjb.getAllInfo();
+    }
+
 }

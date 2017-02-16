@@ -53,6 +53,7 @@ public class DataWatcher {
                             System.out.println("Found csv file");
                             String relPathToFilename = dir.toString() + "/" + fileName.toString();
                             DataCleaner.clean(relPathToFilename);
+
                         }
                     }
                 }
