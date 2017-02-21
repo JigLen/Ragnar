@@ -1,4 +1,4 @@
-package com.vikings.ragnar.services;
+package com.vikings.ragnar.ejb;
 
 import com.vikings.ragnar.daos.MccMncDao;
 import com.vikings.ragnar.entities.MccMncEntity;

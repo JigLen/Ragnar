@@ -1,13 +1,13 @@
 package com.vikings.ragnar.services;
 
 
-import com.vikings.ragnar.entities.BaseDataEntity;
-import com.vikings.ragnar.entities.MccMncEntity;
+import com.vikings.ragnar.daos.UeDao;
+import com.vikings.ragnar.ejb.*;
+import com.vikings.ragnar.entities.*;
+import javafx.event.EventTarget;
 
 import javax.ejb.EJB;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.Collection;
 
@@ -17,11 +17,10 @@ import java.util.Collection;
 
 @Path("/ragnar")
 public class RagnarRest {
-    @EJB
-    MccMncService mccMncServiceEjb;
-
-    @EJB
-    BaseDataService baseDataServiceEjb;
+    @EJB MccMncService mccMncServiceEjb;
+    @EJB BaseDataService baseDataServiceEjb;
+    @EJB FailureClassService failureClassServiceEjb;
+    @EJB UeService ueServiceEjb;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -36,5 +35,39 @@ public class RagnarRest {
     public Collection<BaseDataEntity> getAllBaseDataInfo(){
         return baseDataServiceEjb.getAllInfo();
     }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/allFailureClassInfo")
+    public Collection<FailureClassEntity> getAllFailureClassInfo(){
+        return failureClassServiceEjb.getAllInfo();
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/allUeInfo")
+    public Collection<UeEntity> getAllUeInfo(){
+        return ueServiceEjb.getAllInfo();
+    }
+
+    /////
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void addFailureClass(FailureClassEntity failureClass){
+        failureClassServiceEjb.addFailureClass(failureClass);
+    }
+
+    @DELETE
+    @Path("/{id}")
+    public void deleteCharacter(@PathParam("id") int id) {
+        failureClassServiceEjb.remove(id);
+    }
+
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void update(FailureClassEntity failureClass){
+        failureClassServiceEjb.update(failureClass);
+    }
+
 
 }

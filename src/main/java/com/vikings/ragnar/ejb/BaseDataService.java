@@ -1,4 +1,4 @@
-package com.vikings.ragnar.services;
+package com.vikings.ragnar.ejb;
 
 import com.vikings.ragnar.entities.BaseDataEntity;
 import javax.ejb.Local;
@@ -9,5 +9,5 @@ import java.util.Collection;
  */
 @Local
 public interface BaseDataService {
-    public Collection<BaseDataEntity> getAllInfo();
+    Collection<BaseDataEntity> getAllInfo();
 }

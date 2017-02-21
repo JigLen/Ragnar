@@ -34,25 +34,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Base_Data` (
   HER321_ID decimal(20,0) NULL,
   id INT NOT NULL auto_increment,
  
- #remove next line and uncomment following section to revert
  #The foreign keys are created here.
  CONSTRAINT event_id_fk 
  FOREIGN KEY (Cause_Code,Event_id) REFERENCES Event_Cause(Cause_Code,Event_id),
  CONSTRAINT failure_class_fk 
  FOREIGN KEY (Failure_Class) REFERENCES Failure_Class(Failure_Class),
  primary key(id))
- 
-#  PRIMARY KEY (`id`),
-#  CONSTRAINT `Failure Class`
-#    FOREIGN KEY (`Failure Class`)
-#    REFERENCES `mydb`.`Failure_Class` (`Failure Class`)
-#    ON DELETE NO ACTION
-#    ON UPDATE NO ACTION,
-#  CONSTRAINT `Course Code`
-#    FOREIGN KEY (`Course Code`)
-#    REFERENCES `mydb`.`Event_Cause` (`Course Code`)
-#    ON DELETE NO ACTION
-#    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------

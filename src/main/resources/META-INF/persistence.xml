@@ -9,8 +9,8 @@
       <jta-data-source>java:/mySQL</jta-data-source>
       <class>com.vikings.ragnar.entities.MccMncEntity</class>
        <class>com.vikings.ragnar.entities.BaseDataEntity</class>
-       <class>com.vikings.ragnar.entities.FailureClass</class>
-       <!--<class>com.viings.ragnar.entities.UeEntity</class>-->
+       <class>com.vikings.ragnar.entities.FailureClassEntity</class>
+       <class>com.vikings.ragnar.entities.UeEntity</class>
       <properties>
          <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
           <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>

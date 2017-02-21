@@ -1,7 +1,10 @@
 <!Doctype html>
 <html>
 
-<head><script type="text/javascript" src="functions.js"></script>
+<head>
+    <script type="text/javascript" src="get_functions.js"></script>
+    <script type="text/javascript" src="failure_class_crud.js"></script>
+
 <h1>Ragnar</h1>
 </head>
 
@@ -12,16 +15,49 @@ Ciarán Sweeney<br>
 Dimitar Tsvetkov<br>
 Carl McCann<br>
 
-
 <div id="get">
     <h1>GET</h1>
     <input id="base_data" type="button" onclick="loadAllBaseDataInfo()" value="Get All Base_Data info"/>
-    <input id="event_cause" type="button" onclick="" value="Get All Event_Cause info"/>
-    <input id="failure_class" type="button" onclick="" value="Get All Failure_Class info"/>
+    <input id="event_cause" type="button" onclick="loadAllEventCauseInfo()" value="Get All Event_Cause info"/>
+    <input id="failure_class" type="button" onclick="loadAllFailureClassInfo()" value="Get All Failure_Class info"/>
     <input id="mcc" type="button" onclick="loadAllMccMncInfo()" value="Get All MCC-MNC info"/>
-    <input id="ue" type="button" onclick="" value="Get All UE info"/>
+    <input id="ue" type="button" onclick="loadAllUeInfo()" value="Get All UE info"/>
 </div>
 
+
+<div id="post">
+    <h1>POST</h1>
+
+</div>
+
+<div id="put">
+    <h1>PUT</h1>
+
+</div>
+
+
+<div id="delete">
+    <h1>DELETE</h1>
+
+
+
+
+
+</div>
+
+    <h1>David's stuff</h1>
+
+    <h3>Enter id To Delete</h3>
+    <form>
+        Id:<br>
+        <input type="text" name="id" placeholder="Enter id" id="idText"><br>
+        <br>
+        <input type="button" class="btn" id="deleteFailureClassButton" value="DELETE"/>
+    </form>
+
+    <h1>Failure Class List</h1>
+    <ul id="failureClassHolder">
+    </ul>
 
 
 </body>

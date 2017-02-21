@@ -1,4 +1,4 @@
-package com.vikings.ragnar.services;
+package com.vikings.ragnar.ejb;
 
 import com.vikings.ragnar.daos.BaseDataDao;
 import com.vikings.ragnar.entities.BaseDataEntity;
