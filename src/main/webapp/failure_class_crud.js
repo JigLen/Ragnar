@@ -10,6 +10,16 @@ var MyCharacter = function(id,name, age) {
 }
 
 $(document).ready(function(){
+    $("#testbutton").click(function(){
+       alert("hi");
+    });
+});
+
+function x(){
+    alert("hi");
+}
+
+$(document).ready(function(){
 
     $("#addFailureClassButton").click(function() {
         alert("add button pressed");
@@ -69,7 +79,7 @@ $(document).ready(function(){
 
     $.ajax({
         type: "GET",
-        url: "ragnar/ragnar",
+        url: "ragnar/ragnar/",
 
         success: function (failureClassList) {
             $.each(failureClassList, function (index, value) {
