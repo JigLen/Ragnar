@@ -11,3 +11,4 @@ datasources.xml
 .idea/libraries/
 .idea/datasources/
 .settings/
+.idea/workspace.xml
