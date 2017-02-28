@@ -1,12 +1,12 @@
-var FailureClass = function(failureClass, description) {
-    this.failure_class = failureClass;
+var EventCause = function(causeCode, eventId, description) {
+    this.causeCode = causeCode;
+    this.eventId = eventId;
     this.description = description;
 }
 
-
 $(document).ready(function(){
 
-    $("#addFailureClassButton").click(function() {
+    $("#addEventCauseButton").click(function() {
         alert("add button pressed");
 
         var failure_class =  $("#idText").val();
@@ -26,7 +26,7 @@ $(document).ready(function(){
     });
 
 
-    $("#updateFailureClassButton").click(function() {
+    $("#updateEventCauseButton").click(function() {
         alert("update button pressed");
 
         var id =   $("#idUpdateText").val();
@@ -48,7 +48,7 @@ $(document).ready(function(){
     });
 
 
-    $("#deleteFailureClassButton").click(function() {
+    $("#deleteEventCauseButton").click(function() {
         alert("delete button pressed");
 
         var id =  $("#idText").val();
@@ -56,7 +56,7 @@ $(document).ready(function(){
             type: "DELETE",
             url: "ragnar/ragnar/" + id,
             success: function () {
-                alert("FailureClass deleted");
+                alert("Event Cause deleted");
             },
         });
     });
@@ -64,14 +64,15 @@ $(document).ready(function(){
 
     $.ajax({
         type: "GET",
-        url: "ragnar/ragnar/allFailureClassInfo",
+        url: "ragnar/ragnar/allEventCauseInfo",
 
         success: function (failureClassList) {
             $.each(failureClassList, function (index, value) {
-                ;                $("#failureClassHolder").append("<li>" + value.failure_class + " " + value.description +"</li>");
+                ;                $("#EventCauseHolder").append("<li>" + value.failure_class + " " + value.description +"</li>");
             });
         }
     });
 
 
 });
+

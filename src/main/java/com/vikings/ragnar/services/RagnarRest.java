@@ -21,6 +21,14 @@ public class RagnarRest {
     @EJB BaseDataService baseDataServiceEjb;
     @EJB FailureClassService failureClassServiceEjb;
     @EJB UeService ueServiceEjb;
+    @EJB EventCauseService eventCauseServiceEjb;
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/allEventCauseInfo")
+    public Collection<EventCauseEntity> getAllEventCauseInfo(){
+        return eventCauseServiceEjb.getAllInfo();
+    }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
