@@ -11,4 +11,8 @@ import java.util.Collection;
 @Local
 public interface EventCauseService {
     Collection<EventCauseEntity> getAllInfo();
+    void add(EventCauseEntity eventCause);
+    void remove(int causeCode, int id);
+    void update(EventCauseEntity eventCause);
+    EventCauseEntity getById(int causeCode, int id);
 }

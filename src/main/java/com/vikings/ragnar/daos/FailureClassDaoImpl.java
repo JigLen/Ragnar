@@ -7,6 +7,8 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.swing.*;
+import java.awt.*;
 import java.util.Collection;
 import java.util.List;
 
@@ -33,7 +35,17 @@ public class FailureClassDaoImpl implements FailureClassDao{
             em.persist(failureClass);
 
     }
-
+    public FailureClassEntity getById(int id)
+    {
+        Query query = em.createQuery("from FailureClassEntity where failureClass = :id").setParameter("id", id);
+        FailureClassEntity tmp = (FailureClassEntity) query.getSingleResult();
+        if(tmp != null){
+            System.out.println("Id found");
+        }else{
+            System.out.println("Id not found");
+        }
+        return tmp;
+    }
 
     public void remove(int id) {
         //Query query = em.createQuery("from MyCharacter");
@@ -56,8 +68,10 @@ public class FailureClassDaoImpl implements FailureClassDao{
         Query query = em.createQuery("from FailureClassEntity");
         List<FailureClassEntity> list = query.getResultList();
         for (FailureClassEntity mc : list) {
-            if(mc.getFailureClass() == failureClass.getFailureClass()){
+            if(mc.getFailureClass().equals(failureClass.getFailureClass())){
                 em.merge(failureClass);
+            }else{
+                System.out.print("Not found");
             }
         }
 

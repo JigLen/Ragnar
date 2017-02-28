@@ -46,6 +46,13 @@ public class RagnarRest {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @Path("/failureClass/{id}")
+    public FailureClassEntity getAllFailureClassInfoById(@PathParam("id") int id){
+        return failureClassServiceEjb.getById(id);
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("/allFailureClassInfo")
     public Collection<FailureClassEntity> getAllFailureClassInfo(){
         return failureClassServiceEjb.getAllInfo();
@@ -58,7 +65,6 @@ public class RagnarRest {
         return ueServiceEjb.getAllInfo();
     }
 
-    /////
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void addFailureClass(FailureClassEntity failureClass){
@@ -67,7 +73,7 @@ public class RagnarRest {
 
     @DELETE
     @Path("/{id}")
-    public void deleteCharacter(@PathParam("id") int id) {
+    public void deleteFailureClass(@PathParam("id") int id) {
         failureClassServiceEjb.remove(id);
     }
 
@@ -78,4 +84,22 @@ public class RagnarRest {
     }
 
 
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void addEventCause(EventCauseEntity eventCause){
+        eventCauseServiceEjb.add(eventCause);
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{causeCode}/{id}")
+    public void deleteEventCause(@PathParam("causeCode") int causeCode, @PathParam("id") int id) {
+        eventCauseServiceEjb.getById(causeCode, id);
+    }
+
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void update(EventCauseEntity eventCause){
+        eventCauseServiceEjb.update(eventCause);
+    }
 }

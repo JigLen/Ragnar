@@ -1,5 +1,5 @@
 var FailureClass = function(failureClass, description) {
-    this.failure_class = failureClass;
+    this.failureClass = failureClass;
     this.description = description;
 }
 
@@ -9,9 +9,9 @@ $(document).ready(function(){
     $("#addFailureClassButton").click(function() {
         alert("add button pressed");
 
-        var failure_class =  $("#idText").val();
+        var failureClass =  $("#failureClassID").val();
         var description = $("#descriptionText").val();
-        var myFailureClass = new FailureClass(failure_class,description);
+        var myFailureClass = new FailureClass(failureClass,description);
 
         $.ajax({
             type: "POST",
@@ -29,19 +29,17 @@ $(document).ready(function(){
     $("#updateFailureClassButton").click(function() {
         alert("update button pressed");
 
-        var id =   $("#idUpdateText").val();
-        var name =  $("#nameUpdateText").val();
-        var age = $("#ageUpdateText").val();
-
-        var myViking = new MyCharacter(id,name,age);
+        var id =   $("#updateFailureClassId").val();
+        var description =  $("#updateDescText").val();
+        var failureClass = new FailureClass(id,description);
 
         $.ajax({
             type: "PUT",
             url: "ragnar/ragnar",
             success: function () {
-                alert("Viking updated");
+                alert("FailureClass updated");
             },
-            data: JSON.stringify(myViking),
+            data: JSON.stringify(failureClass),
             contentType: "application/json"
 
         });
@@ -61,6 +59,21 @@ $(document).ready(function(){
         });
     });
 
+    $("#searchById").click(function() {
+        var id =  $("#getById").val();
+        $.ajax({
+            type: "GET",
+            url: "ragnar/ragnar/failureClass/" + id,
+            success: function (value) {
+                alert("FailureClass found");
+                $("#searchText").val(value.failureClass + " " + value.description );
+
+            },
+            error:function () {
+             alert("Not found");
+            }
+        });
+    });
 
     $.ajax({
         type: "GET",
@@ -68,7 +81,7 @@ $(document).ready(function(){
 
         success: function (failureClassList) {
             $.each(failureClassList, function (index, value) {
-                ;                $("#failureClassHolder").append("<li>" + value.failure_class + " " + value.description +"</li>");
+                $("#failureClassHolder").append("<li>" + value.failureClass + " " + value.description +"</li>");
             });
         }
     });

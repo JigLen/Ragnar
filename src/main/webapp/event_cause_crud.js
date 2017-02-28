@@ -15,7 +15,7 @@ $(document).ready(function(){
 
         $.ajax({
             type: "POST",
-            url: "ragnar/ragnar",
+            url: "event_cause/add/",
             success: function () {
                 alert("FailureClass added");
             },
@@ -29,15 +29,15 @@ $(document).ready(function(){
     $("#updateEventCauseButton").click(function() {
         alert("update button pressed");
 
-        var id =   $("#idUpdateText").val();
-        var name =  $("#nameUpdateText").val();
-        var age = $("#ageUpdateText").val();
+        var causeCode = $("#updateEventCauseCode");
+        var id =  $("#updateEventCauseId").val();
+        var description = $("#updateEventCauseDescription").val();
 
-        var myViking = new MyCharacter(id,name,age);
+        var myEventCause = new EventCause(causeCode,id,description);
 
         $.ajax({
             type: "PUT",
-            url: "ragnar/ragnar",
+            url: "event_cause/update/",
             success: function () {
                 alert("Viking updated");
             },
@@ -51,20 +51,38 @@ $(document).ready(function(){
     $("#deleteEventCauseButton").click(function() {
         alert("delete button pressed");
 
-        var id =  $("#idText").val();
+        var causeCode = $("#updateEventCauseCode");
+        var id =  $("#updateEventCauseId").val();
         $.ajax({
             type: "DELETE",
-            url: "ragnar/ragnar/" + id,
+            url: "event_cause/delete/" + causeCode + "/" + id,
             success: function () {
                 alert("Event Cause deleted");
             },
         });
     });
 
+    $("#searchByIdEventCause").click(function() {
+        var causeCode = $("#getEventCauseCode").val();
+        var id =  $("#getEventId").val();
+        $.ajax({
+            type: "GET",
+            url: "ragnar/ragnar/" + causeCode + "/" + id,
+            success: function (value) {
+                alert("EventCause found");
+                $("#getEventCauseSearch").val(value.causeCode + " " + value.eventId + " " + value.description);
+
+            },
+            error:function () {
+                alert("Not found");
+            }
+        });
+    });
+
 
     $.ajax({
         type: "GET",
-        url: "ragnar/ragnar/allEventCauseInfo",
+        url: "event_cause/allEventCauseInfo",
 
         success: function (failureClassList) {
             $.each(failureClassList, function (index, value) {
@@ -75,4 +93,3 @@ $(document).ready(function(){
 
 
 });
-
