@@ -32,12 +32,16 @@ $(document).ready(function(){
         var id =   $("#updateFailureClassId").val();
         var description =  $("#updateDescText").val();
         var failureClass = new FailureClass(id,description);
+        alert("Id:" + id);
 
         $.ajax({
             type: "PUT",
             url: "ragnar/ragnar",
             success: function () {
                 alert("FailureClass updated");
+            },
+            error: function () {
+                alert("Failure Class Id not found")
             },
             data: JSON.stringify(failureClass),
             contentType: "application/json"
