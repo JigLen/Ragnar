@@ -38,6 +38,13 @@ public class RagnarRest {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @Path("/failureClass/{id}")
+    public FailureClassEntity getAllFailureClassInfoById(@PathParam("id") int id){
+        return failureClassServiceEjb.getById(id);
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("/allFailureClassInfo")
     public Collection<FailureClassEntity> getAllFailureClassInfo(){
         return failureClassServiceEjb.getAllInfo();

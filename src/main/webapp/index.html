@@ -2,8 +2,38 @@
 <html>
 
 <head>
+    <title>Ragnar</title>
+    <meta charset="utf-8">
+
+    <!--&lt;!&ndash;bootstrap&ndash;&gt;-->
+
+    <!--&lt;!&ndash; Latest compiled and minified CSS &ndash;&gt;-->
+    <!--<link rel="stylesheet"-->
+          <!--href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
+          <!--integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"-->
+          <!--crossorigin="anonymous">-->
+
+    <!--&lt;!&ndash; Optional theme &ndash;&gt;-->
+    <!--<link rel="stylesheet"-->
+          <!--href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"-->
+          <!--integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"-->
+          <!--crossorigin="anonymous">-->
+
+    <!--&lt;!&ndash; Latest compiled and minified JavaScript &ndash;&gt;-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"-->
+            <!--integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"-->
+            <!--crossorigin="anonymous"></script>-->
+
+
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+    <!--&lt;!&ndash;!bootstrap&ndash;&gt;-->
+
+    <!--If you want JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="get_functions.js"></script>
     <script type="text/javascript" src="failure_class_crud.js"></script>
+    <link id="cs" rel ="stylesheet" href="basic.css">
 
 <h1>Ragnar</h1>
 </head>
@@ -15,7 +45,59 @@ Ciarán Sweeney<br>
 Dimitar Tsvetkov<br>
 Carl McCann<br>
 
-<div id="get">
+<div class="container">
+    <h1>Failure Class</h1>
+
+    <div class="left">
+    <h3>Enter id To Delete</h3>
+        <form>
+            <input type="text" name="id" placeholder="Enter id" id="idText"><br>
+            <br>
+            <input type="button" class="btn" id="deleteFailureClassButton" value="DELETE"/>
+        </form>
+    </div>
+
+    <div class="left">
+        <h3>Add new Failure Class Entry</h3>
+        <form>
+            <input type="text" name="id" placeholder="Enter id" id="failureClassID"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Description" id="descriptionText"><br>
+            <br>
+            <input type="button" class="btn" id="addFailureClassButton" value="ADD"/>
+        </form>
+    </div>
+
+    <div class="left">
+        <h3>Update Failure Class Entry</h3>
+        <form>
+            <input type="text" name="id" placeholder="Enter id" id="updateFailureClassId"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Description" id="updateDescText"><br>
+            <br>
+            <input type="button" class="btn" id="updateFailureClassButton" value="UPDATE"/>
+        </form>
+    </div>
+
+    <div class="left">
+    <h3>Enter id number to search</h3>
+    <form>
+        <input type="text" name="id" placeholder="Enter id" id="getById"><br>
+        <br>
+        <input type="text" name="id" placeholder="" id="searchText"><br>
+        <br>
+        <input type="button" class="btn" id="searchById" value="SEARCH"/>
+    </form>
+    </div>
+    <div class="left">
+        <h2>Failure Class List</h2>
+        <ul id="failureClassHolder">
+        </ul>
+    </div>
+</div>
+
+
+<div class="container">
     <h1>GET</h1>
     <input id="base_data" type="button" onclick="loadAllBaseDataInfo()" value="Get All Base_Data info"/>
     <input id="event_cause" type="button" onclick="loadAllEventCauseInfo()" value="Get All Event_Cause info"/>
@@ -38,27 +120,19 @@ Carl McCann<br>
 
 <div id="delete">
     <h1>DELETE</h1>
-
-
-
-
-
 </div>
 
-    <h1>David's stuff</h1>
+<div class="container">
 
-    <h3>Enter id To Delete</h3>
-    <form>
-        Id:<br>
-        <input type="text" name="id" placeholder="Enter id" id="idText"><br>
-        <br>
-        <input type="button" class="btn" id="deleteFailureClassButton" value="DELETE"/>
-    </form>
+    <h1>bootstrap tutorial</h1>
+    <p>i love new boston<br>
+        https://www.youtube.com/watch?v=qIULMnbH2-o <br>
 
-    <h1>Failure Class List</h1>
-    <ul id="failureClassHolder">
-    </ul>
+        also this <br>
+        https://startbootstrap.com/template-overviews/sb-admin-2/ <br>
+    </p>
 
+</div>
 
 </body>
 
