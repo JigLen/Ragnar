@@ -24,7 +24,7 @@
           <factory-entry name="Ragnar" />
           <factory-entry name="Ragnar_mydb" />
           <factory-entry name="conygreChapter8" />
-          <factory-entry name="mydb" value="46bf7af3-e0c9-4720-9998-276f178570d9" />
+          <factory-entry name="mydb" value="d64ff4c8-b8bb-4365-9aa2-18d70a8c1222" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
       </configuration>
