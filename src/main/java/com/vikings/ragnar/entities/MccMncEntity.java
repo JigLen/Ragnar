@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name="MCC_MNC")
-public class MccMncEntity implements Serializable {
+public class MccMncEntity implements Serializable{
 
     // Mobile Country Codes (MCC) and Mobile Network Codes (MNC)
     @Id @Column(name="MCC")     private Integer mcc;

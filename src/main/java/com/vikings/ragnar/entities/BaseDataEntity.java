@@ -11,7 +11,7 @@ import java.util.Date;
 
 @Entity
 @Table(name="base_data")
-public class BaseDataEntity implements Serializable {
+public class BaseDataEntity implements Serializable{
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

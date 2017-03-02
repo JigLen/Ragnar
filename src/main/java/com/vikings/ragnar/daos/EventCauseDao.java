@@ -1,7 +1,6 @@
 package com.vikings.ragnar.daos;
 
 import com.vikings.ragnar.entities.EventCauseEntity;
-import com.vikings.ragnar.entities.FailureClassEntity;
 
 import javax.ejb.Local;
 import java.util.Collection;

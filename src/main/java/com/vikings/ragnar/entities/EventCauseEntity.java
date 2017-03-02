@@ -17,7 +17,7 @@ import java.io.Serializable;
 })
 
 @Table(name="event_cause")
-public class EventCauseEntity implements Serializable {
+public class EventCauseEntity implements Serializable{
     @Id @Column(name="Cause_Code")  private Integer causeCode;
     @Id @Column(name="Event_id")    private Integer eventId;
     @Column(name="Description")     private String description;
@@ -55,4 +55,14 @@ public class EventCauseEntity implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+
+//    @Override
+//    public int hashCode() {
+//        return super.hashCode();
+//    }
+//
+//    @Override
+//    public boolean equals(Object obj) {
+//        return super.equals(obj);
+//    }
 }

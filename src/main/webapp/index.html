@@ -31,11 +31,11 @@
 
     <!--If you want JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="get_functions.js"></script>
-    <script type="text/javascript" src="failure_class_crud.js"></script>
-    <script type="text/javascript" src="event_cause_crud.js"></script>
+    <script type="text/javascript" src="js/get_functions.js"></script>
+    <script type="text/javascript" src="js/failure_class_crud.js"></script>
+    <script type="text/javascript" src="js/event_cause_crud.js"></script>
 
-    <link id="cs" rel ="stylesheet" href="basic.css">
+    <link id="css" rel ="stylesheet" href="css/basic.css">
 
 <h1>Ragnar</h1>
 </head>
@@ -47,7 +47,7 @@ Ciarán Sweeney<br>
 Dimitar Tsvetkov<br>
 Carl McCann<br>
 
-<div class="container">
+<div class="container" id="failClassDiv">
     <h1>Failure Class</h1>
 
     <div class="left">
@@ -99,7 +99,7 @@ Carl McCann<br>
 </div>
 
 
-<div class="container">
+<div class="container" id="eventCauseDiv">
     <h1>Event Cause</h1>
 
     <div class="left">
@@ -154,14 +154,14 @@ Carl McCann<br>
     </div>
     <div class="left">
         <h2>Event Cause List</h2>
-        <ul id="ueHolder">
+        <ul id="eventCauseHolder">
         </ul>
     </div>
 </div>
 
 
 
-<div class="container">
+<div class="container" id="ueDiv">
     <h1>UE</h1>
 
     <div class="left">
@@ -222,7 +222,7 @@ Carl McCann<br>
     </div>
     <div class="left">
         <h2>Failure Class List</h2>
-        <ul id="eventCauseHolder">
+        <ul id="ueHolder">
         </ul>
     </div>
 </div>

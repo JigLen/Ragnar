@@ -26,7 +26,7 @@ public class EventCauseServiceEjb implements EventCauseService {
     }
 
     @Override
-    public void remove(int causeCode, int id) {
+    public void remove(Integer causeCode, Integer id) {
         eventCauseDao.remove(causeCode,id);
     }
 
@@ -36,7 +36,7 @@ public class EventCauseServiceEjb implements EventCauseService {
     }
 
     @Override
-    public EventCauseEntity getById(int causeCode, int id) {
+    public EventCauseEntity getById(Integer causeCode, Integer id) {
         return eventCauseDao.getById(causeCode, id);
     }
 }

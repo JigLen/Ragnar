@@ -12,7 +12,7 @@ import java.util.Collection;
 public interface EventCauseService {
     Collection<EventCauseEntity> getAllInfo();
     void add(EventCauseEntity eventCause);
-    void remove(int causeCode, int id);
+    void remove(Integer causeCode, Integer id);
     void update(EventCauseEntity eventCause);
-    EventCauseEntity getById(int causeCode, int id);
+    EventCauseEntity getById(Integer causeCode, Integer id);
 }
