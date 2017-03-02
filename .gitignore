@@ -10,3 +10,4 @@ datasources.xml
 .idea/
 .idea/libraries/
 .idea/datasources/
+res/*

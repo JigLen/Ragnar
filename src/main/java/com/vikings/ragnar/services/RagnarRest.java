@@ -15,12 +15,14 @@ import java.util.Collection;
  * Created by carlmccann2 on 15/02/2017.
  */
 
+
 @Path("/ragnar")
 public class RagnarRest {
     @EJB MccMncService mccMncServiceEjb;
     @EJB BaseDataService baseDataServiceEjb;
     @EJB FailureClassService failureClassServiceEjb;
     @EJB UeService ueServiceEjb;
+    @EJB UserService userServiceEjb;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -50,6 +52,21 @@ public class RagnarRest {
         return ueServiceEjb.getAllInfo();
     }
 
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/userLogin")
+    public Collection<UserEntity> getUser(){
+        return userServiceEjb.getUser(1,"test");
+    }
+    /*@GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/userLogin")
+    public UserEntity getUser(Integer id, String password){
+        return userServiceEjb.getUser(1,"test");
+    }*/
+    /*public UserEntity getUser(Integer id, String password){
+        return userServiceEjb.getUser(id,password);
+    }*/
     /////
     @POST
     @Consumes(MediaType.APPLICATION_JSON)

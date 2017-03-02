@@ -2,20 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82667479-5b6a-4afa-a950-957517594b6d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/get_functions.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/functions.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/BaseDataService.java" afterPath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/BaseDataService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/BaseDataServiceEjb.java" afterPath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/BaseDataServiceEjb.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/MccMncService.java" afterPath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/MccMncService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/MccMncServiceEjb.java" afterPath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/MccMncServiceEjb.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ragnar.iml" afterPath="$PROJECT_DIR$/Ragnar.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_scripts/createTables.sql" afterPath="$PROJECT_DIR$/db_scripts/createTables.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_scripts/loadTables.sql" afterPath="$PROJECT_DIR$/db_scripts/loadTables.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/BaseDataEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/BaseDataEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/UserDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/UserDaoImp.java" afterPath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/UserDaoImp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/UserEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/UserEntity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/RagnarRest.java" afterPath="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/RagnarRest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/get_functions.js" afterPath="$PROJECT_DIR$/src/main/webapp/get_functions.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,157 +24,122 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RagnarRest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/RagnarRest.java">
+      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/UserDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#690#691#0" expanded="false" />
-                <element signature="e#742#743#0" expanded="false" />
-                <element signature="e#884#885#0" expanded="false" />
-                <element signature="e#938#939#0" expanded="false" />
-                <element signature="e#1092#1093#0" expanded="false" />
-                <element signature="e#1150#1151#0" expanded="false" />
-                <element signature="e#1274#1275#0" expanded="false" />
-                <element signature="e#1322#1323#0" expanded="false" />
-                <element signature="e#1610#1611#0" expanded="false" />
-                <element signature="e#1659#1660#0" expanded="false" />
-                <element signature="e#1768#1769#0" expanded="false" />
-                <element signature="e#1827#1828#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="get_functions.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/get_functions.js">
+      <file leaf-file-name="UserServiceEjb.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/UserServiceEjb.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#707#708#0" expanded="true" />
+                <element signature="e#758#759#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/UserEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+              <folding>
+                <element signature="e#611#612#0" expanded="true" />
+                <element signature="e#640#641#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UeEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/UeEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="492">
+              <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDaoImp.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/UserDaoImp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="514">
+              <caret line="33" column="41" lean-forward="false" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RagnarRest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/RagnarRest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="3" lean-forward="false" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/UserRest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ragnar.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ragnar.iml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="failure_class_crud.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/failure_class_crud.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="81" column="3" lean-forward="false" selection-start-line="81" selection-start-column="3" selection-end-line="81" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="persistence.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseDataEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/BaseDataEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="32" column="57" lean-forward="false" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#2041#2042#0" expanded="false" />
-                <element signature="e#2072#2073#0" expanded="false" />
-                <element signature="e#2119#2120#0" expanded="false" />
-                <element signature="e#2160#2161#0" expanded="false" />
-                <element signature="e#2195#2196#0" expanded="false" />
-                <element signature="e#2225#2226#0" expanded="false" />
-                <element signature="e#2273#2274#0" expanded="false" />
-                <element signature="e#2312#2313#0" expanded="false" />
-                <element signature="e#2352#2353#0" expanded="false" />
-                <element signature="e#2387#2388#0" expanded="false" />
-                <element signature="e#2445#2446#0" expanded="false" />
-                <element signature="e#2494#2495#0" expanded="false" />
-                <element signature="e#2527#2528#0" expanded="false" />
-                <element signature="e#2556#2557#0" expanded="false" />
-                <element signature="e#2601#2602#0" expanded="false" />
-                <element signature="e#2638#2639#0" expanded="false" />
-                <element signature="e#2672#2673#0" expanded="false" />
-                <element signature="e#2701#2702#0" expanded="false" />
-                <element signature="e#2746#2747#0" expanded="false" />
-                <element signature="e#2782#2783#0" expanded="false" />
-                <element signature="e#2818#2819#0" expanded="false" />
-                <element signature="e#2849#2850#0" expanded="false" />
-                <element signature="e#2898#2899#0" expanded="false" />
-                <element signature="e#2938#2939#0" expanded="false" />
-                <element signature="e#2972#2973#0" expanded="false" />
-                <element signature="e#3001#3002#0" expanded="false" />
-                <element signature="e#3047#3048#0" expanded="false" />
-                <element signature="e#3084#3085#0" expanded="false" />
-                <element signature="e#3120#3121#0" expanded="false" />
-                <element signature="e#3151#3152#0" expanded="false" />
-                <element signature="e#3200#3201#0" expanded="false" />
-                <element signature="e#3240#3241#0" expanded="false" />
-                <element signature="e#3277#3278#0" expanded="false" />
-                <element signature="e#3309#3310#0" expanded="false" />
-                <element signature="e#3361#3362#0" expanded="false" />
-                <element signature="e#3404#3405#0" expanded="false" />
-                <element signature="e#3440#3441#0" expanded="false" />
-                <element signature="e#3472#3473#0" expanded="false" />
-                <element signature="e#3523#3524#0" expanded="false" />
-                <element signature="e#3566#3567#0" expanded="false" />
-                <element signature="e#3601#3602#0" expanded="false" />
-                <element signature="e#3628#3629#0" expanded="false" />
-                <element signature="e#3672#3673#0" expanded="false" />
-                <element signature="e#3704#3705#0" expanded="false" />
-                <element signature="e#3742#3743#0" expanded="false" />
-                <element signature="e#3772#3773#0" expanded="false" />
-                <element signature="e#3823#3824#0" expanded="false" />
-                <element signature="e#3862#3863#0" expanded="false" />
-                <element signature="e#3901#3902#0" expanded="false" />
-                <element signature="e#3932#3933#0" expanded="false" />
-                <element signature="e#3985#3986#0" expanded="false" />
-                <element signature="e#4026#4027#0" expanded="false" />
-                <element signature="e#4066#4067#0" expanded="false" />
-                <element signature="e#4098#4099#0" expanded="false" />
-                <element signature="e#4153#4154#0" expanded="false" />
-                <element signature="e#4196#4197#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FailureClassEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/FailureClassEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#708#709#0" expanded="false" />
-                <element signature="e#743#744#0" expanded="false" />
-                <element signature="e#800#801#0" expanded="false" />
-                <element signature="e#848#849#0" expanded="false" />
-                <element signature="e#886#887#0" expanded="false" />
-                <element signature="e#920#921#0" expanded="false" />
-                <element signature="e#974#975#0" expanded="false" />
-                <element signature="e#1020#1021#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -212,16 +172,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/res/event_cause_data.csv" />
-        <option value="$PROJECT_DIR$/res/base_data/base_data_empty_null_field.csv" />
-        <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/MccMncDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/MccMncEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/MccMncService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/datavalidation/DataCleaner.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/MccMncDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/MccMncServiceEjb.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/datawatcher/DataWatcher.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/FailureClassDAOLocal.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/FailureClassDAOImp.java" />
@@ -244,10 +196,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/UeEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/UeDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/UeDaoImp.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/UeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/MccMncService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/UeServiceEjb.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/FailureClassService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/BaseDataService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/EventCauseEntity.java" />
@@ -255,14 +205,24 @@
         <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/EventCauseDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/EventCauseService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/EventCauseServiceEjb.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/RagnarRest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/functions.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/get_functions.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/Daves_Vikings_index.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/daves-js.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/UeDaoImp.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/res/base_data.csv" />
         <option value="$PROJECT_DIR$/src/main/webapp/failure_class_crud.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/UserEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/UeServiceEjb.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/UserServiceEjb.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/UserDaoImp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/RagnarRest.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/get_functions.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/UserRest.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -314,9 +274,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="773" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -358,8 +319,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -369,20 +330,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Ragnar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ragnar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ragnar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -426,11 +373,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="META-INF" />
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ragnar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ragnar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -457,6 +422,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ragnar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -490,9 +459,125 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ragnar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ragnar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ragnar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ejb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ragnar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ragnar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ragnar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datawatcher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ragnar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ragnar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ragnar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ragnar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ragnar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ragnar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="daos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -504,25 +589,28 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/JavaWorkSpace/MyCompactDiscCRUDService" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\IdeaProjects\Ragnar\src\main\webapp" />
+      <recent name="C:\IdeaProjects\Ragnar\src\main\webapp\WEB-INF" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/res" />
+      <recent name="$PROJECT_DIR$/res/base_data" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$/res/base_data" />
       <recent name="$PROJECT_DIR$/src/main/test/com/vikings/ragnar" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/res" />
-      <recent name="$PROJECT_DIR$/res/base_data" />
     </key>
   </component>
   <component name="RunManager" selected="JBoss Server.Wildfly 8">
@@ -1171,11 +1259,16 @@
       <workItem from="1487521728410" duration="6394000" />
       <workItem from="1487597525930" duration="1652000" />
       <workItem from="1487599279429" duration="4402000" />
+      <workItem from="1487683270558" duration="9633000" />
+      <workItem from="1487867471346" duration="8794000" />
+      <workItem from="1488278562226" duration="21667000" />
+      <workItem from="1488384357841" duration="11798000" />
+      <workItem from="1488457821729" duration="3219000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62308000" />
+    <option name="totallyTimeSpent" value="117419000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1187,19 +1280,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29368576" sideWeight="0.12277868" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2929293" sideWeight="0.12277868" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796487" sideWeight="0.509693" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11712439" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11171875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1210,11 +1303,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796487" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26061493" sideWeight="0.57835215" order="2" side_tool="true" content_ui="tabs" x="21" y="309" width="1238" height="200" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26061493" sideWeight="0.42164782" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2514029" sideWeight="0.5882813" order="2" side_tool="true" content_ui="tabs" x="21" y="309" width="1238" height="200" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25476992" sideWeight="0.41171876" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796487" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31421646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24375" sideWeight="0.5151515" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24375" sideWeight="0.4848485" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1231,6 +1324,24 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -1245,107 +1356,282 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/dataSources.local.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/artifacts/Ragnar_war.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/artifacts/Ragnar_war_exploded.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/FailureClassDAOLocal.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/FailureClassDAOImp.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/datavalidation/DataCleaner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1185">
-          <caret line="81" column="7" lean-forward="false" selection-start-line="78" selection-start-column="6" selection-end-line="81" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/FailureClass.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/BaseDataDAOLocal.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/BaseDataDAOImp.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/BaseDataServiceLocal.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/BaseDataServiceImp.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/EventCauseService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/EventCauseServiceEjb.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/EventCauseEntity.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/EventCauseDao.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/Daves_Vikings_index.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/daves-js.js" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/datawatcher/DataWatcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="204">
           <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/datavalidation/DataCleaner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="81" column="7" lean-forward="false" selection-start-line="78" selection-start-column="6" selection-end-line="81" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/base_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="472" column="23" lean-forward="false" selection-start-line="472" selection-start-column="22" selection-end-line="472" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/FailureClassService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/login.html" />
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">com</node>
+            <node x="" y="">META-INF</node>
+            <node x="" y="">jdk</node>
+            <node x="" y="">netscape</node>
+            <node x="" y="">oracle</node>
+            <node x="" y="">java</node>
+            <node x="" y="">javax</node>
+            <node x="" y="">org</node>
+            <node x="" y="">javafx</node>
+            <node x="" y="">sun</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="155.0" y="165.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.vikings.ragnar">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.vikings.ragnar</OriginalElement>
+          <nodes>
+            <node x="" y="">com.vikings.ragnar.entities.FailureClassEntity</node>
+            <node x="" y="">com.vikings.ragnar.datavalidation.DataCleaner</node>
+            <node x="" y="">com.vikings.ragnar.daos.UeDao</node>
+            <node x="" y="">com.vikings.ragnar.ejb.FailureClassServiceEjb</node>
+            <node x="" y="">com.vikings.ragnar.daos.UeDaoImp</node>
+            <node x="" y="">com.vikings.ragnar.ejb.UeService</node>
+            <node x="" y="">com.vikings.ragnar.daos.UserDaoImp</node>
+            <node x="" y="">com.vikings.ragnar.ejb.MccMncService</node>
+            <node x="" y="">com.vikings.ragnar.daos.FailureClassDao</node>
+            <node x="" y="">com.vikings.ragnar.entities.MccMncEntity</node>
+            <node x="" y="">com.vikings.ragnar.daos.MccMncDao</node>
+            <node x="" y="">com.vikings.ragnar.datawatcher.DataWatcher</node>
+            <node x="" y="">com.vikings.ragnar.ejb.FailureClassService</node>
+            <node x="" y="">com.vikings.ragnar.daos.MccMncDaoImpl</node>
+            <node x="" y="">com.vikings.ragnar.ejb.BaseDataServiceEjb</node>
+            <node x="" y="">com.vikings.ragnar.ejb.BaseDataService</node>
+            <node x="" y="">com.vikings.ragnar.ejb.UeServiceEjb</node>
+            <node x="" y="">com.vikings.ragnar.entities.BaseDataEntity</node>
+            <node x="" y="">com.vikings.ragnar.entities.UeEntity</node>
+            <node x="" y="">com.vikings.ragnar.daos.UserDao</node>
+            <node x="" y="">com.vikings.ragnar.ejb.MccMncServiceEjb</node>
+            <node x="" y="">com.vikings.ragnar.daos.FailureClassDaoImpl</node>
+            <node x="" y="">com.vikings.ragnar.daos.BaseDataDao</node>
+            <node x="" y="">com.vikings.ragnar.ejb.UserServiceEjb</node>
+            <node x="" y="">com.vikings.ragnar.daos.BaseDataDaoImpl</node>
+            <node x="" y="">com.vikings.ragnar.services.RagnarRest</node>
+            <node x="" y="">com.vikings.ragnar.ejb.UserService</node>
+            <node x="" y="">com.vikings.ragnar.entities.UserEntity</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="144.0" y="1208.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e9dbb304-9377-427f-b911-4b9db3e08280/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace (BUS-3084-11's conflicted copy 2017-02-17).xml" />
-    <entry file="file://$PROJECT_DIR$/.classpath">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/BaseDataDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+        <state relative-caret-position="153">
+          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/MccMncEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="33" column="20" lean-forward="false" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="340">
+          <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/MccMncDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/FailureClassEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="42" />
+        <state relative-caret-position="170">
+          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/BaseDataEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/BaseDataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/BaseDataServiceEjb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/MccMncServiceEjb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/MccMncService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/FailureClassServiceEjb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/UeServiceEjb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/UeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/BaseDataDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/FailureClassDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/FailureClassDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/MccMncDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="27" column="35" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="27" selection-end-column="35" />
+        <state relative-caret-position="170">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/UeDaoImp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/MccMncDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+        <state relative-caret-position="187">
+          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="20" lean-forward="false" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/failure_class_crud.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="622">
+          <caret line="81" column="3" lean-forward="false" selection-start-line="81" selection-start-column="3" selection-end-line="81" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1354,252 +1640,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/UeDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        <state relative-caret-position="119">
+          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/MccMncService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/UeDaoImp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/UeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/MccMncServiceEjb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/UeServiceEjb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/BaseDataDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/MccMncEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="20" />
+        <state relative-caret-position="255">
+          <caret line="23" column="42" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/UeEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="29" lean-forward="false" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1497#1498#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/BaseDataDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/BaseDataService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/FailureClassDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/EventCauseDaoImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/FailureClassDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="37" column="21" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/EventCauseService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/FailureClassService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/FailureClassServiceEjb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="36" column="51" lean-forward="false" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/BaseDataServiceEjb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/EventCauseServiceEjb.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/FailureClassEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#708#709#0" expanded="false" />
-            <element signature="e#743#744#0" expanded="false" />
-            <element signature="e#800#801#0" expanded="false" />
-            <element signature="e#848#849#0" expanded="false" />
-            <element signature="e#886#887#0" expanded="false" />
-            <element signature="e#920#921#0" expanded="false" />
-            <element signature="e#974#975#0" expanded="false" />
-            <element signature="e#1020#1021#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/BaseDataEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="32" column="57" lean-forward="false" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2041#2042#0" expanded="false" />
-            <element signature="e#2072#2073#0" expanded="false" />
-            <element signature="e#2119#2120#0" expanded="false" />
-            <element signature="e#2160#2161#0" expanded="false" />
-            <element signature="e#2195#2196#0" expanded="false" />
-            <element signature="e#2225#2226#0" expanded="false" />
-            <element signature="e#2273#2274#0" expanded="false" />
-            <element signature="e#2312#2313#0" expanded="false" />
-            <element signature="e#2352#2353#0" expanded="false" />
-            <element signature="e#2387#2388#0" expanded="false" />
-            <element signature="e#2445#2446#0" expanded="false" />
-            <element signature="e#2494#2495#0" expanded="false" />
-            <element signature="e#2527#2528#0" expanded="false" />
-            <element signature="e#2556#2557#0" expanded="false" />
-            <element signature="e#2601#2602#0" expanded="false" />
-            <element signature="e#2638#2639#0" expanded="false" />
-            <element signature="e#2672#2673#0" expanded="false" />
-            <element signature="e#2701#2702#0" expanded="false" />
-            <element signature="e#2746#2747#0" expanded="false" />
-            <element signature="e#2782#2783#0" expanded="false" />
-            <element signature="e#2818#2819#0" expanded="false" />
-            <element signature="e#2849#2850#0" expanded="false" />
-            <element signature="e#2898#2899#0" expanded="false" />
-            <element signature="e#2938#2939#0" expanded="false" />
-            <element signature="e#2972#2973#0" expanded="false" />
-            <element signature="e#3001#3002#0" expanded="false" />
-            <element signature="e#3047#3048#0" expanded="false" />
-            <element signature="e#3084#3085#0" expanded="false" />
-            <element signature="e#3120#3121#0" expanded="false" />
-            <element signature="e#3151#3152#0" expanded="false" />
-            <element signature="e#3200#3201#0" expanded="false" />
-            <element signature="e#3240#3241#0" expanded="false" />
-            <element signature="e#3277#3278#0" expanded="false" />
-            <element signature="e#3309#3310#0" expanded="false" />
-            <element signature="e#3361#3362#0" expanded="false" />
-            <element signature="e#3404#3405#0" expanded="false" />
-            <element signature="e#3440#3441#0" expanded="false" />
-            <element signature="e#3472#3473#0" expanded="false" />
-            <element signature="e#3523#3524#0" expanded="false" />
-            <element signature="e#3566#3567#0" expanded="false" />
-            <element signature="e#3601#3602#0" expanded="false" />
-            <element signature="e#3628#3629#0" expanded="false" />
-            <element signature="e#3672#3673#0" expanded="false" />
-            <element signature="e#3704#3705#0" expanded="false" />
-            <element signature="e#3742#3743#0" expanded="false" />
-            <element signature="e#3772#3773#0" expanded="false" />
-            <element signature="e#3823#3824#0" expanded="false" />
-            <element signature="e#3862#3863#0" expanded="false" />
-            <element signature="e#3901#3902#0" expanded="false" />
-            <element signature="e#3932#3933#0" expanded="false" />
-            <element signature="e#3985#3986#0" expanded="false" />
-            <element signature="e#4026#4027#0" expanded="false" />
-            <element signature="e#4066#4067#0" expanded="false" />
-            <element signature="e#4098#4099#0" expanded="false" />
-            <element signature="e#4153#4154#0" expanded="false" />
-            <element signature="e#4196#4197#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/EventCauseEntity.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/EventCauseDao.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/RagnarRest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#690#691#0" expanded="false" />
-            <element signature="e#742#743#0" expanded="false" />
-            <element signature="e#884#885#0" expanded="false" />
-            <element signature="e#938#939#0" expanded="false" />
-            <element signature="e#1092#1093#0" expanded="false" />
-            <element signature="e#1150#1151#0" expanded="false" />
-            <element signature="e#1274#1275#0" expanded="false" />
-            <element signature="e#1322#1323#0" expanded="false" />
-            <element signature="e#1610#1611#0" expanded="false" />
-            <element signature="e#1659#1660#0" expanded="false" />
-            <element signature="e#1768#1769#0" expanded="false" />
-            <element signature="e#1827#1828#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/Daves_Vikings_index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="53" column="7" lean-forward="false" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/daves-js.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="76" column="16" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="82" selection-end-column="2" />
+        <state relative-caret-position="391">
+          <caret line="23" column="84" lean-forward="false" selection-start-line="23" selection-start-column="84" selection-end-line="23" selection-end-column="84" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/get_functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ragnar.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1607,18 +1677,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/UserDaoImp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="514">
+          <caret line="33" column="41" lean-forward="false" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/failure_class_crud.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/daos/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="81" column="3" lean-forward="false" selection-start-line="81" selection-start-column="3" selection-end-line="81" selection-end-column="3" />
+        <state relative-caret-position="187">
+          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/UserEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding>
+            <element signature="e#611#612#0" expanded="true" />
+            <element signature="e#640#641#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/entities/UeEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/UserServiceEjb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#707#708#0" expanded="true" />
+            <element signature="e#758#759#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/ejb/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/UserRest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="31" lean-forward="true" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vikings/ragnar/services/RagnarRest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="3" lean-forward="false" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
           <folding />
         </state>
       </provider>
