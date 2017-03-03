@@ -31,9 +31,11 @@
 
     <!--If you want JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="get_functions.js"></script>
-    <script type="text/javascript" src="failure_class_crud.js"></script>
-    <link id="cs" rel ="stylesheet" href="basic.css">
+    <script type="text/javascript" src="js/get_functions.js"></script>
+    <script type="text/javascript" src="js/failure_class_crud.js"></script>
+    <script type="text/javascript" src="js/event_cause_crud.js"></script>
+
+    <link id="css" rel ="stylesheet" href="css/basic.css">
 
 <h1>Ragnar</h1>
 </head>
@@ -45,7 +47,7 @@ Ciarán Sweeney<br>
 Dimitar Tsvetkov<br>
 Carl McCann<br>
 
-<div class="container">
+<div class="container" id="failClassDiv">
     <h1>Failure Class</h1>
 
     <div class="left">
@@ -96,10 +98,8 @@ Carl McCann<br>
     </div>
 </div>
 
-<!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
 
-
-<div class="container">
+<div class="container" id="eventCauseDiv">
     <h1>Event Cause</h1>
 
     <div class="left">
@@ -140,25 +140,28 @@ Carl McCann<br>
     </div>
 
     <div class="left">
-        <h3>Enter TAC code to search</h3>
+        <h3>Enter Cause code and id to search</h3>
         <form>
-            <input type="text" name="id" placeholder="Enter Cause Code" id="getTACCode"><br>
+            <input type="text" name="id" placeholder="Enter Cause Code" id="getEventCauseCode"><br>
             <br>
-            <input type="text" name="id" placeholder="" id="getTACResultId"><br>
+            <input type="text" name="id" placeholder="Enter id" id="getEventId"><br>
             <br>
-            <input type="button" class="btn" id="searchByIdUE" value="SEARCH"/>
+            <input type="text" name="id" placeholder="" id="getEventCauseSearch"><br>
+            <br>
+            <input type="button" class="btn" id="searchByIdEventCause" value="SEARCH"/>
+
         </form>
     </div>
     <div class="left">
-        <h2>UE List</h2>
-        <ul id="ueHolder">
+        <h2>Event Cause List</h2>
+        <ul id="eventCauseHolder">
         </ul>
     </div>
 </div>
-<!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
 
 
-<div class="container">
+
+<div class="container" id="ueDiv">
     <h1>UE</h1>
 
     <div class="left">
@@ -208,18 +211,18 @@ Carl McCann<br>
     <div class="left">
         <h3>Enter composite values to search</h3>
         <form>
-            <input type="text" name="id" placeholder="Enter Cause Code" id="getCauseCodeId"><br>
+            <input type="text" name="id" placeholder="Enter Cause Code" id="getCauseCodeIdTEMP"><br>
             <br>
-            <input type="text" name="id" placeholder="Enter Event id" id="getEventId"><br>
+            <input type="text" name="id" placeholder="Enter Event id" id="getEventIdTEMP"><br>
             <br>
             <input type="text" name="id" placeholder="" id="getResultId"><br>
             <br>
-            <input type="button" class="btn" id="searchByIdEventCause" value="SEARCH"/>
+            <input type="button" class="btn" id="searchByIdEventCauseTEMP" value="SEARCH"/>
         </form>
     </div>
     <div class="left">
         <h2>Failure Class List</h2>
-        <ul id="eventCauseHolder">
+        <ul id="ueHolder">
         </ul>
     </div>
 </div>

@@ -1,13 +1,11 @@
 *.javac
 *.class
-target/*
 *.csv
 .DS_Store
-/target/
+target/
 workspace.xml
-datasources.local.xml
-datasources.xml
 .idea/
-.idea/libraries/
-.idea/datasources/
 .settings/
+res/
+
+src/test/

@@ -7,7 +7,6 @@ var FailureClass = function(failureClass, description) {
 $(document).ready(function(){
 
     $("#addFailureClassButton").click(function() {
-        alert("add button pressed");
 
         var failureClass =  $("#failureClassID").val();
         var description = $("#descriptionText").val();
@@ -15,9 +14,12 @@ $(document).ready(function(){
 
         $.ajax({
             type: "POST",
-            url: "ragnar/ragnar",
+            url: "ragnar/failure_class",
             success: function () {
                 alert("FailureClass added");
+            },
+            error: function(){
+                alert("Failure Class POST failure")
             },
             data: JSON.stringify(myFailureClass),
             contentType: "application/json"
@@ -36,7 +38,7 @@ $(document).ready(function(){
 
         $.ajax({
             type: "PUT",
-            url: "ragnar/ragnar",
+            url: "ragnar/failure_class",
             success: function () {
                 alert("FailureClass updated");
             },
@@ -51,14 +53,15 @@ $(document).ready(function(){
 
 
     $("#deleteFailureClassButton").click(function() {
-        alert("delete button pressed");
-
         var id =  $("#idText").val();
         $.ajax({
             type: "DELETE",
-            url: "ragnar/ragnar/" + id,
+            url: "ragnar/failure_class/" + id,
             success: function () {
                 alert("FailureClass deleted");
+            },
+            error: function () {
+                alert("FailureClass not deleted");
             },
         });
     });
@@ -67,7 +70,7 @@ $(document).ready(function(){
         var id =  $("#getById").val();
         $.ajax({
             type: "GET",
-            url: "ragnar/ragnar/failureClass/" + id,
+            url: "ragnar/failure_class/" + id,
             success: function (value) {
                 alert("FailureClass found");
                 $("#searchText").val(value.failureClass + " " + value.description );
@@ -81,7 +84,7 @@ $(document).ready(function(){
 
     $.ajax({
         type: "GET",
-        url: "ragnar/ragnar/allFailureClassInfo",
+        url: "ragnar/failure_class",
 
         success: function (failureClassList) {
             $.each(failureClassList, function (index, value) {
