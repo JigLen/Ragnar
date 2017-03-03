@@ -68,7 +68,7 @@ public class FailureClassDaoImpl implements FailureClassDao{
         Query query = em.createQuery("from FailureClassEntity");
         List<FailureClassEntity> list = query.getResultList();
         for (FailureClassEntity mc : list) {
-            if(mc.getFailureClass() == failureClass.getFailureClass()){
+            if(mc.getFailureClass().equals(failureClass.getFailureClass())){
                 em.merge(failureClass);
             }else{
                 System.out.print("Not found");
