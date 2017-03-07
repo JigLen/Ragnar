@@ -9,16 +9,36 @@ $(document).ready(function() {
         //location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/ragnar/ragnar/userLogin";
         $.ajax({
             type: "GET",
-            url: "ragnar/userLogin/"+userId+"/"+password,//not done yet
+            url: "ragnar/user/"+userId+"/"+password,//not done yet
             //url: "ragnar",//not done yet
             success: function () {
                 alert("Your Log In");
-                //location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT";
+                location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT";
+
             },
             error:function () {
                 alert("Not found");
+                alert(userId);
+                alert(password);
             }
         });
+    });
+});
+
+$("#searchById").click(function() {
+    var id =  $("#getById").val();
+    $.ajax({
+        type: "GET",
+        url: "ragnar/failure_class/" + id,
+        success: function (value) {
+            alert("FailureClass found");
+            $("#searchText").val(value.failureClass + " " + value.description );
+            location.reload();
+
+        },
+        error:function () {
+            alert("Not found");
+        }
     });
 });
 /*function getLog() {

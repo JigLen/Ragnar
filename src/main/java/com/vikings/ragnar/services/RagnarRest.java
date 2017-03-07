@@ -40,49 +40,10 @@ public class RagnarRest {
 
 
 
-    /*@GET
+    @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/allUeInfo")
     public Collection<UeEntity> getAllUeInfo(){
         return ueServiceEjb.getAllInfo();
     }
-<<<<<<< HEAD
-
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/userLogin")
-    public Collection<UserEntity> getUser(){
-        return userServiceEjb.getUser(1,"test");
-    }
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/userLogin")
-    public UserEntity getUser(Integer id, String password){
-        return userServiceEjb.getUser(1,"test");
-    }*/
-    /*public UserEntity getUser(Integer id, String password){
-        return userServiceEjb.getUser(id,password);
-    }*/
-    /////
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void addFailureClass(FailureClassEntity failureClass){
-        failureClassServiceEjb.addFailureClass(failureClass);
-    }
-
-    @DELETE
-    @Path("/{id}")
-    public void deleteCharacter(@PathParam("id") int id) {
-        failureClassServiceEjb.remove(id);
-    }
-
-    @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void update(FailureClassEntity failureClass){
-        failureClassServiceEjb.update(failureClass);
-    }
-
-
-=======
->>>>>>> db633113f9cad94cf2fcdb81508c89093edd9b03
 }

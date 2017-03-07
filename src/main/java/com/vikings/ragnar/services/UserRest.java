@@ -14,14 +14,14 @@ import java.util.Collection;
 /**
  * Created by c12317616 on 02/03/2017.
  */
-
+@Path("/user")
 public class UserRest {
     @EJB
     UserService userServiceEjb;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/userLogin/{userId}/{password}")
+    @Path("/{userId}/{password}")
     public Collection<UserEntity> getUser(@PathParam("userId") Integer userId,@PathParam("password") String password){
         return userServiceEjb.getUser(userId,password);
     }/*
