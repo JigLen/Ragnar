@@ -1,6 +1,4 @@
-package com.vikings.ragnar.datawatcher;
-
-import com.vikings.ragnar.datavalidation.DataCleaner;
+package datahandling;
 
 import java.io.IOException;
 import java.nio.file.*;

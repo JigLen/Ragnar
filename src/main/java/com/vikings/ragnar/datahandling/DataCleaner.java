@@ -1,4 +1,4 @@
-package com.vikings.ragnar.datavalidation;
+package datahandling;
 
 import java.io.*;
 import java.util.Arrays;

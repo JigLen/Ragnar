@@ -1,3 +1,6 @@
+Some reading: https://www.derekgourlay.com/blog/git-when-to-merge-vs-when-to-rebase/
+
+Combine your new work back into master:
 
 in branch development)$ git merge master
 (resolve any merge conflicts if there are any)

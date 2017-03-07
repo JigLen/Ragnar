@@ -17,6 +17,7 @@ $(document).ready(function(){
             url: "ragnar/failure_class",
             success: function () {
                 alert("FailureClass added");
+                location.reload();
             },
             error: function(){
                 alert("Failure Class POST failure")
@@ -29,18 +30,16 @@ $(document).ready(function(){
 
 
     $("#updateFailureClassButton").click(function() {
-        alert("update button pressed");
 
         var id =   $("#updateFailureClassId").val();
         var description =  $("#updateDescText").val();
         var failureClass = new FailureClass(id,description);
-        alert("Id:" + id);
-
         $.ajax({
             type: "PUT",
             url: "ragnar/failure_class",
             success: function () {
                 alert("FailureClass updated");
+                location.reload();
             },
             error: function () {
                 alert("Failure Class Id not found")
@@ -59,6 +58,7 @@ $(document).ready(function(){
             url: "ragnar/failure_class/" + id,
             success: function () {
                 alert("FailureClass deleted");
+                location.reload();
             },
             error: function () {
                 alert("FailureClass not deleted");

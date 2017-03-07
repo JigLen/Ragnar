@@ -18,6 +18,7 @@ $(document).ready(function(){
             url: "ragnar/event_cause",
             success: function () {
                 alert("Event Cause added");
+                location.reload();
             },
             error: function () {
                 alert("Event Cause not found")
@@ -41,6 +42,7 @@ $(document).ready(function(){
             url: "ragnar/event_cause",
             success: function () {
                 alert("Event Cause updated");
+                location.reload();
             },
             error: function () {
                 alert("Event Cause not updated")
@@ -61,6 +63,7 @@ $(document).ready(function(){
             url: "ragnar/event_cause/" + causeCode + "/" + id,
             success: function () {
                 alert("Event Cause deleted");
+                location.reload();
             },
             error: function () {
                 alert("Event Cause not deleted")

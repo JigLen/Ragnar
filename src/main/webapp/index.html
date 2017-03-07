@@ -34,6 +34,7 @@
     <script type="text/javascript" src="js/get_functions.js"></script>
     <script type="text/javascript" src="js/failure_class_crud.js"></script>
     <script type="text/javascript" src="js/event_cause_crud.js"></script>
+    <script type="text/javascript" src="js/file_upload.js"></script>
 
     <link id="css" rel ="stylesheet" href="css/basic.css">
 
@@ -46,6 +47,15 @@ David Leonard<br>
 Ciarán Sweeney<br>
 Dimitar Tsvetkov<br>
 Carl McCann<br>
+
+
+<!--http://stackoverflow.com/questions/166221/how-can-i-upload-files-asynchronously-->
+<form enctype="multipart/form-data">
+    <input name="file" type="file" id="fileUploadB1" />
+    <input type="button" name="upload "value="Upload" id="fileUploadB2"/>
+</form>
+<progress></progress>
+
 
 <div class="container" id="failClassDiv">
     <h1>Failure Class</h1>
