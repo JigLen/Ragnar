@@ -1,17 +1,24 @@
 package com.vikings.ragnar.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Created by carlmccann2 on 15/02/2017.
  */
 
+
+
 @Entity
-@Table(name="MCC_MNC")
+@NamedQueries({
+        @NamedQuery(name="searchMccMncByCompKey",
+                query="SELECT e " +
+                        "FROM MccMncEntity e " +
+                        "WHERE e.mcc = :mcc AND " +
+                        "      e.mnc = :mnc")
+})
+
+@Table(name="mcc_mnc")
 public class MccMncEntity implements Serializable{
 
     // Mobile Country Codes (MCC) and Mobile Network Codes (MNC)

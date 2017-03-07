@@ -13,4 +13,12 @@ import java.util.Collection;
 public interface MccMncDao {
 
     Collection<MccMncEntity> getAllInfo();
+
+    void add(MccMncEntity mcc_mnc);
+
+    MccMncEntity getById(Integer mccCode, Integer mncCode);
+
+    void update(MccMncEntity mcc_mnc);
+
+    void remove(Integer mccCode, Integer mncCode);
 }

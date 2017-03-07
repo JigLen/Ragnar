@@ -11,4 +11,12 @@ import java.util.Collection;
 @Local
 public interface BaseDataDao {
     Collection<BaseDataEntity> getAllInfo();
+
+    void add(BaseDataEntity baseData);
+
+    BaseDataEntity getById(Integer id);
+
+    void update(BaseDataEntity baseData);
+
+    void remove(Integer id);
 }

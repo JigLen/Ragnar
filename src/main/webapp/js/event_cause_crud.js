@@ -80,7 +80,7 @@ $(document).ready(function(){
             success: function (value) {
                 alert("Event Cause found");
                 $("#getEventCauseSearch").val(value.causeCode + " " + value.eventId + " " + value.description);
-
+                location.reload();
             },
             error:function () {
                 alert("Event Cause Not found");
@@ -88,18 +88,20 @@ $(document).ready(function(){
         });
     });
 
+    $("#showEventCause").click(function() {
+        $.ajax({
+            type: "GET",
+            url: "ragnar/event_cause",
 
-    $.ajax({
-        type: "GET",
-        url: "ragnar/event_cause",
-
-
-        success: function (eventCauseList) {
-            $.each(eventCauseList, function (index, value) {
-                $("#eventCauseHolder").append("<li>" + value.causeCode + " " + value.eventId + " " + value.description + "</li>");
-            });
-        }
+            success: function (eventCauseList) {
+                $.each(eventCauseList, function (index, value) {
+                    $("#eventCauseHolder").append("<li>" + value.causeCode + " " + value.eventId + " " + value.description + "</li>");
+                });
+            }
+        });
     });
 
-
+    $("#closeEventCause").click(function() {
+        $("#eventCauseHolder").empty();
+    });
 });

@@ -23,9 +23,10 @@ $(document).ready(function(){
                 alert("Failure Class POST failure")
             },
             data: JSON.stringify(myFailureClass),
-            contentType: "application/json"
+            contentType: "application/json",
 
-        });
+
+    });
     });
 
 
@@ -74,6 +75,7 @@ $(document).ready(function(){
             success: function (value) {
                 alert("FailureClass found");
                 $("#searchText").val(value.failureClass + " " + value.description );
+                location.reload();
 
             },
             error:function () {
@@ -82,16 +84,22 @@ $(document).ready(function(){
         });
     });
 
-    $.ajax({
-        type: "GET",
-        url: "ragnar/failure_class",
 
-        success: function (failureClassList) {
+    $("#showFailureList").click(function() {
+        $.ajax({
+            type: "GET",
+            url: "ragnar/failure_class",
+
+         success: function (failureClassList) {
             $.each(failureClassList, function (index, value) {
-                $("#failureClassHolder").append("<li>" + value.failureClass + " " + value.description +"</li>");
+                    $("#failureClassHolder").append("<li>" + value.failureClass + " " + value.description +"</li>");
+
             });
-        }
+        }});
     });
 
+    $("#closeFailureList").click(function() {
+        $("#failureClassHolder").empty();
+    });
 
 });

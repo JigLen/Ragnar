@@ -10,4 +10,12 @@ import java.util.Collection;
 @Local
 public interface BaseDataService {
     Collection<BaseDataEntity> getAllInfo();
+
+    void addBaseData(BaseDataEntity baseData);
+
+    BaseDataEntity getById(Integer id);
+
+    void update(BaseDataEntity baseData);
+
+    void remove(Integer id);
 }
