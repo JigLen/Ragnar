@@ -7,7 +7,6 @@ var FailureClass = function(failureClass, description) {
 $(document).ready(function(){
 
     $("#addFailureClassButton").click(function() {
-        alert("add button pressed");
 
         var failureClass =  $("#failureClassID").val();
         var description = $("#descriptionText").val();
@@ -15,14 +14,19 @@ $(document).ready(function(){
 
         $.ajax({
             type: "POST",
-            url: "ragnar/ragnar",
+            url: "ragnar/failure_class",
             success: function () {
                 alert("FailureClass added");
+                location.reload();
+            },
+            error: function(){
+                alert("Failure Class POST failure")
             },
             data: JSON.stringify(myFailureClass),
-            contentType: "application/json"
+            contentType: "application/json",
 
-        });
+
+    });
     });
 
 
@@ -36,9 +40,10 @@ $(document).ready(function(){
 
         $.ajax({
             type: "PUT",
-            url: "ragnar/ragnar",
+            url: "ragnar/failure_class",
             success: function () {
                 alert("FailureClass updated");
+                location.reload();
             },
             error: function () {
                 alert("Failure Class Id not found")
@@ -51,14 +56,16 @@ $(document).ready(function(){
 
 
     $("#deleteFailureClassButton").click(function() {
-        alert("delete button pressed");
-
         var id =  $("#idText").val();
         $.ajax({
             type: "DELETE",
-            url: "ragnar/ragnar/" + id,
+            url: "ragnar/failure_class/" + id,
             success: function () {
                 alert("FailureClass deleted");
+                location.reload();
+            },
+            error: function () {
+                alert("FailureClass not deleted");
             },
         });
     });
@@ -67,10 +74,11 @@ $(document).ready(function(){
         var id =  $("#getById").val();
         $.ajax({
             type: "GET",
-            url: "ragnar/ragnar/failureClass/" + id,
+            url: "ragnar/failure_class/" + id,
             success: function (value) {
                 alert("FailureClass found");
                 $("#searchText").val(value.failureClass + " " + value.description );
+                location.reload();
 
             },
             error:function () {
@@ -79,16 +87,22 @@ $(document).ready(function(){
         });
     });
 
-    $.ajax({
-        type: "GET",
-        url: "ragnar/ragnar/allFailureClassInfo",
 
-        success: function (failureClassList) {
+    $("#showFailureList").click(function() {
+        $.ajax({
+            type: "GET",
+            url: "ragnar/failure_class",
+
+         success: function (failureClassList) {
             $.each(failureClassList, function (index, value) {
-                $("#failureClassHolder").append("<li>" + value.failureClass + " " + value.description +"</li>");
+                    $("#failureClassHolder").append("<li>" + value.failureClass + " " + value.description +"</li>");
+
             });
-        }
+        }});
     });
 
+    $("#closeFailureList").click(function() {
+        $("#failureClassHolder").empty();
+    });
 
 });

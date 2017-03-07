@@ -31,9 +31,14 @@
 
     <!--If you want JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="get_functions.js"></script>
-    <script type="text/javascript" src="failure_class_crud.js"></script>
-    <link id="cs" rel ="stylesheet" href="basic.css">
+    <script type="text/javascript" src="js/get_functions.js"></script>
+    <script type="text/javascript" src="js/failure_class_crud.js"></script>
+    <script type="text/javascript" src="js/event_cause_crud.js"></script>
+    <script type="text/javascript" src="js/ue_crud.js"></script>
+    <script type="text/javascript" src="js/mcc_mnc_crud.js"></script>
+    <script type="text/javascript" src="js/base_data_crud.js"></script>
+
+    <link id="css" rel ="stylesheet" href="css/basic.css">
 
 <h1>Ragnar</h1>
 </head>
@@ -45,7 +50,7 @@ Ciarán Sweeney<br>
 Dimitar Tsvetkov<br>
 Carl McCann<br>
 
-<div class="container">
+<div class="container" id="failClassDiv">
     <h1>Failure Class</h1>
 
     <div class="left">
@@ -91,15 +96,16 @@ Carl McCann<br>
     </div>
     <div class="left">
         <h2>Failure Class List</h2>
+        <br>
+        <input type="button" class="btn" id="showFailureList" value="SHOW"/>
+        <input type="button" class="btn" id="closeFailureList" value="CLOSE"/>
         <ul id="failureClassHolder">
         </ul>
     </div>
 </div>
 
-<!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
 
-
-<div class="container">
+<div class="container" id="eventCauseDiv">
     <h1>Event Cause</h1>
 
     <div class="left">
@@ -140,25 +146,31 @@ Carl McCann<br>
     </div>
 
     <div class="left">
-        <h3>Enter TAC code to search</h3>
+        <h3>Enter Cause code and id to search</h3>
         <form>
-            <input type="text" name="id" placeholder="Enter Cause Code" id="getTACCode"><br>
+            <input type="text" name="id" placeholder="Enter Cause Code" id="getEventCauseCode"><br>
             <br>
-            <input type="text" name="id" placeholder="" id="getTACResultId"><br>
+            <input type="text" name="id" placeholder="Enter id" id="getEventId"><br>
             <br>
-            <input type="button" class="btn" id="searchByIdUE" value="SEARCH"/>
+            <input type="text" name="id" placeholder="" id="getEventCauseSearch"><br>
+            <br>
+            <input type="button" class="btn" id="searchByIdEventCause" value="SEARCH"/>
+
         </form>
     </div>
     <div class="left">
-        <h2>UE List</h2>
-        <ul id="ueHolder">
+        <h2>Event Cause List</h2>
+        <ul id="eventCauseHolder">
+        <br>
+        <input type="button" class="btn" id="showEventCause" value="SHOW"/>
+        <input type="button" class="btn" id="closeEventCause" value="HIDE"/>
         </ul>
     </div>
 </div>
-<!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
 
 
-<div class="container">
+
+<div class="container" id="ueDiv">
     <h1>UE</h1>
 
     <div class="left">
@@ -173,6 +185,8 @@ Carl McCann<br>
     <div class="left">
         <h3>Add new UE Entry</h3>
         <form>
+            <input type="text" name="id" placeholder="Enter TAC" id="Tac"><br>
+            <br>
             <input type="text" name="id" placeholder="Enter Marketing_Name" id="Marketing_Name"><br>
             <br>
             <input type="text" name="id" placeholder="Enter Manufacturer" id="Manufacturer"><br>
@@ -185,7 +199,6 @@ Carl McCann<br>
             <br>
             <input type="text" name="id" placeholder="Enter UE_Type" id="UE_Type"><br>
             <br>
-            <br>
             <input type="text" name="id" placeholder="Enter OS" id="OS"><br>
             <br>
             <input type="text" name="id" placeholder="Enter Input_Mode" id="Input_Mode"><br>
@@ -197,34 +210,209 @@ Carl McCann<br>
     <div class="left">
         <h3>Update UE Entry</h3>
         <form>
-            <input type="text" name="id" placeholder="Enter id" id="updateUEId"><br>
+            <input type="text" name="id" placeholder="Enter TAC code" id="updateUEId"><br>
             <br>
-            <input type="text" name="id" placeholder="Enter Description" id="updateEventCauseDesc"><br>
+            <input type="text" name="id" placeholder="Enter Marketing Name" id="updateMarketingNameDesc"><br>
             <br>
             <input type="button" class="btn" id="updateUEButton" value="UPDATE"/>
         </form>
     </div>
 
     <div class="left">
-        <h3>Enter composite values to search</h3>
+        <h3>Enter TAC code to search</h3>
         <form>
-            <input type="text" name="id" placeholder="Enter Cause Code" id="getCauseCodeId"><br>
-            <br>
-            <input type="text" name="id" placeholder="Enter Event id" id="getEventId"><br>
+            <input type="text" name="id" placeholder="Enter TAC Code" id="tacCodeToSearch"><br>
             <br>
             <input type="text" name="id" placeholder="" id="getResultId"><br>
             <br>
-            <input type="button" class="btn" id="searchByIdEventCause" value="SEARCH"/>
+            <input type="button" class="btn" id="searchByIdUe" value="SEARCH"/>
         </form>
     </div>
     <div class="left">
-        <h2>Failure Class List</h2>
-        <ul id="eventCauseHolder">
+        <h2>UE List</h2>
+        <br>
+        <input type="button" class="btn" id="showUE" value="SHOW"/>
+        <input type="button" class="btn" id="closeUE" value="HIDE"/>
+        <ul id="ueHolder">
         </ul>
     </div>
 </div>
 <!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
 
+<div class="container" id="mcc_mncDiv">
+    <h1>MCC_MNC</h1>
+
+    <div class="left">
+        <h3>Enter composite values to Delete</h3>
+        <form>
+            <input type="text" name="id" placeholder="Enter MCC Code" id="mccDeleteText"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter MNC Code" id="mncDeleteText"><br>
+            <br>
+            <input type="button" class="btn" id="deleteMcc_MncButton" value="DELETE"/>
+        </form>
+    </div>
+
+    <div class="left">
+        <h3>Add new MCC_MNC Entry</h3>
+        <form>
+            <input type="text" name="id" placeholder="Enter MCC Code" id="mccCodeId"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter MNC Code" id="mncId"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Country" id="addCountryDesc"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Operator" id="addOperatorDesc"><br>
+            <br>
+            <input type="button" class="btn" id="addMCC_MNCButton" value="ADD"/>
+        </form>
+    </div>
+
+    <div class="left">
+        <h3>Update MCC MNC Entry</h3>
+        <form>
+            <input type="text" name="id" placeholder="Enter MCC" id="updateMCCCode"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter MNC" id="updateMNCId"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Country" id="updateCountryDescription"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Operator" id="updateOperatorDescription"><br>
+            <br>
+            <input type="button" class="btn" id="updateMCC_MNCButton" value="UPDATE"/>
+        </form>
+    </div>
+
+    <div class="left">
+        <h3>Enter mcc code and mnc code to search</h3>
+        <form>
+            <input type="text" name="id" placeholder="Enter MCC Code" id="getMCCCode"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter MNC Code" id="getMNCId"><br>
+            <br>
+            <input type="text" name="id" placeholder="" id="getMCC_MNCSearch"><br>
+            <br>
+            <input type="button" class="btn" id="searchBy_MCC_MNC_Code" value="SEARCH"/>
+
+        </form>
+    </div>
+    <div class="left">
+        <h2>MCC MNC List</h2>
+        <br>
+        <input type="button" class="btn" id="showMccMNC" value="SHOW"/>
+        <input type="button" class="btn" id="closeMccMnc" value="HIDE"/>
+        <ul id="mcc_mncHolder">
+        </ul>
+    </div>
+</div>
+
+<!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+
+<div class="container" id="baseDataDiv">
+    <h1>BASE DATA</h1>
+
+    <div class="left">
+        <h3>Enter BaseData id to Delete Data</h3>
+        <form>
+            <input type="text" name="id" placeholder="Enter id" id="baseDataDeleteText"><br>
+            <br>
+            <input type="button" class="btn" id="deleteBaseDataButton" value="DELETE"/>
+        </form>
+    </div>
+
+    <div class="left">
+        <h3>Add new Base Data Entry</h3>
+        <form>
+            <input type="text" name="id" placeholder="Enter Date/Time" id="Date_Time"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Event id" id="EventId"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Failure Class id" id="FailureClass_ID"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter UE_Type" id="UE_Type_ID"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Market" id="Market"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Operator" id="Operator_ID"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Cell Id" id="Cell_ID"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Duration" id="Duration"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Cause Code" id="CauseCode_ID"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter NE Version " id="NeVersionId"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter IMSI" id="IMSI_ID"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter HIER3_ID" id="hier3"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter HIER32_ID" id="hier32"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter HIER321_ID" id="hier321"><br>
+            <br>
+            <input type="button" class="btn" id="addBaseDataButton" value="ADD"/>
+        </form>
+    </div>
+
+    <div class="left">
+        <h3>Update BASE DATA Entry</h3>
+        <form>
+            <input type="text" name="id" placeholder="Enter ID To Update" id="UpdateId"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Date/Time" id="UpdateDate_Time"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Event id" id="UpdateEventId"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Failure Class id" id="UpdateFailureClass_ID"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter UE_Type" id="UpdateUE_Type_ID"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Market" id="UpdateMarket"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Operator" id="UpdateOperator_ID"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Cell Id" id="UpdateCell_ID"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Duration" id="UpdateDuration"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter Cause Code" id="UpdateCauseCode_ID"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter NE Version " id="UpdateNeVersionId"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter IMSI" id="UpdateIMSI_ID"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter HIER3_ID" id="Updatehier3"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter HIER32_ID" id="Updatehier32"><br>
+            <br>
+            <input type="text" name="id" placeholder="Enter HIER321_ID" id="Updatehier321"><br>
+            <br>
+            <input type="button" class="btn" id="updateBaseDataButton" value="UPDATE"/>
+        </form>
+        </form>
+    </div>
+
+    <div class="left">
+        <h3>Enter Id to search</h3>
+        <form>
+            <input type="text" name="id" placeholder="Enter Id" id="getDaseDataId"><br>
+            <br>
+            <input type="text" name="id" placeholder="" id="getBaseDataResultId"><br>
+            <br>
+            <input type="button" class="btn" id="searchByIdBaseData" value="SEARCH"/>
+        </form>
+    </div>
+    <div class="left">
+        <h2>Base Data List</h2>
+        <br>
+        <input type="button" class="btn" id="showBaseData" value="SHOW"/>
+        <input type="button" class="btn" id="closeBaseData" value="HIDE"/>
+        <ul id="baseDataHolder">
+        </ul>
+    </div>
+</div>
+<!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
 
 
 <div class="container">

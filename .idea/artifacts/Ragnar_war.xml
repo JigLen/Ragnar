@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="Ragnar:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="Ragnar-0.0.1-SNAPSHOT.war">
-      <element id="artifact" artifact-name="Ragnar:war exploded" />
-    </root>
-  </artifact>
-</component>
