@@ -31,7 +31,7 @@ public class UserDaoImp implements  UserDao{
     }*/
 
     @Override
-    public Collection<UserEntity> getUser(Integer id,String password) {
+    public UserEntity getUser(Integer id,String password) {
         //Query query = em.createQuery("from UserEntity");
         //Integer id=1;
         //String password="test";
@@ -40,7 +40,7 @@ public class UserDaoImp implements  UserDao{
         query.setParameter("id", id);
         query.setParameter("password", password);
         List<UserEntity> allUserInfo = query.getResultList();
-        return allUserInfo;
+        return allUserInfo.get(0);
     }
 
 }

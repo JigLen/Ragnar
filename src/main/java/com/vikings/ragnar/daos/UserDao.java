@@ -12,5 +12,5 @@ import java.util.Collection;
 public interface UserDao {
     //UserEntity getUser(Integer id,String password);
     //Collection<UserEntity> getAllUsers();
-    Collection<UserEntity> getUser(Integer id,String password);
+    UserEntity getUser(Integer id,String password);
 }

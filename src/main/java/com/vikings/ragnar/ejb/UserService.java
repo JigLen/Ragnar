@@ -12,5 +12,5 @@ import java.util.Collection;
 public interface UserService {
     //UserEntity getUser(Integer id,String password);
     //Collection<UserEntity> getAllUserInfo();
-    Collection<UserEntity> getUser(Integer id,String password);
+    UserEntity getUser(Integer id,String password);
 }

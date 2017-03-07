@@ -13,46 +13,20 @@ $(document).ready(function() {
             //url: "ragnar",//not done yet
             success: function () {
                 alert("Your Log In");
-                location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT";
+                if(value.userId!=null) {
+                    location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT";
+                }
 
             },
             error:function () {
                 alert("Not found");
                 alert(userId);
                 alert(password);
-            }
+            },
+            //datatype:
+
         });
     });
 });
 
-$("#searchById").click(function() {
-    var id =  $("#getById").val();
-    $.ajax({
-        type: "GET",
-        url: "ragnar/failure_class/" + id,
-        success: function (value) {
-            alert("FailureClass found");
-            $("#searchText").val(value.failureClass + " " + value.description );
-            location.reload();
 
-        },
-        error:function () {
-            alert("Not found");
-        }
-    });
-});
-/*function getLog() {
-    var userId = $("#getUser").var();
-    var password = $("#getPassword").var();
-    location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/ragnar/ragnar/userLogin";
-    $.ajax({
-        type: "GET",
-        url: "ragnar/userLogin" + userId + password,//not done yet
-        success: function () {
-            alert("Your Log In");
-        },
-        error: function () {
-            alert("Not found");
-        }
-    });
-}*/

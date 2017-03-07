@@ -22,7 +22,7 @@ public class UserRest {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{userId}/{password}")
-    public Collection<UserEntity> getUser(@PathParam("userId") Integer userId,@PathParam("password") String password){
+    public UserEntity getUser(@PathParam("userId") Integer userId,@PathParam("password") String password){
         return userServiceEjb.getUser(userId,password);
     }/*
     @GET
