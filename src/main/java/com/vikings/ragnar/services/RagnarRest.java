@@ -45,7 +45,7 @@ public class RagnarRest {
         return failureClassServiceEjb.getAllInfo();
     }
 
-    @GET
+    /*@GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/allUeInfo")
     public Collection<UeEntity> getAllUeInfo(){
@@ -58,7 +58,7 @@ public class RagnarRest {
     public Collection<UserEntity> getUser(){
         return userServiceEjb.getUser(1,"test");
     }
-    /*@GET
+    @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/userLogin")
     public UserEntity getUser(Integer id, String password){
