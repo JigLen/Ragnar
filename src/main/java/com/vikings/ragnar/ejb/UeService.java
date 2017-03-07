@@ -11,4 +11,8 @@ import java.util.Collection;
 @Local
 public interface UeService {
     Collection<UeEntity> getAllInfo();
+    void addUe(UeEntity ue);
+    UeEntity getById(Integer id);
+    void update(UeEntity ue);
+    void remove(Integer id);
 }

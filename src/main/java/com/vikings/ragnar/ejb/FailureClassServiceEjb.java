@@ -36,4 +36,9 @@ public class FailureClassServiceEjb implements FailureClassService {
     public void update(FailureClassEntity failureClassEntity) {
         failureClassDao.update(failureClassEntity);
     }
+
+    @Override
+    public FailureClassEntity getById(int id) {
+        return failureClassDao.getById(id);
+    }
 }

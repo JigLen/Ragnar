@@ -5,13 +5,14 @@ package com.vikings.ragnar.entities;
  */
 
 import javax.persistence.*;
+import java.io.InterruptedIOException;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
 @Table(name="base_data")
-public class BaseDataEntity implements Serializable {
+public class BaseDataEntity implements Serializable{
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -52,6 +53,13 @@ public class BaseDataEntity implements Serializable {
         this.hier32Id = hier32Id;
         this.hier321Id = hier321Id;
     }
+
+    public long convertDateTimeToMillis()
+    {
+        return dateTime.getTime();
+    }
+
+    public Integer getId(){return id;}
 
     public Date getDateTime() {
         return dateTime;

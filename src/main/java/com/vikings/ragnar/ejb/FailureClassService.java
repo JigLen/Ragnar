@@ -14,4 +14,5 @@ public interface FailureClassService {
     void addFailureClass(FailureClassEntity failureClass);
     void remove(int id);
     void update(FailureClassEntity failureClass);
+    FailureClassEntity getById(int id);
 }

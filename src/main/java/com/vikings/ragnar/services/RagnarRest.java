@@ -20,9 +20,9 @@ import java.util.Collection;
 public class RagnarRest {
     @EJB MccMncService mccMncServiceEjb;
     @EJB BaseDataService baseDataServiceEjb;
-    @EJB FailureClassService failureClassServiceEjb;
     @EJB UeService ueServiceEjb;
     @EJB UserService userServiceEjb;
+
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -38,12 +38,7 @@ public class RagnarRest {
         return baseDataServiceEjb.getAllInfo();
     }
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/allFailureClassInfo")
-    public Collection<FailureClassEntity> getAllFailureClassInfo(){
-        return failureClassServiceEjb.getAllInfo();
-    }
+
 
     /*@GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -51,6 +46,7 @@ public class RagnarRest {
     public Collection<UeEntity> getAllUeInfo(){
         return ueServiceEjb.getAllInfo();
     }
+<<<<<<< HEAD
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -87,4 +83,6 @@ public class RagnarRest {
     }
 
 
+=======
+>>>>>>> db633113f9cad94cf2fcdb81508c89093edd9b03
 }

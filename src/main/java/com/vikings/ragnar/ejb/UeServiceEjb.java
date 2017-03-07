@@ -21,4 +21,24 @@ public class UeServiceEjb implements UeService {
     public Collection<UeEntity> getAllInfo() {
         return ueDao.getAllInfo();
     }
+
+    @Override
+    public void addUe(UeEntity ue) {
+        ueDao.addUe(ue);
+    }
+
+    @Override
+    public UeEntity getById(Integer id) {
+        return ueDao.getById(id);
+    }
+
+    @Override
+    public void update(UeEntity ue) {
+        ueDao.update(ue);
+    }
+
+    @Override
+    public void remove(Integer id) {
+        ueDao.remove(id);
+    }
 }

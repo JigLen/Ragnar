@@ -48,6 +48,7 @@ public class DataWatcher {
                         continue;
                     }
                     else if (kind == ENTRY_CREATE) {
+
                         //  spot sql files
                         if(fileName.toString().endsWith(".csv")){
                             System.out.println("Found csv file");
