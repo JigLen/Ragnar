@@ -16,15 +16,7 @@ import java.util.Collection;
 public class UserServiceEjb implements UserService{
     @EJB
     private UserDao userDao;
-    /*@Override
-    public UserEntity getUser(Integer id,String password) {
-        return userDao.getUser(id,password);
-    }
 
-    /*@Override
-    public Collection<UserEntity> getAllUserInfo() {
-        return userDao.getAllUsers();
-    }*/
     @Override
     public UserEntity getUser(Integer id,String password) {
         return userDao.getUser(id,password);

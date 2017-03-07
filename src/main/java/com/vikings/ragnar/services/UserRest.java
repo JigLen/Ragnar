@@ -24,12 +24,6 @@ public class UserRest {
     @Path("/{userId}/{password}")
     public UserEntity getUser(@PathParam("userId") Integer userId,@PathParam("password") String password){
         return userServiceEjb.getUser(userId,password);
-    }/*
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    //@Path("/userLogin")
-    public Collection<UserEntity> getUser(){
-        return userServiceEjb.getUser(1,"test");
-    }*/
+    }
 
 }

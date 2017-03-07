@@ -10,7 +10,5 @@ import java.util.Collection;
  */
 @Local
 public interface UserService {
-    //UserEntity getUser(Integer id,String password);
-    //Collection<UserEntity> getAllUserInfo();
     UserEntity getUser(Integer id,String password);
 }

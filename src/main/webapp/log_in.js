@@ -11,20 +11,16 @@ $(document).ready(function() {
             type: "GET",
             url: "ragnar/user/"+userId+"/"+password,//not done yet
             //url: "ragnar",//not done yet
-            success: function () {
-                alert("Your Log In");
+            success: function (value) {
                 if(value.userId!=null) {
+                    alert("Your Log In");
                     location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT";
                 }
 
             },
             error:function () {
-                alert("Not found");
-                alert(userId);
-                alert(password);
+                alert("User or  Password is wrong");
             },
-            //datatype:
-
         });
     });
 });
