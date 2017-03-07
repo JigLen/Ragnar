@@ -9,9 +9,11 @@ $(document).ready(function() {
         //location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/ragnar/ragnar/userLogin";
         $.ajax({
             type: "GET",
-            url: "ragnar/userLogin"+userId+password,//not done yet
+            url: "ragnar/userLogin/"+userId+"/"+password,//not done yet
+            //url: "ragnar",//not done yet
             success: function () {
                 alert("Your Log In");
+                //location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT";
             },
             error:function () {
                 alert("Not found");
