@@ -1,0 +1,5 @@
+http://arquillian.org/
+http://arquillian.org/guides/testing_java_persistence/
+http://arquillian.org/guides/getting_started/
+https://docs.jboss.org/arquillian/reference/1.0.0.Alpha1/en-US/html_single/
+https://docs.jboss.org/arquillian/reference/1.0.0.Alpha5/en-US/pdf/arquillian-reference-guide.pdf
