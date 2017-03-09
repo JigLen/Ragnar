@@ -1,4 +1,4 @@
-package datahandling;
+package com.vikings.ragnar.datahandling;
 
 import java.io.*;
 import java.util.Arrays;
