@@ -5,7 +5,5 @@
 target/
 workspace.xml
 .idea/
-.settings/
 res/
-
-src/test/
+.settings/

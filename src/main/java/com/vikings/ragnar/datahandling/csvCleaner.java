@@ -1,4 +1,4 @@
-package com.vikings.ragnar.datavalidation;
+package com.vikings.ragnar.datahandling;
 
 import java.io.*;
 import java.util.Arrays;
@@ -9,7 +9,7 @@ import java.util.Scanner;
  *
  * Watches the directory where new data to be imported will be dropped. This will automate cleaning, insertion etc.
  */
-public class DataCleaner {
+public class csvCleaner {
     public static void clean(String fileName){
         System.out.println("Cleaning: " + fileName);
         // for testing originally, now taken in via arg

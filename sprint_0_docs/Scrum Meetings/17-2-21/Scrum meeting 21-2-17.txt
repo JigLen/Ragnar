@@ -1,0 +1,50 @@
+What did you do?
+
+Everyone is setup with mySQL/git/intellij on dit lab computers and/or personal computers. Everyone Can now begin to work on
+individual tasks.
+
+Dimitar - Helped with setup as mentioned above. Research on front end user verification. 
+
+Sahar - Helped with setup as mentioned above.
+
+David - Helped with setup as mentioned above.
+
+Carl - Helped with setup as mentioned above.
+
+Ciarán - Helped with setup as mentioned above.
+
+
+What will you do today?
+
+Everyone is waiting for proper JIRA tasks. But may do some work(?).
+
+Dimitar 	- ? Users table in db and related work (related to user auth) as mentioned in Dimitars issue below
+
+Sahar		- Excel to CSV file converter java class.
+
+David		- failure_class_crud.js has broken functionality, David's going to try figure out the problem.
+
+Carl		- Update JIRA, with project_docs/workbook. some tasks: Class Diagrams, Testing, Sprint 0 functionality, db ER 					Diagram, Task time estimations(JIRA will generate burndown i think),... etc.
+
+Ciaran		- ? Users table in db and related work (related to user auth) as mentioned in Dimitars issue below
+
+
+* 	Remember the last task in Sprint 0 throughout all of this. Good design now will help later
+
+
+
+ What issues do you have?
+
+Dimitar - On User login etc.
+			Main idea        - http://www.techyari.in/2014/04/login-registration-tutorial-in-j2ee-mysql-jquery-tabs.html
+			similar idea     - https://github.com/jboss-developer/jboss-picketlink-quickstarts/tree/master/
+			(not front end)    picketlink-authorization-rs-rbac/src/main
+			AngularJS help 1 - http://arthur.gonigberg.com/2013/06/29/angularjs-role-based-auth/
+			AngularJS help 2 - http://www.stefanoscerra.it/permission-based-auth-system-in-angularjs/
+			AngularJS help 3 - http://jasonwatmore.com/post/2015/03/10/angularjs-user-registration-and-login-example-tutorial
+
+			persisting new users etc. can be done alongside persisting new csv data as they might be similar
+
+			Main idea, seems to follow a similar structure we already have in place. This task will need to be broken down 
+			further, and more people will work on it.
+

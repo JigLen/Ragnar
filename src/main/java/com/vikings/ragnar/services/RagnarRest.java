@@ -15,11 +15,13 @@ import java.util.Collection;
  * Created by carlmccann2 on 15/02/2017.
  */
 
+
 @Path("/ragnar")
 public class RagnarRest {
     @EJB MccMncService mccMncServiceEjb;
     @EJB BaseDataService baseDataServiceEjb;
     @EJB UeService ueServiceEjb;
+    @EJB UserService userServiceEjb;
 
 
     @GET

@@ -10,6 +10,12 @@ function loadAllMccMncInfo() {
 function loadAllUeInfo(){
     location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/ragnar/ragnar/allUeInfo";
 }
+function loadAllUserLogin(){
+    location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/ragnar/ragnar/userLogin";
+}
+
+
+
 
 //////////////////////////////////
 

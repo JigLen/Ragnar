@@ -34,6 +34,9 @@
     <script type="text/javascript" src="js/get_functions.js"></script>
     <script type="text/javascript" src="js/failure_class_crud.js"></script>
     <script type="text/javascript" src="js/event_cause_crud.js"></script>
+
+    <script type="text/javascript" src="js/file_upload.js"></script>
+
     <script type="text/javascript" src="js/ue_crud.js"></script>
     <script type="text/javascript" src="js/mcc_mnc_crud.js"></script>
     <script type="text/javascript" src="js/base_data_crud.js"></script>
@@ -49,6 +52,15 @@ David Leonard<br>
 Ciarán Sweeney<br>
 Dimitar Tsvetkov<br>
 Carl McCann<br>
+
+
+<!--http://stackoverflow.com/questions/166221/how-can-i-upload-files-asynchronously-->
+<form enctype="multipart/form-data">
+    <input name="file" type="file" id="fileUploadB1" />
+    <input type="button" name="upload "value="Upload" id="fileUploadB2"/>
+</form>
+<progress></progress>
+
 
 <div class="container" id="failClassDiv">
     <h1>Failure Class</h1>
@@ -422,6 +434,8 @@ Carl McCann<br>
     <input id="failure_class" type="button" onclick="loadAllFailureClassInfo()" value="Get All Failure_Class info"/>
     <input id="mcc" type="button" onclick="loadAllMccMncInfo()" value="Get All MCC-MNC info"/>
     <input id="ue" type="button" onclick="loadAllUeInfo()" value="Get All UE info"/>
+    <input id="user_login" type="button" onclick="loadAllUserLogin()" value="Get All User login"/>
+
 </div>
 
 
@@ -442,9 +456,19 @@ Carl McCann<br>
 
 <div class="container">
 
+<<<<<<< HEAD
+    <h3>Enter id To Delete</h3>
+
+        Id:<br>
+        <input type="text" name="id" placeholder="Enter id" id="idText"><br>
+        <br>
+        <input type="button" class="btn" id="deleteFailureClassButton" value="DELETE"/>
+
+=======
     <h1>bootstrap tutorial</h1>
     <p>i love new boston<br>
         https://www.youtube.com/watch?v=qIULMnbH2-o <br>
+>>>>>>> db633113f9cad94cf2fcdb81508c89093edd9b03
 
         also this <br>
         https://startbootstrap.com/template-overviews/sb-admin-2/ <br>

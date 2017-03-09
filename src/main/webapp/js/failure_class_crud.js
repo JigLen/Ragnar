@@ -31,13 +31,10 @@ $(document).ready(function(){
 
 
     $("#updateFailureClassButton").click(function() {
-        alert("update button pressed");
 
         var id =   $("#updateFailureClassId").val();
         var description =  $("#updateDescText").val();
         var failureClass = new FailureClass(id,description);
-        alert("Id:" + id);
-
         $.ajax({
             type: "PUT",
             url: "ragnar/failure_class",
