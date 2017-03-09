@@ -96,7 +96,6 @@ $(document).ready(function(){
          success: function (failureClassList) {
             $.each(failureClassList, function (index, value) {
                     $("#failureClassHolder").append("<li>" + value.failureClass + " " + value.description +"</li>");
-
             });
         }});
     });

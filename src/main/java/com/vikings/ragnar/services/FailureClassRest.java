@@ -16,30 +16,35 @@ import java.util.Collection;
 public class FailureClassRest implements Crud {
     @EJB    FailureClassService failureClassService;
 
-    @POST   @Consumes(MediaType.APPLICATION_JSON)
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
     public void create(FailureClassEntity failureClass) {
         failureClassService.addFailureClass(failureClass);
 
     }
 
-    @GET @Produces(MediaType.APPLICATION_JSON) @Path("/{id}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON) @Path("/{id}")
     public FailureClassEntity read(@PathParam("id") Integer id) {
         return failureClassService.getById(id);
     }
 
-    @GET @Produces(MediaType.APPLICATION_JSON)
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
     public Collection<FailureClassEntity> readAll() {
         return failureClassService.getAllInfo();
     }
 
 
-    @PUT @Consumes(MediaType.APPLICATION_JSON)
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
     public void update(FailureClassEntity failureClass) {
         failureClassService.update(failureClass);
     }
 
 
-    @DELETE @Path("/{id}")
+    @DELETE
+    @Path("/{id}")
     public void delete(@PathParam("id") Integer id) {
         failureClassService.remove(id);
     }

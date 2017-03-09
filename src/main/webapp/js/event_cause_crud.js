@@ -93,12 +93,11 @@ $(document).ready(function(){
             type: "GET",
             url: "ragnar/event_cause",
 
-            success: function (eventCauseList) {
-                $.each(eventCauseList, function (index, value) {
-                    $("#eventCauseHolder").append("<li>" + value.causeCode + " " + value.eventId + " " + value.description + "</li>");
-                });
-            }
-        });
+        success: function (eventCauseList) {
+            $.each(eventCauseList, function (index, value) {
+                $("#eventCauseHolder").append("<li>" + value.causeCode + " " + value.eventId + " " + value.description + "</li>");
+            });
+        }});
     });
 
     $("#closeEventCause").click(function() {
