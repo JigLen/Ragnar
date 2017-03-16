@@ -91,7 +91,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`UE` (
   PRIMARY KEY (TAC))
 ENGINE = InnoDB;
 
-
+-- -----------------------------------------------------
+-- Table `mydb`.`Users`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Users` (
+  User_id INT NOT NULL,
+  Password VARCHAR(45) NULL,
+  Access_Level INT NOT NULL,
+  Description VARCHAR(45) NULL,
+  PRIMARY KEY (User_id))
+ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
