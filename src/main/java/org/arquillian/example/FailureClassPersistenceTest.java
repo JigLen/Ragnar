@@ -1,4 +1,4 @@
-package testing;
+package org.arquillian.example;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
