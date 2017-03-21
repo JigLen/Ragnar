@@ -1,5 +1,8 @@
 package com.vikings.ragnar.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -19,10 +22,19 @@ public class UserEntity  implements Serializable {
     @Column(name="Access_Level")
     private Integer accessLevel;
 
-    public UserEntity(Integer u, String psw, Integer a ){
+    @Column(name="Description")
+    private String description;
+
+    public UserEntity(Integer u, String psw, Integer a, String description){
         userId=u;
         password=psw;
         accessLevel=a;
+        this.description = description;
+    }
+
+    public String Login(Integer userId, String password)
+    {
+        return "Id:" + userId + " " + "Password:" + password;
     }
 
     public UserEntity() {
@@ -38,5 +50,9 @@ public class UserEntity  implements Serializable {
 
     public Integer getAccessLevel() {
         return accessLevel;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

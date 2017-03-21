@@ -6,11 +6,15 @@ use mydb;
 # Carls DIT pc
 #LOAD DATA LOCAL infile 'C:/Users/C12508463/Dropbox/IdeaProjects/Ragnar/res/event_cause_data.csv'
 # Carls MBP
-LOAD DATA LOCAL infile '/Volumes/Data/Users/carlmccann2/IdeaProjects/Ragnar/res/event_cause_data.csv'
+# LOAD DATA LOCAL infile '/Volumes/Data/Users/carlmccann2/IdeaProjects/Ragnar/res/event_cause_data.csv'
 # Carl DIT WINDOWS
 # LOAD DATA LOCAL infile 'C:/Users/C12508463/Dropbox/IdeaProjects/Ragnar/res/event_cause_data.csv'
 #Carls inspiron
 #LOAD DATA LOCAL infile 'C:/Users/Carl/Ragnar/Ragnar/res/event_cause_data.csv'
+# Carl's ElemOS
+
+LOAD DATA LOCAL infile '/home/carl/Dropbox/IdeaProjects/Ragnar/res/event_cause_data.csv'
+
 
 INTO TABLE Event_Cause 
 fields terminated BY ','
@@ -22,11 +26,15 @@ IGNORE 1 LINES
 #LOAD DATA LOCAL infile 'C:/JavaWorkSpace/Ragnar/res/failure_class_data.csv'
 #LOAD DATA LOCAL infile 'C:/Users/C12508463/Dropbox/IdeaProjects/Ragnar/res/failure_class_data.csv'
 # Carls MBP
-LOAD DATA LOCAL infile '/Volumes/Data/Users/carlmccann2/IdeaProjects/Ragnar/res/failure_class_data.csv'
+# LOAD DATA LOCAL infile '/Volumes/Data/Users/carlmccann2/IdeaProjects/Ragnar/res/failure_class_data.csv'
 # Carl DIT WINDOWS
 # LOAD DATA LOCAL infile 'C:/Users/C12508463/Dropbox/IdeaProjects/Ragnar/res/failure_class_data.csv'
 #Carls inspiron
 #LOAD DATA LOCAL infile 'C:/Users/Carl/Ragnar/Ragnar/res/failure_class_data.csv'
+# Carl's ElemOS
+LOAD DATA LOCAL infile '/home/carl/Dropbox/IdeaProjects/Ragnar/res/failure_class_data.csv'
+
+
 
 INTO TABLE Failure_Class
 fields terminated BY ','
@@ -38,11 +46,15 @@ IGNORE 1 LINES
 #LOAD DATA LOCAL infile 'C:/JavaWorkSpace/Ragnar/res/mcc_mnc_data.csv'
 #LOAD DATA LOCAL infile 'C:/Users/C12508463/Dropbox/IdeaProjects/Ragnar/res/mcc_mnc_data.csv'
 # Carls MBP
-LOAD DATA LOCAL infile '/Volumes/Data/Users/carlmccann2/IdeaProjects/Ragnar/res/mcc_mnc_data.csv'
+# LOAD DATA LOCAL infile '/Volumes/Data/Users/carlmccann2/IdeaProjects/Ragnar/res/mcc_mnc_data.csv'
 # Carl DIT WINDOWS
 # LOAD DATA LOCAL infile 'C:/Users/C12508463/Dropbox/IdeaProjects/Ragnar/res/mcc_mnc_data.csv'
 #Carls inspiron
 #LOAD DATA LOCAL infile 'C:/Users/Carl/Ragnar/Ragnar/res/mcc_mnc_data.csv'
+# Carl's ElemOS
+
+LOAD DATA LOCAL infile '/home/carl/Dropbox/IdeaProjects/Ragnar/res/mcc_mnc_data.csv'
+
 
 INTO TABLE MCC_MNC
 fields terminated BY ','
@@ -54,11 +66,18 @@ IGNORE 1 LINES
 #LOAD DATA LOCAL infile 'C:/JavaWorkSpace/Ragnar/res/ue_data.csv'
 #LOAD DATA LOCAL infile 'C:/Users/C12508463/Dropbox/IdeaProjects/Ragnar/res/ue_data.csv'
 # Carls MBP
-LOAD DATA LOCAL infile '/Volumes/Data/Users/carlmccann2/IdeaProjects/Ragnar/res/ue_data.csv'
+# LOAD DATA LOCAL infile '/Volumes/Data/Users/carlmccann2/IdeaProjects/Ragnar/res/ue_data.csv'
 # Carl DIT WINDOWS
 # LOAD DATA LOCAL infile 'C:/Users/C12508463/Dropbox/IdeaProjects/Ragnar/res/ue_data.csv'
 #Carls inspiron
 #LOAD DATA LOCAL infile 'C:/Users/Carl/Ragnar/Ragnar/res/ue_data.csv'
+# Carl's ElemOS
+
+LOAD DATA LOCAL infile '/home/carl/Dropbox/IdeaProjects/Ragnar/res/ue_data.csv'
+
+
+
+
 
 INTO TABLE UE 
 fields terminated BY ','
@@ -73,11 +92,13 @@ OS,Input_Mode);
 #LOAD DATA LOCAL infile 'C:/JavaWorkSpace/Ragnar/res/base_data/base_data_empty_null_field.csv'
 #LOAD DATA LOCAL infile 'C:/Users/C12508463/Dropbox/IdeaProjects/Ragnar/res/base_data/base_data_empty_null_field.csv'
 # Carls MBP
-LOAD DATA LOCAL infile '/Volumes/Data/Users/carlmccann2/IdeaProjects/Ragnar/res/base_data.csv'
+#LOAD DATA LOCAL infile '/Volumes/Data/Users/carlmccann2/IdeaProjects/Ragnar/res/base_data.csv'
 # Carl DIT WINDOWS
 #LOAD DATA LOCAL infile 'C:/Users/C12508463/Dropbox/IdeaProjects/Ragnar/res/base_data.csv'
 #Carls inspiron
 #LOAD DATA LOCAL infile 'C:/Users/Carl/Ragnar/Ragnar/res/base_data.csv'
+# Carl's ElemOS
+LOAD DATA LOCAL infile '/home/carl/Dropbox/IdeaProjects/Ragnar/res/base_data.csv'
 
 INTO TABLE Base_Data
 fields terminated BY ','

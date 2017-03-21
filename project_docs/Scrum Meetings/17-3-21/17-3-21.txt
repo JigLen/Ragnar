@@ -1,0 +1,42 @@
+What did you do?
+
+Dimitar     -
+
+Sahar       -   Started User Story 6
+
+David       -   Started User Story 4
+
+Carl        -   Worked on integrating David's working arquillian test into his
+                project. Worked on File Upload and persisting from there.
+
+Ciarán      -   Wrote standalone page restrictions based on access level.
+
+
+What will you do today?
+
+Dimitar 	-
+
+Sahar		-   Continue
+
+David		-   Continue
+
+Carl		-   Continue on arquillian integration.
+
+Ciaran		-   Switching to Carls task of file upload / persistence. File upload
+                should be working , just need proper entity object creation and
+                persistence. Also Excel -> Java -> DB rather than Excel -> CSV
+                -> Java -> DB for speedup.
+
+
+ What issues do you have?
+
+Dimitar 	-
+
+Sahar		-
+
+David		-
+
+Carl		-
+
+Ciaran		-
+
