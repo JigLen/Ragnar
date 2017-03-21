@@ -15,6 +15,10 @@ public class excelChanger {
 
     public static void writeToCsv(Sheet sheet, String path) {
         System.out.println("Writing to CSV...");
+
+
+        path = path.substring(0,path.length()-4) + "csv";
+
         System.out.println(path);
         try (Writer writer = new BufferedWriter(new OutputStreamWriter(
                 new FileOutputStream(path), "utf-8"))) {
@@ -23,9 +27,13 @@ public class excelChanger {
             for (int i = 0; i <= sheet.getLastRowNum(); i++) {
                 row = sheet.getRow(i);
                 String line = "";
+
                 for (int j = 0; j < row.getLastCellNum(); j++) {
                     if(j == row.getLastCellNum()-1){
+                        System.out.println(row.getCell(j));
                         line+= row.getCell(j);
+                        // row = baseDataEntity
+                        // new BaseDataEntity(getCell(0),getCell(1))
                     }
                     else{
                         line += row.getCell(j) + ",";
@@ -49,8 +57,9 @@ public class excelChanger {
             Workbook wb = WorkbookFactory.create(inp);
 
             for(int i=0;i<wb.getNumberOfSheets();i++) {
-                System.out.println(wb.getSheetAt(i).getSheetName());
-                writeToCsv(wb.getSheetAt(i), path);
+                if(wb.getSheetAt(i).getSheetName().equals("Base Data")){
+                    writeToCsv(wb.getSheetAt(i), path);
+                }
             }
         } catch (InvalidFormatException ex) {
             Logger.getLogger(excelChanger.class.getName()).log(Level.SEVERE, null, ex);
@@ -61,9 +70,6 @@ public class excelChanger {
         } finally {
             try {
                 inp.close();
-                File f = new File(path);
-                path = path.substring(0,path.length()-4) + "csv";
-                f.renameTo(new File(path));
             } catch (IOException ex) {
                 Logger.getLogger(excelChanger.class.getName()).log(Level.SEVERE, null, ex);
             }

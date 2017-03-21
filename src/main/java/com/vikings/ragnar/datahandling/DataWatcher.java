@@ -65,7 +65,7 @@ public class DataWatcher {
                             f.setWritable(true);
 
 
-                            if(fileName.toString().endsWith(".xlsx")){
+                            if(fileName.toString().endsWith(".xlsx") || fileName.toString().endsWith(".xls")){
                                 System.out.println("found excel file");
                                 excelChanger.excelFileHandler(relPathToFilename);
                             }

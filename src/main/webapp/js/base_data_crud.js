@@ -48,7 +48,7 @@ $(document).ready(function(){
 
         $.ajax({
             type: "POST",
-            url: "ragnar/baseData",
+            url: "ragnar/allBaseDataInfo",
             success: function () {
                 alert("BaseData added");
                 location.reload();
@@ -85,7 +85,7 @@ $(document).ready(function(){
 
         $.ajax({
             type: "PUT",
-            url: "ragnar/baseData",
+            url: "ragnar/base_data",
             success: function () {
                 alert("BaseData updated");
                 location.reload();
@@ -104,7 +104,7 @@ $(document).ready(function(){
         var id =  $("#baseDataDeleteText").val();
         $.ajax({
             type: "DELETE",
-            url: "ragnar/baseData/" + id,
+            url: "ragnar/base_data/" + id,
             success: function () {
                 alert("BaseData deleted");
                 location.reload();
@@ -119,7 +119,7 @@ $(document).ready(function(){
         var id =  $("#getDaseDataId").val();
         $.ajax({
             type: "GET",
-            url: "ragnar/baseData/" + id,
+            url: "ragnar/base_data/" + id,
             success: function (value) {
                 alert("BaseData found");
                 $("#getBaseDataResultId").val(Date(value.dateTime) + " " + value.eventId );
@@ -134,7 +134,7 @@ $(document).ready(function(){
     $("#showBaseData").click(function() {
         $.ajax({
             type: "GET",
-            url: "ragnar/baseData",
+            url: "ragnar/base_data",
 
             success: function (baseDataList) {
                 $.each(baseDataList, function (index, value) {
