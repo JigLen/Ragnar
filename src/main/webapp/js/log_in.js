@@ -14,9 +14,9 @@ $(document).ready(function() {
             success: function (value) {
                 if(value.userId!=null) {
                     alert("Your Log In");
-                    location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT";
+                    //var test=value.accessLevel;
+                    location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT#"+value.accessLevel;
                 }
-
             },
             error:function () {
                 alert("User or  Password is wrong");
