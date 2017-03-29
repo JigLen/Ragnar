@@ -27,7 +27,7 @@ public class DataWatcherAndImportEjb {
     @PersistenceContext EntityManager em;
     @Resource           SessionContext sessionContext;
     boolean watch = true;
-    
+
     @PostConstruct
     public void initialise(){
         Runnable run = () -> {
