@@ -1,0 +1,38 @@
+What did you do?
+
+Dimitar     - US8 Wrote mySQL, still translating to JPQL
+
+Sahar       - US6 still going
+
+David       - US4
+
+Carl        - US1
+
+Ciarán      -
+
+
+What will you do today?
+
+Dimitar 	- US5
+
+Sahar		-
+
+David		- US4
+
+Carl		- US1
+
+Ciaran		-
+
+
+ What issues do you have?
+
+Dimitar 	-
+
+Sahar		-
+
+David		-
+
+Carl		-
+
+Ciaran		-
+

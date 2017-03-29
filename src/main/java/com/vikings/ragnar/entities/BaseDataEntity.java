@@ -4,10 +4,11 @@ package com.vikings.ragnar.entities;
  * Created by carlmccann2 on 16/02/2017.
  */
 
+
 import javax.persistence.*;
-import java.io.InterruptedIOException;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
@@ -18,10 +19,10 @@ public class BaseDataEntity implements Serializable{
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id")
     private Integer id;
-    @Column(name="Date_Time") private Date dateTime;
+    @Column(name="Date_Time") private Timestamp dateTime;
     @Column(name="Event_id") private Integer eventId;
     @Column(name="Failure_Class") private Integer failureClass;
-    @Column(name="UE_Type") private String ueType;
+    @Column(name="UE_Type") private Integer ueType;
     @Column(name="Market") private Integer market;
     @Column(name="Operator") private Integer operator;
     @Column(name="Cell_id") private Integer cellId;
@@ -35,7 +36,7 @@ public class BaseDataEntity implements Serializable{
 
     public BaseDataEntity(){}
 
-    public BaseDataEntity(Date dateTime, Integer eventId, Integer failureClass, String ueType, Integer market, Integer operator,
+    public BaseDataEntity(Timestamp dateTime, Integer eventId, Integer failureClass, Integer ueType, Integer market, Integer operator,
                           Integer cellId, Integer duration, Integer causeCode, String neVersion, BigDecimal imsi, BigDecimal hier3Id, BigDecimal hier32Id,
                           BigDecimal hier321Id) {
         this.dateTime = dateTime;
@@ -61,11 +62,11 @@ public class BaseDataEntity implements Serializable{
 
     public Integer getId(){return id;}
 
-    public Date getDateTime() {
+    public Timestamp getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(Date date_time) {
+    public void setDateTime(Timestamp date_time) {
         this.dateTime = date_time;
     }
 
@@ -85,11 +86,11 @@ public class BaseDataEntity implements Serializable{
         this.failureClass = failure_class;
     }
 
-    public String getUeType() {
+    public Integer getUeType() {
         return ueType;
     }
 
-    public void setUeType(String ue_type) {
+    public void setUeType(Integer ue_type) {
         this.ueType = ue_type;
     }
 
@@ -173,8 +174,63 @@ public class BaseDataEntity implements Serializable{
         this.hier321Id = hier321_id;
     }
 
+    @Override
+    public String toString(){
+    return "BaseDataEntity: " +
+            "\ndateTime: " + dateTime +
+            "\neventId: " + eventId +
+            "\nfailureClass: " + failureClass +
+            "\nueType: " + ueType +
+            "\nmarket: " + market +
+            "\noperator: " + operator +
+            "\ncellId: " + cellId +
+            "\nduration: " + duration +
+            "\ncauseCode: " + causeCode +
+            "\nneVersion: " + neVersion +
+            "\nimsi: " + imsi +
+            "\nhier3Id: " + hier3Id +
+            "\nhier32Id: " + hier32Id +
+            "\nhier321Id: " + hier321Id + "\n";
+    }
 
+    public boolean isIncomplete(){
+        if(dateTime == null) return true;
+        if(eventId == null) return true;
+        if(failureClass == null) return true;
+        if(ueType == null) return true;
+        if(market == null) return true;
+        if(operator == null) return true;
+        if(cellId == null) return true;
+        if(duration == null) return true;
+        if(causeCode == null) return true;
+        if(neVersion== null) return true;
+        if(imsi == null) return true;
+        if(hier3Id == null) return true;
+        if(hier32Id == null) return true;
+        if(hier321Id == null) return true;
+        return false;
+    }
 
+    public boolean failureClassIsValid(){
+        if(failureClass >= 0 && failureClass < 5) return true;
+        return false;
+    }
 
+    public boolean eventIdCauseCodeIsValid(){
+        // event_id validation
+        if(eventId == 4097){
+            if(causeCode >= 0 && causeCode < 17) return true;
+        }
+        if(eventId == 4098){
+            if(causeCode >= 0 && causeCode < 4) return true;
+        }
+        if(eventId == 4125){
+            if(causeCode >= 0 && causeCode < 34) return true;
+        }
+        if(eventId == 4106){
+            if(causeCode >= 0 && causeCode < 25) return true;
+        }
+        return false;
+    }
 }
 

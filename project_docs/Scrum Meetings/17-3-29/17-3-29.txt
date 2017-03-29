@@ -1,0 +1,39 @@
+What did you do?
+
+Dimitar     -   Worked on US 5 and 8.
+
+Sahar       -   Broke computer somehow. Java written for US 6. needs js and html.
+
+David       -   US 4 fully done.
+
+Carl        -   US 1 and 3 done i think, awaiting email from jenny about how many records
+                should import for sprint 1 dataset A and B.
+
+Ciarán      -   US 7 done.
+
+
+What will you do today?
+
+Dimitar 	-   US 5 and 8 (js and html)
+
+Sahar		-   Finishing US 6
+
+David		-   working on US 9 and 10 and testing data validation in db.
+
+Carl		-   Merge US 1 / 3 into master. pick a new US.
+
+Ciaran		-   US 11
+
+
+ What issues do you have?
+
+Dimitar 	-
+
+Sahar		-
+
+David		-
+
+Carl		-
+
+Ciaran		-
+
