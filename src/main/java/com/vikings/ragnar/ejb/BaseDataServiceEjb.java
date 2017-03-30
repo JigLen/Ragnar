@@ -41,4 +41,9 @@ public class BaseDataServiceEjb implements BaseDataService{
     public void remove(Integer id) {
          baseDataDao.remove(id);
     }
+
+    @Override
+    public Collection<?> getImsisByFailureClass(Integer failureClass) {
+        return baseDataDao.getImsisByFailureClass(failureClass);
+    }
 }

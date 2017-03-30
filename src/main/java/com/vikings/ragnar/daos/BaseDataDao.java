@@ -19,4 +19,7 @@ public interface BaseDataDao {
     void update(BaseDataEntity baseData);
 
     void remove(Integer id);
+
+    Collection<?> getImsisByFailureClass(Integer failureClass);
+
 }

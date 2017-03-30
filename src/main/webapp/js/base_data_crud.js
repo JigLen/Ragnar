@@ -150,4 +150,24 @@ $(document).ready(function(){
         $("#baseDataHolder").empty();
     });
 
+
+    $("#US14SearchButton").click(function() {
+        var failureClass =  $("#US14Imsi").val();
+        failureClass = parseInt(failureClass);
+        $.ajax({
+            type: "GET",
+            url: "ragnar/base_data/UserStory14/" + failureClass,
+
+            success: function (baseDataList) {
+                alert("carl");
+                $.each(baseDataList, function (index, value) {
+                    $("#US14List").append("<li>" + value + "</li>");
+                });
+            },
+            error: function(){
+                alert("Error");
+            }
+        });
+    });
+
 });

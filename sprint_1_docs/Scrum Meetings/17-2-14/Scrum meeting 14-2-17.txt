@@ -1,0 +1,34 @@
+What did you do?
+
+Dimitar - Researched JSF and JAAS for rolemapping and role based access. 
+
+Sahar - Worked on full front end to back end process including business layer, rest, persistence etc. still ongoing.
+
+David - Worked on full front end to back end process including business layer, rest, persistence etc. still ongoing.
+
+Carl - Set up watch service on directory where new data files for the db will be placed.
+
+Ciarán - Fixed relationships in createTables.sql. Created foreignKey.sql file that edits tables rather than recreates them. 
+
+
+What will you do today?
+
+Dimitar 	- Login as Sys Admin via JSF etc.
+
+Sahar		- Continue work on classes mentioned in What did you do?
+
+David		- Continue work on classes mentioned in What did you do?
+
+Carl		- helping sahar and david. Asked team for estimations for burndown chart. Set up JIRA.
+
+Ciaran		- Data validation in DataCleaner.
+
+
+* 	Remember the last task in Sprint 0 throughout all of this. Good design now will help later
+
+
+
+ What issues do you have?
+
+
+David's git issues fixed for now.

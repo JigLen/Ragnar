@@ -66,6 +66,12 @@ public class BaseDataRest {
     }
 
 
+    @GET @Produces(MediaType.APPLICATION_JSON) @Path("/UserStory14/{failureClass}")
+    public Collection<?> getImsisByFailureClass(@PathParam("failureClass") Integer failureClass){
+        return baseDataService.getImsisByFailureClass(failureClass);
+    }
+
+
 
 
     // file upload

@@ -6,9 +6,7 @@ import com.vikings.ragnar.entities.FailureClassEntity;
 
 import javax.ejb.Local;
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
 
@@ -71,5 +69,13 @@ public class BaseDataDaoImpl implements BaseDataDao {
         }else{
             System.out.println("Id not found");
         }
+    }
+
+
+    @Override
+    public Collection<?> getImsisByFailureClass(Integer failureClass) {
+        Query query = em.createQuery("select b.imsi from BaseDataEntity b where b.failureClass=:input group by b.imsi").setParameter("input", failureClass);
+        Collection<?> results = query.getResultList();
+        return results;
     }
 }
