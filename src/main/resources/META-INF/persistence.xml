@@ -15,6 +15,7 @@
        <class>com.vikings.ragnar.entities.UserEntity</class>
 
        <class>com.vikings.ragnar.entities.EventCauseEntity</class>
+       <class>com.vikings.ragnar.embeddable.EventCauseId</class>
 
       <properties>
          <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>

@@ -45,7 +45,7 @@ public class csvPersister {
                     Integer duration= null;
                     Integer causeCode= null;
                     String neVersion= null;
-                    BigDecimal imsi= null;
+                    Long imsi= null;
                     BigDecimal hier3Id= null;
                     BigDecimal hier32Id= null;
                     BigDecimal hier321Id= null;

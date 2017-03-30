@@ -36,7 +36,7 @@ public class EventCauseDaoImpl implements EventCauseDao {
     @Override
     public void remove(int causeCode,int id) {
         Query query = em.createQuery("from EventCauseEntity " +
-                "where causeCode = :causeCode AND eventId = :id")
+                "where cpk.causeCode = :causeCode AND cpk.eventId= :id")
                 .setParameter("causeCode",causeCode).setParameter("id", id);
 
         EventCauseEntity tmp = (EventCauseEntity) query.getSingleResult();

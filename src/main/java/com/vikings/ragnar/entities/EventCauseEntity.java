@@ -1,5 +1,7 @@
 package com.vikings.ragnar.entities;
 
+import com.vikings.ragnar.embeddable.EventCauseId;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -8,44 +10,60 @@ import java.io.Serializable;
  */
 @Entity
 
+
 @NamedQueries({
         @NamedQuery(name="searchEventCauseByCompKey",
                 query="SELECT e " +
                         "FROM EventCauseEntity e " +
-                        "WHERE e.causeCode = :causeCode AND " +
-                        "      e.eventId = :id")
+                        "WHERE e.cpk.causeCode = :causeCode AND " +
+                        "      e.cpk.eventId = :id")
 })
+
 
 @Table(name="event_cause")
 public class EventCauseEntity implements Serializable{
-    @Id @Column(name="Cause_Code")  private Integer causeCode;
-    @Id @Column(name="Event_id")    private Integer eventId;
+    //@Id @Column(name="Cause_Code")  private Integer causeCode;
+    //@Id @Column(name="Event_id")    private Integer eventId;
+
+
+    @EmbeddedId
+    protected EventCauseId cpk;
+
     @Column(name="Description")     private String description;
 
 
     public EventCauseEntity() {
     }
 
+    public EventCauseId getCpk() {
+        return cpk;
+    }
+
+    public void setCpk(EventCauseId cpk) {
+        this.cpk = cpk;
+    }
+
     public EventCauseEntity(Integer causeCode, Integer eventId, String description) {
-        this.causeCode = causeCode;
-        this.eventId = eventId;
+        //this.causeCode = causeCode;
+        //this.eventId = eventId;
+        cpk = new EventCauseId(causeCode,eventId);
         this.description = description;
     }
 
     public Integer getCauseCode() {
-        return causeCode;
+        return cpk.getCauseCode();
     }
 
     public void setCauseCode(Integer causeCode) {
-        this.causeCode = causeCode;
+        cpk.setCauseCode(causeCode);
     }
 
     public Integer getEventId() {
-        return eventId;
+        return cpk.getEventId();
     }
 
     public void setEventId(Integer eventId) {
-        this.eventId = eventId;
+        cpk.setEventId(eventId);
     }
 
     public String getDescription() {

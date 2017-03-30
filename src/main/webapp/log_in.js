@@ -14,7 +14,19 @@ $(document).ready(function() {
             success: function (value) {
                 if(value.userId!=null) {
                     alert("Your Log In");
-                    location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT";
+                    if(value.accessLevel==1){
+                        location.href ="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/customerRep.html#"+value.accessLeve;
+                    }
+                    else if(value.accessLevel==2){
+                        location.href ="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/supportEngineer.html#"+value.accessLeve;
+                    }
+                    else if(value.accessLevel==3){
+                        location.href ="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/NetworkEngineer.html#"+value.accessLeve;
+                    }
+                    else if(value.accessLevel==4){
+                        location.href ="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/supportEngineer.html#"+value.accessLeve;
+                    }
+                    //location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT#"+value.accessLevel";
                 }
 
             },

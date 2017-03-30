@@ -39,6 +39,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Base_Data` (
  FOREIGN KEY (Cause_Code,Event_id) REFERENCES Event_Cause(Cause_Code,Event_id),
  CONSTRAINT failure_class_fk 
  FOREIGN KEY (Failure_Class) REFERENCES Failure_Class(Failure_Class),
+ CONSTRAINT ue_fk
+ FOREIGN KEY (UE_Type) REFERENCES UE(TAC),
  primary key(id))
 ENGINE = InnoDB;
 

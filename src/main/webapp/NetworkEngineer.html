@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Network Engineer Services</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/base_data_crud.js"></script>
+</head>
+<body>
+
+
+<!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+
+<div class="container" id="baseDataDiv">
+    <h1>NETWORK ENGINEER:</h1>
+
+    <div class="left">
+        <h2>Enter Time period To Search</h2>
+        <h3>User Story 9</h3>
+        <form>
+            <p>Date 1</p>
+            <input type="text" name="id" placeholder="Enter Date 1" id="getDate1"><br>
+            <br>
+            <p>Date 2</p>
+            <input type="text" name="id" placeholder="Enter Date 2" id="getDate2"><br>
+            <br>
+        </form>
+    </div>
+
+    <div class="left">
+        <br>
+        <input type="button" class="btn" id="showUserStory9" value="Display info for given time period"/>
+        <input type="button" class="btn" id="closeUserStory9" value="CLOSE"/>
+        <ul id="query9Holder">
+        </ul>
+    </div>
+    <!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+
+
+    <div class="left">
+        <h2>The top 10 most common Market ,Operator and Cell Combo</h2>
+        <h3>User Story 11</h3>
+
+        <form>
+            <input type="button" class="btn" id="mostCommonMarketOperatorCellCombo" value="Submit">
+            <input type="button" class="btn" id="closeUserStory11" value="CLOSE"/>
+        </form>
+        <ul id="mostCommonMarketOperatorCellComboHolder">
+        </ul>
+    </div>
+
+    <!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+    <div class="left">
+        <h2>Most Common IMSI Fails By Date</h2>
+        <h3>User Story 12</h3>
+        <form>
+            <p>Date 1:</p>
+            <input type="text"  name="date1" id="Date1">
+            <p>Date2:</p>
+            <input type="text"  name="date2" id="Date2"><br><br>
+            <input type="button" class="btn" id="mostCommonIMSIFailsByDate" value="submit">
+            <input type="button" class="btn" id="closeUserStory12" value="CLOSE"/>
+        </form>
+        <ul id="mostCommonIMSIFailsByDateHolder">
+        </ul>
+    </div>
+
+</div>

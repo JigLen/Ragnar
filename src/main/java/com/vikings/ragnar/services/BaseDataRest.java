@@ -13,9 +13,13 @@ import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 import com.vikings.ragnar.entities.BaseDataEntity;
 import javax.ws.rs.*;
+import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
 
 import java.io.*;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -45,7 +49,45 @@ public class BaseDataRest {
     @GET
     @Produces(MediaType.APPLICATION_JSON) @Path("/{id}")
     public BaseDataEntity read(@PathParam("id") Integer id) {
-        return baseDataService.getById(id);
+       return baseDataService.getById(id);
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON) @Path("/userStory4/{id}")
+    public Collection<BaseDataEntity> searchErrorInfoBasedOnIMSI(@PathParam("id") Long id){
+        return baseDataService.searchErrorInfoBasedOnIMSI(id);
+    }
+
+
+    //UserStory6
+    @GET
+    @Produces(MediaType.APPLICATION_JSON) @Path("/userStory6/{imsi}")
+    public Collection<?> getUniqueCauseCodes(@PathParam("imsi") Long imsi){
+        return baseDataService.getUniqueCauseCodes(imsi);
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON) @Path("/userStory9/{d1}/{d2}")
+    public List<?> countNoOfFailuresForImsi(@PathParam("d1") String d1, @PathParam("d2") String d2)throws Exception
+    {
+        SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        Date date1 = dt.parse(d1);
+        Date date2 = dt.parse(d2);
+        return baseDataService.countNoOfFailuresForImsi(date1, date2);
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON) @Path("/userStory11")
+    public Collection<BaseDataEntity> getMostCommonMarketOperatorCellCombo(){
+        return baseDataService.getMostCommonMarketOperatorCellCombo();
+    }
+    @GET
+    @Produces(MediaType.APPLICATION_JSON) @Path("/userStory12/{d1}/{d2}")
+    public Collection<BaseDataEntity> getTopTenMostCommonImsi(@PathParam("d1") String d1, @PathParam("d2") String d2) throws Exception {
+        SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        Date date1 = dt.parse(d1);
+        Date date2 = dt.parse(d2);
+        return baseDataService.getTopTenMostCommonImsi(date1,date2);
     }
 
     @GET @Produces(MediaType.APPLICATION_JSON)
@@ -65,7 +107,30 @@ public class BaseDataRest {
         baseDataService.remove(id);
     }
 
+    //  US 14
+    @GET @Produces(MediaType.APPLICATION_JSON) @Path("/UserStory14/{failureClass}")
+    public Collection<?> getImsisByFailureClass(@PathParam("failureClass") Integer failureClass){
+        return baseDataService.getImsisByFailureClass(failureClass);
+    }
 
+    // US 5
+    @GET @Produces(MediaType.APPLICATION_JSON) @Path("/us5/{imsi}/{d1}/{d2}")
+    public Long getByIMSIAndTimePeriod(@PathParam("imsi") Long imsi, @PathParam("d1") String d1, @PathParam("d2") String d2 )throws Exception {
+        SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        Date date1 = dt.parse(d1);
+        Date date2 = dt.parse(d2);
+        return baseDataService.getByIMSIAndTimePeriod(imsi, date1, date2);
+    }
+
+    //7
+    @GET
+    @Produces(MediaType.APPLICATION_JSON) @Path("/{d1}/{d2}")
+    public  Collection<BaseDataEntity> getAllIMSIByDate(@PathParam("d1") String d1, @PathParam("d2") String d2) throws ParseException {
+        SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        Date date1 = dt.parse(d1);
+        Date date2 = dt.parse(d2);
+        return baseDataService.getAllIMSIByDate(date1,date2);
+    }
 
 
     // file upload
@@ -150,4 +215,5 @@ public class BaseDataRest {
     }
 
 }
+
 

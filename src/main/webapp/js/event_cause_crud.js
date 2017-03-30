@@ -80,7 +80,6 @@ $(document).ready(function(){
             success: function (value) {
                 alert("Event Cause found");
                 $("#getEventCauseSearch").val(value.causeCode + " " + value.eventId + " " + value.description);
-                location.reload();
             },
             error:function () {
                 alert("Event Cause Not found");

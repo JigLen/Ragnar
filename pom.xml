@@ -186,6 +186,18 @@
       <artifactId>poi-ooxml</artifactId>
       <version>3.9</version>
     </dependency>
+      <!--<dependency>-->
+          <!--<groupId>org.hibernate</groupId>-->
+          <!--<artifactId>hibernate</artifactId>-->
+          <!--<version>3.2.6.ga</version>-->
+      <!--</dependency>-->
+    <!-- https://mvnrepository.com/artifact/org.wildfly/wildfly-dist -->
+    <dependency>
+      <groupId>org.wildfly</groupId>
+      <artifactId>wildfly-dist</artifactId>
+      <version>8.2.1.Final</version>
+    </dependency>
+
   </dependencies>
 
 </project>

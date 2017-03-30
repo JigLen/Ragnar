@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>System Admin</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/user_crud.js"></script>
+</head>
+<body>
+<h1>SYSTEM ADMIN:</h1>
+<div class="container" id="US2Container">
+    <div class="left">
+        <h3>US 2: Adding Users</h3>
+        <form>
+            <br>
+            <p>User Type:</p>
+            <input type="text"  name="userType" id="setUserType">
+            <p>User id:</p>
+            <input type="text"  name="userId" id="setUserId">
+            <p>Password:</p>
+            <input type="password"  name="password" id="setUserPassword"><br><br>
+            <input type="button" class="btn"  id="addUser" value="Enter New User">
+        </form>
+
+        <div class="container" id="userDiv">
+            <div class="left">
+                <h2>User List</h2>
+                <br>
+                <input type="button" class="btn" id="showUserList" value="SHOW"/>
+                <input type="button" class="btn" id="closeUserList" value="CLOSE"/>
+                <ul id="userHolder">
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+</body>
+</html>

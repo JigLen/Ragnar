@@ -4,6 +4,8 @@ package com.vikings.ragnar.entities;
  * Created by carlmccann2 on 16/02/2017.
  */
 
+import com.vikings.ragnar.embeddable.EventCauseId;
+
 import javax.persistence.*;
 import java.io.InterruptedIOException;
 import java.io.Serializable;
@@ -19,34 +21,54 @@ public class BaseDataEntity implements Serializable{
     @Column(name="id")
     private Integer id;
     @Column(name="Date_Time") private Date dateTime;
-    @Column(name="Event_id") private Integer eventId;
+    //@Column(name="Event_id") private Integer eventId;
     @Column(name="Failure_Class") private Integer failureClass;
     @Column(name="UE_Type") private String ueType;
     @Column(name="Market") private Integer market;
     @Column(name="Operator") private Integer operator;
     @Column(name="Cell_id") private Integer cellId;
     @Column(name="Duration") private Integer duration;
-    @Column(name="Cause_Code") private Integer causeCode;
+    //@Column(name="Cause_Code") private Integer causeCode;
     @Column(name="NE_Version") private String neVersion;
-    @Column(name="IMSI") private BigDecimal imsi;
+    @Column(name="IMSI") private Long imsi;
     @Column(name="HIER3_ID") private BigDecimal hier3Id;
     @Column(name="HIER32_ID") private BigDecimal hier32Id;
     @Column(name="HER321_ID") private BigDecimal hier321Id;
 
+    @ManyToOne
+    @JoinColumns({
+            @JoinColumn(
+                    name = "Cause_Code",  insertable = false, updatable = false,
+                    referencedColumnName = "Cause_Code"),
+            @JoinColumn(
+                    name = "Event_id",  insertable = false, updatable = false,
+                    referencedColumnName = "Event_id")
+    })
+    private EventCauseEntity eventCauseEntity;
+
+    public EventCauseEntity getEventCauseEntity() {
+        return eventCauseEntity;
+    }
+
+    public void setEventCauseEntity(EventCauseEntity eventCauseEntity) {
+        this.eventCauseEntity = eventCauseEntity;
+    }
+
     public BaseDataEntity(){}
 
     public BaseDataEntity(Date dateTime, Integer eventId, Integer failureClass, String ueType, Integer market, Integer operator,
-                          Integer cellId, Integer duration, Integer causeCode, String neVersion, BigDecimal imsi, BigDecimal hier3Id, BigDecimal hier32Id,
+                          Integer cellId, Integer duration, Integer causeCode, String neVersion, Long imsi, BigDecimal hier3Id, BigDecimal hier32Id,
                           BigDecimal hier321Id) {
         this.dateTime = dateTime;
-        this.eventId = eventId;
+        eventCauseEntity.setCpk(new EventCauseId(eventId, causeCode));
         this.failureClass = failureClass;
         this.ueType = ueType;
         this.market = market;
         this.operator = operator;
         this.cellId = cellId;
         this.duration = duration;
-        this.causeCode = causeCode;
+        //this.eventId = eventId;
+        //this.causeCode = causeCode;
         this.neVersion = neVersion;
         this.imsi = imsi;
         this.hier3Id = hier3Id;
@@ -70,11 +92,12 @@ public class BaseDataEntity implements Serializable{
     }
 
     public Integer getEventId() {
-        return eventId;
+        //eturn  eventId;
+        return eventCauseEntity.getCpk().getEventId();
     }
 
     public void setEventId(Integer event_id) {
-        this.eventId = event_id;
+        eventCauseEntity.getCpk().setEventId(event_id);
     }
 
     public Integer getFailureClass() {
@@ -126,11 +149,12 @@ public class BaseDataEntity implements Serializable{
     }
 
     public Integer getCauseCode() {
-        return causeCode;
+        //return causeCode;
+        return eventCauseEntity.getCpk().getCauseCode();
     }
 
     public void setCauseCode(Integer cause_code) {
-        this.causeCode = cause_code;
+        eventCauseEntity.getCpk().setCauseCode(cause_code);
     }
 
     public String getNeVersion() {
@@ -141,11 +165,11 @@ public class BaseDataEntity implements Serializable{
         this.neVersion = ne_version;
     }
 
-    public BigDecimal getImsi() {
+    public Long getImsi() {
         return imsi;
     }
 
-    public void setImsi(BigDecimal imsi) {
+    public void setImsi(Long imsi) {
         this.imsi = imsi;
     }
 
