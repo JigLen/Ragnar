@@ -192,11 +192,11 @@
           <!--<version>3.2.6.ga</version>-->
       <!--</dependency>-->
     <!-- https://mvnrepository.com/artifact/org.wildfly/wildfly-dist -->
-    <dependency>
-      <groupId>org.wildfly</groupId>
-      <artifactId>wildfly-dist</artifactId>
-      <version>8.2.1.Final</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.wildfly</groupId>-->
+      <!--<artifactId>wildfly-dist</artifactId>-->
+      <!--<version>8.2.1.Final</version>-->
+    <!--</dependency>-->
 
   </dependencies>
 
