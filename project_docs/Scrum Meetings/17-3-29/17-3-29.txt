@@ -20,7 +20,7 @@ Sahar		-   Finishing US 6
 
 David		-   working on US 9 and 10 and testing data validation in db.
 
-Carl		-   Merge US 1 / 3 into master. pick a new US.
+Carl		-   Merge US 1 / 3 into master. pick a new US. update: 20:20 picked US 14.
 
 Ciaran		-   US 11
 

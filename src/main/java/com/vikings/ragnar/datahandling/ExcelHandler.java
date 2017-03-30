@@ -59,7 +59,8 @@ public class ExcelHandler {
                 if (row.getCell(8).getCellType() == Cell.CELL_TYPE_NUMERIC) {
                     baseDataEntity.setCauseCode((int)row.getCell(8).getNumericCellValue());
                 } else {
-                    baseDataEntity.setCauseCode(new Integer(row.getCell(8).getStringCellValue()));
+                    if(row.getCell(8).getStringCellValue().matches("\\d+"))
+                        baseDataEntity.setCauseCode(new Integer(row.getCell(8).getStringCellValue()));
                 }
                 //Col 10 / 14 NeVersion
                 baseDataEntity.setNeVersion(row.getCell(9).getStringCellValue());

@@ -9,7 +9,11 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.util.Date;
+
+@NamedQueries({
+        @NamedQuery(name="US14allImsisForFailureClass",
+                query="select b.imsi from BaseDataEntity b where b.failureClass=:input group by b.imsi")
+})
 
 @Entity
 @Table(name="base_data")
