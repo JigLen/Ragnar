@@ -35,6 +35,14 @@ public class EventCauseEntity implements Serializable{
     public EventCauseEntity() {
     }
 
+    public EventCauseEntity(EventCauseId cpk) {
+        this.cpk = cpk;
+    }
+    public EventCauseEntity(EventCauseId cpk, String description) {
+        this.cpk = cpk;
+        this.description = description;
+    }
+
     public EventCauseId getCpk() {
         return cpk;
     }
@@ -43,12 +51,6 @@ public class EventCauseEntity implements Serializable{
         this.cpk = cpk;
     }
 
-    public EventCauseEntity(Integer causeCode, Integer eventId, String description) {
-        //this.causeCode = causeCode;
-        //this.eventId = eventId;
-        cpk = new EventCauseId(causeCode,eventId);
-        this.description = description;
-    }
 
     public Integer getCauseCode() {
         return cpk.getCauseCode();

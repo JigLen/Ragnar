@@ -1,10 +1,8 @@
 package com.vikings.ragnar.services;
 
 
-import com.vikings.ragnar.daos.UeDao;
 import com.vikings.ragnar.ejb.*;
 import com.vikings.ragnar.entities.*;
-import javafx.event.EventTarget;
 
 import javax.ejb.EJB;
 import javax.ws.rs.*;

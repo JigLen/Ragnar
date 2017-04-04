@@ -9,8 +9,7 @@ $(document).ready(function() {
         //location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/ragnar/ragnar/userLogin";
         $.ajax({
             type: "GET",
-            url: "ragnar/user/"+userId+"/"+password,//not done yet
-            //url: "ragnar",//not done yet
+            url: "ragnar/user/"+userId+"/"+password,
             success: function (value) {
                 if(value.userId!=null) {
                     alert("Your Log In");
@@ -24,11 +23,11 @@ $(document).ready(function() {
                         location.href ="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/NetworkEngineer.html#"+value.accessLeve;
                     }
                     else if(value.accessLevel==4){
-                        location.href ="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/supportEngineer.html#"+value.accessLeve;
+                        location.href ="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/systemAdmin.html#"+value.accessLeve;
                     }
                     //location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT#"+value.accessLevel";
-                }
 
+                }
             },
             error:function () {
                 alert("User or  Password is wrong");

@@ -4,13 +4,13 @@ package com.vikings.ragnar.entities;
  * Created by carlmccann2 on 16/02/2017.
  */
 
+
 import com.vikings.ragnar.embeddable.EventCauseId;
 
 import javax.persistence.*;
-import java.io.InterruptedIOException;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name="base_data")
@@ -20,30 +20,37 @@ public class BaseDataEntity implements Serializable{
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id")
     private Integer id;
-    @Column(name="Date_Time") private Date dateTime;
-    //@Column(name="Event_id") private Integer eventId;
+
+    @Column(name="Date_Time") private Timestamp dateTime;
+//    @Column(name="Event_id") private Integer eventId;
     @Column(name="Failure_Class") private Integer failureClass;
-    @Column(name="UE_Type") private String ueType;
+    @Column(name="UE_Type") private Integer ueType;
     @Column(name="Market") private Integer market;
     @Column(name="Operator") private Integer operator;
     @Column(name="Cell_id") private Integer cellId;
     @Column(name="Duration") private Integer duration;
-    //@Column(name="Cause_Code") private Integer causeCode;
+//    @Column(name="Cause_Code") private Integer causeCode;
     @Column(name="NE_Version") private String neVersion;
     @Column(name="IMSI") private Long imsi;
     @Column(name="HIER3_ID") private BigDecimal hier3Id;
     @Column(name="HIER32_ID") private BigDecimal hier32Id;
     @Column(name="HER321_ID") private BigDecimal hier321Id;
 
-    @ManyToOne
+//    @JoinColumns({
+//            @JoinColumn(
+//                    name = "Cause_Code",  insertable = false, updatable = false,
+//                    referencedColumnName = "Cause_Code"),
+//            @JoinColumn(
+//                    name = "Event_id",  insertable = false, updatable = false,
+//                    referencedColumnName = "Event_id")
+//    })
     @JoinColumns({
             @JoinColumn(
-                    name = "Cause_Code",  insertable = false, updatable = false,
-                    referencedColumnName = "Cause_Code"),
+                    name = "Cause_Code", referencedColumnName = "Cause_Code"),
             @JoinColumn(
-                    name = "Event_id",  insertable = false, updatable = false,
-                    referencedColumnName = "Event_id")
+                    name = "Event_id", referencedColumnName = "Event_id")
     })
+    @ManyToOne
     private EventCauseEntity eventCauseEntity;
 
     public EventCauseEntity getEventCauseEntity() {
@@ -54,21 +61,22 @@ public class BaseDataEntity implements Serializable{
         this.eventCauseEntity = eventCauseEntity;
     }
 
-    public BaseDataEntity(){}
+    public BaseDataEntity(){
+    }
 
-    public BaseDataEntity(Date dateTime, Integer eventId, Integer failureClass, String ueType, Integer market, Integer operator,
-                          Integer cellId, Integer duration, Integer causeCode, String neVersion, Long imsi, BigDecimal hier3Id, BigDecimal hier32Id,
+    public BaseDataEntity(Timestamp dateTime, EventCauseEntity eventCauseEntity, Integer failureClass, Integer ueType, Integer market, Integer operator,
+                          Integer cellId, Integer duration, String neVersion, Long imsi, BigDecimal hier3Id, BigDecimal hier32Id,
                           BigDecimal hier321Id) {
         this.dateTime = dateTime;
-        eventCauseEntity.setCpk(new EventCauseId(eventId, causeCode));
+        this.eventCauseEntity = eventCauseEntity;
         this.failureClass = failureClass;
         this.ueType = ueType;
         this.market = market;
         this.operator = operator;
         this.cellId = cellId;
         this.duration = duration;
-        //this.eventId = eventId;
-        //this.causeCode = causeCode;
+//        this.eventId = eventId;
+//        this.causeCode = causeCode;
         this.neVersion = neVersion;
         this.imsi = imsi;
         this.hier3Id = hier3Id;
@@ -83,21 +91,20 @@ public class BaseDataEntity implements Serializable{
 
     public Integer getId(){return id;}
 
-    public Date getDateTime() {
+    public Timestamp getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(Date date_time) {
+    public void setDateTime(Timestamp date_time) {
         this.dateTime = date_time;
     }
 
     public Integer getEventId() {
-        //eturn  eventId;
-        return eventCauseEntity.getCpk().getEventId();
+        return eventCauseEntity.getEventId();
     }
 
     public void setEventId(Integer event_id) {
-        eventCauseEntity.getCpk().setEventId(event_id);
+        eventCauseEntity.setEventId(event_id);
     }
 
     public Integer getFailureClass() {
@@ -108,11 +115,11 @@ public class BaseDataEntity implements Serializable{
         this.failureClass = failure_class;
     }
 
-    public String getUeType() {
+    public Integer getUeType() {
         return ueType;
     }
 
-    public void setUeType(String ue_type) {
+    public void setUeType(Integer ue_type) {
         this.ueType = ue_type;
     }
 
@@ -149,12 +156,11 @@ public class BaseDataEntity implements Serializable{
     }
 
     public Integer getCauseCode() {
-        //return causeCode;
-        return eventCauseEntity.getCpk().getCauseCode();
+        return eventCauseEntity.getCauseCode();
     }
 
     public void setCauseCode(Integer cause_code) {
-        eventCauseEntity.getCpk().setCauseCode(cause_code);
+        eventCauseEntity.setCauseCode(cause_code);
     }
 
     public String getNeVersion() {
@@ -197,8 +203,70 @@ public class BaseDataEntity implements Serializable{
         this.hier321Id = hier321_id;
     }
 
+    @Override
+    public String toString(){
+    return "BaseDataEntity: " +
+            "\ndateTime: " + dateTime +
+//            "\neventId: " + eventId +
+            "\neventId: " + eventCauseEntity.getEventId() +
+            "\nfailureClass: " + failureClass +
+            "\nueType: " + ueType +
+            "\nmarket: " + market +
+            "\noperator: " + operator +
+            "\ncellId: " + cellId +
+            "\nduration: " + duration +
+//            "\ncauseCode: " + causeCode +
+            "\ncauseCode: " + eventCauseEntity.getCauseCode() +
+            "\nneVersion: " + neVersion +
+            "\nimsi: " + imsi +
+            "\nhier3Id: " + hier3Id +
+            "\nhier32Id: " + hier32Id +
+            "\nhier321Id: " + hier321Id + "\n";
+    }
 
+    public boolean isIncomplete(){
+        if(dateTime == null) return true;
+        if(eventCauseEntity.getEventId() == null) return true;
+//        if(getEventId() == null) return true;
+        if(failureClass == null) return true;
+        if(ueType == null) return true;
+        if(market == null) return true;
+        if(operator == null) return true;
+        if(cellId == null) return true;
+        if(duration == null) return true;
+        if(eventCauseEntity.getCauseCode() == null) return true;
+//        if(getCauseCode() == null) return true;
+        if(neVersion== null) return true;
+        if(imsi == null) return true;
+        if(hier3Id == null) return true;
+        if(hier32Id == null) return true;
+        if(hier321Id == null) return true;
+        return false;
+    }
 
+    public boolean failureClassIsValid(){
+        if(failureClass >= 0 && failureClass < 5) return true;
+        return false;
+    }
 
+    public boolean eventIdCauseCodeIsValid(){
+        int eventId = eventCauseEntity.getEventId();
+        int causeCode = eventCauseEntity.getCauseCode();
+
+        // event_id validation
+        if(eventId == 4097){
+            if(causeCode >= 0 && causeCode < 17) return true;
+        }
+        if(eventId == 4098){
+            if(causeCode >= 0 && causeCode < 4) return true;
+        }
+        if(eventId == 4125){
+            if(causeCode >= 0 && causeCode < 34) return true;
+        }
+        if(eventId == 4106){
+            if(causeCode >= 0 && causeCode < 25) return true;
+        }
+        return false;
+    }
 }
 

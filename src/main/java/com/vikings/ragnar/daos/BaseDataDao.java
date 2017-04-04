@@ -22,11 +22,11 @@ public interface BaseDataDao {
 
     void remove(Integer id);
 
-    Collection<BaseDataEntity> searchErrorInfoBasedOnIMSI(Long imsi);
+    Collection<?> searchErrorInfoBasedOnIMSI(Long imsi);
 
     List<?> countNoOfFailuresForImsi(Date date1, Date date2);
 
-    Collection<BaseDataEntity> getMostCommonMarketOperatorCellCombo();
+    Collection<BaseDataEntity> getTopTenMostCommonMarketOperatorCellCombo(Date dateOne, Date dateTwo);
 
     Collection<BaseDataEntity> getTopTenMostCommonImsi(Date date1, Date date2);
 
@@ -37,5 +37,4 @@ public interface BaseDataDao {
     Collection<BaseDataEntity> getAllIMSIByDate(Date d1, Date d2);
 
     Long getByIMSIAndTimePeriod(Long imsi, Date dateFrom, Date dateTo);
-
 }

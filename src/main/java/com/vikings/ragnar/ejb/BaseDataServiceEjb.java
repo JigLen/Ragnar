@@ -6,7 +6,6 @@ import com.vikings.ragnar.entities.BaseDataEntity;
 import javax.ejb.EJB;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
-import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -46,7 +45,7 @@ public class BaseDataServiceEjb implements BaseDataService{
     }
 
     @Override
-    public Collection<BaseDataEntity> searchErrorInfoBasedOnIMSI(Long imsi) {
+    public Collection<?> searchErrorInfoBasedOnIMSI(Long imsi) {
         return baseDataDao.searchErrorInfoBasedOnIMSI(imsi);
     }
 
@@ -56,8 +55,8 @@ public class BaseDataServiceEjb implements BaseDataService{
     }
 
     @Override
-    public Collection<BaseDataEntity> getMostCommonMarketOperatorCellCombo() {
-        return baseDataDao.getMostCommonMarketOperatorCellCombo();
+    public Collection<BaseDataEntity> getTopTenMostCommonMarketOperatorCellCombo(Date dateOne, Date dateTwo) {
+        return baseDataDao.getTopTenMostCommonMarketOperatorCellCombo(dateOne, dateTwo);
     }
 
     @Override
@@ -83,5 +82,4 @@ public class BaseDataServiceEjb implements BaseDataService{
     public Long getByIMSIAndTimePeriod(Long imsi, Date dateFrom, Date dateTo) {
         return Long.valueOf(baseDataDao.getByIMSIAndTimePeriod(imsi, dateFrom, dateTo));
     }
-
 }

@@ -5,9 +5,7 @@ import com.vikings.ragnar.entities.BaseDataEntity;
 
 import javax.ejb.Local;
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -75,10 +73,15 @@ public class BaseDataDaoImpl implements BaseDataDao {
     }
 
     @Override
-    public Collection<BaseDataEntity> searchErrorInfoBasedOnIMSI(Long imsi) {
-        Query query = em.createQuery( "from BaseDataEntity b where b.imsi = :imsi");
-        query.setParameter("imsi", imsi);
-        List<BaseDataEntity> list = query.getResultList();
+    public Collection<?> searchErrorInfoBasedOnIMSI(Long imsi) {
+        Query query = em.createQuery( "SELECT b.eventCauseEntity.cpk.eventId, b.eventCauseEntity.cpk.causeCode, b.failureClass, e.description " +
+                "FROM BaseDataEntity as b join b.eventCauseEntity as e  " +
+                "where b.eventCauseEntity.cpk.eventId = e.cpk.eventId " +
+                "and b.eventCauseEntity.cpk.causeCode = e.cpk.causeCode " +
+                "and b.imsi = :imsi").setParameter("imsi", imsi);
+
+
+        List<?> list = query.getResultList();
         return list;
 
 //        Query query = em.createQuery(
@@ -124,9 +127,9 @@ public class BaseDataDaoImpl implements BaseDataDao {
 
     }
 
+    // US 9
     @Override
-    public List<?> countNoOfFailuresForImsi(Date date1, Date date2)
-    {
+    public List<?> countNoOfFailuresForImsi(Date date1, Date date2) {
         Query query = em.createQuery( "select b.imsi, count(*),sum(b.duration) from BaseDataEntity b " +
                 "where b.dateTime between :date1 and :date2 group by b.imsi");
         query.setParameter("date1", date1);
@@ -135,21 +138,25 @@ public class BaseDataDaoImpl implements BaseDataDao {
         return data;
     }
 
+    // US 11
     @Override
-    public Collection<BaseDataEntity> getMostCommonMarketOperatorCellCombo()
-    {
-            Query query = em.createQuery("from BaseDataEntity base " +
+    public Collection<BaseDataEntity> getTopTenMostCommonMarketOperatorCellCombo(Date dateOne, Date dateTwo){
+            Query query = em.createQuery("select base.market, base.operator,base.cellId from BaseDataEntity base where dateTime between :dateOne " +
+                    "and :dateTwo " +
                     "group by base.market,base.operator,base.cellId " +
                     "order by count(base) desc ");
+            query.setParameter("dateOne", dateOne);
+            query.setParameter("dateTwo", dateTwo);
             query.setMaxResults(10);
             List<BaseDataEntity> lstCombo = query.getResultList();
             return lstCombo;
     }
 
+    // US 12
     @Override
     public Collection<BaseDataEntity> getTopTenMostCommonImsi(Date date1, Date date2)
     {
-            Query query = em.createQuery("from BaseDataEntity base where dateTime between :date1 and :date2 " +
+            Query query = em.createQuery("select base.imsi from BaseDataEntity base where dateTime between :date1 and :date2 " +
                     "group by base.imsi order by count(base) desc");
             query.setParameter("date1", date1);
             query.setParameter("date2", date2);
@@ -158,11 +165,14 @@ public class BaseDataDaoImpl implements BaseDataDao {
             return lstCombo;
     }
 
+    //US 6
     @Override
     public Collection<?> getUniqueCauseCodes(Long imsi)
     {
-            Query query = em.createQuery("select distinct b.eventCauseEntity.cpk.causeCode from BaseDataEntity b " +
-                    "where b.imsi = :imsi").setParameter("imsi", imsi);
+//            Query query = em.createQuery("select distinct b.eventCauseEntity.cpk.causeCode from BaseDataEntity b " +
+//                    "where b.imsi = :imsi").setParameter("imsi", imsi);
+        Query query = em.createQuery("select distinct b.eventCauseEntity.cpk.causeCode from BaseDataEntity b " +
+                "where b.imsi = :imsi").setParameter("imsi", imsi);
             List<?> uCC = query.getResultList();
             return uCC;
     }
@@ -173,10 +183,11 @@ public class BaseDataDaoImpl implements BaseDataDao {
         Collection<?> results = query.getResultList();
         return results;
     }
+
     //7
     @Override
     public Collection<BaseDataEntity> getAllIMSIByDate(Date d1, Date d2){
-        Query query = em.createQuery("from  BaseDataEntity base where base.dateTime between :d1 and :d2");
+        Query query = em.createQuery("from BaseDataEntity base where base.dateTime between :d1 and :d2");
         query.setParameter("d1", d1);
         query.setParameter("d2", d2);
         List<BaseDataEntity> lstIMSI = query.getResultList();
@@ -194,5 +205,4 @@ public class BaseDataDaoImpl implements BaseDataDao {
         return count;
 
     }
-
 }

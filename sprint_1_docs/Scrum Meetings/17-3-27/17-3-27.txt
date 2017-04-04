@@ -1,0 +1,38 @@
+What did you do?
+
+Dimitar     - Login nearly there
+
+Sahar       - Nothing
+
+David       - Nothing
+
+Carl        - Nothing
+
+Ciarán      - Nothing
+
+
+What will you do today?
+
+Dimitar 	- US8
+
+Sahar		- US6
+
+David		- US4
+
+Carl		- US1
+
+Ciaran		- US7
+
+
+ What issues do you have?
+
+Dimitar 	- Abandoned AngularJS
+
+Sahar		-
+
+David		-
+
+Carl		-
+
+Ciaran		-
+

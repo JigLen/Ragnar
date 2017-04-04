@@ -1,6 +1,7 @@
 // http://stackoverflow.com/questions/166221/how-can-i-upload-files-asynchronously
 
 var isAcceptable = false;
+
 $(document).ready(function () {
     $('#fileUploadB1').on('change', function() {
 

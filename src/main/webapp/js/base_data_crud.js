@@ -130,18 +130,30 @@ $(document).ready(function(){
         });
     });
 
+    /*************************** USER STORY 4 **********************************/
     $("#US4Show").click(function() {
         var imsi = $("#getImsiNum").val();
         alert(imsi);
         $.ajax({
             type: "GET",
-            url: "ragnar/base_data/userCase4/" + imsi,
+            url: "ragnar/base_data/userStory4/" + imsi,
             success: function (baseDataList) {
                 alert("Inside");
                 $.each(baseDataList, function (index, value) {
-                    $("#query4Holder").append("<li>"  + value.eventId + " " + value.causeCode
-                        + " " + value.failureClass + " " + value.imsi + "</li>");
+                    var array = value.toString();
+                    var strArray = array.split(",");
+                    var eventID = strArray[0];
+                    var causecode = strArray[1];
+                    var imsi = strArray[2];
+                    var description = strArray[3];
+
+                    $("#query4Holder").append("<li>"  + eventID + " " + causecode
+                        + " " + imsi + " " + description + "</li>");
                 });
+                /*
+                 $("#query4Holder").append("<li>"  + value.eventId + " " + value.causeCode
+                 + " " + value.failureClass + " " + value.imsi + "</li>");
+                 });*/
             },
             error: function(){
                 alert("Error!");
@@ -193,7 +205,7 @@ $(document).ready(function(){
             url: "ragnar/base_data/"+d1+"/"+d2,
             success: function (lst) {
                 $.each(lst, function (index, value) {
-                    $("#misiHolderByDate").append("<li>"+value.imsi+" "+value.failureClass+"</li>");
+                    $("#misiHolderByDate").append("<li>"+ value.imsi + "</li>");
                 });
             },
             error:function () {
@@ -249,17 +261,23 @@ $(document).ready(function(){
         $("#baseDataHolder").empty();
     });
 
-
     /*************************** USER STORY 11 **********************************/
     $("#mostCommonMarketOperatorCellCombo").click(function() {
+        var date1 = $("#US11DateFrom").val();
+        var date2 = $("#US11DateTo").val();
         $.ajax({
             type: "GET",
-            url: "ragnar/base_data/userStory11",
+            url: "ragnar/base_data/userStory11/" + date1 + "/" + date2,
             success: function (lst) {
                // mostCommonMarketOperatorCellComboHolder.empty();
                 $("#mostCommonMarketOperatorCellComboHolder").empty();
                 $.each(lst, function (index, value) {
-                    $("#mostCommonMarketOperatorCellComboHolder").append("<li>" + value.market + " " + value.operator + " " + value.cellId + "</li>")
+                    var array = value.toString();
+                    var strArray = array.split(",");
+                    var market = strArray[0];
+                    var operator = strArray[1];
+                    var cellId = strArray[2];
+                    $("#mostCommonMarketOperatorCellComboHolder").append("<li>" + market + " " + operator + " " + cellId + "</li>")
                 });
             },
             error:function () {
@@ -283,7 +301,7 @@ $(document).ready(function(){
                 //mostCommonIMSIFailsByDateHolder.empty();
                 $("#mostCommonIMSIFailsByDateHolder").empty();
                 $.each(lst, function (index, value) {
-                    $("#mostCommonIMSIFailsByDateHolder").append("<li>"+value.imsi+"</li>");
+                    $("#mostCommonIMSIFailsByDateHolder").append("<li>"+value+"</li>");
                 });
             },
             error:function () {
@@ -316,7 +334,9 @@ $(document).ready(function(){
             }
         });
     });
+
     $("#US14CloseList").click(function() {
         $("#US14List").empty();
     });
+
 });

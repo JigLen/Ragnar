@@ -11,4 +11,6 @@ import java.util.Collection;
 @Local
 public interface UserService {
     UserEntity getUser(Integer id,String password);
+
+    void addUser(UserEntity user);
 }

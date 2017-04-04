@@ -1,0 +1,38 @@
+What did you do?
+
+Dimitar     - Researched/implemented Arquillian testing. Still ongoing.
+
+Sahar       - Finished excel converter. Wrote EJB tests that dont work.
+
+David       - Full Crud 99% implemented. Show/hide lists in index.html.
+
+Carl        - Arquillian testing with Dimitar and sahar. Work on file upload/listening/persistence
+
+Ciarán      - Login screen, and full slice.
+
+
+What will you do today?
+
+Dimitar 	- Researching/implementing Arquillian unit testing
+
+Sahar		- Researching/implementing Arquillian unit testing
+
+David       - Researching/implementing Arquillian unit testing
+
+Carl		- further work on file upload/listening/persistence.
+
+Ciaran		- Gathering Resources for submission.
+
+
+ What issues do you have?
+
+Dimitar 	- User Login Security. Come back to that for Sprint 1.
+
+Sahar		- Arquillian, like everyone else
+
+David		- haven't a notion.
+
+Carl		-
+
+Ciaran		-
+

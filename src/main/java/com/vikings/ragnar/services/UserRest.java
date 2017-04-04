@@ -4,10 +4,7 @@ import com.vikings.ragnar.ejb.UserService;
 import com.vikings.ragnar.entities.UserEntity;
 
 import javax.ejb.EJB;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.Collection;
 
@@ -26,4 +23,9 @@ public class UserRest {
         return userServiceEjb.getUser(userId,password);
     }
 
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void create(UserEntity user) {
+        userServiceEjb.addUser(user);
+    }
 }

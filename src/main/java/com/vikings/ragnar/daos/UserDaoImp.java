@@ -27,4 +27,9 @@ public class UserDaoImp implements  UserDao{
         return allUserInfo.get(0);
     }
 
+    @Override
+    public void addUser(UserEntity user) {
+        em.persist(user);
+    }
+
 }

@@ -21,19 +21,19 @@ public interface BaseDataService {
 
     void remove(Integer id);
 
-    Collection<BaseDataEntity> searchErrorInfoBasedOnIMSI(Long imsi);
+    Collection<?> searchErrorInfoBasedOnIMSI(Long imsi);
 
-    List<?> countNoOfFailuresForImsi(Date date1, Date date2);
+    Collection<?> countNoOfFailuresForImsi(Date date1, Date date2);
 
-    Collection<BaseDataEntity> getMostCommonMarketOperatorCellCombo();
+    Collection<?> getTopTenMostCommonMarketOperatorCellCombo(Date dateOne, Date dateTwo);
 
-    Collection<BaseDataEntity> getTopTenMostCommonImsi(Date date1, Date date2);
+    Collection<?> getTopTenMostCommonImsi(Date date1, Date date2);
 
     Collection<?> getUniqueCauseCodes(Long imsi);
 
     Collection<?> getImsisByFailureClass(Integer failureClass);
 
-    Collection<BaseDataEntity> getAllIMSIByDate(Date d1, Date d2);
+    Collection<?> getAllIMSIByDate(Date d1, Date d2);
 
     Long getByIMSIAndTimePeriod(Long imsi, Date dateFrom, Date dateTo);
 }

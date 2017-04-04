@@ -41,9 +41,28 @@
     <script type="text/javascript" src="js/mcc_mnc_crud.js"></script>
     <script type="text/javascript" src="js/base_data_crud.js"></script>
 
+    <script type="text/javascript" src="js/access_check.js"></script>
+
     <link id="css" rel ="stylesheet" href="css/basic.css">
 
+
+
 <h1>Ragnar</h1>
+    <script>
+       /* var access_lv=window.location.hash.substring(1);
+        if(!(checkAccess(1,access_lv))){
+            location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/login.html";
+        }
+        if(!(checkAccess(2,access_lv))){
+            location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/login.html";
+        }
+        if(!(checkAccess(3,access_lv))){
+            location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/login.html";
+        }
+        if(!(checkAccess(4,access_lv))){
+            location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/login.html";
+        }*/
+    </script>
 </head>
 <script>
      location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/login.html";
@@ -57,12 +76,43 @@ Carl McCann<br>
 
 
 <!--http://stackoverflow.com/questions/166221/how-can-i-upload-files-asynchronously-->
-<form enctype="multipart/form-data" method="post">
-    <input name="file" type="file" id="fileUploadB1" />
-    <input type="button" name="upload "value="Upload" id="fileUploadB2"/>
-</form>
-<progress></progress>
 
+
+
+<h1>Sprint 1</h1>
+
+
+<div class="container" id="US1Container">
+    <div class="left">
+        <h3>US 1:receive and import Datasets <br>
+            US 3: Validation <br>
+            US 21: 30000 records import < 2 mins
+        </h3>
+        <form enctype="multipart/form-data" method="post">
+            <input name="file" type="file" id="fileUploadB1" />
+            <input type="button" name="upload "value="Upload" id="fileUploadB2"/>
+        </form>
+        <progress></progress>
+    </div>
+</div>
+
+<div class="container" id="US14Container">
+    <div class="left">
+        <h3>US 14:Get IMSIs by Failure Class</h3>
+        <form>
+            <input type="text" id="US14Imsi">
+            <input type="button" id="US14SearchButton" value="Search">
+        </form>
+        <ul id="US14List">
+
+        </ul>
+
+    </div>
+
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<h1>Sprint 0</h1>
 
 <div class="container" id="failClassDiv">
     <h1>Failure Class</h1>
@@ -468,6 +518,9 @@ Carl McCann<br>
     </p>
 
 </div>
+
+<br>
+<a href="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/" class="return">Log Out</a>
 
 </body>
 

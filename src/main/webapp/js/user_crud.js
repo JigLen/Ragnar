@@ -12,7 +12,6 @@ $(document).ready(function()
 {
     $("#addUser").click(function() {
 
-        alert("TEST");
         var accessLevel =  $("#setUserType").val();
         var userId =  $("#setUserId").val();
         var password = $("#setUserPassword").val();
@@ -26,8 +25,6 @@ $(document).ready(function()
              description ="Support Engineer";
         }if(accessLevel == 4){
              description ="Customer Rep";
-        }else{
-            alert("Incorrect access type");
         }
 
         var myUser = new User(userId, password,accessLevel, description );
