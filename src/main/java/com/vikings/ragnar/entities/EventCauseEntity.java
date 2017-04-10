@@ -1,6 +1,6 @@
 package com.vikings.ragnar.entities;
 
-import com.vikings.ragnar.embeddable.EventCauseId;
+import com.vikings.ragnar.entities.embeddable.EventCauseId;
 
 import javax.persistence.*;
 import java.io.Serializable;

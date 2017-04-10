@@ -23,6 +23,12 @@ public class UeEntity implements Serializable {
     @Column(name="OS")                  private String os;
     @Column(name="Input_Mode")          private String inputMode;
 
+    public UeEntity() {
+
+    }
+    public UeEntity(Integer tac) {
+        this.tac = tac;
+    }
     public UeEntity(Integer tac, String marketingName, String manufacturer, String accessCapability, String model, String vendorName, String ueType, String os, String inputMode) {
         this.tac = tac;
         this.marketingName = marketingName;
@@ -35,9 +41,7 @@ public class UeEntity implements Serializable {
         this.inputMode = inputMode;
     }
 
-    public UeEntity() {
 
-    }
 
     public Integer getTac() {
         return tac;

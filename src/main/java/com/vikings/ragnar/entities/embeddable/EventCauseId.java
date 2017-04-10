@@ -1,8 +1,7 @@
-package com.vikings.ragnar.embeddable;
+package com.vikings.ragnar.entities.embeddable;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Objects;
 

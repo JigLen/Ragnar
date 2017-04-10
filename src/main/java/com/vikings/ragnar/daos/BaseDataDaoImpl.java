@@ -74,7 +74,7 @@ public class BaseDataDaoImpl implements BaseDataDao {
 
     @Override
     public Collection<?> searchErrorInfoBasedOnIMSI(Long imsi) {
-        Query query = em.createQuery( "SELECT b.eventCauseEntity.cpk.eventId, b.eventCauseEntity.cpk.causeCode, b.failureClass, e.description " +
+        Query query = em.createQuery( "SELECT b.eventCauseEntity.cpk.eventId, b.eventCauseEntity.cpk.causeCode, b.failureClassEntity.failureClass, e.description " +
                 "FROM BaseDataEntity as b join b.eventCauseEntity as e  " +
                 "where b.eventCauseEntity.cpk.eventId = e.cpk.eventId " +
                 "and b.eventCauseEntity.cpk.causeCode = e.cpk.causeCode " +
@@ -141,9 +141,9 @@ public class BaseDataDaoImpl implements BaseDataDao {
     // US 11
     @Override
     public Collection<BaseDataEntity> getTopTenMostCommonMarketOperatorCellCombo(Date dateOne, Date dateTwo){
-            Query query = em.createQuery("select base.market, base.operator,base.cellId from BaseDataEntity base where dateTime between :dateOne " +
+            Query query = em.createQuery("select base.mccMncEntity.mccMncId.mcc, base.mccMncEntity.mccMncId.mnc,base.cellId from BaseDataEntity base where dateTime between :dateOne " +
                     "and :dateTwo " +
-                    "group by base.market,base.operator,base.cellId " +
+                    "group by base.mccMncEntity.mccMncId.mcc,base.mccMncEntity.mccMncId.mnc,base.cellId " +
                     "order by count(base) desc ");
             query.setParameter("dateOne", dateOne);
             query.setParameter("dateTwo", dateTwo);
@@ -179,7 +179,7 @@ public class BaseDataDaoImpl implements BaseDataDao {
 
     @Override
     public Collection<?> getImsisByFailureClass(Integer failureClass) {
-        Query query = em.createQuery("select b.imsi from BaseDataEntity b where b.failureClass=:input group by b.imsi").setParameter("input", failureClass);
+        Query query = em.createQuery("select b.imsi from BaseDataEntity b where b.failureClassEntity.failureClass=:input group by b.imsi").setParameter("input", failureClass);
         Collection<?> results = query.getResultList();
         return results;
     }
@@ -197,7 +197,7 @@ public class BaseDataDaoImpl implements BaseDataDao {
     // US 5
     @Override
     public Long getByIMSIAndTimePeriod(Long imsi, Date dateFrom, Date dateTo) {
-        Query query = em.createQuery(" SELECT count(base.failureClass) from BaseDataEntity base where base.imsi =:imsi and base.dateTime between :d1 and :d2");
+        Query query = em.createQuery(" SELECT count(base.failureClassEntity.failureClass) from BaseDataEntity base where base.imsi =:imsi and base.dateTime between :d1 and :d2");
         query.setParameter("imsi", imsi);
         query.setParameter("d1", dateFrom);
         query.setParameter("d2", dateTo);

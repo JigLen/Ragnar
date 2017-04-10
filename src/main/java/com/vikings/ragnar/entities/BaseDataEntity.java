@@ -5,7 +5,6 @@ package com.vikings.ragnar.entities;
  */
 
 
-import com.vikings.ragnar.embeddable.EventCauseId;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -22,28 +21,32 @@ public class BaseDataEntity implements Serializable{
     private Integer id;
 
     @Column(name="Date_Time") private Timestamp dateTime;
-//    @Column(name="Event_id") private Integer eventId;
-    @Column(name="Failure_Class") private Integer failureClass;
-    @Column(name="UE_Type") private Integer ueType;
-    @Column(name="Market") private Integer market;
-    @Column(name="Operator") private Integer operator;
+//    @Column(name="Market") private Integer market;
+//    @Column(name="Operator") private Integer operator;
     @Column(name="Cell_id") private Integer cellId;
     @Column(name="Duration") private Integer duration;
-//    @Column(name="Cause_Code") private Integer causeCode;
     @Column(name="NE_Version") private String neVersion;
     @Column(name="IMSI") private Long imsi;
     @Column(name="HIER3_ID") private BigDecimal hier3Id;
     @Column(name="HIER32_ID") private BigDecimal hier32Id;
     @Column(name="HER321_ID") private BigDecimal hier321Id;
 
-//    @JoinColumns({
-//            @JoinColumn(
-//                    name = "Cause_Code",  insertable = false, updatable = false,
-//                    referencedColumnName = "Cause_Code"),
-//            @JoinColumn(
-//                    name = "Event_id",  insertable = false, updatable = false,
-//                    referencedColumnName = "Event_id")
-//    })
+
+    @JoinColumns({
+            @JoinColumn(name="Market", referencedColumnName="MCC"),
+            @JoinColumn(name="Operator", referencedColumnName="MNC")
+
+    })
+    @ManyToOne
+    private MccMncEntity mccMncEntity;
+
+    @JoinColumn(name="UE_Type", referencedColumnName="TAC")
+    @ManyToOne
+    private UeEntity ueEntity;
+
+    @JoinColumn(name="Failure_Class", referencedColumnName="Failure_Class")
+    @ManyToOne
+    private FailureClassEntity failureClassEntity;
     @JoinColumns({
             @JoinColumn(
                     name = "Cause_Code", referencedColumnName = "Cause_Code"),
@@ -64,19 +67,16 @@ public class BaseDataEntity implements Serializable{
     public BaseDataEntity(){
     }
 
-    public BaseDataEntity(Timestamp dateTime, EventCauseEntity eventCauseEntity, Integer failureClass, Integer ueType, Integer market, Integer operator,
+    public BaseDataEntity(Timestamp dateTime, EventCauseEntity eventCauseEntity, FailureClassEntity failureClassEntity, UeEntity ueEntity, MccMncEntity mccMncEntity,
                           Integer cellId, Integer duration, String neVersion, Long imsi, BigDecimal hier3Id, BigDecimal hier32Id,
                           BigDecimal hier321Id) {
         this.dateTime = dateTime;
         this.eventCauseEntity = eventCauseEntity;
-        this.failureClass = failureClass;
-        this.ueType = ueType;
-        this.market = market;
-        this.operator = operator;
+        this.failureClassEntity = failureClassEntity;
+        this.ueEntity = ueEntity;
+        this.mccMncEntity = mccMncEntity;
         this.cellId = cellId;
         this.duration = duration;
-//        this.eventId = eventId;
-//        this.causeCode = causeCode;
         this.neVersion = neVersion;
         this.imsi = imsi;
         this.hier3Id = hier3Id;
@@ -108,35 +108,43 @@ public class BaseDataEntity implements Serializable{
     }
 
     public Integer getFailureClass() {
-        return failureClass;
+        return failureClassEntity.getFailureClass();
     }
 
     public void setFailureClass(Integer failure_class) {
-        this.failureClass = failure_class;
+        this.failureClassEntity.setFailureClass(failure_class);
     }
 
     public Integer getUeType() {
-        return ueType;
+        return ueEntity.getTac();
+    }
+
+    public UeEntity getUeEntity() {
+        return ueEntity;
+    }
+
+    public void setUeEntity(UeEntity ueEntity) {
+        this.ueEntity = ueEntity;
     }
 
     public void setUeType(Integer ue_type) {
-        this.ueType = ue_type;
+        this.ueEntity.setTac(ue_type);
     }
 
     public Integer getMarket() {
-        return market;
+        return mccMncEntity.getMcc();
     }
 
     public void setMarket(Integer market) {
-        this.market = market;
+        this.mccMncEntity.setMcc(market);
     }
 
     public Integer getOperator() {
-        return operator;
+        return this.mccMncEntity.getMnc();
     }
 
     public void setOperator(Integer operator) {
-        this.operator = operator;
+        this.mccMncEntity.setMnc(operator);
     }
 
     public Integer getCellId() {
@@ -203,16 +211,32 @@ public class BaseDataEntity implements Serializable{
         this.hier321Id = hier321_id;
     }
 
+    public FailureClassEntity getFailureClassEntity() {
+        return failureClassEntity;
+    }
+
+    public void setFailureClassEntity(FailureClassEntity failureClassEntity) {
+        this.failureClassEntity = failureClassEntity;
+    }
+
+    public MccMncEntity getMccMncEntity() {
+        return mccMncEntity;
+    }
+
+    public void setMccMncEntity(MccMncEntity mccMncEntity) {
+        this.mccMncEntity = mccMncEntity;
+    }
+
     @Override
     public String toString(){
     return "BaseDataEntity: " +
             "\ndateTime: " + dateTime +
 //            "\neventId: " + eventId +
             "\neventId: " + eventCauseEntity.getEventId() +
-            "\nfailureClass: " + failureClass +
-            "\nueType: " + ueType +
-            "\nmarket: " + market +
-            "\noperator: " + operator +
+            "\nfailureClass: " + failureClassEntity.getFailureClass() +
+            "\nueType: " + ueEntity.getTac() +
+            "\nmarket: " + mccMncEntity.getMcc() +
+            "\noperator: " + mccMncEntity.getMnc() +
             "\ncellId: " + cellId +
             "\nduration: " + duration +
 //            "\ncauseCode: " + causeCode +
@@ -228,10 +252,10 @@ public class BaseDataEntity implements Serializable{
         if(dateTime == null) return true;
         if(eventCauseEntity.getEventId() == null) return true;
 //        if(getEventId() == null) return true;
-        if(failureClass == null) return true;
-        if(ueType == null) return true;
-        if(market == null) return true;
-        if(operator == null) return true;
+        if(failureClassEntity.getFailureClass() == null) return true;
+        if(ueEntity.getTac() == null) return true;
+        if(mccMncEntity.getMcc() == null) return true;
+        if(mccMncEntity.getMnc() == null) return true;
         if(cellId == null) return true;
         if(duration == null) return true;
         if(eventCauseEntity.getCauseCode() == null) return true;
@@ -245,6 +269,7 @@ public class BaseDataEntity implements Serializable{
     }
 
     public boolean failureClassIsValid(){
+        Integer failureClass = failureClassEntity.getFailureClass();
         if(failureClass >= 0 && failureClass < 5) return true;
         return false;
     }

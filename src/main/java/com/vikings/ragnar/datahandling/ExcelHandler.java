@@ -1,8 +1,8 @@
 package com.vikings.ragnar.datahandling;
 
-import com.vikings.ragnar.embeddable.EventCauseId;
-import com.vikings.ragnar.entities.BaseDataEntity;
-import com.vikings.ragnar.entities.EventCauseEntity;
+import com.vikings.ragnar.entities.*;
+import com.vikings.ragnar.entities.embeddable.EventCauseId;
+import com.vikings.ragnar.entities.embeddable.MccMncId;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 
@@ -69,19 +69,34 @@ public class ExcelHandler {
 
 
                 //Col 3 / 14 failureClass
+                FailureClassEntity failureClassEntity;
                 if(row.getCell(2).getCellType() == Cell.CELL_TYPE_NUMERIC){
-                    baseDataEntity.setFailureClass((int) row.getCell(2).getNumericCellValue());
+//                    baseDataEntity.setFailureClass();
+                    failureClassEntity = new FailureClassEntity((int) row.getCell(2).getNumericCellValue());
+                    baseDataEntity.setFailureClassEntity(failureClassEntity);
                 }
                 else{
                     if(row.getCell(2).getStringCellValue().equals("(null)")) continue;
-                    baseDataEntity.setFailureClass(new Integer(row.getCell(2).getStringCellValue()));
+//                    baseDataEntity.setFailureClass(new Integer(row.getCell(2).getStringCellValue()));
+                    failureClassEntity = new FailureClassEntity(new Integer(row.getCell(2).getStringCellValue()));
+                    baseDataEntity.setFailureClassEntity(failureClassEntity);
                 }
                 //Col 4 / 14 ueType
-                baseDataEntity.setUeType((int) row.getCell(3).getNumericCellValue());
+                UeEntity ueEntity = new UeEntity((int) row.getCell(3).getNumericCellValue());
+                baseDataEntity.setUeEntity(ueEntity);
                 //Col 5 / 14 market
-                baseDataEntity.setMarket((int) row.getCell(4).getNumericCellValue());
+//                baseDataEntity.setMarket((int) row.getCell(4).getNumericCellValue());
                 //Col 6 / 14 operator
-                baseDataEntity.setOperator((int) row.getCell(5).getNumericCellValue());
+//                baseDataEntity.setOperator((int) row.getCell(5).getNumericCellValue());
+
+                MccMncEntity mccMncEntity =
+                        new MccMncEntity(new MccMncId((int) row.getCell(4).getNumericCellValue(),
+                                (int) row.getCell(5).getNumericCellValue()));
+
+                baseDataEntity.setMccMncEntity(mccMncEntity);
+
+
+
                 //Col 7 / 14 cellId
                 baseDataEntity.setCellId((int) row.getCell(6).getNumericCellValue());
                 //Col 8 / 14 Duration

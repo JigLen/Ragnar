@@ -1,5 +1,7 @@
 package com.vikings.ragnar.entities;
 
+import com.vikings.ragnar.entities.embeddable.MccMncId;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -14,42 +16,46 @@ import java.io.Serializable;
         @NamedQuery(name="searchMccMncByCompKey",
                 query="SELECT e " +
                         "FROM MccMncEntity e " +
-                        "WHERE e.mcc = :mcc AND " +
-                        "      e.mnc = :mnc")
+                        "WHERE e.mccMncId.mcc = :mcc AND " +
+                        "      e.mccMncId.mnc = :mnc")
 })
 
 @Table(name="mcc_mnc")
 public class MccMncEntity implements Serializable{
 
     // Mobile Country Codes (MCC) and Mobile Network Codes (MNC)
-    @Id @Column(name="MCC")     private Integer mcc;
-    @Id @Column(name="MNC")     private Integer mnc;
+    @EmbeddedId protected MccMncId mccMncId;
     @Column(name="Country")     private String country;
     @Column(name="Operator")    private String operator;
 
     public MccMncEntity(){}
 
-    public MccMncEntity(Integer mcc, Integer mnc, String country, String operator) {
-        this.mcc = mcc;
-        this.mnc = mnc;
+    public MccMncEntity(MccMncId mccMncId){
+        this.mccMncId = mccMncId;
+    }
+
+
+
+    public MccMncEntity(MccMncId mccMncId, String country, String operator) {
+        this.mccMncId = mccMncId;
         this.country = country;
         this.operator = operator;
     }
 
     public Integer getMcc() {
-        return mcc;
+        return mccMncId.getMCC();
     }
 
     public void setMcc(Integer mcc) {
-        this.mcc = mcc;
+        this.mccMncId.setMcc(mcc);
     }
 
     public Integer getMnc() {
-        return mnc;
+        return mccMncId.getMNC();
     }
 
     public void setMnc(Integer mnc) {
-        this.mnc = mnc;
+        this.mccMncId.setMnc(mnc);
     }
 
     public String getCountry() {

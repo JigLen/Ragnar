@@ -41,6 +41,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Base_Data` (
  FOREIGN KEY (Failure_Class) REFERENCES Failure_Class(Failure_Class),
  CONSTRAINT ue_fk
  FOREIGN KEY (UE_Type) REFERENCES UE(TAC),
+ CONSTRAINT mcc_mnc_fk
+FOREIGN KEY (Market, Operator) REFERENCES MCC_MNC(MCC, MNC),
  primary key(id))
 ENGINE = InnoDB;
 

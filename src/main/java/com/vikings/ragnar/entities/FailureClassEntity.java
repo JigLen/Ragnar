@@ -18,6 +18,10 @@ public class FailureClassEntity implements Serializable{
     public FailureClassEntity() {
     }
 
+    public FailureClassEntity(Integer failureClass) {
+        this.failureClass = failureClass;
+    }
+
     public FailureClassEntity(Integer failureClass, String description) {
         this.failureClass = failureClass;
         this.description = description;

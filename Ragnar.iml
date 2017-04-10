@@ -13,7 +13,6 @@
           <root url="file://$MODULE_DIR$/src/main/java" />
           <root url="file://$MODULE_DIR$/src/main/resources" />
         </sourceRoots>
-<<<<<<< HEAD
       </configuration>
     </facet>
     <facet type="jpa" name="JPA">
@@ -24,8 +23,7 @@
           <factory-entry name="mydb" value="fbeca3e1-24c6-41c0-8252-e67348b80982" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
-=======
->>>>>>> master
+
       </configuration>
     </facet>
   </component>
@@ -41,11 +39,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-<<<<<<< HEAD
-=======
     <orderEntry type="library" name="jquery-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="Arquillian JUnit:Release" level="project" />
->>>>>>> master
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax:javaee-api:6.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.0.Final" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.resource:jboss-connector-api_1.5_spec:1.0.0.Final" level="project" />
