@@ -293,5 +293,42 @@ public class BaseDataEntity implements Serializable{
         }
         return false;
     }
+
+    public boolean mccMncIsValid(){
+        int mcc = mccMncEntity.getMcc();
+        int mnc = mccMncEntity.getMnc();
+        switch(mcc){
+            case 238:
+                if(mnc > 0 && mnc < 4) return true;
+                break;
+            case 240:
+                if(mnc == 1 || mnc == 2 || mnc == 3 || mnc == 20 || mnc == 21) return true;
+                break;
+            case 302:
+                if(mnc == 36 || mnc == 37 || mnc == 62 || mnc == 63) return true;
+                break;
+            case 310:
+                if(mnc == 10 || mnc == 12 || mnc == 13 || mnc == 540 || mnc == 550
+                        || mnc == 560 || mnc == 570 || mnc == 580 || mnc == 590) return true;
+                break;
+            case 340:
+                if(mnc > 0 && mnc < 4) return true;
+                break;
+            case 344:
+                if(mnc == 30 || mnc == 920 || mnc == 930) return true;
+                break;
+            case 405:
+                if(mnc > 0 && mnc < 6) return true;
+                break;
+            case 440:
+                if(mnc > 8 && mnc < 12) return true;
+                break;
+            case 505:
+                if(mnc == 62 || mnc == 68 || mnc == 71 || mnc == 72
+                        || mnc == 88 || mnc == 90) return true;
+                break;
+        }
+        return false;
+    }
 }
 

@@ -72,10 +72,15 @@ public class DataWatcherAndImportEjb {
                                 Collection<BaseDataEntity> toBePersisted = ExcelHandler.excelFileHandler(relPathToFilename);
                                 System.out.println("Persisting entities");
                                 for(BaseDataEntity baseDataEntity: toBePersisted){
-                                    UserTransaction uTx = sessionContext.getUserTransaction();
-                                    uTx.begin();
-                                    em.persist(baseDataEntity);
-                                    uTx.commit();
+                                    try{
+                                        UserTransaction uTx = sessionContext.getUserTransaction();
+                                        uTx.begin();
+                                        em.persist(baseDataEntity);
+                                        uTx.commit();
+                                    }
+                                    catch(RollbackException e ){
+                                        e.printStackTrace();
+                                    }
                                 }
                                 System.out.println("Persistence completed in: " +
                                         ((System.currentTimeMillis() - startTime) / 1000) + "s");
@@ -97,8 +102,9 @@ public class DataWatcherAndImportEjb {
                 e.printStackTrace();
             } catch (SystemException e) {
                 e.printStackTrace();
-            } catch (RollbackException e) {
-                e.printStackTrace();
+
+//            } catch (RollbackException e) {
+//                e.printStackTrace();
             } catch (HeuristicMixedException e) {
                 e.printStackTrace();
             } catch (HeuristicRollbackException e) {

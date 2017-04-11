@@ -132,7 +132,8 @@ public class ExcelHandler {
                 }
 
                 if(!baseDataEntity.isIncomplete() && baseDataEntity.failureClassIsValid()
-                        && baseDataEntity.eventIdCauseCodeIsValid()){
+                        && baseDataEntity.eventIdCauseCodeIsValid()
+                        && baseDataEntity.mccMncIsValid()){
                     // persistence
 //                em.persist(baseDataEntity);
                     toBePersisted.add(baseDataEntity);
