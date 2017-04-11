@@ -156,7 +156,7 @@ public class BaseDataDaoImpl implements BaseDataDao {
     @Override
     public Collection<BaseDataEntity> getTopTenMostCommonImsi(Date date1, Date date2)
     {
-            Query query = em.createQuery("select base.imsi from BaseDataEntity base where dateTime between :date1 and :date2 " +
+            Query query = em.createQuery("select base.imsi, count(base) from BaseDataEntity base where dateTime between :date1 and :date2 " +
                     "group by base.imsi order by count(base) desc");
             query.setParameter("date1", date1);
             query.setParameter("date2", date2);

@@ -288,8 +288,8 @@ $(document).ready(function(){
 
     $("#closeUserStory11").click(function() {
         $("#mostCommonMarketOperatorCellComboHolder").empty();
-    });
 
+    });
     /*************************** USER STORY 12 **********************************/
     $("#mostCommonIMSIFailsByDate").click(function() {
         var d1= $("#Date1").val();
@@ -305,7 +305,8 @@ $(document).ready(function(){
                 });
             },
             error:function () {
-                alert("Date is not entered in the right format");
+
+                alert("Oh no, Error");
             }
         });
     });

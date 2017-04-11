@@ -4,8 +4,8 @@ import com.vikings.ragnar.ejb.BaseDataService;
 
 import org.jboss.resteasy.plugins.providers.multipart.InputPart;
 import org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInput;
-import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
+import javax.ejb.EJB;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
@@ -21,6 +21,8 @@ import java.io.*;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+
+import static org.jboss.shrinkwrap.resolver.api.maven.PackagingType.EJB;
 
 
 /**
@@ -83,6 +85,8 @@ public class BaseDataRest {
         Date date2 = dt.parse(d2);
         return baseDataService.getTopTenMostCommonMarketOperatorCellCombo(date1, date2);
     }
+
+    //UserStory12
     @GET
     @Produces(MediaType.APPLICATION_JSON) @Path("/userStory12/{d1}/{d2}")
     public Collection<?> getTopTenMostCommonImsi(@PathParam("d1") String d1, @PathParam("d2") String d2) throws Exception {
@@ -143,7 +147,7 @@ public class BaseDataRest {
         // relative path not working
         String path = "res/incoming_data/";
 
-        path = "/Volumes/Data/Users/carlmccann2/IdeaProjects/Ragnar/res/incoming_data/";
+        path = "Z:\\Ragnar\\res";
         String fileName = "";
 
         Map<String, List<InputPart>> formParts = input.getFormDataMap();

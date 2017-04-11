@@ -5,6 +5,15 @@
     <title>Network Engineer Services</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/base_data_crud.js"></script>
+  <!--import graph 1-->
+    <script src ="jquery.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"
+    <script>
+        $(function(){
+            $("#top10graph").load("graph1.html");
+        });
+    </script>
 </head>
 <body>
 
@@ -69,9 +78,12 @@
         </form>
         <ul id="mostCommonIMSIFailsByDateHolder">
         </ul>
-    </div>
 
+
+    </div>
 </div>
+
+<div id="top10graph"></div>
 
 <br>
 <a href="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/" class="return">Log Out</a>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Network Engineer Graphs</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+</head>
+
+<body>
+
+
+<div id="container" style="width:100%; height:400px;"></div>
+<script>
+    var chart = Highcharts.chart('container', {
+
+        title: {
+            text: 'Top 10 IMSI\'s that had call failures during a given period'       },
+
+        subtitle: {
+            text: ''
+        },
+
+        xAxis: {
+            categories: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            ,
+            crosshair: true
+        },
+
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Number of call failures'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Failures',
+            type: 'column',
+            colorByPoint: true,
+            data: [1000, 90, 80, 70, 60, 50, 40, 30, 20, 10],
+            showInLegend: false
+        }]
+
+    });
+
+
+    $('#plain').click(function () {
+        chart.update({
+            chart: {
+                inverted: false,
+                polar: false
+            },
+            subtitle: {
+                text: 'Plain'
+            }
+        });
+    });
+
+    $('#inverted').click(function () {
+        chart.update({
+            chart: {
+                inverted: true,
+                polar: false
+            },
+            subtitle: {
+                text: 'Inverted'
+            }
+        });
+    });
+
+    $('#polar').click(function () {
+        chart.update({
+            chart: {
+                inverted: false,
+                polar: true
+            },
+            subtitle: {
+                text: 'Polar'
+            }
+        });
+    });
+</script>
+</body>
+
+</html>
