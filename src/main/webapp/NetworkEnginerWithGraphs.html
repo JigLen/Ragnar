@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Network Engineer Services</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/base_data_crud.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    <script src="jquery-3.2.0.min.js"></script>
+</head>
+<body>
+
+
+
+    <!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+    <div class="left">
+        <h2>Top 10 IMSIs for failures between dates</h2>
+        <h3>User Story 12</h3>
+        <form>
+            <p>Date 1:</p>
+            <input type="text"  name="date1" id="Date1">
+            <p>Date2:</p>
+            <input type="text"  name="date2" id="Date2"><br><br>
+            <input type="button" class="btn" id="mostCommonIMSIFailsByDate" value="submit">
+            <input type="button" class="btn" id="closeUserStory12" value="CLOSE"/>
+        </form>
+
+        <table id="mostCommonIMSIFailsByDateHolder"></table>
+
+    </div>
+
+
+
+    <script>
+
+        var chart = Highcharts.chart('container', {
+            data: {
+                table: 'mostCommonIMSIFailsByDateHolder'
+            },
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Data extracted from a HTML table in the page'
+            },
+            yAxis: {
+                allowDecimals: false,
+                title: {
+                    text: 'Units'
+                }
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + '</b><br/>' +
+                        this.point.y + ' ' + this.point.name.toLowerCase();
+                }
+            }
+        });
+    </script>
+
+<br>
+<a href="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/" class="return">Log Out</a>
+
+</body>
+</html>
+

@@ -5,15 +5,7 @@
     <title>Network Engineer Services</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/base_data_crud.js"></script>
-  <!--import graph 1-->
-    <script src ="jquery.js"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="http://code.highcharts.com/modules/exporting.js"
-    <script>
-        $(function(){
-            $("#top10graph").load("graph1.html");
-        });
-    </script>
+
 </head>
 <body>
 
@@ -76,17 +68,31 @@
             <input type="button" class="btn" id="mostCommonIMSIFailsByDate" value="submit">
             <input type="button" class="btn" id="closeUserStory12" value="CLOSE"/>
         </form>
-        <ul id="mostCommonIMSIFailsByDateHolder">
-        </ul>
 
+        <table id="mostCommonIMSIFailsByDateHolder"></table>
+
+    </div>
+
+
+
+        <div>
+        <iframe src ="graph1.html" name = "Top10IMSIs" allowtransparency="true" scrolling="no" frameborder="0" width="800" height="500">
+        </iframe>
+        </div>
+        <br/>
+        <div>
+            <a href="graph1.html" target="targetframe">Open in new tab</a><br />
+        </div>
+
+        </li>
 
     </div>
 </div>
 
-<div id="top10graph"></div>
 
 <br>
 <a href="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/" class="return">Log Out</a>
 
 </body>
 </html>
+

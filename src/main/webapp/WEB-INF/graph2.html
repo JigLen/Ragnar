@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Network Engineer Graphs</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    <script src="jquery-3.2.0.min.js"></script>
+</head>
+
+<body>
+
+
+<div id="container" style="width:100%; height:400px;"></div>
+<script>
+
+    var chart = Highcharts.chart('container', {
+        data: {
+            table: 'datatable'
+        },
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Data extracted from a HTML table in the page'
+        },
+        yAxis: {
+            allowDecimals: false,
+            title: {
+                text: 'Units'
+            }
+        },
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.series.name + '</b><br/>' +
+                    this.point.y + ' ' + this.point.name.toLowerCase();
+            }
+        }
+    });
+</script>
+</body>
+
+</html>

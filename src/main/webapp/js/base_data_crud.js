@@ -301,7 +301,7 @@ $(document).ready(function(){
                 //mostCommonIMSIFailsByDateHolder.empty();
                 $("#mostCommonIMSIFailsByDateHolder").empty();
                 $.each(lst, function (index, value) {
-                    $("#mostCommonIMSIFailsByDateHolder").append("<li>"+value+"</li>");
+                    $("#mostCommonIMSIFailsByDateHolder").append("<tr><td>"+value[0]+"</td><td>"+value[1]+"</td></tr>");
                 });
             },
             error:function () {
