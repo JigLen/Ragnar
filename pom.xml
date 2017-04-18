@@ -98,9 +98,13 @@
     </dependencies>
   </dependencyManagement>
 
+  <properties>
+    <project.java.version>1.8</project.java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
 
   <dependencies>
-
     <dependency>
       <groupId>javax</groupId>
       <artifactId>javaee-api</artifactId>

@@ -79,7 +79,7 @@ public class DataWatcherAndImportEjb {
                                         uTx.commit();
                                     }
                                     catch(RollbackException e ){
-                                        e.printStackTrace();
+                                        System.out.println("Transaction Rollback. Probably Foreign Key Constraint error");
                                     }
                                 }
                                 System.out.println("Persistence completed in: " +
@@ -102,9 +102,6 @@ public class DataWatcherAndImportEjb {
                 e.printStackTrace();
             } catch (SystemException e) {
                 e.printStackTrace();
-
-//            } catch (RollbackException e) {
-//                e.printStackTrace();
             } catch (HeuristicMixedException e) {
                 e.printStackTrace();
             } catch (HeuristicRollbackException e) {

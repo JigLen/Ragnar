@@ -20,123 +20,14 @@ var BaseData = function( dateTime,  eventId,  failureClass,  ueType,  market,  o
     this.hier321Id = hier321Id;
 }
 
-
-
-
-
 $(document).ready(function(){
-
-    $("#addBaseDataButton").click(function() {
-
-        var dateTime =  $("#Date_Time").val();
-        var eventId = $("#EventId").val();
-        var failureClass =  $("#FailureClass_ID").val();
-        var ueType =  $("#UE_Type_ID").val();
-        var market = $("#Market").val();
-        var operator =  $("#Operator_ID").val();
-        var cellId = $("#Cell_ID").val();
-        var duration =  $("#Duration").val();
-        var causeCode = $("#CauseCode_ID").val();
-        var neVersion = $("#NeVersionId").val();
-        var imsi =  $("#IMSI_ID").val();
-        var hier3Id = $("#hier3").val();
-        var hier32Id =  $("#hier32").val();
-        var hier321Id = $("#hier321").val();
-        var myBaseData = new BaseData( dateTime,  eventId,  failureClass,  ueType,  market,  operator,
-            cellId,  duration,  causeCode,  neVersion,  imsi,  hier3Id,  hier32Id,
-            hier321Id);
-
-        $.ajax({
-            type: "POST",
-            url: "ragnar/allBaseDataInfo",
-            success: function () {
-                alert("BaseData added");
-                location.reload();
-            },
-            error: function(){
-                alert("BaseData POST failure")
-            },
-            data: JSON.stringify(myBaseData),
-            contentType: "application/json",
-        });
-    });
-
-
-    $("#updateBaseDataButton").click(function() {
-        alert("update button pressed");
-
-        var dateTime =  $("#failureClassID").val();
-        var eventId = $("#descriptionText").val();
-        var failureClass =  $("#failureClassID").val();
-        var ueType =  $("#failureClassID").val();
-        var market = $("#descriptionText").val();
-        var operator =  $("#failureClassID").val();
-        var cellId = $("#descriptionText").val();
-        var duration =  $("#failureClassID").val();
-        var causeCode = $("#descriptionText").val();
-        var neVersion = $("#descriptionText").val();
-        var imsi =  $("#failureClassID").val();
-        var hier3Id = $("#descriptionText").val();
-        var hier32Id =  $("#failureClassID").val();
-        var hier321Id = $("#descriptionText").val();
-        var myBaseData = new BaseData( dateTime,  eventId,  failureClass,  ueType,  market,  operator,
-            cellId,  duration,  causeCode,  neVersion,  imsi,  hier3Id,  hier32Id,
-            hier321Id);
-
-        $.ajax({
-            type: "PUT",
-            url: "ragnar/base_data",
-            success: function () {
-                alert("BaseData updated");
-                location.reload();
-            },
-            error: function () {
-                alert("BaseData Id not found")
-            },
-            data: JSON.stringify(myBaseData),
-            contentType: "application/json"
-
-        });
-    });
-
-
-    $("#deleteBaseDataButton").click(function() {
-        var id =  $("#baseDataDeleteText").val();
-        $.ajax({
-            type: "DELETE",
-            url: "ragnar/base_data/" + id,
-            success: function () {
-                alert("BaseData deleted");
-                location.reload();
-            },
-            error: function () {
-                alert("BaseData not deleted");
-            },
-        });
-    });
-
-    $("#searchByIdBaseData").click(function() {
-        var id =  $("#getBaseDataId").val();
-        $.ajax({
-            type: "GET",
-            url: "ragnar/base_data/"+ id,
-            success: function (value) {
-                alert("BaseData found");
-                $("#getBaseDataResultId").val(Date(value.dateTime) + " " + value.eventId );
-            },
-            error:function () {
-                alert("Not found");
-            }
-        });
-    });
-
     /*************************** USER STORY 4 **********************************/
     $("#US4Show").click(function() {
         var imsi = $("#getImsiNum").val();
         alert(imsi);
         $.ajax({
             type: "GET",
-            url: "ragnar/base_data/userStory4/" + imsi,
+            url: "ragnar/base_data/us4/" + imsi,
             success: function (baseDataList) {
                 alert("Inside");
                 $.each(baseDataList, function (index, value) {
@@ -189,7 +80,7 @@ $(document).ready(function(){
         alert(imsi);
         $.ajax({
             type: "GET",
-            url: "ragnar/base_data/userStory6/"+imsi,
+            url: "ragnar/base_data/us6/"+imsi,
             success: function (value) {
                 $.each(value, function(index, value) {
                     $("#UniqueCauseCodesHolder").append("<li>" + value + "</li>");
@@ -202,7 +93,7 @@ $(document).ready(function(){
         var d2= $("#getDate2").val();
         $.ajax({
             type: "GET",
-            url: "ragnar/base_data/"+d1+"/"+d2,
+            url: "ragnar/base_data/us7/"+d1+"/"+d2,
             success: function (lst) {
                 $.each(lst, function (index, value) {
                     $("#misiHolderByDate").append("<li>"+ value.imsi + "</li>");
@@ -221,7 +112,7 @@ $(document).ready(function(){
         var date2 = $("#getDate2").val();
         $.ajax({
             type: "GET",
-            url: "ragnar/base_data/userStory9/" +date1 + "/" + date2,
+            url: "ragnar/base_data/us9/" +date1 + "/" + date2,
 
             success: function (baseDataList) {
                 $("#query9Holder").empty();
@@ -267,7 +158,7 @@ $(document).ready(function(){
         var date2 = $("#US11DateTo").val();
         $.ajax({
             type: "GET",
-            url: "ragnar/base_data/userStory11/" + date1 + "/" + date2,
+            url: "ragnar/base_data/us11/" + date1 + "/" + date2,
             success: function (lst) {
                // mostCommonMarketOperatorCellComboHolder.empty();
                 $("#mostCommonMarketOperatorCellComboHolder").empty();
@@ -296,7 +187,7 @@ $(document).ready(function(){
         var d2= $("#Date2").val();
         $.ajax({
             type: "GET",
-            url: "ragnar/base_data/userStory12/"+d1+"/"+d2,
+            url: "ragnar/base_data/us12/"+d1+"/"+d2,
             success: function (lst) {
                 //mostCommonIMSIFailsByDateHolder.empty();
                 $("#mostCommonIMSIFailsByDateHolder").empty();
@@ -322,7 +213,7 @@ $(document).ready(function(){
         failureClass = parseInt(failureClass);
         $.ajax({
             type: "GET",
-            url: "ragnar/base_data/UserStory14/" + failureClass,
+            url: "ragnar/base_data/us14/" + failureClass,
 
             success: function (baseDataList) {
                 $.each(baseDataList, function (index, value) {

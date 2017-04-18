@@ -20,7 +20,7 @@ public class UserDaoImp implements  UserDao{
 
     @Override
     public UserEntity getUser(Integer id,String password) {
-        Query query = em.createQuery("from UserEntity user where user.userId = :id and user.password= :password");
+        Query query = em.createNamedQuery("getUser");
         query.setParameter("id", id);
         query.setParameter("password", password);
         List<UserEntity> allUserInfo = query.getResultList();
@@ -31,5 +31,4 @@ public class UserDaoImp implements  UserDao{
     public void addUser(UserEntity user) {
         em.persist(user);
     }
-
 }

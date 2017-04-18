@@ -4,13 +4,24 @@ package com.vikings.ragnar.entities;
  * Created by carlmccann2 on 16/02/2017.
  */
 
-
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
+@NamedQueries({
+        @NamedQuery(name = "US4", query = "SELECT b.eventCauseEntity.cpk.eventId, b.eventCauseEntity.cpk.causeCode, b.failureClassEntity.failureClass, e.description FROM BaseDataEntity AS b JOIN b.eventCauseEntity AS e WHERE b.eventCauseEntity.cpk.eventId = e.cpk.eventId AND b.eventCauseEntity.cpk.causeCode = e.cpk.causeCode AND b.imsi = :imsi"),
+        @NamedQuery(name = "US5", query = "SELECT COUNT(b.failureClassEntity.failureClass) FROM BaseDataEntity b WHERE b.imsi =:imsi AND b.dateTime BETWEEN :d1 AND :d2"),
+        @NamedQuery(name = "US6", query = "SELECT DISTINCT b.eventCauseEntity.cpk.causeCode FROM BaseDataEntity b WHERE b.imsi = :imsi"),
+        @NamedQuery(name = "US7", query = "FROM BaseDataEntity b WHERE b.dateTime BETWEEN :d1 AND :d2"),
+        // ??
+        @NamedQuery(name = "US8", query = "SELECT b.ueEntity.model, COUNT(*) FROM BaseDataEntity b JOIN b.ueEntity AS ue WHERE ue.model =:model AND b.dateTime BETWEEN :date1 AND :date2"),
+        @NamedQuery(name = "US9", query = "SELECT b.imsi, COUNT(*), SUM(b.duration) FROM BaseDataEntity b WHERE b.dateTime BETWEEN :date1 AND :date2 GROUP BY b.imsi"),
+        @NamedQuery(name = "US10", query = "SELECT b.eventCauseEntity.cpk.eventId, b.eventCauseEntity.cpk.causeCode, b.eventCauseEntity.description, COUNT(*), b.ueEntity.model FROM BaseDataEntity AS b INNER JOIN b.ueEntity AS ue WHERE b.ueEntity.model=:model GROUP BY b.eventCauseEntity.cpk.eventId, b.eventCauseEntity.cpk.causeCode"),
+        @NamedQuery(name = "US11", query = "SELECT b.mccMncEntity.mccMncId.mcc, b.mccMncEntity.mccMncId.mnc,b.cellId FROM BaseDataEntity b WHERE dateTime BETWEEN :dateOne AND :dateTwo GROUP BY b.mccMncEntity.mccMncId.mcc, b.mccMncEntity.mccMncId.mnc,b.cellId ORDER BY COUNT(b) DESC"),
+        @NamedQuery(name = "US12", query = "SELECT b.imsi FROM BaseDataEntity b WHERE dateTime BETWEEN :date1 AND :date2 GROUP BY b.imsi ORDER BY COUNT(b) DESC"),
+        @NamedQuery(name = "US14", query = "SELECT b.imsi FROM BaseDataEntity b WHERE b.failureClassEntity.failureClass=:input GROUP BY b.imsi")
+})
 @Entity
 @Table(name="base_data")
 public class BaseDataEntity implements Serializable{
@@ -21,8 +32,6 @@ public class BaseDataEntity implements Serializable{
     private Integer id;
 
     @Column(name="Date_Time") private Timestamp dateTime;
-//    @Column(name="Market") private Integer market;
-//    @Column(name="Operator") private Integer operator;
     @Column(name="Cell_id") private Integer cellId;
     @Column(name="Duration") private Integer duration;
     @Column(name="NE_Version") private String neVersion;
@@ -30,7 +39,6 @@ public class BaseDataEntity implements Serializable{
     @Column(name="HIER3_ID") private BigDecimal hier3Id;
     @Column(name="HIER32_ID") private BigDecimal hier32Id;
     @Column(name="HER321_ID") private BigDecimal hier321Id;
-
 
     @JoinColumns({
             @JoinColumn(name="Market", referencedColumnName="MCC"),
@@ -251,7 +259,6 @@ public class BaseDataEntity implements Serializable{
     public boolean isIncomplete(){
         if(dateTime == null) return true;
         if(eventCauseEntity.getEventId() == null) return true;
-//        if(getEventId() == null) return true;
         if(failureClassEntity.getFailureClass() == null) return true;
         if(ueEntity.getTac() == null) return true;
         if(mccMncEntity.getMcc() == null) return true;
@@ -259,75 +266,11 @@ public class BaseDataEntity implements Serializable{
         if(cellId == null) return true;
         if(duration == null) return true;
         if(eventCauseEntity.getCauseCode() == null) return true;
-//        if(getCauseCode() == null) return true;
         if(neVersion== null) return true;
         if(imsi == null) return true;
         if(hier3Id == null) return true;
         if(hier32Id == null) return true;
         if(hier321Id == null) return true;
-        return false;
-    }
-
-    public boolean failureClassIsValid(){
-        Integer failureClass = failureClassEntity.getFailureClass();
-        if(failureClass >= 0 && failureClass < 5) return true;
-        return false;
-    }
-
-    public boolean eventIdCauseCodeIsValid(){
-        int eventId = eventCauseEntity.getEventId();
-        int causeCode = eventCauseEntity.getCauseCode();
-
-        // event_id validation
-        if(eventId == 4097){
-            if(causeCode >= 0 && causeCode < 17) return true;
-        }
-        if(eventId == 4098){
-            if(causeCode >= 0 && causeCode < 4) return true;
-        }
-        if(eventId == 4125){
-            if(causeCode >= 0 && causeCode < 34) return true;
-        }
-        if(eventId == 4106){
-            if(causeCode >= 0 && causeCode < 25) return true;
-        }
-        return false;
-    }
-
-    public boolean mccMncIsValid(){
-        int mcc = mccMncEntity.getMcc();
-        int mnc = mccMncEntity.getMnc();
-        switch(mcc){
-            case 238:
-                if(mnc > 0 && mnc < 4) return true;
-                break;
-            case 240:
-                if(mnc == 1 || mnc == 2 || mnc == 3 || mnc == 20 || mnc == 21) return true;
-                break;
-            case 302:
-                if(mnc == 36 || mnc == 37 || mnc == 62 || mnc == 63) return true;
-                break;
-            case 310:
-                if(mnc == 10 || mnc == 12 || mnc == 13 || mnc == 540 || mnc == 550
-                        || mnc == 560 || mnc == 570 || mnc == 580 || mnc == 590) return true;
-                break;
-            case 340:
-                if(mnc > 0 && mnc < 4) return true;
-                break;
-            case 344:
-                if(mnc == 30 || mnc == 920 || mnc == 930) return true;
-                break;
-            case 405:
-                if(mnc > 0 && mnc < 6) return true;
-                break;
-            case 440:
-                if(mnc > 8 && mnc < 12) return true;
-                break;
-            case 505:
-                if(mnc == 62 || mnc == 68 || mnc == 71 || mnc == 72
-                        || mnc == 88 || mnc == 90) return true;
-                break;
-        }
         return false;
     }
 }
