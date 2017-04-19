@@ -11,11 +11,10 @@
        <class>com.vikings.ragnar.entities.BaseDataEntity</class>
        <class>com.vikings.ragnar.entities.FailureClassEntity</class>
        <class>com.vikings.ragnar.entities.UeEntity</class>
-
        <class>com.vikings.ragnar.entities.UserEntity</class>
-
        <class>com.vikings.ragnar.entities.EventCauseEntity</class>
-       <class>com.vikings.ragnar.entities.embeddable.EventCauseId</class>
+
+
 
       <properties>
          <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>

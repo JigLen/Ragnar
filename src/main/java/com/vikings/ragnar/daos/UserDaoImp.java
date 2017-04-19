@@ -7,6 +7,7 @@ import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -22,7 +23,9 @@ public class UserDaoImp implements  UserDao{
 
     @Override
     public UserEntity getUser(Integer id,String password) {
-        Query query = em.createQuery("from UserEntity user where user.userId = :id and user.password= :password");
+
+        Query query = em.createNamedQuery("getUser");
+
         query.setParameter("id", id);
         query.setParameter("password", password);
         List<UserEntity> allUserInfo = query.getResultList();
@@ -34,10 +37,12 @@ public class UserDaoImp implements  UserDao{
         em.persist(user);
     }
 
+
     // Annotation says that we do not need to open a transaction
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
     public UserEntity findUserById(Integer id) {
         return em.find(UserEntity.class, id);
     }
+
 
 }

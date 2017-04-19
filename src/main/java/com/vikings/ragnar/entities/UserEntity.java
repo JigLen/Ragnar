@@ -9,21 +9,19 @@ import java.io.Serializable;
 /**
  * Created by Ciaran Sweeney on 21/02/2017.
  */
+
+@NamedQueries({
+        @NamedQuery(name = "getUser", query = "from UserEntity user where user.userId = :id and user.password= :password")
+})
+
 @Entity
 @Table(name="users")
 public class UserEntity  implements Serializable {
-    @Id
-    @Column(name="User_id")
-    private Integer userId;
+    @Id @Column(name="User_id")     private Integer userId;
+    @Column(name="Password")        private String password;
+    @Column(name="Access_Level")    private Integer accessLevel;
+    @Column(name="Description")     private String description;
 
-    @Column(name="Password")
-    private String password;
-
-    @Column(name="Access_Level")
-    private Integer accessLevel;
-
-    @Column(name="Description")
-    private String description;
 
     public UserEntity(Integer u, String psw, Integer a, String description){
         userId=u;

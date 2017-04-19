@@ -24,6 +24,7 @@ var BaseData = function( dateTime,  eventId,  failureClass,  ueType,  market,  o
 
 
 
+
 $(document).ready(function(){
 
     $("#addBaseDataButton").click(function() {
@@ -134,11 +135,11 @@ $(document).ready(function(){
     var x = document.getElementById('tabletest');
     $("#US4Show").click(function() {
         var imsi = $("#select-box").val();
-        alert(imsi);
         $.ajax({
             type: "GET",
-            url: "ragnar/base_data/userStory4/" + imsi,
+            url: "ragnar/base_data/us4/" + imsi,
             success: function (baseDataList) {
+
                 $.each(baseDataList, function (index, value) {
                     var array = value.toString();
                     var strArray = array.split(",");
@@ -146,6 +147,7 @@ $(document).ready(function(){
                     var causecode = strArray[1];
                     var imsi = strArray[2];
                     var description = strArray[3];
+
                     var tr = (
                         '<tr>' +
                         '<td>'+ eventID +'</td>'+
@@ -156,18 +158,12 @@ $(document).ready(function(){
                     );
 
                     $('#tablebody').append(tr);
-                   // $('#tabletest').append('<tr><td>eventID</td><td></td><td></td><td></td></tr>');
-                    //$('#tabletest').append($("<td></td>"));
-                    //$('#tabletest').append($("<td></td>").text(eventID));
-                    //$('#tabletest').append($("<td></td>").text(causecode));
-                   // $('#tabletest').append($("<td></td>").text(imsi));
-                    //$('#tabletest').append($("<td></td>").text(description));
                 });
-
 
                 if (x.style.display === 'none') {
                     x.style.display = 'block';
                 }
+
             },
             error: function(){
                 alert("Error!");
@@ -176,14 +172,16 @@ $(document).ready(function(){
     });
 
     $("#close").click(function() {
+
         x.style.display = 'none';
         $("#tablebody").empty();
+
     });
     /*************************** USER STORY 5 **********************************/
 
     $("#searchByImsiAndDatesUS5").click(function() {
         $("#US5Output").empty();
-        alert("Inside");
+
         var imsi = ($("#imsiCodeToSearchUS5").val());
         var dateFrom = $("#getDateFromUS5").val();
         var dateTo = $("#getDateToUS5").val();
@@ -205,7 +203,8 @@ $(document).ready(function(){
         alert(imsi);
         $.ajax({
             type: "GET",
-            url: "ragnar/base_data/userStory6/"+imsi,
+
+            url: "ragnar/base_data/us6/"+imsi,
             success: function (value) {
                 $.each(value, function(index, value) {
                     $("#UniqueCauseCodesHolder").append("<li>" + value + "</li>");
@@ -214,15 +213,16 @@ $(document).ready(function(){
     });
     /*************************** USER STORY 7 **********************************/
     $("#dateCheck").click(function() {
-        alert("Inside us7");
         var d1= $("#getDate1").val();
         var d2= $("#getDate2").val();
         $.ajax({
             type: "GET",
-            url: "ragnar/base_data/"+d1+"/"+d2,
+
+            url: "ragnar/base_data/us7/"+d1+"/"+d2,
             success: function (lst) {
                 $.each(lst, function (index, value) {
-                    $("#imsiHolderByDate").append("<li>"+ value.imsi + "</li>");
+                    $("#misiHolderByDate").append("<li>"+ value.imsi + "</li>");
+
                 });
             },
             error:function () {
@@ -238,7 +238,8 @@ $(document).ready(function(){
         var date2 = $("#getDate2").val();
         $.ajax({
             type: "GET",
-            url: "ragnar/base_data/userStory9/" +date1 + "/" + date2,
+
+            url: "ragnar/base_data/us9/" +date1 + "/" + date2,
 
             success: function (baseDataList) {
                 $("#query9Holder").empty();
@@ -284,7 +285,10 @@ $(document).ready(function(){
         var date2 = $("#US11DateTo").val();
         $.ajax({
             type: "GET",
-            url: "ragnar/base_data/userStory11/" + date1 + "/" + date2,
+
+
+            url: "ragnar/base_data/us11/" + date1 + "/" + date2,
+
             success: function (lst) {
                // mostCommonMarketOperatorCellComboHolder.empty();
                 $("#mostCommonMarketOperatorCellComboHolder").empty();
@@ -313,7 +317,10 @@ $(document).ready(function(){
         var d2= $("#Date2").val();
         $.ajax({
             type: "GET",
-            url: "ragnar/base_data/userStory12/"+d1+"/"+d2,
+
+
+            url: "ragnar/base_data/us12/"+d1+"/"+d2,
+
             success: function (lst) {
                 //mostCommonIMSIFailsByDateHolder.empty();
                 $("#mostCommonIMSIFailsByDateHolder").empty();
@@ -339,7 +346,10 @@ $(document).ready(function(){
         failureClass = parseInt(failureClass);
         $.ajax({
             type: "GET",
-            url: "ragnar/base_data/UserStory14/" + failureClass,
+
+
+            url: "ragnar/base_data/us14/" + failureClass,
+
 
             success: function (baseDataList) {
                 $.each(baseDataList, function (index, value) {

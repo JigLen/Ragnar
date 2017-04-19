@@ -1,0 +1,45 @@
+What did you do?
+
+Dimitar     -   Work on bootstrap login.
+
+Sahar       -   Researched graphing. Written HTML for the graphs (designed).
+
+David       -   Implementing final User stories. Working(failing :) ) on arquillian
+
+Carl        -   Refactor to named queries, to make code more readable. Try/catch on persist
+                removes need for validation methods in Entity. Proper order and commenting
+                on some classed to make user stories easier to find in code (needs further
+                tidying).
+
+Ciarán      -   Going at Sessions, didn't make much progress.
+
+
+What will you do today?
+
+Dimitar 	-   Keep working on bootstrap. Look into Testing too (talk to David).
+
+Sahar		-   Manipulating json return from queries to fit graph.
+
+David		-   Looking at bootstrap login too. Communicate with dimitar about it. And
+                Non login bootstrap. Will coordinate with ciaran on a design then branch
+                and work on individual parts of it. Look into Sessions as well.
+
+Carl		-   Setup windows laptop for dimitar's old page problem (Not needed in the
+                end). Fix US 8 & 10 (only url methods). Continue code cleaning. Look into
+                sessions. Push to master.
+
+Ciaran		-   Non login bootstrap.
+
+
+ What issues do you have?
+
+Dimitar 	-   Old login page stays in project post deletion.
+
+Sahar		-
+
+David		-
+
+Carl		-
+
+Ciaran		-   Web Servlets / Stateful bean integration. Carl taking problem.
+

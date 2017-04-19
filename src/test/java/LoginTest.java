@@ -1,5 +1,7 @@
+
 import com.vikings.ragnar.daos.UserDao;
 import com.vikings.ragnar.daos.UserDaoImp;
+
 import com.vikings.ragnar.entities.UserEntity;
 
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -18,6 +20,9 @@ import static junit.framework.TestCase.assertNotNull;
 import static org.junit.Assert.assertEquals;
 
 
+import javax.inject.Inject;
+
+
 /**
  * Created by C07589301 on 08/03/2017.
  */
@@ -28,12 +33,17 @@ public class LoginTest
     @Deployment
     public static JavaArchive createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)
+
                 .addClasses(UserEntity.class, UserDaoImp.class, UserDao.class)
+
+                .addClass(UserEntity.class)
+
                 .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
     }
 
     @Inject
     UserEntity loginBean;
+
 
     @EJB
     private UserDaoImp service;
@@ -44,6 +54,7 @@ public class LoginTest
         service.addUser(user);
         assertNotNull(user.getDescription(), "Customer Rep");
     }
+
 
     @Test
     public void login_mary()

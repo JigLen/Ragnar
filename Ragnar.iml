@@ -27,6 +27,7 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -38,6 +39,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+
+    <orderEntry type="library" name="jquery-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="Arquillian JUnit:Release" level="project" />
+
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax:javaee-api:6.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:1.0.0.Final" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.resource:jboss-connector-api_1.5_spec:1.0.0.Final" level="project" />
@@ -164,7 +169,9 @@
     <orderEntry type="module-library">
       <library name="Maven: sun.jdk:jconsole:jdk">
         <CLASSES>
+
           <root url="jar://C:/Program Files/Java/jdk1.8.0_60/lib/jconsole.jar!/" />
+
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -183,6 +190,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.jboss.stdio:jboss-stdio:1.0.2.GA" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.jboss:jboss-vfs:3.2.5.Final" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: io.undertow:undertow-core:1.1.8.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.jboss.msc:jboss-msc:1.2.2.Final" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.wildfly:wildfly-controller-client:8.2.1.Final" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.wildfly:wildfly-protocol:8.2.1.Final" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.jboss:jboss-dmr:1.2.0.Final" level="project" />

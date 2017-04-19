@@ -13,11 +13,13 @@ $(document).ready(function() {
             success: function (value) {
                 if(value.userId!=null) {
                     alert("Your Log In");
+
                     if(value.accessLevel==1 || value.accessLevel==2 || value.accessLevel==3 || value.accessLevel==4){
                         location.href ="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/newIndex.html#";
 
                     }
                     /*
+
                     if(value.accessLevel==1){
                         location.href ="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/customerRep.html#"+value.accessLeve;
                     }
@@ -31,7 +33,8 @@ $(document).ready(function() {
                         location.href ="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/systemAdmin.html#"+value.accessLeve;
                     }
                     //location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT#"+value.accessLevel";
-*/
+
+                    */
                 }
             },
             error:function () {

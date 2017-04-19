@@ -13,6 +13,8 @@ public interface UserDao {
     //UserEntity getUser(Integer id,String password);
     //Collection<UserEntity> getAllUsers();
     UserEntity getUser(Integer id,String password);
+
     UserEntity findUserById(Integer id);
+
     void addUser(UserEntity user);
 }

@@ -13,7 +13,8 @@
             <!--<property name="jbossHome">${jbossHome:target/wildfly-8.2.1.Final}</property>-->
 
             <!--if you see permission denied errors, chown -R the wildfly dir-->
-            <property name="jbossHome">${C:\JavaFolder\wildfly-8.2.1.Final}</property>
+            <property name="jbossHome">${jbossHome:/Applications/wildfly-8.2.1.Final}</property>
+
         </configuration>
     </container>
 

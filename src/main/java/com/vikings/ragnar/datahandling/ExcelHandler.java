@@ -131,10 +131,9 @@ public class ExcelHandler {
                     baseDataEntity.setHier321Id((BigDecimal) decimalFormat.parse(row.getCell(13).getStringCellValue()));
                 }
 
-                if(!baseDataEntity.isIncomplete() && baseDataEntity.failureClassIsValid()
-                        && baseDataEntity.eventIdCauseCodeIsValid()){
-                    // persistence
-//                em.persist(baseDataEntity);
+
+                if(!baseDataEntity.isIncomplete()){
+
                     toBePersisted.add(baseDataEntity);
                 }
             } catch (ParseException e) {

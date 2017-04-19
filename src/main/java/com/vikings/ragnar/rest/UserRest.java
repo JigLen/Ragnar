@@ -1,4 +1,4 @@
-package com.vikings.ragnar.services;
+package com.vikings.ragnar.rest;
 
 import com.vikings.ragnar.ejb.UserService;
 import com.vikings.ragnar.entities.UserEntity;
@@ -6,7 +6,6 @@ import com.vikings.ragnar.entities.UserEntity;
 import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.util.Collection;
 
 /**
  * Created by c12317616 on 02/03/2017.
@@ -23,17 +22,9 @@ public class UserRest {
         return userServiceEjb.getUser(userId,password);
     }
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{userId}")
-    public UserEntity findUserById(@PathParam("userId") Integer userId){
-        return userServiceEjb.findUserById(userId);
-    }
-
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void create(UserEntity user) {
         userServiceEjb.addUser(user);
     }
-
 }

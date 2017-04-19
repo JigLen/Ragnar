@@ -12,35 +12,29 @@ import java.util.List;
  */
 @Local
 public interface BaseDataDao {
-    Collection<BaseDataEntity> getAllInfo();
 
-    void add(BaseDataEntity baseData);
-
-    BaseDataEntity getById(Integer id);
-
-    void update(BaseDataEntity baseData);
-
-    void remove(Integer id);
-
+    // US 4
     Collection<?> searchErrorInfoBasedOnIMSI(Long imsi);
-
-    List<?> countNoOfFailuresForImsi(Date date1, Date date2);
-
-    Collection<BaseDataEntity> getTopTenMostCommonMarketOperatorCellCombo(Date dateOne, Date dateTwo);
-
-    Collection<BaseDataEntity> getTopTenMostCommonImsi(Date date1, Date date2);
-
+    // US 5
+    Long getByIMSIAndTimePeriod(Long imsi, Date dateFrom, Date dateTo);
+    // US 6
     Collection<?> getUniqueCauseCodes(Long imsi);
-
+    // US 7
+    Collection<BaseDataEntity> getAllIMSIByDate(Date d1, Date d2);
+    // US 8
+    Collection<?> countNoOfCallFailuresForGivenModel(String model, Date date1, Date date2);
+    // US 9
+    List<?> countNoOfFailuresForImsi(Date date1, Date date2);
+    // US 10
+    Collection<?> getAllUniqueCallFailuresForGivenModelOfPhone(String model);
+    // US 11
+    Collection<BaseDataEntity> getTopTenMostCommonMarketOperatorCellCombo(Date dateOne, Date dateTwo);
+    // US 12
+    Collection<BaseDataEntity> getTopTenMostCommonImsi(Date date1, Date date2);
+    // US 14
     Collection<?> getImsisByFailureClass(Integer failureClass);
 
-    Collection<BaseDataEntity> getAllIMSIByDate(Date d1, Date d2);
-
-    Long getByIMSIAndTimePeriod(Long imsi, Date dateFrom, Date dateTo);
-
-    Collection<?> countNoOfCallFailuresForGivenModel(String model, Date date1, Date date2);
-
-    Collection<?> getAllUniqueCallFailuresForGivenModelOfPhone(String model);
-
     Collection<?> getUniqueImsiNumbers();
+
 }
+

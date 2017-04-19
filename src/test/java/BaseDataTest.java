@@ -1,18 +1,5 @@
-import com.vikings.ragnar.daos.BaseDataDaoImpl;
-import com.vikings.ragnar.entities.BaseDataEntity;
-import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.shrinkwrap.api.ArchivePaths;
-import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.junit.runners.model.InitializationError;
-
-import javax.ejb.EJB;
-import javax.xml.registry.infomodel.User;
-import java.util.List;
 
 /**
  * Created by User on 11-Apr-17.

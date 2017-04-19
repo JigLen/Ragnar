@@ -1,4 +1,4 @@
-package com.vikings.ragnar.services;
+package com.vikings.ragnar.rest;
 
 import com.vikings.ragnar.ejb.BaseDataService;
 
@@ -11,7 +11,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
-import com.vikings.ragnar.entities.BaseDataEntity;
 import javax.ws.rs.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -39,28 +38,9 @@ public class BaseDataRest {
     @EJB
     BaseDataService baseDataService;
 
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void create(BaseDataEntity baseData) {
-        baseDataService.addBaseData(baseData);
-    }
-
+    // US 4
     @GET
-    @Produces(MediaType.APPLICATION_JSON) @Path("/{id}")
-    public BaseDataEntity read(@PathParam("id") Integer id) {
-       return baseDataService.getById(id);
-    }
-
-    @GET
-    @Produces(MediaType.APPLICATION_JSON) @Path("/getUniqueImsi")
-    public Collection<?> BaseDataEntity()
-    {
-        return baseDataService.getUniqueImsiNumbers();
-    }
-
-    //US4
-    @GET
-    @Produces(MediaType.APPLICATION_JSON) @Path("/userStory4/{id}")
+    @Produces(MediaType.APPLICATION_JSON) @Path("/us4/{id}")
     public Collection<?> searchErrorInfoBasedOnIMSI(@PathParam("id") Long id){
         return baseDataService.searchErrorInfoBasedOnIMSI(id);
     }
@@ -74,17 +54,16 @@ public class BaseDataRest {
         return baseDataService.getByIMSIAndTimePeriod(imsi, date1, date2);
     }
 
-
-    //UserStory6
+    // US 6
     @GET
-    @Produces(MediaType.APPLICATION_JSON) @Path("/userStory6/{imsi}")
+    @Produces(MediaType.APPLICATION_JSON) @Path("/us6/{imsi}")
     public Collection<?> getUniqueCauseCodes(@PathParam("imsi") Long imsi){
         return baseDataService.getUniqueCauseCodes(imsi);
     }
 
-    //7
+    // US 7
     @GET
-    @Produces(MediaType.APPLICATION_JSON) @Path("/{d1}/{d2}")
+    @Produces(MediaType.APPLICATION_JSON) @Path("/us7/{d1}/{d2}")
     public  Collection<?> getAllIMSIByDate(@PathParam("d1") String d1, @PathParam("d2") String d2) throws ParseException {
         SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         Date date1 = dt.parse(d1);
@@ -101,36 +80,36 @@ public class BaseDataRest {
         return baseDataService.countNoOfCallFailuresForGivenModel(model, date1, date2);
     }
 
-    //US9
+    // US 9
     @GET
-    @Produces(MediaType.APPLICATION_JSON) @Path("/userStory9/{d1}/{d2}")
-    public Collection<?> countNoOfFailuresForImsi(@PathParam("d1") String d1, @PathParam("d2") String d2)throws Exception
-    {
+    @Produces(MediaType.APPLICATION_JSON) @Path("/us9/{d1}/{d2}")
+    public Collection<?> countNoOfFailuresForImsi(@PathParam("d1") String d1, @PathParam("d2") String d2)throws Exception {
         SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         Date date1 = dt.parse(d1);
         Date date2 = dt.parse(d2);
         return baseDataService.countNoOfFailuresForImsi(date1, date2);
     }
 
-    //US10
+    // US 10
     @GET
-    @Produces(MediaType.APPLICATION_JSON) @Path("/userStory10/{model}")
-    public Collection<?> getAllUniqueCallFailuresForGivenModelOfPhone(@PathParam("model") String model)throws Exception
-    {
+    @Produces(MediaType.APPLICATION_JSON) @Path("/us10/{model}")
+    public Collection<?> getAllUniqueCallFailuresForGivenModelOfPhone(@PathParam("model") String model)throws Exception {
         return baseDataService.getAllUniqueCallFailuresForGivenModelOfPhone(model);
     }
 
-
+    // US 11
     @GET
-    @Produces(MediaType.APPLICATION_JSON) @Path("/userStory11/{d1}/{d2}")
+    @Produces(MediaType.APPLICATION_JSON) @Path("/us11/{d1}/{d2}")
     public Collection<?> getMostCommonMarketOperatorCellCombo(@PathParam("d1") String d1, @PathParam("d2") String d2) throws Exception{
         SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         Date date1 = dt.parse(d1);
         Date date2 = dt.parse(d2);
         return baseDataService.getTopTenMostCommonMarketOperatorCellCombo(date1, date2);
     }
+
+    // US 12
     @GET
-    @Produces(MediaType.APPLICATION_JSON) @Path("/userStory12/{d1}/{d2}")
+    @Produces(MediaType.APPLICATION_JSON) @Path("/us12/{d1}/{d2}")
     public Collection<?> getTopTenMostCommonImsi(@PathParam("d1") String d1, @PathParam("d2") String d2) throws Exception {
         SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         Date date1 = dt.parse(d1);
@@ -139,37 +118,19 @@ public class BaseDataRest {
     }
 
     //  US 14
-    @GET @Produces(MediaType.APPLICATION_JSON) @Path("/UserStory14/{failureClass}")
+    @GET @Produces(MediaType.APPLICATION_JSON) @Path("/us14/{failureClass}")
     public Collection<?> getImsisByFailureClass(@PathParam("failureClass") Integer failureClass){
         return baseDataService.getImsisByFailureClass(failureClass);
     }
 
-    @GET @Produces(MediaType.APPLICATION_JSON)
-    public Collection<BaseDataEntity> readAll() {
-        return baseDataService.getAllInfo();
-    }
+    // imsi combobox filler
 
-
-    @PUT @Consumes(MediaType.APPLICATION_JSON)
-    public void update(BaseDataEntity baseData) {
-        baseDataService.update(baseData);
-    }
-
-
-    @DELETE @Path("/{id}")
-    public void delete(@PathParam("id") Integer id) {
-        baseDataService.remove(id);
-    }
-
-
-
-
-
-
+    @GET @Produces(MediaType.APPLICATION_JSON) @Path("/getUniqueImsi")
+    public Collection<?> getUniqueImsi(){ return  baseDataService.getUniqueImsiNumbers();}
 
     // file upload
     @POST @Path("/upload")@Consumes(MediaType.MULTIPART_FORM_DATA)
-    public Response upload(MultipartFormDataInput input) throws IOException{
+    public Response upload(MultipartFormDataInput input) throws IOException {
         // relative path not working
         String path = "res/incoming_data/";
 
@@ -177,49 +138,34 @@ public class BaseDataRest {
         String fileName = "";
 
         Map<String, List<InputPart>> formParts = input.getFormDataMap();
-
         List<InputPart> inPart = formParts.get("file");
 
         for (InputPart inputPart : inPart) {
 
             try {
-
                 // Retrieve headers, read the Content-Disposition header to obtain the original name of the file
                 MultivaluedMap<String, String> headers = inputPart.getHeaders();
                 fileName = parseFileName(headers);
-
                 // Handle the body of that part with an InputStream
                 InputStream istream = inputPart.getBody(InputStream.class,null);
-
                 fileName = path + fileName;
-
                 saveFile(istream,fileName);
 
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
-
         String output = "File saved to server location : " + fileName;
-
         return Response.status(200).entity(output).build();
     }
 
-
     // Parse Content-Disposition header to get the original file name
     private String parseFileName(MultivaluedMap<String, String> headers) {
-
         String[] contentDispositionHeader = headers.getFirst("Content-Disposition").split(";");
-
         for (String name : contentDispositionHeader) {
-
             if ((name.trim().startsWith("filename"))) {
-
                 String[] tmp = name.split("=");
-
                 String fileName = tmp[1].trim().replaceAll("\"","");
-
                 return fileName;
             }
         }
@@ -227,9 +173,7 @@ public class BaseDataRest {
     }
 
     // save uploaded file to a defined location on the server
-    private void saveFile(InputStream uploadedInputStream,
-                          String serverLocation) {
-
+    private void saveFile(InputStream uploadedInputStream, String serverLocation) {
         try {
             OutputStream outputStream;
             int read = 0;
@@ -242,11 +186,9 @@ public class BaseDataRest {
             outputStream.flush();
             outputStream.close();
         } catch (IOException e) {
-
             e.printStackTrace();
         }
     }
-
 }
 
 
