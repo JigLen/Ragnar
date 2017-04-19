@@ -87,9 +87,15 @@
 
     <script>
 
+        //X axis counts IMSI values - must change
+
         $("#showGraph1").click(function() {
             $("#graphContainer").show();
             makeChart();
+        });
+
+        $("#closeGraph").click(function() {
+            $("#graphContainer").hide();
         });
 
         function makeChart() {
