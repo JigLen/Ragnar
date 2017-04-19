@@ -86,6 +86,11 @@ public class BaseDataServiceEjb implements BaseDataService{
     public Collection<?> getUniqueImsiNumbers() {
         return baseDataDao.getUniqueImsiNumbers();
     }
+    @Override
+    public Collection<?> getUniqueModels() {
+        return baseDataDao.getUniqueModels();
+    }
+
 
 
 }

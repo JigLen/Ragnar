@@ -35,4 +35,6 @@ public interface BaseDataService {
 
     Collection<?> getUniqueImsiNumbers();
 
+    Collection<?> getUniqueModels();
+
 }

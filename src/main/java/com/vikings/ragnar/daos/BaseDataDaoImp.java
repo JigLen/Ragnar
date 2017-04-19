@@ -125,4 +125,11 @@ public class BaseDataDaoImp implements BaseDataDao {
         Collection<?> results = query.getResultList();
         return results;
     }
+
+    @Override
+    public Collection<?> getUniqueModels() {
+        Query query = em.createQuery(" SELECT DISTINCT ue.model FROM BaseDataEntity b inner join b.ueEntity ue");
+        Collection<?> results = query.getResultList();
+        return results;
+    }
 }

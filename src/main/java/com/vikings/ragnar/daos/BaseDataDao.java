@@ -36,5 +36,7 @@ public interface BaseDataDao {
 
     Collection<?> getUniqueImsiNumbers();
 
+    Collection<?> getUniqueModels();
+
 }
 

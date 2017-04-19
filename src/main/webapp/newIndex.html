@@ -107,7 +107,6 @@
         <h3>Display the Event Id and Cause Code for any/all failures affecting that IMSI</h3>
         <h3>Enter IMSI Code</h3>
         <form>
-            <!--<input type="text" name="id" placeholder="IMSI code goes here" id="getImsiNum"><br>-->
             <select id="select-box">
                 <option value="Select imsi code">Select imsi code</option>
             </select>
@@ -130,10 +129,12 @@
         </table>
     </div>
     <div class="left" id="us5Div" style="display:none">
-            <h3>US5: Failure count for given IMSI between dates</h3>
+            <h3>Failure count for given IMSI between dates</h3>
             <form>
-                <h3>Enter IMSI Code</h3>
-                <input type="text" name="id" placeholder="IMSI code goes here" id="imsiCodeToSearchUS5"><br>
+                <!--<input type="text" name="id" placeholder="IMSI code goes here" id="imsiCodeToSearchUS5"><br>-->
+                <select id="select_box_us5">
+                    <option value="Select imsi code">Select imsi code</option>
+                </select>
                 <br>
                 <!--<input type="text" name="id" placeholder="Enter date from" id="getDateFromUS5"><br>-->
                 <div id="datetimepicker51" class="input-append date">
@@ -157,20 +158,44 @@
         <form>
             <h3>Search IMSI by Date</h3>
             <div id="datetimepicker71" class="input-append date">
-                <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date from" id="getDate1"></input>
+                <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date from" id="getDateFromUs7"></input>
                 <span class="add-on">
                     <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
             </div>
             <br>
             <div id="datetimepicker72" class="input-append date">
-                <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date to" id="getDate2"></input>
+                <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date to" id="getDateToUs7"></input>
                 <span class="add-on">
                      <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
             </div>
             <br>
-            <input type="button" class="btn" id="dateCheck" value="submit">
+            <input type="button" class="btn" id="searchImsiByDatesUs7" value="SEARCH">
         </form>
         <ul id="imsiHolderByDate">
+        </ul>
+    </div>
+
+    <div class="left"  id="us8Div" style="display:none">
+        <form>
+            <select id="select_box_us8">
+                <option value="Select Model">Select Model</option>
+            </select>
+            <br>
+            <div id="datetimepicker81" class="input-append date">
+                <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date from" id="getDateFromUs8"></input>
+                <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+            </div>
+            <br>
+            <div id="datetimepicker82" class="input-append date">
+                <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date to" id="getDateToUs8"></input>
+                <span class="add-on">
+                     <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+            </div>
+            <br>
+            <input type="button" class="btn" id="searchByModelAndDatesUs8" value="submit">
+        </form>
+        <ul id="imsiHolderByModel">
         </ul>
     </div>
 

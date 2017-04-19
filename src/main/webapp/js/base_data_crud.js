@@ -182,7 +182,7 @@ $(document).ready(function(){
     $("#searchByImsiAndDatesUS5").click(function() {
         $("#US5Output").empty();
 
-        var imsi = ($("#imsiCodeToSearchUS5").val());
+        var imsi = ($("#select_box_us5").val());
         var dateFrom = $("#getDateFromUS5").val();
         var dateTo = $("#getDateToUS5").val();
         $.ajax({
@@ -212,16 +212,41 @@ $(document).ready(function(){
             }});
     });
     /*************************** USER STORY 7 **********************************/
-    $("#dateCheck").click(function() {
-        var d1= $("#getDate1").val();
-        var d2= $("#getDate2").val();
+    $("#searchImsiByDatesUs7").click(function() {
+        var d1= $("#getDateFromUs7").val();
+        var d2= $("#getDateToUs7").val();
         $.ajax({
             type: "GET",
 
             url: "ragnar/base_data/us7/"+d1+"/"+d2,
             success: function (lst) {
                 $.each(lst, function (index, value) {
-                    $("#misiHolderByDate").append("<li>"+ value.imsi + "</li>");
+                    $("#imsiHolderByDate").append("<li>"+ value.imsi + "</li>");
+
+                });
+            },
+            error:function () {
+                alert("Date is not entered in the right format");
+            }
+        });
+    });
+
+    /*************************** USER STORY 8 **********************************/
+    $("#searchByModelAndDatesUs8").click(function() {
+        var model =$("#select_box_us8").val();
+        var d1= $("#getDateFromUs8").val();
+        var d2= $("#getDateToUs8").val();
+        $.ajax({
+            type: "GET",
+
+            url: "ragnar/base_data/us8/"+model+"/"+d1+"/"+d2,
+            success: function (lst) {
+                $.each(lst, function (index, value) {
+                    var array = value.toString();
+                    var strArray = array.split(",");
+                    var model = strArray[0];
+                    var count = strArray[1];
+                    $("#imsiHolderByModel").append("<li>"+ model +  " " + count + "</li>");
 
                 });
             },

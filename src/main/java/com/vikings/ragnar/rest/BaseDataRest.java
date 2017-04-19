@@ -128,13 +128,16 @@ public class BaseDataRest {
     @GET @Produces(MediaType.APPLICATION_JSON) @Path("/getUniqueImsi")
     public Collection<?> getUniqueImsi(){ return  baseDataService.getUniqueImsiNumbers();}
 
+    @GET @Produces(MediaType.APPLICATION_JSON) @Path("/getUniqueModels")
+    public Collection<?> getUniqueModels(){ return  baseDataService.getUniqueModels();}
+
     // file upload
     @POST @Path("/upload")@Consumes(MediaType.MULTIPART_FORM_DATA)
     public Response upload(MultipartFormDataInput input) throws IOException {
         // relative path not working
         String path = "res/incoming_data/";
 
-        path = "/Volumes/Data/Users/carlmccann2/IdeaProjects/Ragnar/res/incoming_data/";
+        path = "D:\\Ragnar\\res\\incoming_data\\";
         String fileName = "";
 
         Map<String, List<InputPart>> formParts = input.getFormDataMap();
