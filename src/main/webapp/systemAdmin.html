@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>System Admin</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/user_crud.js"></script>
+    <script type="text/javascript" src="js/file_upload.js"></script>
+</head>
+<body>
+<h1>SYSTEM ADMIN:</h1>
+
+<div class="container" id="US1Container">
+    <div class="left">
+        <h3>US 1:receive and import Datasets <br>
+            US 3: Validation <br>
+            US 21: 30000 records import < 2 mins
+        </h3>
+        <form enctype="multipart/form-data" method="post">
+            <input name="file" type="file" id="fileUploadB1" />
+            <input type="button" name="upload "value="Upload" id="fileUploadB2"/>
+        </form>
+        <progress></progress>
+    </div>
+</div>
+
+<div class="container" id="US2Container">
+    <div class="left">
+        <h3>US 2: Adding Users</h3>
+        <form>
+            <br>
+            <p>User Type:</p>
+            <input type="text"  name="userType" id="setUserType">
+            <p>User id:</p>
+            <input type="text"  name="userId" id="setUserId">
+            <p>Password:</p>
+            <input type="password"  name="password" id="setUserPassword"><br><br>
+            <input type="button" class="btn"  id="addUser" value="Enter New User">
+        </form>
+
+
+    </div>
+
+
+</div>
+
+
+<br>
+<a href="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/" class="return">Log Out</a>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/test.js"></script>
+    <script type="text/javascript" src="js/base_data_crud.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen"
+          href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+
+    <script src="js/bootstrap/excanvas.min.js"></script>
+    <script src="js/bootstrap/jquery.min.js"></script>
+    <script src="js/bootstrap/jquery.ui.custom.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/bootstrap/jquery.flot.min.js"></script>
+    <script src="js/bootstrap/jquery.flot.resize.min.js"></script>
+    <script src="js/bootstrap/jquery.peity.min.js"></script>
+    <script src="js/bootstrap/fullcalendar.min.js"></script>
+    <script src="js/bootstrap/matrix.js"></script>
+    <script src="js/bootstrap/matrix.dashboard.js"></script>
+    <script src="js/bootstrap/jquery.gritter.min.js"></script>
+    <script src="js/bootstrap/matrix.interface.js"></script>
+    <script src="js/bootstrap/jquery.validate.js"></script>
+    <script src="js/bootstrap/matrix.form_validation.js"></script>
+    <script src="js/bootstrap/jquery.wizard.js"></script>
+    <script src="js/bootstrap/jquery.uniform.js"></script>
+    <script src="js/bootstrap/matrix.popover.js"></script>
+    <script src="js/bootstrap/jquery.dataTables.min.js"></script>
+    <script src="js/bootstrap/matrix.tables.js"></script>
+    <script type="text/javascript"
+            src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+    </script>
+    <script type="text/javascript"
+            src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript"
+            src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+    </script>
+    <script type="text/javascript"
+            src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+    </script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="css/bootstrap/fullcalendar.css" />
+    <link rel="stylesheet" href="css/bootstrap/matrix-style.css" />
+    <link rel="stylesheet" href="css/bootstrap/matrix-media.css" />
+    <link rel="stylesheet" href="css/bootstrap/jquery.gritter.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<!--top-Header-menu-->
+<!--Header-part-->
+<div id="header">
+    <h1><a href="dashboard.html">Matrix Admin</a></h1>
+</div>
+<!--close-Header-part-->
+<div id="user-nav" class="navbar navbar-inverse">
+    <ul class="nav">
+        <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Welcome User</span><b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="icon-check"></i> My Tasks</a></li>
+                <li class="divider"></li>
+                <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+            </ul>
+        </li>
+        <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+        <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+    </ul>
+</div>
+<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+    <ul>
+        <li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>Home</span></a> </li>
+        <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>First Line Queries</span> <span class="label label-important">2</span></a>
+            <ul>
+                <li id="userstory4"><a href="#">Event ID, Cause Code for all affecting failures</a></li>
+                <li id="userstory5"><a href="#">Number of call failures in the given time period </a></li>
+            </ul>
+        </li>
+        <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Investigating Problems</span> <span class="label label-important">4</span></a>
+            <ul>
+                <li id="userstory7"><a href="#">List of all the IMSIs with call failures in the given time period</a></li>
+                <li id="userstory8"><a href="#">Number of call failures the model of phone has in the given time period</a></li>
+                <li id="userstory9"><a href="#">Number of call failures and their total duration based on the IMSI code</a></li>
+                <li id="userstory14"><a href="#">Number of IMSI that are affected</a></li>
+
+                </a></li>
+            </ul>
+        </li>
+        <li><a href="tables.html"><i class="icon icon-th"></i> <span>Evaluation</span></a></li>
+    </ul>
+</div>
+
+<div id="content">
+    <div id="content-header">
+    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
+</div>
+
+    <div class="left" id="us4Div" style="display:none">
+        <h3>Display the Event Id and Cause Code for any/all failures affecting that IMSI</h3>
+        <h3>Enter IMSI Code</h3>
+        <form>
+            <!--<input type="text" name="id" placeholder="IMSI code goes here" id="getImsiNum"><br>-->
+            <select id="select-box">
+                <option value="Select imsi code">Select imsi code</option>
+            </select>
+        </form>
+        <br>
+        <input type="button" class="btn" id="US4Show" value="Show List"/>
+        <br>
+        <input type="button" class="btn" id="close" value="Close List"/>
+        <table class="table table-bordered" id="tabletest" style="display:none">
+            <thead>
+            <tr>
+                <th>Event Id</th>
+                <th>Cause Code</th>
+                <th>Failure Class Number</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody id="tablebody">
+            </tbody>
+        </table>
+    </div>
+    <div class="left" id="us5Div" style="display:none">
+            <h3>US5: Failure count for given IMSI between dates</h3>
+            <form>
+                <h3>Enter IMSI Code</h3>
+                <input type="text" name="id" placeholder="IMSI code goes here" id="imsiCodeToSearchUS5"><br>
+                <br>
+                <!--<input type="text" name="id" placeholder="Enter date from" id="getDateFromUS5"><br>-->
+                <div id="datetimepicker51" class="input-append date">
+                    <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date from" id="getDateFromUS5"></input>
+                    <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+                </div>
+                <br>
+                <div id="datetimepicker52" class="input-append date">
+                <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date to" id="getDateToUS5"></input>
+                <span class="add-on">
+                     <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+                </div>
+                <br>
+                <input type="button" class="btn" id="searchByImsiAndDatesUS5" value="SEARCH"/>
+            </form>
+            <h3 id="US5Output"></h3>
+    </div>
+
+    <div class="left"  id="us7Div" style="display:none">
+        <form>
+            <h3>Search IMSI by Date</h3>
+            <div id="datetimepicker71" class="input-append date">
+                <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date from" id="getDate1"></input>
+                <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+            </div>
+            <br>
+            <div id="datetimepicker72" class="input-append date">
+                <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date to" id="getDate2"></input>
+                <span class="add-on">
+                     <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+            </div>
+            <br>
+            <input type="button" class="btn" id="dateCheck" value="submit">
+        </form>
+        <ul id="imsiHolderByDate">
+        </ul>
+    </div>
+
+
+</div>
+</body>
+</html>

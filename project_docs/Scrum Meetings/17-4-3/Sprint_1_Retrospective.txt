@@ -1,0 +1,13 @@
+Issues:
+
+User Friendliness & Bootstrap
+
+Unit testing & Arquillian testing
+
+Sessions for Users
+
+hashing for passwords
+
+User Stories
+
+Jira / Scrum

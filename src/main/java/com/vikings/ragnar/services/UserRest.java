@@ -1,0 +1,39 @@
+package com.vikings.ragnar.services;
+
+import com.vikings.ragnar.ejb.UserService;
+import com.vikings.ragnar.entities.UserEntity;
+
+import javax.ejb.EJB;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import java.util.Collection;
+
+/**
+ * Created by c12317616 on 02/03/2017.
+ */
+@Path("/user")
+public class UserRest {
+    @EJB
+    UserService userServiceEjb;
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{userId}/{password}")
+    public UserEntity getUser(@PathParam("userId") Integer userId,@PathParam("password") String password){
+        return userServiceEjb.getUser(userId,password);
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{userId}")
+    public UserEntity findUserById(@PathParam("userId") Integer userId){
+        return userServiceEjb.findUserById(userId);
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void create(UserEntity user) {
+        userServiceEjb.addUser(user);
+    }
+
+}

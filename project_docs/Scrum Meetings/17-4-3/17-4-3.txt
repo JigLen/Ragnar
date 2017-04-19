@@ -1,0 +1,41 @@
+What did you do?
+
+Dimitar     -   Found a password hashing library: java.security.MessageDigest.getInstance('md5')
+
+Sahar       -
+
+David       -
+
+Carl        -
+
+Ciarán      -
+
+
+What will you do today?
+
+Dimitar 	-   Research Bootstrap templates. Research password hashing.
+
+Sahar		-   Research graphing the data. Will communicate with Dimitar as it may tie in to
+                Bootstrap.
+
+David		-   Help Carl fix USs. Start new USs
+
+Carl		-   Fix USs that were "Working" for sprint 1 demo. Fix composite primary key issue
+                where BaseDataEntity objects couldn't be created properly. Push fixed code to
+                master for everyone to work from.
+
+Ciaran		-   Research and implement user sessions.
+
+
+ What issues do you have?
+
+Dimitar 	-
+
+Sahar		-
+
+David		-
+
+Carl		-
+
+Ciaran		-
+

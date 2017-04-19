@@ -1,0 +1,39 @@
+What did you do?
+
+Dimitar     -   work on US 5 and 8
+
+Sahar       -   work on US6.
+
+David       -   US 4 kind of done and 9 kind of and 10 has sql written for it.
+
+Carl        -   Finalised US 1 3 21, fixed small validation problem
+
+Ciarán      -   US 11 done. SQL written US 12.
+
+
+What will you do today?
+
+Dimitar 	-   US 5 and 8
+
+Sahar		-   US 6.
+
+David		-   US 9.
+
+Carl		-   US 14.
+
+Ciaran		-   US 12.
+
+prepare presentation and merge all code.
+
+ What issues do you have?
+
+Dimitar 	-
+
+Sahar		-
+
+David		-
+
+Carl		-
+
+Ciaran		-
+

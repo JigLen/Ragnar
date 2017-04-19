@@ -1,0 +1,38 @@
+What did you do?
+
+Dimitar - Nothing
+
+Sahar - Research on User privileges to help Ciarán and Dimitar
+
+David - Worked on Full CRUD
+
+Carl -  Restructured REST classes, Worked on full CRUD
+
+Ciarán - User DB table, full slice with username and password etc. Will be incorporated into Full Crud
+
+
+What will you do today?
+
+Dimitar 	- Test entities. Further Work/Research User privileging
+
+Sahar		- work on restructure of excel converter to have similar structure to DataCleaner. Test datahandling class.
+
+David       - work on full CRUD
+
+Carl		- Thinking about Architecture and inheritance etc. Working on full crud.
+
+Ciaran		- Make a log in screen
+
+
+ What issues do you have?
+
+Dimitar 	-
+
+Sahar		-
+
+David		-
+
+Carl		-
+
+Ciaran		- UserEntity not working on single read by id and password, done through array as of now.
+

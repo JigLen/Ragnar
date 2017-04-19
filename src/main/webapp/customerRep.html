@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Rep Services</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/base_data_crud.js"></script>
+    <script type="text/javascript" src="js/access_check.js"></script>
+    <style> .indented { padding-left: 25pt; padding-right: 25pt; } </style>
+
+    <script>
+    /*var access_lv=window.location.hash.substring(1);
+    if(!(checkAccess(2,access_lv))){
+        location.href = "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/login.html";
+    }*/
+    </script>
+</head>
+<body>
+
+
+<!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+
+<div class="container" id="baseDataDiv">
+    <h1>CUSTOMER REP:</h1>
+
+    <div class="left">
+        <h2>Enter IMSI Code</h2>
+        <h3>US4: given IMSI, return Event Id and Cause Code<br>
+        for any/all failures affecting that IMSI</h3>
+        <form>
+            <input type="text" name="id" placeholder="Enter IMSI number" id="getImsiNum"><br>
+        </form>
+    </div>
+    <div class="left">
+        <br>
+        <input type="button" class="btn" id="US4Show" value="Display info for given IMSI code"/>
+        <input type="button" class="btn" id="close" value="CLOSE"/>
+        <p class="indented"> Event Id   Cause Code   Failure Class   IMSI</p>
+        <ul id="query4Holder">
+        </ul>
+    </div>
+
+    <div class="container" id="US5Container">
+            <div class="left">
+                <h3>US5: Failure count for given IMSI between dates</h3>
+                <form>
+                    <input type="text" name="id" placeholder="Enter IMSI Code" id="imsiCodeToSearchUS5"><br>
+                    <br>
+                    <input type="text" name="id" placeholder="Enter date from" id="getDateFromUS5"><br>
+                    <br>
+                    <input type="text" name="id" placeholder="Enter date to" id="getDateToUS5"><br>
+                    <br>
+                    <input type="button" class="btn" id="searchByImsiAndDatesUS5" value="SEARCH"/>
+                </form>
+                <p id="US5Output"></p>
+            </div>
+    </div>
+
+
+
+    <!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+    <!--User Story 6-->
+    <div class="left">
+        <form>
+            <h2>List Unique Cause Codes for Given IMSI</h2>
+            <h3>User Story 6</h3>
+            <p>IMSI</p>
+            <input type="text" name ="imsi" id = "getCauseCodeimsi">
+            <input type="button" class="btn" id="getUniqueCauseCodes" value="submit">
+        </form>
+        <ul id="UniqueCauseCodesHolder"></ul>
+    </div>
+
+</div>
+
+<br>
+<a href="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/" class="return">Log Out</a>
+
+</body>
+</html>

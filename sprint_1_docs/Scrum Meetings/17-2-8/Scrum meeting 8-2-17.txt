@@ -1,0 +1,31 @@
+What did you do? (Collectively)
+
+Learned about the data
+cleaned it via java (needs work as it is a singular case)
+stored it, but without relationships and may need restructure
+
+Sahar - has reviewed query list. Stored in workbook in Queries sheet in project_docs.
+
+What will you do today?
+
+Dimitar 	- research user privileging methods.
+
+Sahar		- IMSI based query for customer services rep. (Simple Query)
+
+Carl		- User story 1 and 3. Research burndown chart and implement.
+
+Ciaran		- Establish Relationships within the db. User story 3 (Joint effort, dual approach who’s is better wins)
+
+David		- Research what a user story is. and prepare a list for the product owner
+		  (Jenny) to populate the product backlog.
+
+* 	Remember the last task in Sprint 0 throughout all of this. Good design now will 	help later
+
+
+
+ What issues do you have?
+
+Everybody’s happy! 
+Sahar is going to work on her part, will update team by saturday if it’s going well, or she needs help etc.
+
+ 

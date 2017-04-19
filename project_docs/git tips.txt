@@ -1,0 +1,22 @@
+Some reading: https://www.derekgourlay.com/blog/git-when-to-merge-vs-when-to-rebase/
+
+Combine your new work back into master:
+
+in branch development)$ git merge master
+(resolve any merge conflicts if there are any)
+                                        // now you have an up to date working branch
+git checkout master
+git merge development (there won't be any conflicts now)
+                                        // for when dev isn't dev anymore and you want it
+                                        // on master
+
+
+This might ask you to do a set-upstream command:
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/master development
+
+
+this sets your local git to track your development branch i think*
+this will help the merge process

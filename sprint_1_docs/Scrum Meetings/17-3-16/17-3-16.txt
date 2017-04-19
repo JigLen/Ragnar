@@ -1,0 +1,44 @@
+What did you do?
+
+Dimitar     - Worked on login that redirects to specific page eg customerRep or SystemAdmin
+              Worked User Story 2.
+
+Sahar       -
+
+David       - Worked on login that redirects to specific page eg customerRep or SystemAdmin.
+              Worked User Story 2.
+
+Carl        -
+
+Ciarán      - Worked User Story 2.
+
+
+What will you do today?
+
+Dimitar 	-   Thinking about the db restructure eg new relationships, maybe think about
+                breeaking base_data table up for better data access speeds. Research the meanings
+                of the columns in base data and draw up a template for the separate base_data table
+                based on what will be used most/least etc.
+
+Sahar		-   User Story 5.
+
+David		-   User Story 4.
+
+Carl		-   Unify master with testing and all code from Sprint 0, so the project can move forward.
+
+Ciaran		-   at the moment user specific pages can be accessed via url. Ciaran is going to
+                restrict these to appropriate privilege levels.
+
+
+ What issues do you have?
+
+Dimitar 	-
+
+Sahar		-
+
+David		-
+
+Carl		-
+
+Ciaran		-
+

@@ -1,0 +1,5 @@
+go to these links and set up an account so you can be added to the JIRA Project
+
+within DIT:  jira:8080
+outside DIT: http://147.252.80.39:8080/
+
