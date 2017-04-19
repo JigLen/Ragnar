@@ -5,7 +5,9 @@
     <title>Network Engineer Services</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/base_data_crud.js"></script>
-
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
 </head>
 <body>
 
@@ -60,39 +62,152 @@
     <div class="left">
         <h2>Top 10 IMSIs for failures between dates</h2>
         <h3>User Story 12</h3>
-        <form>
+       <br>
             <p>Date 1:</p>
             <input type="text"  name="date1" id="Date1">
             <p>Date2:</p>
             <input type="text"  name="date2" id="Date2"><br><br>
-            <input type="button" class="btn" id="mostCommonIMSIFailsByDate" value="submit">
-            <input type="button" class="btn" id="closeUserStory12" value="CLOSE"/>
+            <button type="submit" class="btn" id="mostCommonIMSIFailsByDate">Submit</button>
+            <button class="btn" id="showGraph1">Graph Data</button>
+            <button type="reset" class="btn" id="closeGraph">Close Graph</button>
         </form>
 
-        <table id="mostCommonIMSIFailsByDateHolder"></table>
+
+
+        <table id="mostCommonIMSIFailsByDateHolder" style="border:1px solid black">
+        </table>
 
     </div>
 
 
-
-        <div>
-        <iframe src ="graph1.html" name = "Top10IMSIs" allowtransparency="true" scrolling="no" frameborder="0" width="800" height="500">
-        </iframe>
-        </div>
-        <br/>
-        <div>
-            <a href="graph1.html" target="targetframe">Open in new tab</a><br />
-        </div>
-
-        </li>
-
-    </div>
-</div>
-
+    <div id="graphContainer" style="width:100%; height:400px; display:none"></div>
 
 <br>
 <a href="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/" class="return">Log Out</a>
 
+    <script>
+//
+    document.getElementById('showGraph1').onclick = createChart();
+
+    function createChart(){
+        makeChart();
+        document.getElementById('graphContainer').style.display = 'block';
+        }
+//
+//        $("#closeGraph").click(function() {
+//            $('#graphContainer').hide();
+//        });
+
+        function makeChart() {
+            var chart;
+            chart = Highcharts.chart('graphContainer', {
+
+                title: {
+                    text: 'Top 10 IMSI\'s that had call failures during a given period'
+                    startRow: 1
+                },
+
+//            subtitle: {
+//                text: ''
+//            },
+
+                data: {
+                    table: 'mostCommonIMSIFailsByDateHolder'
+                },
+
+                xAxis: {
+                    allowDecimals: false,
+                    categories: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                    ,
+                    crosshair: true
+                },
+
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Number of call failures'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                chart: {
+                    type: 'spline',
+                    animation: Highcharts.svg, // don't animate in old IE
+                    marginRight: 10,
+                    events: {
+                        load: function () {
+
+                            // set up the updating of the chart each second
+                            var series = this.series[0];
+                            setInterval(function () {
+                                var x = (new Date()).getTime(), // current time
+                                    y = Math.random();
+                                series.addPoint([x, y], true, true);
+                            }, 1000);
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Failures',
+                    type: 'column',
+                    colorByPoint: true,
+//                data: [1000, 90, 80, 70, 60, 50, 40, 30, 20, 10],
+                    showInLegend: false
+                }]
+
+            });
+
+
+            $('#plain').click(function () {
+                chart.update({
+                    chart: {
+                        inverted: false,
+                        polar: false
+                    },
+                    subtitle: {
+                        text: 'Plain'
+                    }
+                });
+            });
+
+            $('#inverted').click(function () {
+                chart.update({
+                    chart: {
+                        inverted: true,
+                        polar: false
+                    },
+                    subtitle: {
+                        text: 'Inverted'
+                    }
+                });
+            });
+
+            $('#polar').click(function () {
+                chart.update({
+                    chart: {
+                        inverted: false,
+                        polar: true
+                    },
+                    subtitle: {
+                        text: 'Polar'
+                    }
+                });
+            });
+        }
+
+        </script>
 </body>
 </html>
 

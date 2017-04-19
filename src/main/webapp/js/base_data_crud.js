@@ -301,7 +301,12 @@ $(document).ready(function(){
                 //mostCommonIMSIFailsByDateHolder.empty();
                 $("#mostCommonIMSIFailsByDateHolder").empty();
                 $.each(lst, function (index, value) {
-                    $("#mostCommonIMSIFailsByDateHolder").append("<tr><td>"+value[0]+"</td><td>"+value[1]+"</td></tr>");
+                    var currentRow = document.createElement('tr');
+                    var imsiCell = currentRow.insertCell(0);
+                    var failuresCell = currentRow.insertCell(1);
+                    imsiCell.innerHTML = value[0];
+                    failuresCell.innerHTML = value[1];
+                    $("#mostCommonIMSIFailsByDateHolder").append(currentRow);
                 });
             },
             error:function () {
