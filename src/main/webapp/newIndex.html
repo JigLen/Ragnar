@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" media="screen"
           href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
 
+    <script type="text/javascript" src="js/access_check.js"></script>
+
     <script src="js/bootstrap/excanvas.min.js"></script>
     <script src="js/bootstrap/jquery.min.js"></script>
     <script src="js/bootstrap/jquery.ui.custom.js"></script>
@@ -78,13 +80,13 @@
 <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
     <ul>
         <li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>Home</span></a> </li>
-        <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>First Line Queries</span> <span class="label label-important">2</span></a>
+        <li id="first_line_quries" class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>First Line Queries</span> <span class="label label-important">2</span></a>
             <ul>
                 <li id="userstory4"><a href="#">Event ID, Cause Code for all affecting failures</a></li>
                 <li id="userstory5"><a href="#">Number of call failures in the given time period </a></li>
             </ul>
         </li>
-        <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Investigating Problems</span> <span class="label label-important">4</span></a>
+        <li id="investigating_problems" class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Investigating Problems</span> <span class="label label-important">4</span></a>
             <ul>
                 <li id="userstory7"><a href="#">List of all the IMSIs with call failures in the given time period</a></li>
                 <li id="userstory8"><a href="#">Number of call failures the model of phone has in the given time period</a></li>
@@ -94,7 +96,14 @@
                 </a></li>
             </ul>
         </li>
-        <li><a href="tables.html"><i class="icon icon-th"></i> <span>Evaluation</span></a></li>
+        <li id="evaluation" class="submenu" > <a href="#"><i class="icon icon-th-list"></i> <span>Evaluation</span> <span class="label label-important">4</span></a>
+            <ul>
+                <li><a href="#">Number of call failures and their total duration</a></li>
+                <li><a href="#">All unique failure Event ID and cause code combinations and number of occorunces</a></li>
+                <li><a href="#">Top 10 Market/Operator/Cell ID combinations that had call failures during a time period</a></li>
+                <li><a href="#">Top 10 IMSIs that had call failures</a></li>
+            </ul>
+        </li>
     </ul>
 </div>
 
@@ -173,8 +182,9 @@
         <ul id="imsiHolderByDate">
         </ul>
     </div>
-
-
 </div>
+<script>
+    permissions(2);
+</script>
 </body>
 </html>
