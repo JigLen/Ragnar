@@ -86,17 +86,11 @@
 <a href="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/" class="return">Log Out</a>
 
     <script>
-//
-    document.getElementById('showGraph1').onclick = createChart();
 
-    function createChart(){
-        makeChart();
-        document.getElementById('graphContainer').style.display = 'block';
-        }
-//
-//        $("#closeGraph").click(function() {
-//            $('#graphContainer').hide();
-//        });
+        $("#showGraph1").click(function() {
+            $("#graphContainer").show();
+            makeChart();
+        });
 
         function makeChart() {
             var chart;
@@ -104,7 +98,6 @@
 
                 title: {
                     text: 'Top 10 IMSI\'s that had call failures during a given period'
-                    startRow: 1
                 },
 
 //            subtitle: {
