@@ -216,7 +216,6 @@ $(document).ready(function(){
 
     /*************************** USER STORY 9 **********************************/
     $("#showUserStory9").click(function() {
-        alert("Test");
         var date1 = $("#getDate1").val();
         var date2 = $("#getDate2").val();
         $.ajax({
@@ -229,10 +228,19 @@ $(document).ready(function(){
                 $.each(baseDataList, function (index, value) {
                     var array = value.toString();
                     var strArray = array.split(",");
-                    var imsiVal = strArray[0];
-                    var count = strArray[1];
-                    var sum = strArray[2];
-                    $("#query9Holder").append("<li>"  + imsiVal + " " + count + " " + sum +"</li>");
+
+
+                    var currentRow = document.createElement('tr');
+                    var imsiCell = currentRow.insertCell(0);
+                    var countCell = currentRow.insertCell(1);
+                    var sumCell = currentRow.insertCell(1);
+
+
+                     imsiCell.innerHTML = '"' + strArray[0] + '"';
+                     countCell.innerHTML = strArray[1];
+                     sumCell.innerHTML = strArray[2];
+
+                    $("#query9Holder").append(currentRow);
                 });
             }});
     });
@@ -241,7 +249,7 @@ $(document).ready(function(){
         $("#query9Holder").empty();
     });
 
-
+//Show Base Data
     $("#showBaseData").click(function() {
         $.ajax({
             type: "GET",

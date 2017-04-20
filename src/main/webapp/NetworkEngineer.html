@@ -35,8 +35,10 @@
         <br>
         <input type="button" class="btn" id="showUserStory9" value="Display info for given time period"/>
         <input type="button" class="btn" id="closeUserStory9" value="CLOSE"/>
-        <ul id="query9Holder">
-        </ul>
+        <button class="btn" id="showGraph2">Graph Data</button>
+
+        <table id="query9Holder">
+        </table>
     </div>
     <!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
 
@@ -65,11 +67,12 @@
        <br>
             <p>Date 1:</p>
             <input type="text"  name="date1" id="Date1">
-            <p>Date2:</p>
+            <p>Date 2:</p>
             <input type="text"  name="date2" id="Date2"><br><br>
             <button type="submit" class="btn" id="mostCommonIMSIFailsByDate">Submit</button>
             <button class="btn" id="showGraph1">Graph Data</button>
-            <button type="reset" class="btn" id="closeGraph">Close Graph</button>
+            <button class="btn" id="closeGraph">Hide Graph</button>
+            <input type="button" class="btn" id="closeUserStory12" value="CLOSE"/>
         </form>
 
 
@@ -89,16 +92,21 @@
 
         //X axis counts IMSI values - must change
 
-        $("#showGraph1").click(function() {
+        $("#showGraph2").click(function() {
+            makeChart('query9holder');
             $("#graphContainer").show();
-            makeChart();
+        });
+
+        $("#showGraph1").click(function() {
+            makeChart('mostCommonIMSIFailsByDateHolder');
+            $("#graphContainer").show();
         });
 
         $("#closeGraph").click(function() {
             $("#graphContainer").hide();
         });
 
-        function makeChart() {
+        function makeChart(cname) {
             var chart;
             chart = Highcharts.chart('graphContainer', {
 
@@ -111,7 +119,7 @@
 //            },
 
                 data: {
-                    table: 'mostCommonIMSIFailsByDateHolder'
+                    table: cname
                 },
 
                 xAxis: {
