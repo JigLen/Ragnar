@@ -304,7 +304,7 @@ $(document).ready(function(){
                     var currentRow = document.createElement('tr');
                     var imsiCell = currentRow.insertCell(0);
                     var failuresCell = currentRow.insertCell(1);
-                    imsiCell.innerHTML = value[0];
+                    imsiCell.innerHTML = '"' + value[0] + '"';
                     failuresCell.innerHTML = value[1];
                     $("#mostCommonIMSIFailsByDateHolder").append(currentRow);
                 });

@@ -141,28 +141,12 @@
                         borderWidth: 0
                     }
                 },
-                chart: {
-                    type: 'spline',
-                    animation: Highcharts.svg, // don't animate in old IE
-                    marginRight: 10,
-                    events: {
-                        load: function () {
-
-                            // set up the updating of the chart each second
-                            var series = this.series[0];
-                            setInterval(function () {
-                                var x = (new Date()).getTime(), // current time
-                                    y = Math.random();
-                                series.addPoint([x, y], true, true);
-                            }, 1000);
-                        }
-                    }
-                },
+               
                 series: [{
                     name: 'Failures',
                     type: 'column',
                     colorByPoint: true,
-//                data: [1000, 90, 80, 70, 60, 50, 40, 30, 20, 10],
+//                data: 100, 90, 80, 70, 60, 50, 40, 30, 20, 10],
                     showInLegend: false
                 }]
 
