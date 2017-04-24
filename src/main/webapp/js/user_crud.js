@@ -10,25 +10,40 @@ var User = function(userId, password,accessLevel, description ) {
 
 $(document).ready(function()
 {
-    $("#addUser").click(function() {
 
-        var accessLevel =  $("#setUserType").val();
+    $("#addUser").click(function()
+    {
+
+        var userType =  $("#setUserType").val();
         var userId =  $("#setUserId").val();
         var password = $("#setUserPassword").val();
-        var description = "";
+        var description = " ";
+        var accessLevel = 0;
 
-        if(accessLevel == 1){
-             description ="Administrator";
-        }if(accessLevel == 2){
-             description ="Network Management";
-        }if(accessLevel == 3){
-             description ="Support Engineer";
-        }if(accessLevel == 4){
-             description ="Customer Rep";
+        if(userType == "Customer Rep")
+        {
+            accessLevel = 1;
+            description ="Customer Rep";
+        }
+        if(userType == "Support Engineer")
+        {
+            accessLevel = 2;
+            description = "Support Engineer";
+        }
+        if(userType == "Network Engineer")
+        {
+            accessLevel = 3;
+            description ="Network Engineer";
+        }
+        if(userType == "System Admin")
+        {
+            accessLevel = 4;
+            description ="System Admin";
         }
 
-        var myUser = new User(userId, password,accessLevel, description );
 
+        alert(userId + " " + password + " " + accessLevel + " " + description);
+        var myUser = new User(userId, password,accessLevel, description );
 
 
         $.ajax({
@@ -43,8 +58,6 @@ $(document).ready(function()
             },
             data: JSON.stringify(myUser),
             contentType: "application/json",
-
-
         });
     });
 

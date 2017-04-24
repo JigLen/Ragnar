@@ -132,4 +132,11 @@ public class BaseDataDaoImp implements BaseDataDao {
         Collection<?> results = query.getResultList();
         return results;
     }
+
+    @Override
+    public Collection<?> getUniqueFailureTypes() {
+        Query query = em.createQuery(" SELECT DISTINCT f.description FROM BaseDataEntity b inner join b.failureClassEntity f");
+        Collection<?> results = query.getResultList();
+        return results;
+    }
 }

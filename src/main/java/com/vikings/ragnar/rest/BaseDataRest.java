@@ -131,6 +131,9 @@ public class BaseDataRest {
     @GET @Produces(MediaType.APPLICATION_JSON) @Path("/getUniqueModels")
     public Collection<?> getUniqueModels(){ return  baseDataService.getUniqueModels();}
 
+    @GET @Produces(MediaType.APPLICATION_JSON) @Path("/getUniqueFailureTypes")
+    public Collection<?> getUniqueFailureTypes(){ return  baseDataService.getUniqueFailureTypes();}
+
     // file upload
     @POST @Path("/upload")@Consumes(MediaType.MULTIPART_FORM_DATA)
     public Response upload(MultipartFormDataInput input) throws IOException {

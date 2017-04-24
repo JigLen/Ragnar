@@ -38,5 +38,7 @@ public interface BaseDataDao {
 
     Collection<?> getUniqueModels();
 
+    Collection<?> getUniqueFailureTypes();
+
 }
 

@@ -91,6 +91,10 @@ public class BaseDataServiceEjb implements BaseDataService{
         return baseDataDao.getUniqueModels();
     }
 
+    @Override
+    public Collection<?> getUniqueFailureTypes() {
+        return baseDataDao.getUniqueFailureTypes();
+    }
 
 
 }

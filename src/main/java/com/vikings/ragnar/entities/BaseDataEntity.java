@@ -14,7 +14,7 @@ import java.sql.Timestamp;
         @NamedQuery(name = "US4", query = "SELECT b.eventCauseEntity.cpk.eventId, b.eventCauseEntity.cpk.causeCode, b.failureClassEntity.failureClass, e.description FROM BaseDataEntity AS b JOIN b.eventCauseEntity AS e WHERE b.eventCauseEntity.cpk.eventId = e.cpk.eventId AND b.eventCauseEntity.cpk.causeCode = e.cpk.causeCode AND b.imsi = :imsi"),
         @NamedQuery(name = "US5", query = "SELECT COUNT(b.failureClassEntity.failureClass) FROM BaseDataEntity b WHERE b.imsi =:imsi AND b.dateTime BETWEEN :d1 AND :d2"),
         @NamedQuery(name = "US6", query = "SELECT DISTINCT b.eventCauseEntity.cpk.causeCode FROM BaseDataEntity b WHERE b.imsi = :imsi"),
-        @NamedQuery(name = "US7", query = "FROM BaseDataEntity b WHERE b.dateTime BETWEEN :d1 AND :d2"),
+        @NamedQuery(name = "US7", query = "SELECT b.imsi FROM BaseDataEntity b WHERE b.dateTime BETWEEN :d1 AND :d2"),
         @NamedQuery(name = "US8", query = "SELECT b.ueEntity.model, COUNT(*) FROM BaseDataEntity b JOIN b.ueEntity AS ue WHERE ue.model =:model AND b.dateTime BETWEEN :date1 AND :date2"),
         @NamedQuery(name = "US9", query = "SELECT b.imsi, COUNT(*), SUM(b.duration) FROM BaseDataEntity b WHERE b.dateTime BETWEEN :date1 AND :date2 GROUP BY b.imsi"),
         @NamedQuery(name = "US10", query = "SELECT b.eventCauseEntity.cpk.eventId, b.eventCauseEntity.cpk.causeCode, b.eventCauseEntity.description, COUNT(*), b.ueEntity.model FROM BaseDataEntity AS b INNER JOIN b.ueEntity AS ue WHERE b.ueEntity.model=:model GROUP BY b.eventCauseEntity.cpk.eventId, b.eventCauseEntity.cpk.causeCode"),

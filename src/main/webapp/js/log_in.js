@@ -12,8 +12,6 @@ $(document).ready(function() {
             url: "ragnar/user/"+userId+"/"+password,
             success: function (value) {
                 if(value.userId!=null) {
-                    alert("Your Log In");
-
                     if(value.accessLevel==1 || value.accessLevel==2 || value.accessLevel==3 || value.accessLevel==4){
                         location.href ="http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/newIndex.html#";
 

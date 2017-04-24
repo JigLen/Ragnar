@@ -37,4 +37,7 @@ public interface BaseDataService {
 
     Collection<?> getUniqueModels();
 
+    Collection<?> getUniqueFailureTypes();
+
+
 }
