@@ -51,4 +51,30 @@ public class UserEntity  implements Serializable {
     public String getDescription() {
         return description;
     }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setAccessLevel(Integer accessLevel) {
+        this.accessLevel = accessLevel;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "userId=" + userId +
+                ", password='" + password + '\'' +
+                ", accessLevel=" + accessLevel +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

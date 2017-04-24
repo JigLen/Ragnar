@@ -7,14 +7,16 @@
         <url-pattern>/ragnar/*</url-pattern>
 
     </servlet-mapping>
+    
+    <servlet>     
+        <display-name>UserSessionServlet</display-name>
+        <servlet-name>UserSessionServlet</servlet-name>
+        <servlet-class>com.vikings.ragnar.servlets.UserSessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserSessionServlet</servlet-name>
+        <url-pattern>/UserSessionServlet</url-pattern>
+    </servlet-mapping>
 
-
-
-
-    <!--<servlet>-->
-        <!--<servlet-name>datawatcher</servlet-name>-->
-        <!--<servlet-class>com.vikings.ragnar.datahandling.DataWatcher</servlet-class>-->
-        <!--<load-on-startup>1</load-on-startup>-->
-    <!--</servlet>-->
 </web-app>
 

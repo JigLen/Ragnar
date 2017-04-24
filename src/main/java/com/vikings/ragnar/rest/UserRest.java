@@ -12,18 +12,14 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("/user")
 public class UserRest {
-    @EJB
-    UserService userServiceEjb;
+    @EJB    UserService userServiceEjb;
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{userId}/{password}")
-    public UserEntity getUser(@PathParam("userId") Integer userId,@PathParam("password") String password){
+    @GET @Produces(MediaType.APPLICATION_JSON) @Path("/{userId}/{password}")
+    public UserEntity getUser(@PathParam("userId") Integer userId, @PathParam("password") String password){
         return userServiceEjb.getUser(userId,password);
     }
 
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
+    @POST @Consumes(MediaType.APPLICATION_JSON)
     public void create(UserEntity user) {
         userServiceEjb.addUser(user);
     }

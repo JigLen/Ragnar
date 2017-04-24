@@ -1,0 +1,38 @@
+What did you do?
+
+Dimitar     -   Nothing.
+
+Sahar       -   Work on graph (US12)
+
+David       -   Bootstrap.
+
+Carl        -   US8 & US10 fully working.
+
+Ciarán      -   Restrictions on queries. Only the right queries are loaded for
+                each user. Merged with david's bootstrap.
+
+
+What will you do today?
+
+Dimitar 	-   Researching Arquillian/Selenium/etc...
+
+Sahar		-   Work on graph(US12)
+
+David		-   Merging All query functionality into bootstrap.
+
+Carl		-   User Sessions with Stateful Session Beans and HTTP Session.
+
+Ciaran		-   Research into Selenium for front end testing
+
+
+ What issues do you have?
+
+Dimitar 	-
+
+Sahar		-
+
+David		-
+
+Carl		-
+
+Ciaran		-
