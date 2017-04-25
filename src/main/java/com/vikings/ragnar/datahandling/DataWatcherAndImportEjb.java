@@ -35,7 +35,7 @@ public class DataWatcherAndImportEjb {
                 WatchService watcher = FileSystems.getDefault().newWatchService();
                 Path dir = Paths.get("res/incoming_data");
                 // Absolute Path will cause problems on other machines
-                dir = Paths.get("Z:\\Ragnar\\res");
+                dir = Paths.get("Z:\\Ragnar\\res\\incoming_data\\");
                 // could also have ENTRY_DELETE, ENTRY_MODIFY etc.
                 dir.register(watcher, ENTRY_CREATE);
                 System.out.println("Watch Service registered for dir: " + dir.getFileName());

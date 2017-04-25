@@ -56,8 +56,8 @@
             <input type="button" class="btn" id="mostCommonMarketOperatorCellCombo" value="Submit">
             <input type="button" class="btn" id="closeUserStory11" value="CLOSE"/>
         </form>
-        <ul id="mostCommonMarketOperatorCellComboHolder">
-        </ul>
+        <table id="mostCommonMarketOperatorCellComboHolder">
+        </table>
     </div>
 
     <!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
@@ -98,7 +98,7 @@
         });
 
         $("#showGraph1").click(function() {
-            makeChart('mostCommonIMSIFailsByDateHolder');
+            makeChart('mostCommonMarketOperatorCellComboHolder');
             $("#graphContainer").show();
         });
 
@@ -114,17 +114,13 @@
                     text: 'Top 10 IMSI\'s that had call failures during a given period'
                 },
 
-//            subtitle: {
-//                text: ''
-//            },
-
                 data: {
                     table: cname
                 },
 
                 xAxis: {
                     allowDecimals: false,
-                    categories: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                    categories: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
                     ,
                     crosshair: true
                 },

@@ -282,10 +282,12 @@ $(document).ready(function(){
                 $.each(lst, function (index, value) {
                     var array = value.toString();
                     var strArray = array.split(",");
-                    var market = strArray[0];
-                    var operator = strArray[1];
-                    var cellId = strArray[2];
-                    $("#mostCommonMarketOperatorCellComboHolder").append("<li>" + market + " " + operator + " " + cellId + "</li>")
+                    var currentRow = document.createElement('tr');
+                    var combinationsCell = currentRow.insertCell(0);
+                    var countCell = currentRow.insertCell(1);
+                    combinationsCell.innerHTML = '"' + strArray[0] + ',' + strArray[1] + ',' + strArray[2] + '"' ;
+                    countCell.innerHTML = strArray[2];
+                    $("#mostCommonMarketOperatorCellComboHolder").append(currentRow);
                 });
             },
             error:function () {
