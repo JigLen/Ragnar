@@ -235,7 +235,7 @@ $(document).ready(function(){
             type: "GET",
             url: "ragnar/base_data/us7/"+d1+"/"+d2,
             success: function (lst) {
-                //$("#tablebodyUs7").empty();
+                $("#tablebodyUs7").empty();
                 $.each(lst, function (index, value) {
                     var tr = (
                         '<tr>' +
@@ -269,7 +269,7 @@ $(document).ready(function(){
             type: "GET",
             url: "ragnar/base_data/us8/"+model+"/"+d1+"/"+d2,
             success: function (lst) {
-                //$("#tablebodyUs8").empty();
+                $("#tablebodyUs8").empty();
                 $.each(lst, function (index, value) {
                     var array = value.toString();
                     var strArray = array.split(",");
@@ -304,15 +304,13 @@ $(document).ready(function(){
     /*************************** USER STORY 9 **********************************/
     var xUs9 = document.getElementById('tableUs9');
     $("#showUserStory9").click(function() {
-        alert("Test");
         var date1 = $("#getDate1").val();
         var date2 = $("#getDate2").val();
         $.ajax({
             type: "GET",
             url: "ragnar/base_data/us9/" +date1 + "/" + date2,
             success: function (baseDataList) {
-                //$("#tablebodyUs9").empty();
-                alert("Inside");
+                $("#tablebodyUs9").empty();
                 $.each(baseDataList, function (index, value) {
                     var array = value.toString();
                     var strArray = array.split(",");
@@ -417,7 +415,7 @@ $(document).ready(function(){
             url: "ragnar/base_data/us11/" + date1 + "/" + date2,
             success: function (lst) {
                // mostCommonMarketOperatorCellComboHolder.empty();
-                //$("#tablebodyUs11").empty();
+                $("#tablebodyUs11").empty();
                 $.each(lst, function (index, value) {
                     var array = value.toString();
                     var strArray = array.split(",");

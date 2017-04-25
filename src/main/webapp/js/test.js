@@ -4,8 +4,6 @@
 $(document).ready(function() {
 
     var currentQuery = 0;
-    var queryOpenFlag = false;
-
     function showCurrentQueryOnly(current){
         queryID = "";
     }
@@ -74,216 +72,147 @@ $(document).ready(function() {
     });
 
     $('#userstory1').click(function () {
+            clearAll();
             var x = document.getElementById('us1Div');
-            if (x.style.display === 'none' /*&& queryOpenFlag === false*/) {
-                x.style.display = 'block';
-                //queryOpenFlag = true;
-            } else if (x.style.display === 'block' /*&& queryOpenFlag === true*/) {
-                x.style.display = 'none';
-                //queryOpenFlag = false;
-            }
-
+            x.style.display = 'block';
     });
 
 
     $('#userstory2').click(function () {
+        clearAll();
         var x = document.getElementById('us2Div');
-        if (x.style.display === 'none' /*&& queryOpenFlag === false*/) {
-            x.style.display = 'block';
-            queryOpenFlag = true;
-        } else if(x.style.display === 'block' /*&& queryOpenFlag === true*/) {
-            x.style.display = 'none';
-            queryOpenFlag = false;
-        }
+        x.style.display = 'block';
     });
 
 
     $('#userstory4').click(function () {
-
+        clearAll();
+        $('#tablebody').empty();
         var x = document.getElementById('us4Div');
         var us4ImsiPicker =  document.getElementById('select-box');
-
-        if (x.style.display === 'none' /*&& queryOpenFlag === false*/) {
-            x.style.display = 'block';
-            queryOpenFlag = true;
-        } else if(x.style.display === 'block' /*&& queryOpenFlag === true*/) {
-            x.style.display = 'none';
-            us4ImsiPicker.value = 'Select IMSI';
-            queryOpenFlag = false;
-        }
+        us4ImsiPicker.value = 'Select IMSI';
+        x.style.display = 'block';
     });
 
 
     $('#userstory5').click(function () {
-
+        clearAll();
+        $("#US5Output").empty();
         var x = document.getElementById('us5Div');
         var us5ImsiPicker =  document.getElementById('select_box_us5');
         var us5DateFrom =  document.getElementById('getDateFromUs5');
         var us5DateTo =  document.getElementById('getDateToUs5');
-        if (x.style.display === 'none' && queryOpenFlag === false) {
-            x.style.display = 'block';
-            queryOpenFlag = true;
-        } else if(x.style.display === 'block' && queryOpenFlag === true) {
-            x.style.display = 'none';
-            us5ImsiPicker.value = 'Select IMSI';
-            us5DateFrom.value = '';
-            us5DateTo.value = '';
-            us5DateFrom.placeholder = 'Enter Date From';
-            us5DateTo.placeholder = 'Enter Date To';
-            queryOpenFlag = false;
-        }
+        us5ImsiPicker.value = 'Select IMSI';
+        us5DateFrom.value = '';
+        us5DateTo.value = '';
+        us5DateFrom.placeholder = 'Enter Date From';
+        us5DateTo.placeholder = 'Enter Date To';
+        x.style.display = 'block';
     });
 
 
     $('#userstory6').click(function () {
-
+        clearAll();
+        $("#tablebodyUs6").empty();
         var x = document.getElementById('us6Div');
         var us6ImsiPicker =  document.getElementById('select_box_us6');
-        if (x.style.display === 'none' && queryOpenFlag === false) {
-            x.style.display = 'block';
-            queryOpenFlag = true;
-        } else if(x.style.display === 'block' && queryOpenFlag === true) {
-            x.style.display = 'none';
-            us6ImsiPicker.value = 'Select IMSI';
-            queryOpenFlag = false;
-        }
+        us6ImsiPicker.value = 'Select IMSI';
+        x.style.display = 'block';
     });
 
 
     $('#userstory7').click(function () {
+        clearAll();
+        $("#tablebodyUs7").empty();
         var us7DateFrom =  document.getElementById('getDateFromUs7');
         var us7DateTo =  document.getElementById('getDateToUs7');
+        us7DateFrom.value = '';
+        us7DateTo.value = '';
+        us7DateFrom.placeholder = 'Enter Date From';
+        us7DateTo.placeholder = 'Enter Date To';
         var x = document.getElementById('us7Div');
-        if (x.style.display === 'none' && queryOpenFlag === false) {
-            x.style.display = 'block';
-            queryOpenFlag = true;
-        } else if(x.style.display === 'block' && queryOpenFlag === true) {
-            x.style.display = 'none';
-            us7DateFrom.value = '';
-            us7DateTo.value = '';
-            us7DateFrom.placeholder = 'Enter Date From';
-            us7DateTo.placeholder = 'Enter Date To';
-            queryOpenFlag = false;
-        }
+        x.style.display = 'block';
     });
 
 
     $('#userstory8').click(function () {
-
+        clearAll();
+        $("#tablebodyUs8").empty();
         var x = document.getElementById('us8Div');
         //var us8Body = document.getElementById('tablebodyUs8');
         var us8ModelPicker =  document.getElementById('select_box_us8');
         var us8DateFrom =  document.getElementById('getDateFromUs8');
         var us8DateTo =  document.getElementById('getDateToUs8');
-        if (x.style.display === 'none' && queryOpenFlag === false)
-        {
-            x.style.display = 'block';
-            queryOpenFlag = true;
-        }
-        else if(x.style.display === 'block' && queryOpenFlag === true)
-        {
-            x.style.display = 'none';
-            //us8Body.style.display = 'none';
-            us8ModelPicker.value = 'Select Model';
-            us8DateFrom.value = '';
-            us8DateTo.value = '';
-            us8DateFrom.placeholder = 'Enter Date From';
-            us8DateTo.placeholder = 'Enter Date To';
-            queryOpenFlag = false;
-        }
+        us8ModelPicker.value = 'Select Model';
+        us8DateFrom.value = '';
+        us8DateTo.value = '';
+        us8DateFrom.placeholder = 'Enter Date From';
+        us8DateTo.placeholder = 'Enter Date To';
+        x.style.display = 'block';
     });
 
 
     $('#userstory9').click(function () {
-
+        clearAll();
+        $("#tablebodyUs9").empty();
         var x = document.getElementById('us9Div');
         var us9Body = document.getElementById('tablebodyUs9');
         var us9DateFrom =  document.getElementById('getDate1');
         var us9DateTo =  document.getElementById('getDate2');
-        if (x.style.display === 'none' && queryOpenFlag === false)
-        {
-            x.style.display = 'block';
-            queryOpenFlag = true;
-        }
-        else if(x.style.display === 'block' && queryOpenFlag === true)
-        {
-            x.style.display = 'none';
-            us9Body.style.display = 'none';
-            us9DateFrom.value = '';
-            us9DateTo.value = '';
-            us9DateFrom.placeholder = 'Enter Date From';
-            us9DateTo.placeholder = 'Enter Date To';
-            queryOpenFlag = false;
-        }
+        us9Body.style.display = 'none';
+        us9DateFrom.value = '';
+        us9DateTo.value = '';
+        us9DateFrom.placeholder = 'Enter Date From';
+        us9DateTo.placeholder = 'Enter Date To';
+        x.style.display = 'block';
     });
 
 
     $('#userstory10').click(function () {
+        clearAll();
+        $("#tablebodyUs10").empty();
         var us10ModelPicker =  document.getElementById('select_box_us10');
         var x = document.getElementById('us10Div');
-        if (x.style.display === 'none' && queryOpenFlag === false) {
-            x.style.display = 'block';
-            queryOpenFlag = true;
-        } else if(x.style.display === 'block' && queryOpenFlag === true) {
-            x.style.display = 'none';
-            us10ModelPicker.value = 'Select Model';
-            queryOpenFlag = false;
-        }
+        us10ModelPicker.value = 'Select Model';
+        x.style.display = 'block';
     });
 
 
     $('#userstory11').click(function () {
+        clearAll();
+        $("#tablebodyUs11").empty()
         var us11DateFrom =  document.getElementById('getDateFromUs11');
         var us11DateTo =  document.getElementById('getDateToUs11');
         var x = document.getElementById('us11Div');
-        if (x.style.display === 'none' && queryOpenFlag === false) {
-            x.style.display = 'block';
-            queryOpenFlag = true;
-        } else if(x.style.display === 'block' && queryOpenFlag === true) {
-            x.style.display = 'none';
-            us11DateFrom.value = '';
-            us11DateTo.value = '';
-            us11DateFrom.placeholder = 'Enter Date From';
-            us11DateTo.placeholder = 'Enter Date To';
-            queryOpenFlag = false;
-        }
+        us11DateFrom.value = '';
+        us11DateTo.value = '';
+        us11DateFrom.placeholder = 'Enter Date From';
+        us11DateTo.placeholder = 'Enter Date To';
+        x.style.display = 'block';
     });
 
 
     $('#userstory12').click(function () {
+        clearAll();
+        $("#tablebodyUs12").empty();
         var us12DateFrom =  document.getElementById('getDateFromUs12');
         var us12DateTo =  document.getElementById('getDateToUs12');
         var x = document.getElementById('us12Div');
-        if (x.style.display === 'none' && queryOpenFlag === false) {
-            x.style.display = 'block';
-            queryOpenFlag = true;
-        } else if(x.style.display === 'block' && queryOpenFlag === true) {
-            x.style.display = 'none';
-            us12DateFrom.value = '';
-            us12DateTo.value = '';
-            us12DateFrom.placeholder = 'Enter Date From';
-            us12DateTo.placeholder = 'Enter Date To';
-            //$('datetimepicker121').attr('placeholder', 'Enter Date From');
-            //$('datetimepicker122').attr('placeholder', 'Enter Date To');
-
-            queryOpenFlag = false;
-        }
+        us12DateFrom.value = '';
+        us12DateTo.value = '';
+        us12DateFrom.placeholder = 'Enter Date From';
+        us12DateTo.placeholder = 'Enter Date To';
+        x.style.display = 'block';
     });
 
 
     $('#userstory14').click(function () {
-
+        clearAll();
+        $("#tablebodyUs14").empty();
         var x = document.getElementById('us14Div');
         var us14FailureTypePicker =  document.getElementById('select_box_us14');
-        if (x.style.display === 'none' && queryOpenFlag === false) {
-            x.style.display = 'block';
-            queryOpenFlag = true;
-        } else if(x.style.display === 'block' && queryOpenFlag === true) {
-            x.style.display = 'none';
-            us14FailureTypePicker.value = 'Select Failure Type';
-
-            queryOpenFlag = false;
-        }
+        us14FailureTypePicker.value = 'Select Failure Type';
+        x.style.display = 'block';
     });
 
 
@@ -337,3 +266,17 @@ $(document).ready(function() {
     });
 
 });
+
+function clearAll(){
+    var user_story="us";
+    var div_name="Div"
+    var name="";
+    var x;
+    for(var i=1; i<=14; i++){
+        if(i!=3 && i !=13) {
+            name = user_story + i + div_name;
+            x = document.getElementById(name);
+            x.style.display = 'none';
+        }
+    }
+}
