@@ -12,6 +12,16 @@
     <link rel="stylesheet" type="text/css" media="screen"
           href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
 
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--pagination-->
+    <script type="text/javascript" src="path_to/jquery.js"></script>
+    <script type="text/javascript" src="path_to/jquery.simplePagination.js"></script>
+    <link type="text/css" rel="stylesheet" href="path_to/simplePagination.css"/>
+
     <script src="js/bootstrap/excanvas.min.js"></script>
     <script src="js/bootstrap/jquery.min.js"></script>
     <script src="js/bootstrap/jquery.ui.custom.js"></script>
@@ -160,6 +170,7 @@
         <table class="table table-bordered" id="tabletest" style="display:none">
             <thead>
             <tr>
+                <th>Date/Time</th>
                 <th>Event Id</th>
                 <th>Cause Code</th>
                 <th>Failure Class Number</th>
@@ -169,7 +180,11 @@
             <tbody id="tablebody">
             </tbody>
         </table>
+        <div class="alert alert-warning" id="alert4" style="display:none">
+            <strong>Warning!</strong> Please select a IMSI number to search.
+        </div>
     </div>
+
     <!------------------------------------------------------------------------------>
 
 
@@ -247,7 +262,7 @@
             <input type="button" class="btn" id="searchUs7" value="Search">
             <input type="button" class="btn" id="closeUserStory7" value="Close"/>
         </form>
-        <table class="table table-bordered" id="tableUs7" style="display:none">
+        <table class="paginated" id="tableUs7" style="display:none">
             <thead>
             <tr>
                 <th>IMSIs</th>
@@ -329,6 +344,13 @@
             <tbody id="tablebodyUs9">
             </tbody>
         </table>
+        <div class="container">
+            <h2>Close Alerts Via JavaScript</h2>
+            <div class="alert alert-success alert-dismissible" id="myAlert9">
+                <a href="#" class="close">&times;</a>
+                <strong>Success!</strong>
+            </div>
+        </div>
     </div>
     <!------------------------------------------------------------------------------>
 
@@ -382,9 +404,10 @@
         <table class="table table-bordered" id="tableUs11" style="display:none">
             <thead>
             <tr>
-                <th>MCC</th>
-                <th>MNC</th>
+                <th>Country</th>
+                <th>Operator</th>
                 <th>Cell ID</th>
+                <th>Count</th>
             </tr>
             </thead>
             <tbody id="tablebodyUs11">
@@ -455,6 +478,6 @@
 
 
 </div>
-<script> language="javascript"> permissions(3); </script>
+<!--<script> language="javascript"> permissions(3); </script>-->
 </body>
 </html>

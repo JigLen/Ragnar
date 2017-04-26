@@ -133,6 +133,7 @@ $(document).ready(function(){
 
     /*************************** USER STORY 4 **********************************/
     var x = document.getElementById('tabletest');
+    var y = document.getElementById('alert4');
     $("#US4Show").click(function() {
         var imsi = $("#select-box").val();
         $.ajax({
@@ -143,12 +144,15 @@ $(document).ready(function(){
                 $.each(baseDataList, function (index, value) {
                     var array = value.toString();
                     var strArray = array.split(",");
-                    var eventID = strArray[0];
-                    var causecode = strArray[1];
-                    var imsi = strArray[2];
-                    var description = strArray[3];
+                    var dateTime = strArray[0];
+                    var eventID = strArray[1];
+                    var causecode = strArray[2];
+                    var imsi = strArray[3];
+                    var description = strArray[4];
+
                     var tr = (
                         '<tr>' +
+                        '<td>'+ dateTime + '</td>'+
                         '<td>'+ eventID +'</td>'+
                         '<td>'+ causecode +'</td>'+
                         '<td>'+ imsi +'</td>'+
@@ -164,7 +168,10 @@ $(document).ready(function(){
                 }
             },
             error: function(){
-                alert("Error!");
+               // alert("Error");
+                if(y.style.display === 'none') {
+                    y.style.display = 'block';
+                }
             }
         });
     });
@@ -201,7 +208,6 @@ $(document).ready(function(){
     var xUs6 = document.getElementById('tableUs6');
     $("#US6SearchButton").click(function() {
         var imsi = ($("#select_box_us6").val());
-        alert(imsi);
         $.ajax({
             type: "GET",
             url: "ragnar/base_data/us6/"+imsi,
@@ -236,14 +242,18 @@ $(document).ready(function(){
             url: "ragnar/base_data/us7/"+d1+"/"+d2,
             success: function (lst) {
                 //$("#tablebodyUs7").empty();
-                $.each(lst, function (index, value) {
+                var counter = 0;
+                $.each(lst, function (index, value)
+                {
                     var tr = (
                         '<tr>' +
-                        '<td>'+ value +'</td>'+
+                        '<td>' + value + '</td>' +
                         '</tr>'
                     );
+
                     $('#tablebodyUs7').append(tr);
                 });
+
                 if (xUs7.style.display === 'none') {
                     xUs7.style.display = 'block';
                 }
@@ -257,7 +267,6 @@ $(document).ready(function(){
         xUs7.style.display = 'none';
         $("#tablebodyUs7").empty();
     });
-
 
     /*************************** USER STORY 8 **********************************/
     var xUs8 = document.getElementById('tableUs8');
@@ -273,10 +282,12 @@ $(document).ready(function(){
                 $.each(lst, function (index, value) {
                     var array = value.toString();
                     var strArray = array.split(",");
-                    var model = strArray[0];
-                    var count = strArray[1];
+                    var dateTime = strArray[0];
+                    var model = strArray[1];
+                    var count = strArray[2];
                     var tr = (
                         '<tr>' +
+                        '<td>'+ dateTime +'</td>'+
                         '<td>'+ model +'</td>'+
                         '<td>'+ count +'</td>'+
                         '</tr>'
@@ -295,6 +306,7 @@ $(document).ready(function(){
             }
         });
     });
+
     $("#closeUserStory8").click(function() {
         xUs8.style.display = 'none';
         $("#tablebodyUs8").empty();
@@ -312,27 +324,34 @@ $(document).ready(function(){
             url: "ragnar/base_data/us9/" +date1 + "/" + date2,
             success: function (baseDataList) {
                 //$("#tablebodyUs9").empty();
-                alert("Inside");
                 $.each(baseDataList, function (index, value) {
                     var array = value.toString();
                     var strArray = array.split(",");
-                    var imsiVal = strArray[0];
-                    var count = strArray[1];
-                    var sum = strArray[2];
+                    var dateTime = strArray[0];
+                    var imsiVal = strArray[1];
+                    var count = strArray[2];
+                    var sum = strArray[3];
                     //$("#query9Holder").append("<li>"  + imsiVal + " " + count + " " + sum +"</li>");
                     var tr = (
                         '<tr>' +
+                        '<td>'+ dateTime +'</td>'+
                         '<td>'+ imsiVal +'</td>'+
                         '<td>'+ count +'</td>'+
                         '<td>'+ sum +'</td>'+
                         '</tr>'
                     );
                     $('#tablebodyUs9').append(tr);
+
                 });
                 if (xUs9.style.display === 'none') {
                     xUs9.style.display = 'block';
                 }
-            }});
+            },
+            error:function () {
+                //$("#myAlert9").alert("close");
+                //alert("Date is not entered in the right format");
+            }
+        });
     });
 
     $("#closeUserStory9").click(function() {
@@ -360,6 +379,7 @@ $(document).ready(function(){
                     var model = strArray[4];
                     var tr = (
                         '<tr>' +
+                        '<td>'+ Date/Time +'</td>'+
                         '<td>'+ eventId +'</td>'+
                         '<td>'+ causeCode +'</td>'+
                         '<td>'+ description +'</td>'+
@@ -388,11 +408,11 @@ $(document).ready(function(){
     });
 
 
-    $("#showBaseData").click(function() {
+    $("#showBaseData").click(function()
+    {
         $.ajax({
             type: "GET",
             url: "ragnar/base_data",
-
             success: function (baseDataList) {
                 $.each(baseDataList, function (index, value) {
                     $("#baseDataHolder").append("<li>" + Date(value.dateTime) + " " + value.eventId + " " + value.failureClass
@@ -424,11 +444,14 @@ $(document).ready(function(){
                     var market = strArray[0];
                     var operator = strArray[1];
                     var cellId = strArray[2];
+                    var count = strArray[3];
                     var tr = (
                         '<tr>' +
+                        '<td>'+ Date/Time +'</td>'+
                         '<td>'+ market +'</td>'+
                         '<td>'+ operator +'</td>'+
                         '<td>'+ cellId +'</td>'+
+                        '<td>'+ count +'</td>'+
                         '</tr>'
                     );
 
@@ -466,6 +489,7 @@ $(document).ready(function(){
                     //$("#mostCommonIMSIFailsByDateHolder").append("<li>"+value+"</li>");
                     var tr = (
                         '<tr>' +
+                        '<td>'+ Date/Time +'</td>'+
                         '<td>'+ value +'</td>'+
                         '</tr>'
                     );
@@ -495,10 +519,13 @@ $(document).ready(function(){
         var x = failure.localeCompare("EMERGENCY");
         var y = failure.localeCompare("HIGH PRIORITY ACCESS");
         var z = failure.localeCompare("MT ACCESS");
+        var a = failure.localeCompare("HIGH PRIORITY ACCESS");
+        var b = failure.localeCompare("MT ACCESS");
         if(x == 1)num = 0;
         if(y == 1)num = 1;
         if(z == 1)num = 2;
-        alert(num);
+        if(a == 1)num = 3;
+        if(b == 1)num = 4;
         //failureClass = parseInt(failureClass);
         $.ajax({
             type: "GET",
@@ -508,6 +535,7 @@ $(document).ready(function(){
                     //$("#US14List").append("<li>" + value + "</
                     var tr = (
                         '<tr>' +
+                        '<td>'+ Date/Time +'</td>'+
                         '<td>'+ value +'</td>'+
                         '</tr>'
                     );
