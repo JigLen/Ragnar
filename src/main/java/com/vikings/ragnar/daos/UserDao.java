@@ -12,7 +12,7 @@ import java.util.Collection;
 public interface UserDao {
     //UserEntity getUser(Integer id,String password);
     //Collection<UserEntity> getAllUsers();
-    UserEntity getUser(Integer id,String password);
+    UserEntity getUser(String username,String password);
 
     UserEntity findUserById(Integer id);
 

@@ -50,7 +50,7 @@ public class LoginTest
 
     @Test
     public void callServiceToAddNewUserToDB() {
-        final UserEntity user = new UserEntity(100,"King", 3,"Customer Rep");
+        final UserEntity user = new UserEntity("John","King", 3,"Customer Rep");
         service.addUser(user);
         assertNotNull(user.getDescription(), "Customer Rep");
     }
@@ -59,7 +59,7 @@ public class LoginTest
     @Test
     public void login_mary()
     {
-        String loginResponse = loginBean.Login(45, "ssss");
+        String loginResponse = loginBean.Login("Mary", "ssss");
         Assert.assertEquals("Id:" + 45 + " " + "Password:ssss", loginResponse);
     }
 }

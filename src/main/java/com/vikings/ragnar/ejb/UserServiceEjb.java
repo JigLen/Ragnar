@@ -18,8 +18,8 @@ public class UserServiceEjb implements UserService{
     private UserDao userDao;
 
     @Override
-    public UserEntity getUser(Integer id,String password) {
-        return userDao.getUser(id,password);
+    public UserEntity getUser(String username,String password) {
+        return userDao.getUser(username,password);
     }
 
     @Override

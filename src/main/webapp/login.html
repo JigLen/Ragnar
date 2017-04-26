@@ -6,61 +6,52 @@
 		<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.min.css" />
 		<link rel="stylesheet" href="css/bootstrap/matrix-login.css" />
-		<link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+		<!-- might cause problems -->
+		<!--<link href="css/bootstrap/font-awesome.css" rel="stylesheet" />-->
+
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script type="text/javascript" src="js/log_in.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
 		<!--<link id="css" rel ="stylesheet" href="logInStyle.css">-->
+
+		<script src="js/matrix.login.js"></script>
+
 
 	</head>
 	<h1 align="center">User Login</h1>
 	<div id="loginbox">
-		<form id="loginform" class="form-vertical" action="index.html">
+
+
+
+		<form id="loginform" class="form-vertical" action="/Ragnar-0.0.1-SNAPSHOT/UserSessionServlet" method="post">
 			<div class="control-group">
 				<div class="controls">
 					<div class="main_input_box">
-						<span class="add-on bg_lg"><i class="icon-user"> </i></span><input type="text" placeholder="Username" id="getUser" />
+						<span class="add-on bg_lg"><i class="icon-user"> </i></span><input type="text" placeholder="Username" id="getUser" name="username" />
 					</div>
 				</div>
 			</div>
 			<div class="control-group">
 				<div class="controls">
 					<div class="main_input_box">
-						<span class="add-on bg_ly"><i class="icon-lock"></i></span><input type="password" placeholder="Password" id="getPassword" />
+						<span class="add-on bg_ly"><i class="icon-lock"></i></span><input type="password" placeholder="Password" id="getPassword" name="password" />
 					</div>
 				</div>
 			</div>
 			<div class="form-actions">
-				<span class="pull-right"><a type="button" id="logIn" class="btn btn-success" /> Login</a></span>
+				<span class="pull-right">
+					<input type="submit" class="btn btn-success"  id="logIn" value="log In">
+				</span>
 			</div>
 		</form>
 	</div>
 
-	<!--
-=======
-<!DOCTYPE html>
-<html>
-<head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/log_in.js"></script>
 
-	<link id="css" rel ="stylesheet" href="css/logInStyle.css">
-</head>
 
-<body>
->>>>>>> master
-	<form>
-		<p>User id:</p>
-		<input type="text"  name="userId" id="getUser">
-		<p>Password:</p>
-		<input type="password"  name="password" id="getPassword"><br><br>
-		<input type="button" class="btn"  id="logIn" value="log In">
-	</form>
-<<<<<<< HEAD
-	<script src="js/jquery.min.js"></script>
-	<script src="js/matrix.login.js"></script>
-	-->
+
+
 
 </body>
 

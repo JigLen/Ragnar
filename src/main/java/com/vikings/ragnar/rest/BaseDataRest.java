@@ -2,6 +2,7 @@ package com.vikings.ragnar.rest;
 
 import com.vikings.ragnar.ejb.BaseDataService;
 
+import com.vikings.ragnar.entities.BaseDataEntity;
 import org.jboss.resteasy.plugins.providers.multipart.InputPart;
 import org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInput;
 import javax.ejb.EJB;
@@ -140,7 +141,7 @@ public class BaseDataRest {
         // relative path not working
         String path = "res/incoming_data/";
 
-        path = "D:\\Ragnar\\res\\incoming_data\\";
+        path = "/Volumes/Data/Users/carlmccann2/IdeaProjects/Ragnar/res/incoming_data/";
         String fileName = "";
 
         Map<String, List<InputPart>> formParts = input.getFormDataMap();

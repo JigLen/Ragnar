@@ -11,28 +11,31 @@ import java.io.Serializable;
  */
 
 @NamedQueries({
-        @NamedQuery(name = "getUser", query = "from UserEntity user where user.userId = :id and user.password= :password")
+        @NamedQuery(name = "getUser", query = "from UserEntity user where user.username = :username and user.password= :password")
 })
 
 @Entity
 @Table(name="users")
 public class UserEntity  implements Serializable {
-    @Id @Column(name="User_id")     private Integer userId;
+    @Column(name="Username")        private String username;
+    @Id @Column(name="User_id")
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Integer userId;
     @Column(name="Password")        private String password;
     @Column(name="Access_Level")    private Integer accessLevel;
     @Column(name="Description")     private String description;
 
 
-    public UserEntity(Integer u, String psw, Integer a, String description){
-        userId=u;
-        password=psw;
-        accessLevel=a;
+    public UserEntity(String username, String password, Integer accessLevel, String description){
+        this.username = username;
+        this.password = password;
+        this.accessLevel = accessLevel;
         this.description = description;
     }
 
-    public String Login(Integer userId, String password)
+    public String Login(String username, String password)
     {
-        return "Id:" + userId + " " + "Password:" + password;
+        return "username:" + username + " " + "Password:" + password;
     }
 
     public UserEntity() {
@@ -52,5 +55,41 @@ public class UserEntity  implements Serializable {
 
     public String getDescription() {
         return description;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setAccessLevel(Integer accessLevel) {
+        this.accessLevel = accessLevel;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "username='" + username + '\'' +
+                ", userId=" + userId +
+                ", password='" + password + '\'' +
+                ", accessLevel=" + accessLevel +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

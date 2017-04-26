@@ -1,8 +1,8 @@
 /**
  * Created by C07589301 on 08/03/2017.
  */
-var User = function(userId, password,accessLevel, description ) {
-    this.userId = userId;
+var User = function(username, password, accessLevel, description) {
+    this.username = username;
     this.password = password;
     this.accessLevel = accessLevel;
     this.description = description;
@@ -15,7 +15,7 @@ $(document).ready(function()
     {
 
         var userType =  $("#setUserType").val();
-        var userId =  $("#setUserId").val();
+        var username =  $("#setUsername").val();
         var password = $("#setUserPassword").val();
         var description = " ";
         var accessLevel = 0;
@@ -30,20 +30,19 @@ $(document).ready(function()
             accessLevel = 2;
             description = "Support Engineer";
         }
-        if(userType == "Network Engineer")
-        {
-            accessLevel = 3;
-            description ="Network Engineer";
-        }
         if(userType == "System Admin")
         {
-            accessLevel = 4;
+            accessLevel = 3;
             description ="System Admin";
+        }
+        if(userType == "Network Engineer")
+        {
+            accessLevel = 4;
+            description ="Network Engineer";
         }
 
 
-        alert(userId + " " + password + " " + accessLevel + " " + description);
-        var myUser = new User(userId, password,accessLevel, description );
+        var myUser = new User(username, password,accessLevel, description );
 
 
         $.ajax({
@@ -51,7 +50,6 @@ $(document).ready(function()
             url: "ragnar/user",
             success: function () {
                 alert("user added");
-                location.reload();
             },
             error: function(){
                 alert("User POST failure")
@@ -69,7 +67,7 @@ $(document).ready(function()
             url: "ragnar/user",
             success: function (userList) {
                 $.each(userList, function (index, value) {
-                    $("#userHolder").append("<li>" + value.userId + " " + value.password +  " " + value.accessLevel + " " + value.description  +"</li>");
+                    $("#userHolder").append("<li>" + value.username + " " + value.password +  " " + value.accessLevel + " " + value.description  +"</li>");
                 });
             }});
     });

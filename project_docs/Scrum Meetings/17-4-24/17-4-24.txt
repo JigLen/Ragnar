@@ -1,0 +1,38 @@
+What did you do?
+
+Dimitar     -   Not Present(Worked on testing?)
+
+Sahar       -   Graphing.
+
+David       -   Bootstrap.
+
+Carl        -   Work on User Session.
+
+Ciarán      -   Removing specific functions based on what user is logged in. Sketched bootstrap
+                layout on paper.
+
+
+What will you do today?
+
+Dimitar 	-   Not Present(Working on testing?)
+
+Sahar		-   Second Graph US9.
+
+David		-   Fixed Up all queries in bootstrap.
+
+Carl		-   Work on user session.
+
+Ciaran		-   Tidied up navigation on bootstrap.
+
+
+ What issues do you have?
+
+Dimitar 	-
+
+Sahar		-
+
+David		-
+
+Carl		-
+
+Ciaran		-

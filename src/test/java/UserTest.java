@@ -46,7 +46,7 @@ public class UserTest {
 
     @Test
     public void callServiceToAddNewUserToDB() {
-        final UserEntity user = new UserEntity(100,"King", 3,"Customer Rep");
+        final UserEntity user = new UserEntity("John","King", 3,"Customer Rep");
         service.addUser(user);
         assertEquals(java.util.Optional.of(100), user.getUserId());
     }

@@ -147,12 +147,16 @@ $(document).ready(function(){
                     var causecode = strArray[1];
                     var imsi = strArray[2];
                     var description = strArray[3];
+                    var dateTime = new Date(parseInt(strArray[4]));
+                    alert(dateTime);
+
                     var tr = (
                         '<tr>' +
                         '<td>'+ eventID +'</td>'+
                         '<td>'+ causecode +'</td>'+
                         '<td>'+ imsi +'</td>'+
                         '<td>'+ description +'</td>'+
+                        '<td>'+ dateTime +'</td>'+
                         '</tr>'
                     );
 
@@ -332,7 +336,11 @@ $(document).ready(function(){
                 if (xUs9.style.display === 'none') {
                     xUs9.style.display = 'block';
                 }
-            }});
+            },
+            error:function () {
+                alert("Date is not entered in the right format");
+            }
+        });
     });
 
     $("#closeUserStory9").click(function() {
@@ -424,6 +432,7 @@ $(document).ready(function(){
                     var market = strArray[0];
                     var operator = strArray[1];
                     var cellId = strArray[2];
+
                     var tr = (
                         '<tr>' +
                         '<td>'+ market +'</td>'+

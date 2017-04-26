@@ -10,7 +10,7 @@ import java.util.Collection;
  */
 @Local
 public interface UserService {
-    UserEntity getUser(Integer id,String password);
+    UserEntity getUser(String username,String password);
     UserEntity findUserById(Integer id);
     void addUser(UserEntity user);
 }

@@ -11,7 +11,7 @@ import java.sql.Timestamp;
 
 
 @NamedQueries({
-        @NamedQuery(name = "US4", query = "SELECT b.eventCauseEntity.cpk.eventId, b.eventCauseEntity.cpk.causeCode, b.failureClassEntity.failureClass, e.description FROM BaseDataEntity AS b JOIN b.eventCauseEntity AS e WHERE b.eventCauseEntity.cpk.eventId = e.cpk.eventId AND b.eventCauseEntity.cpk.causeCode = e.cpk.causeCode AND b.imsi = :imsi"),
+        @NamedQuery(name = "US4", query = "SELECT b.eventCauseEntity.cpk.eventId, b.eventCauseEntity.cpk.causeCode, b.failureClassEntity.failureClass, e.description, b.dateTime FROM BaseDataEntity AS b JOIN b.eventCauseEntity AS e WHERE b.eventCauseEntity.cpk.eventId = e.cpk.eventId AND b.eventCauseEntity.cpk.causeCode = e.cpk.causeCode AND b.imsi = :imsi"),
         @NamedQuery(name = "US5", query = "SELECT COUNT(b.failureClassEntity.failureClass) FROM BaseDataEntity b WHERE b.imsi =:imsi AND b.dateTime BETWEEN :d1 AND :d2"),
         @NamedQuery(name = "US6", query = "SELECT DISTINCT b.eventCauseEntity.cpk.causeCode FROM BaseDataEntity b WHERE b.imsi = :imsi"),
         @NamedQuery(name = "US7", query = "SELECT b.imsi FROM BaseDataEntity b WHERE b.dateTime BETWEEN :d1 AND :d2"),

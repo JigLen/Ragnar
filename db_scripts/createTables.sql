@@ -99,7 +99,8 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Users`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Users` (
-  User_id INT NOT NULL,
+  Username VARCHAR(50) NOT NULL,
+  User_id INT NOT NULL AUTO_INCREMENT,
   Password VARCHAR(45) NULL,
   Access_Level INT NOT NULL,
   Description VARCHAR(45) NULL,

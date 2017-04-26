@@ -2,14 +2,7 @@
  * Created by User on 14-Apr-17.
  */
 $(document).ready(function() {
-
-    var currentQuery = 0;
     var queryOpenFlag = false;
-
-    function showCurrentQueryOnly(current){
-        queryID = "";
-    }
-
 
     $.ajax({
         type: "GET",
@@ -74,14 +67,14 @@ $(document).ready(function() {
     });
 
     $('#userstory1').click(function () {
-            var x = document.getElementById('us1Div');
-            if (x.style.display === 'none' /*&& queryOpenFlag === false*/) {
-                x.style.display = 'block';
-                //queryOpenFlag = true;
-            } else if (x.style.display === 'block' /*&& queryOpenFlag === true*/) {
-                x.style.display = 'none';
-                //queryOpenFlag = false;
-            }
+        var x = document.getElementById('us1Div');
+        if (x.style.display === 'none' /*&& queryOpenFlag === false*/) {
+            x.style.display = 'block';
+            //queryOpenFlag = true;
+        } else if (x.style.display === 'block' /*&& queryOpenFlag === true*/) {
+            x.style.display = 'none';
+            //queryOpenFlag = false;
+        }
 
     });
 
@@ -99,7 +92,6 @@ $(document).ready(function() {
 
 
     $('#userstory4').click(function () {
-
         var x = document.getElementById('us4Div');
         var us4ImsiPicker =  document.getElementById('select-box');
 

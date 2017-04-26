@@ -22,11 +22,11 @@ public class UserDaoImp implements  UserDao{
     EntityManager em;
 
     @Override
-    public UserEntity getUser(Integer id,String password) {
+    public UserEntity getUser(String username,String password) {
 
         Query query = em.createNamedQuery("getUser");
 
-        query.setParameter("id", id);
+        query.setParameter("username", username);
         query.setParameter("password", password);
         List<UserEntity> allUserInfo = query.getResultList();
         return allUserInfo.get(0);
@@ -34,6 +34,8 @@ public class UserDaoImp implements  UserDao{
 
     @Override
     public void addUser(UserEntity user) {
+        System.out.println("Made it to DAO");
+        System.out.println(user.toString());
         em.persist(user);
     }
 

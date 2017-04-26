@@ -121,21 +121,21 @@ public class BaseDataDaoImp implements BaseDataDao {
     //
     @Override
     public Collection<?> getUniqueImsiNumbers() {
-        Query query = em.createQuery(" SELECT DISTINCT base.imsi FROM BaseDataEntity base");
+        Query query = em.createQuery(" SELECT DISTINCT base.imsi FROM BaseDataEntity base ORDER BY base.imsi");
         Collection<?> results = query.getResultList();
         return results;
     }
 
     @Override
     public Collection<?> getUniqueModels() {
-        Query query = em.createQuery(" SELECT DISTINCT ue.model FROM BaseDataEntity b inner join b.ueEntity ue");
+        Query query = em.createQuery(" SELECT DISTINCT ue.model FROM BaseDataEntity b inner join b.ueEntity ue ORDER BY ue.model");
         Collection<?> results = query.getResultList();
         return results;
     }
 
     @Override
     public Collection<?> getUniqueFailureTypes() {
-        Query query = em.createQuery(" SELECT DISTINCT f.description FROM BaseDataEntity b inner join b.failureClassEntity f");
+        Query query = em.createQuery("SELECT DISTINCT f.description FROM BaseDataEntity b inner join b.failureClassEntity f");
         Collection<?> results = query.getResultList();
         return results;
     }
