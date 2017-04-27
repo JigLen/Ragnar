@@ -26,6 +26,7 @@ public class UserSessionServlet extends HttpServlet {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
 
+
             UserEntity userEntity;
             try {
                 userEntity = userService.getUser(username, password);
@@ -36,16 +37,17 @@ public class UserSessionServlet extends HttpServlet {
 
                 System.out.println("User Entity Stored in session");
 
-                if (session.getAttribute("userEntity") == null) response.sendRedirect("login.html");
-                else response.sendRedirect("newIndex.html");
+                if (session.getAttribute("userEntity") == null) response.sendRedirect("HTML/login.html");
+                else response.sendRedirect("HTML/index.html");
             } catch (Exception e) {
                 System.out.println("User Not Found");
-                response.sendRedirect("login.html");
+                response.sendRedirect("HTML/login.html");
             }
         }
         else{                                               // logout
+            System.out.println("LOGOUT TEST");
             session.removeAttribute("userEntity");
-            response.sendRedirect("login.html");
+            response.sendRedirect("HTML/login.html");
         }
 
 
@@ -75,7 +77,7 @@ public class UserSessionServlet extends HttpServlet {
 
             }
             else{
-                response.sendRedirect("login.html");
+                response.sendRedirect("HTML/login.html");
                 System.out.println("No One logged in");
             }
         }
