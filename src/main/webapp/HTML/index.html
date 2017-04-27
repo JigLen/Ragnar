@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ragnar</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+  <link rel="stylesheet" href="css/fullcalendar.css" />
+  <link rel="stylesheet" href="css/matrix-style.css" />
+  <link rel="stylesheet" href="css/matrix-media.css" />
+  <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/jquery.gritter.css" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+
+  <!--------------------------------------Our JS------------------------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/test.js"></script>
+  <script type="text/javascript" src="js/user_crud.js"></script>
+  <script type="text/javascript" src="js/access_check.js"></script>
+  <script type="text/javascript" src="js/base_data_crud.js"></script>
+
+
+  <!--------------------------------------BootStrap JS------------------------------------------------------------------------->
+  <script src="js/excanvas.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.ui.custom.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.flot.min.js"></script>
+  <script src="js/jquery.flot.resize.min.js"></script>
+  <script src="js/jquery.peity.min.js"></script>
+  <script src="js/fullcalendar.min.js"></script>
+  <script src="js/matrix.js"></script>
+  <!--<script src="js/matrix.dashboard.js"></script>!-->
+  <script src="js/jquery.gritter.min.js"></script>
+  <!--<script src="js/matrix.interface.js"></script>-->
+  <script src="js/matrix.chat.js"></script>
+  <script src="js/jquery.validate.js"></script>
+  <!--<script src="js/matrix.form_validation.js"></script>-->
+  <script src="js/jquery.wizard.js"></script>
+  <script src="js/jquery.uniform.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="js/matrix.popover.js"></script>
+  <script src="js/jquery.dataTables.min.js"></script>
+  <!--<script src="js/matrix.tables.js"></script>-->
+
+  <script type="text/javascript"
+          src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+  </script>
+
+  <script type="text/javascript"
+          src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+  </script>
+
+  <script type="text/javascript"
+          src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+  </script>
+
+  <script type="text/javascript"
+          src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+  </script>
+
+</head>
+<body>
+
+<!--Header-part-->
+<div id="header">
+  <h1><a href="dashboard.html">Matrix Admin</a></h1>
+</div>
+<!--close-Header-part--> 
+
+
+<!--top-Header-menu-->
+<div id="user-nav" class="navbar navbar-inverse">
+  <ul class="nav">
+    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Welcome User</span><b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="icon-check"></i> My Tasks</a></li>
+        <li class="divider"></li>
+        <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+      </ul>
+    </li>
+    <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+  </ul>
+</div>
+<!--close-top-Header-menu-->
+<!--start-top-serch-->
+<!--close-top-serch-->
+<!--sidebar-menu-->
+<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+  <ul>
+    <li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>Home</span></a> </li>
+    <li id="first_line_queries" class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>First Line Queries</span> <span class="label label-important"></span></a>
+      <ul>
+        <li id="userstory4"><a href="#">Event ID, Cause Code for all affecting failures</a></li>
+        <li id="userstory5"><a href="#">Number of call failures in the given time period </a></li>
+      </ul>
+    </li>
+    <li id="investigating_problems" class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Investigating Problems</span> <span class="label label-important"></span></a>
+      <ul>
+        <li id="userstory7"><a href="#">List of all the IMSIs with call failures in the given time period</a></li>
+        <li id="userstory8"><a href="#">Number of call failures the model of phone has in the given time period</a></li>
+        <li id="userstory9"><a href="#">Number of call failures and their total duration based on the IMSI code</a></li>
+        <li id="userstory14"><a href="#">Number of IMSI that are affected</a></li>
+
+        </a></li>
+      </ul>
+    </li>
+    <li id="evaluation"class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Evaluation</span> <span class="label label-important"></span></a>
+      <ul>
+        <li id="userstory6"><a href="#">List all Unique Cause Codes</a></li>
+        <li id="userstory10"><a href="#">Display all unique call failures for given model of phone</a></li>
+        <li id="userstory11"><a href="#">Display top ten most common market operator cell combo</a></li>
+        <li id="userstory12"><a href="#">Display top ten most common IMSI numbers</a></li>
+      </ul>
+    </li>
+    <li id="admin"class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Administration</span> <span class="label label-important"></span></a>
+      <ul>
+        <li id="userstory1"><a href="#">Import Datasets</a></li>
+        <li id="userstory2"><a href="#">Add new user</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!--sidebar-menu-->
+
+<!--main-container-part-->
+<div id="content">
+<!--breadcrumbs-->
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
+  </div>
+<!--End-breadcrumbs-->
+  <div class="left" id="us1Div" style="display:none">
+    <form enctype="multipart/form-data" method="post">
+      <input name="file" type="file" id="fileUploadB1" />
+      <input type="button" name="upload "value="Upload" id="fileUploadB2"/>
+    </form>
+    <progress></progress>
+  </div>
+
+  <!------------------------------------------------------------------------------>
+  <div class="left" id="us2Div" style="display:none">
+    <h3>Add new user</h3>
+    <form>
+      <br>
+      <p>User Type:</p>
+      <!--<input type="text"  name="userType" id="setUserType">-->
+      <select id="setUserType">
+        <option value="Customer Rep">Customer Rep</option>
+        <option value="Support Engineer">Support Engineer</option>
+        <option value="Network Engineer">Network Engineer</option>
+        <option value="System Admin">System Admin</option>
+      </select>
+      <p>User id:</p>
+      <input type="text"  name="userId" id="setUserId">
+      <p>Password:</p>
+      <input type="password"  name="password" id="setUserPassword"><br><br>
+      <input type="button" class="btn"  id="addUser" value="Enter New User">
+    </form>
+  </div>
+
+  <!------------------------------------------------------------------------------>
+  <div class="left" id="us4Div" style="display:none">
+    <h4>Display the Event Id and Cause Code for any/all failures affecting that IMSI</h4>
+    <form>
+      <select id="select-box">
+        <option value="Select IMSI">Select IMSI</option>
+      </select>
+    </form>
+    <input type="button" class="btn" id="US4Show" value="Show List"/>
+    <input type="button" class="btn" id="close" value="Close List"/>
+    <table class="table table-bordered" id="tabletest" style="display:none">
+      <thead>
+      <tr>
+        <th>Event Id</th>
+        <th>Cause Code</th>
+        <th>Failure Class Number</th>
+        <th>Description</th>
+      </tr>
+      </thead>
+      <tbody id="tablebody">
+      </tbody>
+    </table>
+  </div>
+  <!------------------------------------------------------------------------------>
+
+
+  <!------------------------------------------------------------------------------>
+  <div class="left" id="us5Div" style="display:none">
+    <h4>Failure count for given IMSI between dates</h4>
+    <form>
+      <!--<input type="text" name="id" placeholder="IMSI code goes here" id="imsiCodeToSearchUS5"><br>-->
+      <select id="select_box_us5">
+        <option value="Select IMSI">Select IMSI</option>
+      </select>
+      <br>
+      <!--<input type="text" name="id" placeholder="Enter date from" id="getDateFromUS5"><br>-->
+      <div id="datetimepicker51" class="input-append date">
+        <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date from" id="getDateFromUs5"></input>
+        <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+      </div>
+      <br>
+      <div id="datetimepicker52" class="input-append date">
+        <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date to" id="getDateToUs5"></input>
+        <span class="add-on">
+                     <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+      </div>
+      <br>
+      <input type="button" class="btn" id="searchByImsiAndDatesUS5" value="Search"/>
+      <input type="button" class="btn" id="closeUserStory5" value="Close"/>
+
+    </form>
+    <h3 id="US5Output"></h3>
+  </div>
+  <!------------------------------------------------------------------------------>
+
+
+  <!------------------------------------------------------------------------------>
+  <div class="left" id="us6Div" style="display:none">
+    <h4>Get affected IMSIs by Failure Type</h4>
+    <form>
+      <select id="select_box_us6">
+        <option value="Select IMSI">Select IMSI</option>
+      </select>
+      <br>
+      <input type="button" id="US6SearchButton" value="Search">
+      <input type="button" class="btn" id="closeUserStory6" value="Close"/>
+    </form>
+    <table class="table table-bordered" id="tableUs6" style="display:none">
+      <thead>
+      <tr>
+        <th>Cause Code</th>
+      </tr>
+      </thead>
+      <tbody id="tablebodyUs6">
+      </tbody>
+    </table>
+  </div>
+  <!------------------------------------------------------------------------------>
+
+
+  <!------------------------------------------------------------------------------>
+  <div class="left"  id="us7Div" style="display:none">
+    <form>
+      <h4>Search IMSI by Date</h4>
+      <div id="datetimepicker71" class="input-append date">
+        <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date from" id="getDateFromUs7"></input>
+        <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+      </div>
+      <br>
+      <div id="datetimepicker72" class="input-append date">
+        <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date to" id="getDateToUs7"></input>
+        <span class="add-on">
+                     <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+      </div>
+      <br>
+      <input type="button" class="btn" id="searchUs7" value="Search">
+      <input type="button" class="btn" id="closeUserStory7" value="Close"/>
+    </form>
+    <table class="table table-bordered" id="tableUs7" style="display:none">
+      <thead>
+      <tr>
+        <th>IMSIs</th>
+      </tr>
+      </thead>
+      <tbody id="tablebodyUs7">
+      </tbody>
+    </table>
+  </div>
+  <!------------------------------------------------------------------------------>
+
+
+  <!------------------------------------------------------------------------------>
+  <div class="left"  id="us8Div" style="display:none">
+    <form>
+      <select id="select_box_us8">
+        <option value="Select Model">Select Model</option>
+      </select>
+      <br>
+      <!--<input type="text" name="id" placeholder="Enter date from" id="getDateFromUs8"><br>
+      <input type="text" name="id" placeholder="Enter date from" id="getDateToUs8"><br>-->
+      <div id="datetimepicker81" class="input-append date">
+        <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date from" id="getDateFromUs8"></input>
+        <span class="add-on">
+                     <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+      </div>
+      <br>
+      <div id="datetimepicker82" class="input-append date">
+        <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date to" id="getDateToUs8"></input>
+        <span class="add-on">
+                      <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+      </div>
+      <br>
+      <input type="button" class="btn" id="openUserStory8" value="Submit">
+      <input type="button" class="btn" id="closeUserStory8" value="Close"/>
+    </form>
+    <table class="table table-bordered" id="tableUs8" style="display:none">
+      <thead>
+      <tr>
+        <th>Phone Model</th>
+        <th>Total Failure Count</th>
+      </tr>
+      </thead>
+      <tbody id="tablebodyUs8">
+      </tbody>
+    </table>
+  </div>
+  <!------------------------------------------------------------------------------>
+
+
+  <!------------------------------------------------------------------------------>
+  <div class="left" id="us9Div" style="display:none">
+    <h4>Enter Time Period To Search</h4>
+    <form>
+      <div id="datetimepicker91" class="input-append date">
+        <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date from" id="getDate1"></input>
+        <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+      </div>
+      <br>
+      <div id="datetimepicker92" class="input-append date">
+        <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date to" id="getDate2"></input>
+        <span class="add-on">
+                     <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+      </div>
+      <br>
+      <input type="button" class="btn" id="showUserStory9" value="Search"/>
+      <input type="button" class="btn" id="closeUserStory9" value="Close"/>
+
+    </form>
+    <table class="table table-bordered" id="tableUs9" style="display:none">
+      <thead>
+      <tr>
+        <th>IMSI</th>
+        <th>Count</th>
+        <th>Total Duration</th>
+      </tr>
+      </thead>
+      <tbody id="tablebodyUs9">
+      </tbody>
+    </table>
+  </div>
+  <!------------------------------------------------------------------------------>
+
+
+  <!------------------------------------------------------------------------------>
+  <div class="left"  id="us10Div" style="display:none">
+  <form>
+    <select id="select_box_us10">
+      <option value="Select Model">Select Model</option>
+    </select>
+    <br>
+    <input type="button" class="btn" id="searchsUs10" value="Submit">
+    <input type="button" class="btn" id="closeUserStory10" value="Close"/>
+  </form>
+  <table class="table table-bordered" id="tableUs10" style="display:none">
+    <thead>
+    <tr>
+      <th>Event ID</th>
+      <th>Cause Code</th>
+      <th>Description</th>
+      <th>Count</th>
+      <th>Mode;</th>
+    </tr>
+    </thead>
+    <tbody id="tablebodyUs10">
+    </tbody>
+  </table>
+</div>
+  <!------------------------------------------------------------------------------>
+
+
+  <!------------------------------------------------------------------------------>
+  <div class="left" id="us11Div" style="display:none">
+    <h4>Display the top 10 most common Market ,Operator and Cell Combo within dates</h4>
+    <form>
+      <div id="datetimepicker111" class="input-append date">
+        <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date from" id="getDateFromUs11"></input>
+        <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+      </div>
+      <br>
+      <div id="datetimepicker112" class="input-append date">
+        <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date to" id="getDateToUs11"></input>
+        <span class="add-on">
+                     <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+      </div>
+      <br>
+      <input type="button" class="btn" id="mostCommonMarketOperatorCellCombo" value="Submit">
+      <input type="button" class="btn" id="closeUserStory11" value="Close"/>
+    </form>
+    <table class="table table-bordered" id="tableUs11" style="display:none">
+      <thead>
+      <tr>
+        <th>MCC</th>
+        <th>MNC</th>
+        <th>Cell ID</th>
+      </tr>
+      </thead>
+      <tbody id="tablebodyUs11">
+      </tbody>
+    </table>
+    <!--<ul id="mostCommonMarketOperatorCellComboHolder"></ul>-->
+  </div>
+  <!------------------------------------------------------------------------------>
+
+
+  <!------------------------------------------------------------------------------>
+  <div class="left" id="us12Div" style="display:none">
+    <h4>Display top 10 IMSIs for failures between dates</h4>
+    <form>
+      <div id="datetimepicker121" class="input-append date">
+        <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date from" id="getDateFromUs12"></input>
+        <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+      </div>
+      <br>
+      <div id="datetimepicker122" class="input-append date">
+        <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date to" id="getDateToUs12"></input>
+        <span class="add-on">
+                     <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+      </div>
+      <br>
+      <input type="button" class="btn" id="mostCommonIMSIFailsByDate" value="Submit">
+      <input type="button" class="btn" id="closeUserStory12" value="Close"/>
+    </form>
+    <table class="table table-bordered" id="tableUs12" style="display:none">
+      <thead>
+      <tr>
+        <th>IMSIs</th>
+      </tr>
+      </thead>
+      <tbody id="tablebodyUs12">
+      </tbody>
+    </table>
+  </div>
+  <!------------------------------------------------------------------------------>
+
+
+  <!------------------------------------------------------------------------------>
+  <div class="left" id="us14Div" style="display:none">
+    <h3>Get affected IMSIs by Failure Type</h3>
+    <form>
+      <select id="select_box_us14">
+        <option value="Select Failure Type">Select Failure Type</option>
+      </select>
+      <br>
+      <input type="button" id="US14SearchButton" value="Search">
+      <input type="button" id="closeUserStory14" value="Empty">
+    </form>
+    <table class="table table-bordered" id="tableUs14" style="display:none">
+      <thead>
+      <tr>
+        <th>IMSI</th>
+      </tr>
+      </thead>
+      <tbody id="tablebodyUs14">
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!--end-main-container-part-->
+
+<!--Footer-part-->
+
+<div class="row-fluid">
+  <div id="footer" class="span12"> 2017 &copy; Ragnar was created by Carl, Ciaran, David, Dimitar and Sahar </div>
+</div>
+
+<!--end-Footer-part-->
+<script> language="javascript"> permissions(4); </script>
+
+
+</body>
+</html>
