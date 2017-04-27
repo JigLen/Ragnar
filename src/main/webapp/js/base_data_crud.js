@@ -139,28 +139,29 @@ $(document).ready(function(){
             type: "GET",
             url: "ragnar/base_data/us4/" + imsi,
             success: function (baseDataList) {
-                $('#tablebody').empty();
+                $('#tablebodyUs4').empty();
                 $.each(baseDataList, function (index, value) {
                     var array = value.toString();
                     var strArray = array.split(",");
                     var eventID = strArray[0];
                     var causecode = strArray[1];
-                    var imsi = strArray[2];
-                    var description = strArray[3];
-                    var dateTime = new Date(parseInt(strArray[4]));
-                    alert(dateTime);
+                    var failClassNo = strArray[2];
+                    var failClass = strArray[3];
+                    var description = strArray[4];
+                    var dateTime = new Date(parseInt(strArray[5]));
 
                     var tr = (
                         '<tr>' +
                         '<td>'+ eventID +'</td>'+
                         '<td>'+ causecode +'</td>'+
-                        '<td>'+ imsi +'</td>'+
+                        '<td>'+ failClassNo +'</td>'+
+                        '<td>'+ failClass +'</td>'+
                         '<td>'+ description +'</td>'+
                         '<td>'+ dateTime +'</td>'+
                         '</tr>'
                     );
 
-                    $('#tablebody').append(tr);
+                    $('#tablebodyUs4').append(tr);
                 });
 
                 if (x.style.display === 'none') {
@@ -175,7 +176,7 @@ $(document).ready(function(){
 
     $("#close").click(function() {
         x.style.display = 'none';
-        $("#tablebody").empty();
+        $("#tablebodyUs4").empty();
 
     });
     /*************************** USER STORY 5 **********************************/
@@ -239,7 +240,7 @@ $(document).ready(function(){
             type: "GET",
             url: "ragnar/base_data/us7/"+d1+"/"+d2,
             success: function (lst) {
-                //$("#tablebodyUs7").empty();
+                $("#tablebodyUs7").empty();
                 $.each(lst, function (index, value) {
                     var tr = (
                         '<tr>' +
@@ -273,7 +274,7 @@ $(document).ready(function(){
             type: "GET",
             url: "ragnar/base_data/us8/"+model+"/"+d1+"/"+d2,
             success: function (lst) {
-                //$("#tablebodyUs8").empty();
+                $("#tablebodyUs8").empty();
                 $.each(lst, function (index, value) {
                     var array = value.toString();
                     var strArray = array.split(",");
@@ -308,15 +309,14 @@ $(document).ready(function(){
     /*************************** USER STORY 9 **********************************/
     var xUs9 = document.getElementById('tableUs9');
     $("#showUserStory9").click(function() {
-        alert("Test");
         var date1 = $("#getDate1").val();
         var date2 = $("#getDate2").val();
         $.ajax({
             type: "GET",
             url: "ragnar/base_data/us9/" +date1 + "/" + date2,
             success: function (baseDataList) {
-                //$("#tablebodyUs9").empty();
-                alert("Inside");
+                $("#tablebodyUs9").empty();
+                var first = true;
                 $.each(baseDataList, function (index, value) {
                     var array = value.toString();
                     var strArray = array.split(",");
@@ -324,6 +324,7 @@ $(document).ready(function(){
                     var count = strArray[1];
                     var sum = strArray[2];
                     //$("#query9Holder").append("<li>"  + imsiVal + " " + count + " " + sum +"</li>");
+
                     var tr = (
                         '<tr>' +
                         '<td>'+ imsiVal +'</td>'+
@@ -331,6 +332,7 @@ $(document).ready(function(){
                         '<td>'+ sum +'</td>'+
                         '</tr>'
                     );
+                    if(first) alert(tr); first=false;
                     $('#tablebodyUs9').append(tr);
                 });
                 if (xUs9.style.display === 'none') {
@@ -425,19 +427,21 @@ $(document).ready(function(){
             url: "ragnar/base_data/us11/" + date1 + "/" + date2,
             success: function (lst) {
                // mostCommonMarketOperatorCellComboHolder.empty();
-                //$("#tablebodyUs11").empty();
+                $("#tablebodyUs11").empty();
                 $.each(lst, function (index, value) {
                     var array = value.toString();
                     var strArray = array.split(",");
                     var market = strArray[0];
                     var operator = strArray[1];
                     var cellId = strArray[2];
+                    var count = strArray[3];
 
                     var tr = (
                         '<tr>' +
                         '<td>'+ market +'</td>'+
                         '<td>'+ operator +'</td>'+
                         '<td>'+ cellId +'</td>'+
+                        '<td>'+ count +'</td>'+
                         '</tr>'
                     );
 
