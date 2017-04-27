@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="css/jquery.gritter.css" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 
+  <!--------------------------------------MD5 JS------------------------------------------------------------------------->
+  <script type="text/javascript" src="js/md5.js"></script>
+
   <!--------------------------------------Our JS------------------------------------------------------------------------->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="js/test.js"></script>
@@ -25,6 +28,12 @@
   <script type="text/javascript" src="js/file_upload.js"></script>
 
 
+  <!--------------------------------------HighChart JS------------------------------------------------------------------------->
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="http://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/data.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
 
   <!--------------------------------------BootStrap JS------------------------------------------------------------------------->
   <script src="js/excanvas.min.js"></script>
@@ -137,6 +146,9 @@
       <input type="button" name="upload "value="Upload" id="fileUploadB2"/>
     </form>
     <progress></progress>
+    <div class="alert alert-warning" id="alert1" style="display:none">
+      <strong>Warning!</strong> Non excel files will not upload
+    </div>
   </div>
 
   <!------------------------------------------------------------------------------>
@@ -158,6 +170,9 @@
       <input type="password"  name="password" id="setUserPassword"><br><br>
       <input type="button" class="btn"  id="addUser" value="Enter New User">
     </form>
+    <div class="alert alert-warning" id="alert2" style="display:none">
+      <strong>Warning!</strong> Please enter username and password
+    </div>
   </div>
 
   <!------------------------------------------------------------------------------>
@@ -184,7 +199,9 @@
       <tbody id="tablebodyUs4">
       </tbody>
     </table>
-
+    <div class="alert alert-warning" id="alert4" style="display:none">
+      <strong>Warning!</strong> Please select an IMSI number to search.
+    </div>
   </div>
   <!------------------------------------------------------------------------------>
 
@@ -216,6 +233,9 @@
 
     </form>
     <h3 id="US5Output"></h3>
+    <div class="alert alert-warning" id="alert5" style="display:none">
+      <strong>Warning!</strong> Please select a IMSI and input valid dates.
+    </div>
   </div>
   <!------------------------------------------------------------------------------>
 
@@ -228,7 +248,7 @@
         <option value="Select IMSI">Select IMSI</option>
       </select>
       <br>
-      <input type="button" id="US6SearchButton" value="Search">
+      <input type="button" class='btn' id="US6SearchButton" value="Search">
       <input type="button" class="btn" id="closeUserStory6" value="Close"/>
     </form>
     <table class="table table-bordered" id="tableUs6" style="display:none">
@@ -240,6 +260,9 @@
       <tbody id="tablebodyUs6">
       </tbody>
     </table>
+    <div class="alert alert-warning" id="alert6" style="display:none">
+      <strong>Warning!</strong> Please select an IMSI number.
+    </div>
   </div>
   <!------------------------------------------------------------------------------>
 
@@ -272,6 +295,9 @@
       <tbody id="tablebodyUs7">
       </tbody>
     </table>
+    <div class="alert alert-warning" id="alert7" style="display:none">
+      <strong>Warning!</strong> Please enter valid dates.
+    </div>
   </div>
   <!------------------------------------------------------------------------------>
 
@@ -310,6 +336,9 @@
       <tbody id="tablebodyUs8">
       </tbody>
     </table>
+    <div class="alert alert-warning" id="alert8" style="display:none">
+      <strong>Warning!</strong> Please select a phone model and enter valid dates.
+    </div>
   </div>
   <!------------------------------------------------------------------------------>
 
@@ -332,6 +361,7 @@
       <br>
       <input type="button" class="btn" id="showUserStory9" value="Search"/>
       <input type="button" class="btn" id="closeUserStory9" value="Close"/>
+      <input type="button" class="btn" id="graph9" value="Display Graph" style="display:none">
 
     </form>
     <table class="table table-bordered" id="tableUs9" style="display:none">
@@ -345,6 +375,17 @@
       <tbody id="tablebodyUs9">
       </tbody>
     </table>
+    <div class="alert alert-warning" id="alert9" style="display:none">
+      <strong>Warning!</strong> Please enter valid dates.
+    </div>
+    <table id="table9Graph" style="border:1px solid black; display:none">
+      <tr>
+        <th>IMSI</th>
+        <th>Count</th>
+        <th>Total Duration</th>
+      </tr>
+    </table>
+    <div id="graphContainer9" style="width:80%; height:400px; display:none"></div>
   </div>
   <!------------------------------------------------------------------------------>
 
@@ -356,7 +397,7 @@
       <option value="Select Model">Select Model</option>
     </select>
     <br>
-    <input type="button" class="btn" id="searchsUs10" value="Submit">
+    <input type="button" class="btn" id="searchUs10" value="Submit">
     <input type="button" class="btn" id="closeUserStory10" value="Close"/>
   </form>
   <table class="table table-bordered" id="tableUs10" style="display:none">
@@ -372,6 +413,9 @@
     <tbody id="tablebodyUs10">
     </tbody>
   </table>
+    <div class="alert alert-warning" id="alert10" style="display:none">
+      <strong>Warning!</strong> Please select a phone model to search.
+    </div>
 </div>
   <!------------------------------------------------------------------------------>
 
@@ -394,6 +438,8 @@
       <br>
       <input type="button" class="btn" id="mostCommonMarketOperatorCellCombo" value="Submit">
       <input type="button" class="btn" id="closeUserStory11" value="Close"/>
+      <input type="button" class="btn" id="graph11" value="Display Graph" style="display:none">
+
     </form>
     <table class="table table-bordered" id="tableUs11" style="display:none">
       <thead>
@@ -407,6 +453,11 @@
       <tbody id="tablebodyUs11">
       </tbody>
     </table>
+    <div class="alert alert-warning" id="alert11" style="display:none">
+      <strong>Warning!</strong> Please enter valid dates.
+    </div>
+    <table id="table11Graph" style="border:1px solid black; display:none"></table>
+    <div id="graphContainer11" style="width:80%; height:400px; display:none"></div>
     <!--<ul id="mostCommonMarketOperatorCellComboHolder"></ul>-->
   </div>
   <!------------------------------------------------------------------------------>
@@ -430,16 +481,25 @@
       <br>
       <input type="button" class="btn" id="mostCommonIMSIFailsByDate" value="Submit">
       <input type="button" class="btn" id="closeUserStory12" value="Close"/>
+      <input type="button" class="btn" id="graph12" value="Display Graph" style="display:none">
+
     </form>
     <table class="table table-bordered" id="tableUs12" style="display:none">
       <thead>
       <tr>
-        <th>IMSIs</th>
+        <th>IMSI</th>
+        <th>Count</th>
+
       </tr>
       </thead>
       <tbody id="tablebodyUs12">
       </tbody>
     </table>
+    <div class="alert alert-warning" id="alert12" style="display:none">
+      <strong>Warning!</strong> Please enter valid dates.
+    </div>
+    <table id="table12Graph" style="border:1px solid black; display:none"></table>
+    <div id="graphContainer12" style="width:80%; height:400px; display:none"></div>
   </div>
   <!------------------------------------------------------------------------------>
 
@@ -464,6 +524,10 @@
       <tbody id="tablebodyUs14">
       </tbody>
     </table>
+    <div class="alert alert-warning" id="alert14" style="display:none">
+      <strong>Warning!</strong> Please select a failure type to search.
+    </div>
+  </div>
   </div>
 </div>
 
@@ -475,6 +539,204 @@
   <div id="footer" class="span12"> 2017 &copy; Ragnar was created by Carl, Ciaran, David, Dimitar and Sahar </div>
 </div>
 
+
+
+<script>
+
+    $("#graph12").click(function()
+    {
+        makeChart();
+        $("#graphContainer12").show();
+    });
+
+    $("#graph11").click(function()
+    {
+        makeChart11();
+        $("#graphContainer11").show();
+    });
+
+    $("#graph9").click(function()
+    {
+        makeChart9();
+        $("#graphContainer9").show();
+    });
+
+
+
+
+
+
+    function makeChart()
+    {
+        var chart;
+        chart = Highcharts.chart('graphContainer12', {
+
+            title: {
+                text: 'Top 10 IMSI\'s that had call failures during a given period'
+            },
+
+            data: {
+                table: "table12Graph"
+            },
+
+            xAxis: {
+                allowDecimals: false,
+                categories: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                ,
+                crosshair: true
+            },
+
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Number of call failures'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">Failures: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+
+            series: [{
+                name: 'Failures',
+                type: 'column',
+                colorByPoint: true,
+                showInLegend: false
+            }]
+
+        });
+
+
+
+    }
+
+    function makeChart11()
+    {
+
+        var chart;
+        chart = Highcharts.chart('graphContainer11', {
+
+            title: {
+                text: 'Top 10 most common Market, Operator and Cell Combo within'
+            },
+
+            data: {
+                table: "table11Graph"
+            },
+
+            xAxis: {
+                allowDecimals: false,
+                categories: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                ,
+                crosshair: true
+            },
+
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Number of combinations'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">Failures: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+
+            series: [{
+                name: 'Failures',
+                type: 'column',
+                colorByPoint: true,
+                showInLegend: false
+            }]
+
+        });
+    }
+
+
+    function makeChart9()
+    {
+
+        Highcharts.chart('graphContainer9', {
+            chart: {
+                zoomType: 'xy'
+            },
+            title: {
+                text: 'Number of Failures and their duration'
+            },
+            xAxis: [{
+                categories: imsiArray
+            }],
+            yAxis: [{ // Primary yAxis
+                labels: {
+                    style: {
+                        color: Highcharts.getOptions().colors[1]
+                    }
+                },
+                title: {
+                    text: 'Number of Failures',
+                    style: {
+                        color: Highcharts.getOptions().colors[1]
+                    }
+                }
+            }, { // Secondary yAxis
+                title: {
+                    text: 'Total Duration',
+                    style: {
+                        color: Highcharts.getOptions().colors[0]
+                    }
+                },
+                labels: {
+                    style: {
+                        color: Highcharts.getOptions().colors[0]
+                    }
+                },
+                opposite: true
+            }],
+
+            tooltip: {
+                shared: true
+            },
+
+            series: [{
+                name: 'Total Duration',
+                type: 'column',
+                yAxis: 1,
+                data: durationSeries,
+                tooltip: {
+                    pointFormat: '<span style="font-weight: bold; color: {series.color}">{series.name}</span>: <b>{point.y:.1f} Seconds</b> '
+                }
+            }, {
+                name: 'Number of Failures',
+                type: 'spline',
+                data: countSeries,
+                tooltip: {
+                    pointFormat: ' <span style="font-weight: bold; color: {series.color}">{series.name}</span>: <b>{point.y:.1f}</b> '
+                }
+            },]
+        });
+    }
+
+</script>
 
 </body>
 </html>

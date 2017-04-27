@@ -21,6 +21,12 @@ var BaseData = function( dateTime,  eventId,  failureClass,  ueType,  market,  o
 }
 
 
+var imsiArray = [];
+var countArray = [];
+var durationArray = [];
+//JSON
+var countSeries = [];
+var durationSeries = [];
 
 
 
@@ -132,6 +138,7 @@ $(document).ready(function(){
     });
 
     /*************************** USER STORY 4 **********************************/
+    var alert4 = document.getElementById('alert4');
     var x = document.getElementById('tabletest');
     $("#US4Show").click(function() {
         var imsi = $("#select-box").val();
@@ -139,6 +146,7 @@ $(document).ready(function(){
             type: "GET",
             url: "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/ragnar/base_data/us4/" + imsi,
             success: function (baseDataList) {
+                alert4.style.display = 'none';
                 $('#tablebody').empty();
                 $.each(baseDataList, function (index, value) {
                     var array = value.toString();
@@ -169,7 +177,7 @@ $(document).ready(function(){
                 }
             },
             error: function(){
-                alert("Error!");
+                alert4.style.display = 'block';
             }
         });
     });
@@ -180,6 +188,7 @@ $(document).ready(function(){
 
     });
     /*************************** USER STORY 5 **********************************/
+    var alert5 = document.getElementById('alert5');
 
     $("#searchByImsiAndDatesUS5").click(function() {
         $("#US5Output").empty();
@@ -190,10 +199,11 @@ $(document).ready(function(){
             type: "GET",
             url: "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/ragnar/base_data/us5/"+imsi+"/"+dateFrom+"/"+dateTo,
             success: function (value) {
+                alert5.style.display = 'none';
                 $("#US5Output").append("Number of failures for a given IMSI and time period: " + value);
             },
             error: function(){
-                $("#US5Output").append = "Error!!";
+                alert5.style.display = 'block';
             }
         });
     });
@@ -204,12 +214,14 @@ $(document).ready(function(){
 
     /*************************** USER STORY 6 **********************************/
     var xUs6 = document.getElementById('tableUs6');
+    var alert6 = document.getElementById('alert6');
     $("#US6SearchButton").click(function() {
         var imsi = ($("#select_box_us6").val());
         $.ajax({
             type: "GET",
             url: "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/ragnar/base_data/us6/"+imsi,
             success: function (value) {
+                alert6.style.display = 'none';
                 $("#tablebodyUs6").empty();
                 $.each(value, function(index, value) {
                     var tr = (
@@ -222,7 +234,10 @@ $(document).ready(function(){
                 if(xUs6.style.display === 'none') {
                     xUs6.style.display = 'block';
                 }
-            }});
+            },
+        error: function(){
+            alert6.style.display = 'block';
+        }});
     });
     $("#closeUserStory6").click(function() {
         xUs6.style.display = 'none';
@@ -232,6 +247,7 @@ $(document).ready(function(){
 
     /*************************** USER STORY 7 **********************************/
     var xUs7 = document.getElementById('tableUs7');
+    var alert7 = document.getElementById('alert7');
     $("#searchUs7").click(function() {
         var d1= $("#getDateFromUs7").val();
         var d2= $("#getDateToUs7").val();
@@ -239,6 +255,7 @@ $(document).ready(function(){
             type: "GET",
             url: "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/ragnar/base_data/us7/"+d1+"/"+d2,
             success: function (lst) {
+                alert7.style.display = 'none';
                 $("#tablebodyUs7").empty();
                 $.each(lst, function (index, value) {
                     var tr = (
@@ -253,7 +270,7 @@ $(document).ready(function(){
                 }
             },
             error:function () {
-                alert("Date is not entered in the right format");
+                alert7.style.display = 'block';
             }
         });
     });
@@ -264,6 +281,7 @@ $(document).ready(function(){
 
 
     /*************************** USER STORY 8 **********************************/
+    var alert8 = document.getElementById('alert8');
     var xUs8 = document.getElementById('tableUs8');
     $("#openUserStory8").click(function() {
         var model =$("#select_box_us8").val();
@@ -273,6 +291,7 @@ $(document).ready(function(){
             type: "GET",
             url: "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/ragnar/base_data/us8/"+model+"/"+d1+"/"+d2,
             success: function (lst) {
+                alert8.style.display = 'none';
                 $("#tablebodyUs8").empty();
                 $.each(lst, function (index, value) {
                     var array = value.toString();
@@ -295,7 +314,7 @@ $(document).ready(function(){
                 }
             },
             error:function () {
-                alert("Date is not entered in the right format");
+                alert8.style.display = 'block';
             }
         });
     });
@@ -306,7 +325,10 @@ $(document).ready(function(){
 
 
     /*************************** USER STORY 9 **********************************/
+    var graphBt9 = document.getElementById('graph9');
     var xUs9 = document.getElementById('tableUs9');
+    var us9Body = document.getElementById('tablebodyUs9');
+    var alert9 = document.getElementById('alert9');
     $("#showUserStory9").click(function() {
         var date1 = $("#getDate1").val();
         var date2 = $("#getDate2").val();
@@ -314,7 +336,13 @@ $(document).ready(function(){
             type: "GET",
             url: "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/ragnar/base_data/us9/" +date1 + "/" + date2,
             success: function (baseDataList) {
+                alert9.style.display = 'none';
+
                 $("#tablebodyUs9").empty();
+                imsiArray = [];
+                countArray = [];
+                durationArray = [];
+
                 $.each(baseDataList, function (index, value) {
                     var array = value.toString();
                     var strArray = array.split(",");
@@ -329,11 +357,25 @@ $(document).ready(function(){
                         '<td>'+ sum +'</td>'+
                         '</tr>'
                     );
+
+                    imsiArray.push(imsiVal);
+                    countArray.push(count);
+                    durationArray.push(sum);
                     $('#tablebodyUs9').append(tr);
                 });
+                for (var i = 0; i < durationArray.length; i++) {
+                    durationSeries.push([i, parseInt(durationArray[i])]);
+                    countSeries.push([i, parseInt(countArray[i])]);
+                }
+                graphBt9.style.display = 'block';
                 if (xUs9.style.display === 'none') {
                     xUs9.style.display = 'block';
+                    us9Body.style.display = 'block';
+
                 }
+            },
+            error: function(){
+                alert9.style.display = 'block';
             }});
     });
 
@@ -342,46 +384,53 @@ $(document).ready(function(){
         $("#tablebodyUs9").empty();
     });
 
-
+    /*************************** USER STORY 10 **********************************/
+    var alert10 = document.getElementById('alert10');
     var xUs10 = document.getElementById('tableUs10');
-    $("#searchsUs10").click(function() {
+    $("#searchUs10").click(function() {
         var model =$("#select_box_us10").val();
-        $.ajax({
-            type: "GET",
 
-            url: "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/ragnar/base_data/us10/"+model,
-            success: function (lst) {
-                $("#tablebodyUs10").empty();
-                $.each(lst, function (index, value) {
-                    var array = value.toString();
-                    var strArray = array.split(",");
-                    var eventId = strArray[0];
-                    var causeCode = strArray[1];
-                    var description = strArray[2];
-                    var count = strArray[3];
-                    var model = strArray[4];
-                    var tr = (
-                        '<tr>' +
-                        '<td>'+ eventId +'</td>'+
-                        '<td>'+ causeCode +'</td>'+
-                        '<td>'+ description +'</td>'+
-                        '<td>'+ count +'</td>'+
-                        '<td>'+ model +'</td>'+
-                        '</tr>'
-                    );
+        if(model != null) {
+            $.ajax({
+                type: "GET",
 
-                    $('#tablebodyUs10').append(tr);
-                    //$("#imsiHolderByModel").append("<li>"+ model +  " " + count + "</li>");
+                url: "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/ragnar/base_data/us10/" + model,
+                success: function (lst) {
+                    alert10.style.display = 'none';
+                    $("#tablebodyUs10").empty();
+                    $.each(lst, function (index, value) {
+                        var array = value.toString();
+                        var strArray = array.split(",");
+                        var eventId = strArray[0];
+                        var causeCode = strArray[1];
+                        var description = strArray[2];
+                        var count = strArray[3];
+                        var model = strArray[4];
+                        var tr = (
+                            '<tr>' +
+                            '<td>' + eventId + '</td>' +
+                            '<td>' + causeCode + '</td>' +
+                            '<td>' + description + '</td>' +
+                            '<td>' + count + '</td>' +
+                            '<td>' + model + '</td>' +
+                            '</tr>'
+                        );
 
-                });
-                if (xUs10.style.display === 'none') {
-                    xUs10.style.display = 'block';
+                        $('#tablebodyUs10').append(tr);
+
+                    });
+                    // if (xUs10.style.display === 'none') {
+                    //     xUs10.style.display = 'block';
+                    // }
+                },
+                error: function () {
+                    alert10.style.display = 'block';
                 }
-            },
-            error:function () {
-                alert("Date is not entered in the right format");
-            }
-        });
+            });
+        }
+        else{
+            alert10.style.display = 'block';
+        }
     });
 
     $("#closeUserStory10").click(function() {
@@ -410,7 +459,9 @@ $(document).ready(function(){
     });
 
     /*************************** USER STORY 11 **********************************/
+    var alert11 = document.getElementById('alert11');
     var xUs11 = document.getElementById('tableUs11');
+    var graphBt11 = document.getElementById('graph11');
     $("#mostCommonMarketOperatorCellCombo").click(function() {
         var date1 = $("#getDateFromUs11").val();
         var date2 = $("#getDateToUs11").val();
@@ -420,6 +471,9 @@ $(document).ready(function(){
             success: function (lst) {
                // mostCommonMarketOperatorCellComboHolder.empty();
                 $("#tablebodyUs11").empty();
+                $('#table11Graph').empty();                   // $("#mostCommonMarketOperatorCellComboHolder").append("<li>" + market + " " + operator + " " + cellId + "</li>")
+
+                var first = true;
                 $.each(lst, function (index, value) {
                     var array = value.toString();
                     var strArray = array.split(",");
@@ -436,15 +490,28 @@ $(document).ready(function(){
                         '</tr>'
                     );
 
+                    var tr2 = (
+                        '<tr>' +
+                        '<td>' + '"' + market  + ',' + operator + '"' + '</td>'+
+                        '<td>'+ count +'</td>'+
+                        '</tr>'
+                    );
+
                     $('#tablebodyUs11').append(tr);
-                   // $("#mostCommonMarketOperatorCellComboHolder").append("<li>" + market + " " + operator + " " + cellId + "</li>")
+
+                    if(first){
+                        $('#table11Graph').append(tr2);                   // $("#mostCommonMarketOperatorCellComboHolder").append("<li>" + market + " " + operator + " " + cellId + "</li>")
+                        first = false;
+                    }
+                    $('#table11Graph').append(tr2);                   // $("#mostCommonMarketOperatorCellComboHolder").append("<li>" + market + " " + operator + " " + cellId + "</li>")
                 });
+                graphBt11.style.display = 'block';
                 if (xUs11.style.display === 'none') {
                     xUs11.style.display = 'block';
                 }
             },
             error:function () {
-                alert("Not Found");
+                alert11.style.display = 'block';
             }
         });
     });
@@ -455,7 +522,9 @@ $(document).ready(function(){
     });
 
     /*************************** USER STORY 12 **********************************/
+    var alert12 = document.getElementById('alert12');
     var xUs12 = document.getElementById('tableUs12');
+    var graphBt12 = document.getElementById('graph12');
     $("#mostCommonIMSIFailsByDate").click(function() {
         var d1= $("#getDateFromUs12").val();
         var d2= $("#getDateToUs12").val();
@@ -463,24 +532,36 @@ $(document).ready(function(){
             type: "GET",
             url: "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/ragnar/base_data/us12/"+d1+"/"+d2,
             success: function (lst) {
+                alert12.style.display = 'none';
                 $("#tablebodyUs12").empty();
-                //mostCommonIMSIFailsByDateHolder.empty();
-                //$("#mostCommonIMSIFailsByDateHolder").empty();
+                $('#table12Graph').empty();                   // $("#mostCommonMarketOperatorCellComboHolder").append("<li>" + market + " " + operator + " " + cellId + "</li>")
+
+                var first = true;
                 $.each(lst, function (index, value) {
-                    //$("#mostCommonIMSIFailsByDateHolder").append("<li>"+value+"</li>");
+                    var array = value.toString();
+                    var strArray = array.split(",");
+                    var imsi = strArray[0];
+                    var count = strArray[1];
                     var tr = (
                         '<tr>' +
-                        '<td>'+ value +'</td>'+
+                        '<td>'+ '"' + imsi + '"' +'</td>'+
+                        '<td>'+ count +'</td>'+
                         '</tr>'
                     );
                     $('#tablebodyUs12').append(tr);
+                    if(first){
+                        $('#table12Graph').append(tr);
+                        first = false;
+                    }
+                    $('#table12Graph').append(tr);
                 });
-                if(xUs12.style.display === 'none') {
+                graphBt12.style.display = 'block';
+                if (xUs12.style.display === 'none') {
                     xUs12.style.display = 'block';
                 }
             },
             error:function () {
-                alert("Date is not entered in the right format");
+                alert12.style.display = 'block';
             }
         });
     });
@@ -491,22 +572,23 @@ $(document).ready(function(){
     });
 
     /*************************** USER STORY 14 **********************************/
+    var alert14 = document.getElementById('alert14');
     var xUs14 = document.getElementById('tableUs14');
     $("#US14SearchButton").click(function() {
         $("#tablebodyUs14").empty();
         var num;
-        var failure = $("#select_box_us14").val();
-        var x = failure.localeCompare("EMERGENCY");
-        var y = failure.localeCompare("HIGH PRIORITY ACCESS");
-        var z = failure.localeCompare("MT ACCESS");
-        if(x == 1)num = 0;
-        if(y == 1)num = 1;
-        if(z == 1)num = 2;
-        //failureClass = parseInt(failureClass);
+        var temp = $("#select_box_us14").val();
+        var failureType = new String(temp);
+        if(failureType.trim() == "EMERGENCY")num = 0;
+        if(failureType.trim() == "HIGH PRIORITY ACCESS")num = 1;
+        if(failureType.trim() == "MT ACCESS")num = 2;
+        if(failureType.trim() == "MO SIGNALLING")num = 3;
+        if(failureType.trim() == "MO DATA")num = 4;
         $.ajax({
             type: "GET",
             url: "http://localhost:8080/Ragnar-0.0.1-SNAPSHOT/ragnar/base_data/us14/" + num,
             success: function (baseDataList) {
+                alert14.style.display = 'none';
                 $.each(baseDataList, function (index, value) {
                     //$("#US14List").append("<li>" + value + "</
                     var tr = (
@@ -518,7 +600,7 @@ $(document).ready(function(){
                 });
             },
             error: function(){
-                alert("Error");
+                alert14.style.display = 'block';
             }
         });
         if(xUs14.style.display === 'none') {

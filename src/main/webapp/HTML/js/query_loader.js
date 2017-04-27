@@ -5,18 +5,21 @@
 
 function loadUS1(){
     clearAll();
+    document.getElementById('alert1').style.display = 'none';
     var x = document.getElementById('us1Div');
     x.style.display = 'block';
 }
 
 function loadUS2(){
     clearAll();
+    document.getElementById('alert2').style.display = 'none';
     var x = document.getElementById('us2Div');
     x.style.display = 'block';
 }
 
 function loadUS4(){
     clearAll();
+    document.getElementById('tabletest').style.display = 'none';
     var x = document.getElementById('us4Div');
     var table = document.getElementById('tablebodyUs4');
     while(table.hasChildNodes()){
@@ -48,6 +51,8 @@ function loadUS5(){
 
 function loadUS6(){
     clearAll();
+    document.getElementById('tableUs6').style.display = 'none';
+
     var table = document.getElementById('tablebodyUs6');
     while(table.hasChildNodes()){
         table.removeChild(table.lastChild);
@@ -61,6 +66,8 @@ function loadUS6(){
 
 function loadUS7(){
     clearAll();
+    document.getElementById('tableUs7').style.display = 'none';
+
     var table = document.getElementById('tablebodyUs7');
     while(table.hasChildNodes()){
         table.removeChild(table.lastChild);
@@ -78,6 +85,8 @@ function loadUS7(){
 
 function loadUS8(){
     clearAll();
+    document.getElementById('tableUs8').style.display = 'none';
+
     var table = document.getElementById('tablebodyUs8');
     while(table.hasChildNodes()){
         table.removeChild(table.lastChild);
@@ -97,10 +106,15 @@ function loadUS8(){
 
 function loadUS9(){
     clearAll();
+    document.getElementById('tableUs9').style.display = 'none';
+
     var table = document.getElementById('tablebodyUs9');
     while(table.hasChildNodes()){
         table.removeChild(table.lastChild);
     }
+    document.getElementById('table9Graph').style.display = 'none';
+    document.getElementById('graphContainer9').style.display = 'none';
+    document.getElementById('graph9').style.display = 'none';
     var x = document.getElementById('us9Div');
      // var us9Body = document.getElementById('tablebodyUs9');
     var us9DateFrom =  document.getElementById('getDate1');
@@ -115,6 +129,7 @@ function loadUS9(){
 
 function loadUS10(){
     clearAll();
+    document.getElementById('tableUs10').style.display = 'none';
     var table = document.getElementById('tablebodyUs10');
     while(table.hasChildNodes()){
         table.removeChild(table.lastChild);
@@ -127,10 +142,15 @@ function loadUS10(){
 
 function loadUS11(){
     clearAll();
+    document.getElementById('tableUs11').style.display = 'none';
+
     var table = document.getElementById('tablebodyUs11');
     while(table.hasChildNodes()){
         table.removeChild(table.lastChild);
     }
+    document.getElementById('table11Graph').style.display = 'none';
+    document.getElementById('graphContainer11').style.display = 'none';
+    document.getElementById('graph11').style.display = 'none';
     var us11DateFrom =  document.getElementById('getDateFromUs11');
     var us11DateTo =  document.getElementById('getDateToUs11');
     var x = document.getElementById('us11Div');
@@ -144,10 +164,15 @@ function loadUS11(){
 
 function loadUS12(){
     clearAll();
+    document.getElementById('tableUs12').style.display = 'none';
     var table = document.getElementById('tablebodyUs12');
     while(table.hasChildNodes()){
         table.removeChild(table.lastChild);
     }
+
+    document.getElementById('table12Graph').style.display = 'none';
+    document.getElementById('graphContainer12').style.display = 'none';
+    document.getElementById('graph12').style.display = 'none';
     var us12DateFrom =  document.getElementById('getDateFromUs12');
     var us12DateTo =  document.getElementById('getDateToUs12');
     var x = document.getElementById('us12Div');
@@ -160,6 +185,7 @@ function loadUS12(){
 
 function loadUS14(){
     clearAll();
+    document.getElementById('tableUs14').style.display = 'none';
     var table = document.getElementById('tablebodyUs14');
     while(table.hasChildNodes()){
         table.removeChild(table.lastChild);

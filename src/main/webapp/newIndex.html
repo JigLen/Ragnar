@@ -14,6 +14,7 @@
     <script type="text/javascript" src="js/user_crud.js"></script>
     <script type="text/javascript" src="js/access_check.js"></script>
     <script type="text/javascript" src="js/base_data_crud.js"></script>
+<<<<<<< HEAD
     <script type="text/javascript" src="js/file_upload.js"></script>
     <script type="text/javascript" src="js/logout.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
@@ -24,9 +25,28 @@
 
 
 
+=======
+    <!--<script type="text/javascript" src="js/UserStory12Graph.js"></script>-->
+>>>>>>> d08c10818a2ef50884a5256323a814800e1a2118
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen"
           href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--pagination-->
+    <script type="text/javascript" src="path_to/jquery.js"></script>
+    <script type="text/javascript" src="path_to/jquery.simplePagination.js"></script>
+    <link type="text/css" rel="stylesheet" href="path_to/simplePagination.css"/>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+
 
     <script src="js/bootstrap/excanvas.min.js"></script>
     <script src="js/bootstrap/jquery.min.js"></script>
@@ -170,8 +190,8 @@
     <div class="left" id="us4Div" style="display:none">
         <h4>Display the Event Id and Cause Code for any/all failures affecting that IMSI</h4>
         <form>
+            <p>Select IMSI Number</p>
             <select id="select-box">
-                <option value="Select IMSI">Select IMSI</option>
             </select>
         </form>
         <input type="button" class="btn" id="US4Show" value="Show List"/>
@@ -179,6 +199,7 @@
         <table class="table table-bordered" id="tabletest" style="display:none">
             <thead>
             <tr>
+                <th>Date/Time</th>
                 <th>Event Id</th>
                 <th>Cause Code</th>
                 <th>Failure Class No.</th>
@@ -190,13 +211,21 @@
             <tbody id="tablebodyUs4">
             </tbody>
         </table>
+<<<<<<< HEAD
 
+=======
+        <div class="alert alert-warning" id="alert4" style="display:none">
+            <strong>Warning!</strong> Please select an IMSI number to search.
+        </div>
+>>>>>>> d08c10818a2ef50884a5256323a814800e1a2118
     </div>
+
     <!------------------------------------------------------------------------------>
 
 
     <!------------------------------------------------------------------------------>
     <div class="left" id="us5Div" style="display:none">
+<<<<<<< HEAD
         <h4>Failure count for given IMSI between dates</h4>
         <form>
             <!--<input type="text" name="id" placeholder="IMSI code goes here" id="imsiCodeToSearchUS5"><br>-->
@@ -208,6 +237,19 @@
             <div id="datetimepicker51" class="input-append date">
                 <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date from" id="getDateFromUs5"></input>
                 <span class="add-on">
+=======
+            <h4>Failure count for given IMSI between dates</h4>
+            <form>
+                <!--<input type="text" name="id" placeholder="IMSI code goes here" id="imsiCodeToSearchUS5"><br>-->
+                <p>Select IMSI Number</p>
+                <select id="select_box_us5">
+                </select>
+                <br>
+                <!--<input type="text" name="id" placeholder="Enter date from" id="getDateFromUS5"><br>-->
+                <div id="datetimepicker51" class="input-append date">
+                    <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date from" id="getDateFromUs5"></input>
+                    <span class="add-on">
+>>>>>>> d08c10818a2ef50884a5256323a814800e1a2118
                     <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
             </div>
             <br>
@@ -215,6 +257,7 @@
                 <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date to" id="getDateToUs5"></input>
                 <span class="add-on">
                      <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+<<<<<<< HEAD
             </div>
             <br>
             <input type="button" class="btn" id="searchByImsiAndDatesUS5" value="Search"/>
@@ -223,6 +266,17 @@
         </form>
         <h3 id="US5Output"></h3>
 
+=======
+                </div>
+                <br>
+                <input type="button" class="btn" id="searchByImsiAndDatesUS5" value="Search"/>
+                <input type="button" class="btn" id="closeUserStory5" value="Close"/>
+            </form>
+            <h4 id="US5Output"></h4>
+            <div class="alert alert-warning" id="alert5" style="display:none">
+            <strong>Warning!</strong> Please select a IMSI and input valid dates.
+            </div>
+>>>>>>> d08c10818a2ef50884a5256323a814800e1a2118
     </div>
     <!------------------------------------------------------------------------------>
 
@@ -247,7 +301,13 @@
             <tbody id="tablebodyUs6">
             </tbody>
         </table>
+<<<<<<< HEAD
 
+=======
+        <div class="alert alert-warning" id="alert6" style="display:none">
+            <strong>Warning!</strong> Please select an IMSI number.
+        </div>
+>>>>>>> d08c10818a2ef50884a5256323a814800e1a2118
     </div>
     <!------------------------------------------------------------------------------>
 
@@ -271,7 +331,7 @@
             <input type="button" class="btn" id="searchUs7" value="Search">
             <input type="button" class="btn" id="closeUserStory7" value="Close"/>
         </form>
-        <table class="table table-bordered" id="tableUs7" style="display:none">
+        <table class="paginated" id="tableUs7" style="display:none">
             <thead>
             <tr>
                 <th>IMSIs</th>
@@ -280,7 +340,13 @@
             <tbody id="tablebodyUs7">
             </tbody>
         </table>
+<<<<<<< HEAD
 
+=======
+        <div class="alert alert-warning" id="alert7" style="display:none">
+            <strong>Warning!</strong> Please enter valid dates.
+        </div>
+>>>>>>> d08c10818a2ef50884a5256323a814800e1a2118
     </div>
     <!------------------------------------------------------------------------------>
 
@@ -288,6 +354,7 @@
     <!------------------------------------------------------------------------------>
     <div class="left"  id="us8Div" style="display:none">
         <form>
+            <h4>Display the number of call failures for given phone model</h4>
             <select id="select_box_us8">
                 <option value="Select Model">Select Model</option>
             </select>
@@ -319,7 +386,13 @@
             <tbody id="tablebodyUs8">
             </tbody>
         </table>
+<<<<<<< HEAD
 
+=======
+        <div class="alert alert-warning" id="alert8" style="display:none">
+            <strong>Warning!</strong> Please select a phone model and enter valid dates.
+        </div>
+>>>>>>> d08c10818a2ef50884a5256323a814800e1a2118
     </div>
     <!------------------------------------------------------------------------------>
 
@@ -329,20 +402,20 @@
         <h4>Enter Time Period To Search</h4>
         <form>
             <div id="datetimepicker91" class="input-append date">
-                <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date from" id="getDate1"></input>
+                <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date from" id="getDateFromUs9"></input>
                 <span class="add-on">
                     <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
             </div>
             <br>
             <div id="datetimepicker92" class="input-append date">
-                <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date to" id="getDate2"></input>
+                <input data-format="yyyy-MM-dd hh:mm:ss" type="text" placeholder="Enter date to" id="getDateToUs9"></input>
                 <span class="add-on">
                      <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
             </div>
             <br>
             <input type="button" class="btn" id="showUserStory9" value="Search"/>
             <input type="button" class="btn" id="closeUserStory9" value="Close"/>
-
+            <input type="button" class="btn" id="graph9" value="Display Graph" style="display:none">
         </form>
         <table class="table table-bordered" id="tableUs9" style="display:none">
             <thead>
@@ -356,15 +429,26 @@
             </tbody>
         </table>
 
+        <div class="alert alert-warning" id="alert9" style="display:none">
+            <strong>Warning!</strong> Please enter valid dates.
+        </div>
+        <table id="table9Graph" style="border:1px solid black; display:none">
+            <tr>
+                <th>IMSI</th>
+                <th>Count</th>
+                <th>Total Duration</th>
+            </tr>
+        </table>
+        <div id="graphContainer9" style="width:100%; height:400px; display:none"></div>
     </div>
     <!------------------------------------------------------------------------------>
 
 
     <!------------------------------------------------------------------------------>
     <div class="left"  id="us10Div" style="display:none">
+        <h4>Display all unique call failures for given phone model</h4>
         <form>
             <select id="select_box_us10">
-                <option value="Select Model">Select Model</option>
             </select>
             <br>
             <input type="button" class="btn" id="searchsUs10" value="Submit">
@@ -373,6 +457,7 @@
         <table class="table table-bordered" id="tableUs10" style="display:none">
             <thead>
             <tr>
+                <th>Date/Time</th>
                 <th>Event ID</th>
                 <th>Cause Code</th>
                 <th>Description</th>
@@ -383,6 +468,9 @@
             <tbody id="tablebodyUs10">
             </tbody>
         </table>
+        <div class="alert alert-warning" id="alert10" style="display:none">
+            <strong>Warning!</strong> Please select a phone model to search.
+        </div>
     </div>
     <!------------------------------------------------------------------------------>
 
@@ -405,24 +493,25 @@
             <br>
             <input type="button" class="btn" id="mostCommonMarketOperatorCellCombo" value="Submit">
             <input type="button" class="btn" id="closeUserStory11" value="Close"/>
+            <input type="button" class="btn" id="graph11" value="Display Graph" style="display:none">
         </form>
         <table class="table table-bordered" id="tableUs11" style="display:none">
             <thead>
             <tr>
-
                 <th>Market</th>
                 <th>Operator</th>
                 <th>Cell ID</th>
                 <th>Count</th>
-
             </tr>
             </thead>
             <tbody id="tablebodyUs11">
             </tbody>
         </table>
-        <!--<ul id="mostCommonMarketOperatorCellComboHolder"></ul>-->
-
-
+        <div class="alert alert-warning" id="alert11" style="display:none">
+            <strong>Warning!</strong> Please enter valid dates.
+        </div>
+        <table id="table11Graph" style="border:1px solid black; display:none"></table>
+        <div id="graphContainer11" style="width:100%; height:400px; display:none"></div>
     </div>
     <!------------------------------------------------------------------------------>
 
@@ -445,27 +534,231 @@
             <br>
             <input type="button" class="btn" id="mostCommonIMSIFailsByDate" value="Submit">
             <input type="button" class="btn" id="closeUserStory12" value="Close"/>
+            <input type="button" class="btn" id="graph12" value="Display Graph" style="display:none">
         </form>
         <table class="table table-bordered" id="tableUs12" style="display:none">
             <thead>
             <tr>
                 <th>IMSIs</th>
+                <th>Number Of Failures</th>
             </tr>
             </thead>
             <tbody id="tablebodyUs12">
             </tbody>
         </table>
 
+        <div class="alert alert-warning" id="alert12" style="display:none">
+            <strong>Warning!</strong> Please enter valid dates.
+        </div>
+        <table id="table12Graph" style="border:1px solid black; display:none"></table>
+        <div id="graphContainer12" style="width:100%; height:400px; display:none"></div>
     </div>
     <!------------------------------------------------------------------------------>
+    <script>
+
+    $("#graph12").click(function()
+    {
+        alert("test");
+        makeChart();
+        $("#graphContainer12").show();
+    });
+
+    $("#graph11").click(function()
+    {
+        alert("dis werk?");
+        makeChart11();
+        $("#graphContainer11").show();
+    });
+
+    $("#graph9").click(function()
+    {
+        alert("test9");
+        makeChart9();
+        $("#graphContainer9").show();
+    });
 
 
+
+
+
+
+    function makeChart()
+    {
+        var chart;
+        chart = Highcharts.chart('graphContainer12', {
+
+        title: {
+        text: 'Top 10 IMSI\'s that had call failures during a given period'
+    },
+
+    data: {
+         table: "table12Graph"
+    },
+
+    xAxis: {
+        allowDecimals: false,
+        categories: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    ,
+        crosshair: true
+    },
+
+    yAxis: {
+        min: 0,
+    title: {
+        text: 'Number of call failures'
+    }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">Failures: </td>' +
+        '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+        plotOptions: {
+          column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+         }
+        },
+
+        series: [{
+            name: 'Failures',
+            type: 'column',
+            colorByPoint: true,
+            showInLegend: false
+        }]
+
+    });
+
+
+
+    }
+
+    function makeChart11()
+    {
+
+        var chart;
+        chart = Highcharts.chart('graphContainer11', {
+
+            title: {
+                text: 'Top 10 most common Market, Operator and Cell Combo within'
+            },
+
+            data: {
+                table: "table11Graph"
+            },
+
+            xAxis: {
+                allowDecimals: false,
+                categories: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                ,
+                crosshair: true
+            },
+
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Number of combinations'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">Failures: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+
+            series: [{
+                name: 'Failures',
+                type: 'column',
+                colorByPoint: true,
+                showInLegend: false
+            }]
+
+        });
+    }
+
+
+    function makeChart9()
+    {
+
+        Highcharts.chart('graphContainer9', {
+            chart: {
+                zoomType: 'xy'
+            },
+            title: {
+                text: 'Number of Failures and their duration'
+            },
+            xAxis: [{
+                categories: imsiArray
+            }],
+            yAxis: [{ // Primary yAxis
+                labels: {
+                    style: {
+                        color: Highcharts.getOptions().colors[1]
+                    }
+                },
+                title: {
+                    text: 'Number of Failures',
+                    style: {
+                        color: Highcharts.getOptions().colors[1]
+                    }
+                }
+            }, { // Secondary yAxis
+                title: {
+                    text: 'Total Duration',
+                    style: {
+                        color: Highcharts.getOptions().colors[0]
+                    }
+                },
+                labels: {
+                    style: {
+                        color: Highcharts.getOptions().colors[0]
+                    }
+                },
+                opposite: true
+            }],
+
+            tooltip: {
+                shared: true
+            },
+
+            series: [{
+                name: 'Total Duration',
+                type: 'column',
+                yAxis: 1,
+                data: durationSeries,
+                tooltip: {
+                    pointFormat: '<span style="font-weight: bold; color: {series.color}">{series.name}</span>: <b>{point.y:.1f} Seconds</b> '
+                }
+            }, {
+                name: 'Number of Failures',
+                type: 'spline',
+                data: countSeries,
+                tooltip: {
+                    pointFormat: ' <span style="font-weight: bold; color: {series.color}">{series.name}</span>: <b>{point.y:.1f}</b> '
+                }
+            },]
+        });
+    }
+
+    </script>
     <!------------------------------------------------------------------------------>
     <div class="left" id="us14Div" style="display:none">
-        <h3>Get affected IMSIs by Failure Type</h3>
+        <h4>Get affected IMSIs by Failure Type</h4>
         <form>
+            <p>Select Failure Type</p>
             <select id="select_box_us14">
-                <option value="Select Failure Type">Select Failure Type</option>
             </select>
             <br>
             <input type="button" id="US14SearchButton" value="Search">
@@ -480,13 +773,23 @@
             <tbody id="tablebodyUs14">
             </tbody>
         </table>
+<<<<<<< HEAD
 
+=======
+        <div class="alert alert-warning" id="alert14" style="display:none">
+            <strong>Warning!</strong> Please select a failure type to search.
+        </div>
+>>>>>>> d08c10818a2ef50884a5256323a814800e1a2118
     </div>
     <!------------------------------------------------------------------------------>
 
     <!------------------------------------------------------------------------------>
 
 </div>
+<<<<<<< HEAD
 
+=======
+<!--<script> language="javascript"> permissions(4); </script>-->
+>>>>>>> d08c10818a2ef50884a5256323a814800e1a2118
 </body>
 </html>
