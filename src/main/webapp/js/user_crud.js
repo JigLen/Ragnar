@@ -41,22 +41,32 @@ $(document).ready(function()
             description ="Network Engineer";
         }
 
+        if(username && password){
+            document.getElementById('alert2').style.display = 'none';
+            var myUser = new User(username, password,accessLevel, description );
 
-        var myUser = new User(username, password,accessLevel, description );
+
+            $.ajax({
+                type: "POST",
+                url: "ragnar/user",
+                success: function () {
+                    document.getElementById('alert2').innerHTML = 'User Added';
+                    document.getElementById('alert2').style.display = 'block';
+                },
+                error: function(){
+                    document.getElementById('alert2').innerHTML = '<strong>Warning!</strong> User Post Failure';
+                    document.getElementById('alert2').style.display = 'block';
+                },
+                data: JSON.stringify(myUser),
+                contentType: "application/json",
+            });
+        }
+        else{
+            document.getElementById('alert2').innerHTML = '<strong>Warning!</strong> Please enter username and password';
+            document.getElementById('alert2').style.display = 'block';
+        }
 
 
-        $.ajax({
-            type: "POST",
-            url: "ragnar/user",
-            success: function () {
-                alert("user added");
-            },
-            error: function(){
-                alert("User POST failure")
-            },
-            data: JSON.stringify(myUser),
-            contentType: "application/json",
-        });
     });
 
     $("#showUserList").click(function() {

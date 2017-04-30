@@ -1,12 +1,7 @@
 /**
  * Created by c12317616 on 16/03/2017.
  */
-function checkAccess(access_lv,user_access){
-    if(access_lv==user_access) {
-        return true;
-    }
-    return false;
-}
+
 function permissions(user_access){
     var sidebar=document.getElementById("sidebar");
 
@@ -81,7 +76,7 @@ function loadSupportEngineerFunctions(){
     var li3 = document.createElement('li');
     li3.setAttribute('id', 'userstory14');
     li3.setAttribute('onclick','loadUS14()');
-    li3.innerHTML = '<a href="#">Number of IMSI that are affected</a>';
+    li3.innerHTML = '<a href="#">Given a Failure class, display all affected IMSIs</a>';
     ul.appendChild(li3);
 }
 

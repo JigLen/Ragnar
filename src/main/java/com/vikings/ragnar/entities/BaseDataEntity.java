@@ -19,7 +19,6 @@ import java.sql.Timestamp;
         @NamedQuery(name = "US10", query = "SELECT b.eventCauseEntity.cpk.eventId, b.eventCauseEntity.cpk.causeCode, b.eventCauseEntity.description, COUNT(*), b.ueEntity.model FROM BaseDataEntity AS b INNER JOIN b.ueEntity AS ue WHERE b.ueEntity.model=:model GROUP BY b.eventCauseEntity.cpk.eventId, b.eventCauseEntity.cpk.causeCode"),
         @NamedQuery(name = "US11", query = "SELECT b.mccMncEntity.country, b.mccMncEntity.operator,b.cellId,COUNT(*) FROM BaseDataEntity b JOIN b.mccMncEntity AS m WHERE b.dateTime BETWEEN :dateOne AND :dateTwo GROUP BY b.mccMncEntity.mccMncId.mcc, b.mccMncEntity.mccMncId.mnc,b.cellId ORDER BY COUNT(b) DESC"),
         @NamedQuery(name = "US12", query = "SELECT b.imsi, COUNT(b) FROM BaseDataEntity b WHERE dateTime BETWEEN :date1 AND :date2 GROUP BY b.imsi ORDER BY COUNT(b) DESC"),
-
         @NamedQuery(name = "US14", query = "SELECT b.imsi FROM BaseDataEntity b WHERE b.failureClassEntity.failureClass=:input GROUP BY b.imsi")
 })
 

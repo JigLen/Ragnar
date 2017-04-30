@@ -37,17 +37,16 @@ public class UserSessionServlet extends HttpServlet {
 
                 System.out.println("User Entity Stored in session");
 
-                if (session.getAttribute("userEntity") == null) response.sendRedirect("HTML/login.html");
-                else response.sendRedirect("HTML/index.html");
+                if (session.getAttribute("userEntity") == null) response.sendRedirect("login.html");
+                else response.sendRedirect("index.html");
             } catch (Exception e) {
                 System.out.println("User Not Found");
-                response.sendRedirect("HTML/login.html");
+                response.sendRedirect("login.html");
             }
         }
         else{                                               // logout
-            System.out.println("LOGOUT TEST");
             session.removeAttribute("userEntity");
-            response.sendRedirect("HTML/login.html");
+            response.sendRedirect("login.html");
         }
 
 
@@ -77,7 +76,7 @@ public class UserSessionServlet extends HttpServlet {
 
             }
             else{
-                response.sendRedirect("HTML/login.html");
+                response.sendRedirect("login.html");
                 System.out.println("No One logged in");
             }
         }

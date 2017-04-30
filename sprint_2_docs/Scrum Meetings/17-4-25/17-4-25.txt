@@ -1,0 +1,37 @@
+What did you do?
+
+Dimitar     -   Sprained Ankle (Worked on testing?)
+
+Sahar       -   Second Graph US9
+
+David       -   All queries working with bootstrap.
+
+Carl        -   User login session working, and is used to load functions.
+
+Ciarán      -   Tidied up navigation on bootstrap.
+
+
+What will you do today?
+
+Dimitar 	-   Sprained Ankle (Working on testing?)
+
+Sahar		-   Drilling down the graphs.
+
+David		-   Notifications. US 11 Joins etc (we forgot to add)
+
+Carl		-   User Logout and page restriction eg. pressing back after logout.
+
+Ciaran		-   fix Images not loading in bootstrap (to do with awesome-font)
+
+
+ What issues do you have?
+
+Dimitar 	-
+
+Sahar		-
+
+David		-
+
+Carl		-
+
+Ciaran		-

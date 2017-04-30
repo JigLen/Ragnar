@@ -7,7 +7,8 @@ $(document).ready(function () {
 
         var file = this.files[0];
         if (!file.name.includes(".xls") || !file.name.includes(".xls")){
-            alert("Warning! Not an excel spreadsheet!\nThis will not upload!");
+            document.getElementById('alert1').innerHTML = '<strong>Warning!</strong> Non excel files will not upload';
+            document.getElementById('alert1').style.display = 'block';
             isAcceptable = false;
         }
         else{
@@ -47,6 +48,8 @@ $(document).ready(function () {
                             }
                         } , false);
                     }
+                    document.getElementById('alert1').innerHTML = 'File uploaded';
+                    document.getElementById('alert1').style.display = 'block';
                     return myXhr;
                 },
             });
